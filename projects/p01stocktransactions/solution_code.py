@@ -18,6 +18,7 @@ profit_loss = total_sell_price - sell_commission - (total_buy_price + buy_commis
 
 print()
 print("Transactions for stock:", stock_symbol)
+
 print("Bought", shares, "shares", "@", buy_price)
 print("Paid", round(total_buy_price, DECIMAL_DIGITS))
 print("Commission when buying:", round(buy_commission, DECIMAL_DIGITS))
