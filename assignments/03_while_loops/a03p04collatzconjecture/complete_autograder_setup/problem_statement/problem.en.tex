@@ -1,0 +1,24 @@
+\problemname{Collatz Conjecture}
+
+Let $a$ be a positive integer and consider the sequence where $x_0 = a$ and 
+
+$$ x_{n+1} =
+\begin{cases}
+    x_n / 2     & \text{if } x_n \text{ is even} \\
+    3 x_n + 1 & \text{if } x_n \text{ is odd}
+\end{cases}
+$$
+
+The Collatz conjecture states that this sequence will always reach $1$.
+
+For example, if $a = 10$, then $x_0 = 10, x_1 = 5, x_2 = 16, x_3 = 8, x_4 = 4, x_5 = 2$ and $x_6 = 1$.
+
+Write a program that reads a positive integer from the user and, using a while loop, outputs each element of the above sequence until it reaches $1$.
+
+
+\section*{Input}
+Input consists of one line with one integer $x_0$, the initial term of the sequence, where $0 \leq x_0 \leq 100\,000$.
+
+\section*{Output}
+
+Output consists of one or more lines, where the $i$th line contains the integer $x_i$, for $i \geq 0$.

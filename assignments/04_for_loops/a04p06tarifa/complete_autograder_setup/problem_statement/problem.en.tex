@@ -1,0 +1,23 @@
+\problemname{Tarifa}
+
+You have been using a new cell phone plan for the last $n$ months,
+and have recorded how much data you use each month.
+
+This phone plan accrues data that you have not used, so you can use it at a later date.
+
+Given a plan, in MB/month, and the phones reported usage for the $n$ months,
+write a program that calculates the number of MB you are allotted next month,
+assuming you will not use more data this month.
+
+
+\section*{Input}
+The first line of the input contains the integer $m$, the number of MB you are allotted each month, where $1 \leq m \leq 10^6$ \\
+The second line contains the integer $n$, the number of months you have been using the plan, where $0 \leq n \leq 10^5$ \\
+The next $n$ lines each contain one integer $d_i$, the MB used on month $i$, where $0 \leq d_i \leq 10^6$
+
+It is guaranteed you will never use more data on a given month than you are allotted.
+
+\section*{Output}
+Output consists of one line with one integer,
+the number of megabytes you are allotted next month,
+assuming that you will not use more data during this month.

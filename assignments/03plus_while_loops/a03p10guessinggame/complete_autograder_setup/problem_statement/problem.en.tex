@@ -1,0 +1,42 @@
+\problemname{Guessing Game}
+
+Time to play a guessing game.
+I will pick a number between $1$ and $1\,000$, inclusive, and you write a program which guesses what it is.
+I will then tell your program whether the guess was correct, too low or too high.
+If I get bored, I might quit.
+
+Your program should use a method known as binary search, halving the range of possible solutions each time I say the guess is too low or too high.
+Using this method, your program is guaranteed to guess correctly using at most $10$ guesses!
+
+When the game begins, the solution must lie somewhere between $1$ and $1\,000$.
+To divide the solution space in half, pick a guess that is exactly in the middle.
+Pick the lower one in case of ties, which is $500 = \left\lfloor \frac{1+1000}{2} \right\rfloor$.
+
+Imagine that the guess is too high.
+Then the solution must lie between $1$ and $499$.
+The next guess will therefore be $250 = \left\lfloor \frac{1+499}{2} \right\rfloor$.
+
+Imagine that the guess is too low.
+Then the solution must lie between $251$ and $499$ so the next guess will therefore be $375 = \left\lfloor \frac{251+499}{2} \right\rfloor$.
+
+By repeating this process up to $10$ times, you are guaranteed to find the correct answer.
+If not, then I must be cheating!
+
+Your program should always pick a guess that is in the middle of the range of possible solutions, rounded down (floored) to the nearest integer.
+
+\section*{Input}
+For each guess your program makes, the input will contain a line with the following:
+\begin{itemize}
+    \item \texttt{l} if the guess is too low,
+    \item \texttt{h} if the guess is too high,
+    \item \texttt{c} if the guess is correct,
+    \item \texttt{q} if the program should quit early.
+\end{itemize}
+
+
+\section*{Output}
+Your program should start by writing the initial guess.
+Then it should keep guessing according to the input given, until the guess is correct or until the signal to quit early is given.
+In case the signal to quit early is given, your program should output \texttt{Quitter} and then exit.
+After guessing correctly your program should output \texttt{I AM VICTORIOUS} and then exit.
+The program should detect if cheating has occurred, in which case it should output \texttt{Tsk, tsk, don't try to cheat me} and then exit.

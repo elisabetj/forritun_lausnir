@@ -1,0 +1,5 @@
+INT(-1, 10000, n) NEWLINE
+WHILE(n != -1)
+INT(-1, 10000, n) NEWLINE
+END
+EOF

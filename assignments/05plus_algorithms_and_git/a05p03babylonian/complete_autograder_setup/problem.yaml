@@ -1,0 +1,6 @@
+name: Babylonian Square Root Algorithm
+author: Arnar Páll Jóhannsson, Eiríkur Fannar Torfason
+source: T-111-Programming
+rights_owner: Háskólinn í Reykjavík
+license: cc by-sa
+validator_flags: float_tolerance 1e-4

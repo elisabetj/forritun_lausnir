@@ -1,0 +1,27 @@
+\problemname{Elo Rating}
+
+In chess, players are rated using the Elo system.
+The system is designed such that if a player has 100 more Elo than the opponent,
+then the player will win 64\% of the time.
+Elo rankings can be split into multiple categories.
+\begin{itemize}
+	\item A super grandmaster has $\geq 2700$ Elo.
+	\item A grandmaster has $\geq 2500$ Elo.
+	\item A international grandmaster has $\geq 2400$ Elo.
+	\item Let's call a chess player with $<2400$ Elo amateur.
+\end{itemize}
+Ratings are considered valid if they are $>999$. \\
+Write a program that reads in a chess Elo rating and prints
+\texttt{Super grandmaster},
+\texttt{Grandmaster},
+\texttt{International grandmaster},
+\texttt{Amateur} or
+\texttt{Invalid}
+depending on the input.
+
+\section*{Input}
+Input consists of one line containing one integer $rating$,
+where $-10^6 \leq rating \leq 10^6$.
+
+\section*{Output}
+Output consists of one line, the Elo category.

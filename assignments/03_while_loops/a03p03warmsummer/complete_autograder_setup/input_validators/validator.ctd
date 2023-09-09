@@ -1,0 +1,7 @@
+REGEX("[^\n]*", s) NEWLINE
+WHILE(s == "Y")
+FLOATP(-1000000, 1000000, 0, 6) NEWLINE
+REGEX("[^\n]*", s) NEWLINE
+END
+
+EOF

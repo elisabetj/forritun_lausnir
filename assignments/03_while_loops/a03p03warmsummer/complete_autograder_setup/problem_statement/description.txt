@@ -1,0 +1,5 @@
+Title: The warm summer
+
+Write a program that doubles any input, until the user does not want anything else doubled.
+
+Try running the tests and having a look at the test cases to see what the output should look like.

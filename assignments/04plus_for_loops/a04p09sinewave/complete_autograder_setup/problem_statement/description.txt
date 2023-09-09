@@ -1,0 +1,56 @@
+Author: Eiríkur Fannar Torfason
+
+Title: Sine Wave
+
+Let's attempt to draw a sine wave using the print() statement.
+Sine waves are usually drawn horizontally (left to right)
+but the print() statement creates output that is ordered from top to bottom.
+We'll therefore draw our wave vertically.
+
+Our program shall accept two arguments:
+
+number_of_cycles - which controls how many waves should be drawn
+number_of_lines - which controls how many lines are used to print the waves
+
+To draw the wave we simply print a series of "X" characters. Here's an example:
+
+Number of cycles: 1
+Stretched over how many lines? 20
+XXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXX
+XXXXXXXX
+XXXX
+X
+
+X
+XXXX
+XXXXXXXX
+XXXXXXXXXXXXXX
+
+Python has a built in math.sin() function that we will leverage.
+To calculate its input, we will consider the lines to be numbered from 0 and onwards.
+The distance in radians is then given by:
+
+radians_per_line = number_of_cycles * 2 * math.pi / number_of_lines
+radians = line_number * radians_per_line 
+
+math.sin(radians) will return a number between -1.0 and 1.0 inclusive.
+We are going to linearly transform the sine value to a number between 0 and 40 (inclusive)
+and round that number to figure out how many "X" characters to print.
+Here are a few examples:
+
+Sine value              Number of X characters to print
+-1.0	                
+0.0	                    20
+1.0	                    40
+0.8414709848078965	    37

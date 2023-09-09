@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+USE_SCORING=0
+. ../../../../testdata_tools/gen.sh
+
+use_solution solution_code.py
+
+compile random_generator.py
+
+sample 01
+sample 02
+sample 03
+sample 04
+sample 05
+sample 06
+
+for i in {01..18}; do
+tc normal-$i random_generator normal
+done;
+# skip 19 because duplicate
+tc normal-20 random_generator normal
+tc normal-21 random_generator normal
+for i in {01..10}; do
+tc quit-$i random_generator quit
+done;
+for i in {01..20}; do
+tc cheat-$i random_generator cheat
+done;

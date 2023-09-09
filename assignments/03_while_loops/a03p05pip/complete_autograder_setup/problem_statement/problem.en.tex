@@ -1,0 +1,29 @@
+\problemname{Pip}
+
+In the game Pip,
+players take turns counting one number each,
+but whenever the number is divisible by $7$
+or contains the digit $7$,
+then the current player should say \texttt{Pip!} instead,
+and then the order of the players is reversed,
+so the previous player is next.
+If a player says something they're not supposed to,
+they lose,
+and the game starts over,
+beginning with the player who lost.
+
+Now, imagine we know nothing about strings or how to check if they contain a given character.
+One way to check if a number contains the digit $7$
+is to keep dividing it by $10$, discarding the remainder, until it becomes $0$,
+and at each step checking if the last digit (the discarded remainder) is $7$.
+
+Write a program that accepts a positive integer,
+and checks if it contains a 7,
+using repeated divisions by 10 and remainders.
+
+\section*{Input}
+
+Input consists of one line with one integer number $n$, where $0 \leq n \leq 1\,000\,000$.
+
+\section*{Output}
+Output contains one line with either the string \texttt{The number contains 7.} or \texttt{The number does not contain 7.} depending on the results of your program.

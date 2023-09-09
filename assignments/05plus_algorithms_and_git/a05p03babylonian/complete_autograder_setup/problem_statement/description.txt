@@ -1,0 +1,31 @@
+Author: Eiríkur Fannar Torfason
+
+Title: Babylonian square root algorithm
+
+Let's implement the Babylonian square root algorithm. Here's a pseudocode description of the algorithm.
+
+    let n be the number for which to find the square root
+    let g be the initial guess
+    let t be the tolerance
+    let g' be our previous guess, initialized to 0
+    while the absolute difference between g and g' is greater than t
+        g' = g
+        g = average of n/g and g
+
+The program shall take as input the following
+
+    number - an integer for which to find the square root
+    guess  - an integer representing from where to start the search for the actual square root
+    tolerance - a float indicating the minimum change between iterations until the algorithm stops
+
+It should print out the square root, rounded to the 4th decimal, and the number of repetitions until tolerance was reached.
+
+Example:
+
+Find the square root of integer: 2
+Initial guess: 1
+What tolerance: 0.0001
+Square root of 2 is 1.4142
+Took 4 reps to get it to tolerance
+
+This exercise is based on chapter 3.5 in the textbook.

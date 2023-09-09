@@ -1,0 +1,50 @@
+\problemname{The Leftovers}
+
+The game \emph{Rock, paper, scissors} is well known,
+and often used when two people need to choose one among them
+for some activity.
+
+But what if there are more than two people who need to select a candidate?
+
+Then the game can be changed/extended as follows
+(and this version can be used for two people as well):
+
+The players are numbered from $0$ to $n-1$,
+where $n$ is the number of players.
+
+On the count of three, each person puts out a number of fingers.
+All upheld fingers are counted,
+and the total is divided by the number of players.
+The remainder of that division,
+which will be a number in the range $0$ to $n-1$ (inclusive),
+decides which player is chosen.
+
+Write a program that:
+\begin{enumerate}
+
+\item First, asks how many players are involved.
+Let us keep it to two or more.
+
+If the given input is less than $2$,
+your program should keep asking until the input is valid.
+
+\item Next, asks each player about their contribution.
+In the physical game,
+the contribution would be limited by the number of fingers,
+but in a computer implementation we do not have such primitive limitations.
+
+\item Finally, sums up all contributions and calculates who is the winner.
+
+\end{enumerate}
+
+\section*{Input}
+Input consists of one integer $p$, the number of players, where $ 2 \leq p \leq 100$. If $p < 2$ this input is repeated.
+This is followed by $p$ lines of one integer $c$ each, the contribution of each player, where $ -100\,000 \leq c \leq 100\,000$.
+
+\section*{Output}
+Output consists of three lines.\\
+The first line contains the string \texttt{The sum of all contributions is (t)}\\
+The second line contains the string \texttt{When (t) is divided by (p), the remainder is (r)}\\
+The third line contains the string \texttt{Player (r) is the winner!}\\
+Where $t$ is the total contributions, $r$ is the number of the player that won, and $p$ is the number of players.
+

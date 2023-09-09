@@ -1,0 +1,30 @@
+\problemname{Comrade Computer Operator}
+\illustration{0.3}{nuclear}{Radioactive!}
+
+Your nation's prestigious reputation is being tarnished by the evil foreign
+media due to a slight mishap in one of its nucelar power plants.
+To prevent this from happening again, the wise leaders of your nation have
+given you the task to create a computer program that controls reactor temperature.
+At regular intervals, the temperature of the water in the reactor is measured.
+The last two measurements are given to the program, which then decides what should
+be done with the control rods in order to maintain an optimum operating temperature
+of $300^\circ C$. The control logic is as follows:
+
+\begin{itemize}
+    \item If the current temperature is below $300^\circ C$ and the temperature is not rising then raise the control rods to increase temperature.
+    \item If the current temperature is below $300^\circ C$ but the temperature is rising then keep the control rods where they are.
+    \item If the current temperature is exactly $300^\circ C$ then keep the control rods where they are.
+    \item If the current temperature is above $300^\circ C$ and the temperature is not falling then lower the control rods to reduce temperature.
+    \item If the current temperature is above $300^\circ C$ but the temperature is falling then keep the control rods where they are.
+    \item If the current temperature is $350^\circ C$ or higher then initiate emergency shutdown procedures.
+\end{itemize}
+
+Can you write the program and save your nation's reputation?
+
+\section*{Input}
+The input consists of two lines.
+The first line contains one integer $a$, the current temperature, where $0 \leq a \leq 400$.
+The second line contains one integer $b$, the previous temperature, where $0 \leq b \leq 349$.
+
+\section*{Output}
+Depending on the pair of measurements, output \texttt{raise}, \texttt{keep}, \texttt{lower} or \texttt{shutdown}.

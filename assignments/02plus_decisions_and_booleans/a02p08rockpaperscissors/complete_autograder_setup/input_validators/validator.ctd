@@ -1,0 +1,3 @@
+REGEX("(rock|paper|scissors)") NEWLINE
+REGEX("(rock|paper|scissors)") NEWLINE
+EOF

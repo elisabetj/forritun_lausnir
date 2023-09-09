@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+USE_SCORING=0
+. ../../../../testdata_tools/gen.sh
+
+use_solution solution_code.py
+
+compile random_generator.py
+
+sample 01
+sample 02
+sample 03
+sample 04
+sample 05
+sample 06
+sample 07
+
+
+tc prime-01 random_generator prime 3 3
+tc prime-02 random_generator prime 5 5
+tc prime-03 random_generator prime 11 11
+tc prime-04 random_generator prime 17 17
+tc prime-05 random_generator prime 19 19
+tc prime-06 random_generator prime 29 29
+tc prime-07 random_generator prime 31 31
+tc prime-08 random_generator prime 37 37
+tc prime-09 random_generator prime 41 41
+tc prime-10 random_generator prime 43 43
+for i in {11..30}; do
+tc prime-$i random_generator prime 47 2000
+done;
+for i in {31..49}; do
+tc prime-$i random_generator prime 2001 999982
+done;
+tc prime-50 random_generator prime 999983 999983
+
+tc composite-01 random_generator composite 4 4
+tc composite-02 random_generator composite 8 8
+tc composite-03 random_generator composite 9 9
+tc composite-04 random_generator composite 10 10
+tc composite-05 random_generator composite 12 12
+tc composite-06 random_generator composite 14 14
+tc composite-07 random_generator composite 15 15
+tc composite-08 random_generator composite 16 16
+tc composite-09 random_generator composite 18 18
+tc composite-10 random_generator composite 20 20
+tc composite-11 random_generator composite 21 21
+tc composite-12 random_generator composite 22 22
+tc composite-13 random_generator composite 24 24
+tc composite-14 random_generator composite 25 25
+
+for i in {15..30}; do
+tc composite-$i random_generator composite 26 2000
+done;
+
+for i in {31..49}; do
+tc composite-$i random_generator composite 2001 999999
+done;
+tc composite-50 random_generator composite 1000000 1000000

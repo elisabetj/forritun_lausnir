@@ -1,0 +1,50 @@
+Title: Maximum number
+
+Design an algorithm that finds the maximum positive integer input by a user.
+The user repeatedly inputs numbers until a negative value is entered.
+
+Make sure that you write up the algorithm before starting to code.
+Then implement the algorithm in Python.
+Put your algorithmic description as a comment in the program file.
+
+During the design of your algorithm and your implementation, you should use git:
+- It's simplest to start with GitHub:
+    - Create an account on github.com (if you don't already have it).
+    - Create a private repository on Github
+    - Follow the instructions (that appear on Github).
+        - Pick a name for the repo, for example "Assignment 5"
+        - Make the repo private
+        - Check the box for making a README file
+        - Check the box for making a .gitignore file. Select the python template (you can type py in the search field)
+        - You don't really need to protect this homework with a license, so skip that for now
+        - Click "Create repository"
+    - Once you've created the repo, you should see a green button near the top, labelled "Code". Click it, and copy the url (https, not ssh).
+    - Open a terminal. For Windows, we recommend git bash.
+    - Navigate to a folder where you want to store the repo on your computer
+    - (if you're having trouble accessing the correct drive, you can also open the folder in the GUI, right click, and open "Git Bash Here" or similar)
+    - `git clone url-to-repository`
+    - If (when) you are prompted to log in, you can use a Personal Access Token as the password.
+        - Go to GitHub
+        - Click on your profile image in the top-right corner and click settings
+        - Under "Developer Settings" (bottom left), click "Personal access tokens".
+        - Create a new token, make sure to check the checkbox for "repo", which will also check all the subselections.
+        - Set the expiry date after the course is done (90 days is enough).
+        - Scroll all the way down, and click "Generate token"
+        - Store the generated token somewhere safe. If you lose this token you can never reclaim it (although if you do, you can revoke it and generate a new one).
+        - Use this token as your password
+    - If this does not work, make sure you have the latest version of git installed and try again
+    - `cd` into the folder git creates for you
+    - open this folder in VSCode
+- Write the text of your algorithm in a file called `max_int.py`.
+- Inspect the result of `git status`.
+- Use `git add .` to move changes to the staging area.
+- Commit your changes with `git commit -m "Describe the algorithm"`.
+- Then start implementing your algorithm
+- During your implementation, make sure you do `git status`, `git add`, and `git commit` regularly.
+    - Take care to write good commit messages (in English) that describe what the change involves.
+        - Use imperative mood in commit messages. For example, "Fix bug", and not "Fixed bug" or "Fixes bug".
+- You can see a log of all your commits with `git log`.
+    - Hit 'q' to escape the log interface.
+- When you have finished your implementation:
+    - Push your changes to the remote repo with `git push`.
+    - Inspect your commits on Github.

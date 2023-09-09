@@ -1,0 +1,25 @@
+\problemname{The Warm Summer}
+
+Write a program that doubles any input, until the user does not want anything else doubled.
+
+\section*{Input}
+
+Input starts with one line containing a string $s$, where if $s$ is \texttt{Y} the following input repeats until $s$ is not \texttt{Y}. 
+\begin{itemize}
+    \item A line containing one floating point number $d$, where $-1\,000\,000 \leq d \leq 1\,000\,000$.
+    \item A line containing the new value of $s$.
+\end{itemize}
+It is guaranteed that each character in the input, except for the newline characters,
+belongs to the set of printable characters in the ASCII table,
+and that the numbers are given with at most six digits after the decimal point.
+
+\section*{Output}
+
+First, the program should prompt the user with ``\texttt{You need something doubled? (Y)es? }'', without quotations.
+The following repeats until the user does not input \texttt{Y}, at which point the program exits without outputting anything else:
+\begin{itemize}
+    \item The program prompts the user with ``\texttt{All right, then. Give me a number, and I'll double it for ya: }'', without quotations.
+    \item The program outputs the value of $d$ doubled.
+    \item The program prompts the user with ``\texttt{You need something else doubled? (Y)es? }'', without quotations.
+\end{itemize}
+The output numbers should have an absolute or relative error of at most $10^{-6}$.

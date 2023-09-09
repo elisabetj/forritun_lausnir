@@ -1,0 +1,21 @@
+\problemname{Euclid's GCD}
+
+One of the oldest known algorithms
+is a method for finding the greatest common divisor of two natural numbers.
+It turns out that you have already learned all you need to implement it.
+
+Given two numbers $a$ and $b$,
+we keep doing the following until $b$ becomes $0$:
+\begin{itemize}
+    \item Calculate the remainder of dividing $a$ by $b$,
+    \item update $a$ to be the previous value of $b$ and $b$ to be the value of the remainder.
+\end{itemize}
+If at any time $b$ is $0$, then $a$ is the greatest common divisor of the original two numbers.
+
+\section*{Input}
+Input consists of two lines.
+The first line consists of one integer $a$, where $0 \leq a \leq 10^{18}$.
+The second line consists of one integer $b$, where $0 \leq b \leq 10^{18}$.
+
+\section*{Output}
+Output the greatest common divisor of $a$ and $b$.

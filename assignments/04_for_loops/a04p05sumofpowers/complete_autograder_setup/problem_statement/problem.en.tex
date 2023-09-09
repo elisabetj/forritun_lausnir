@@ -1,0 +1,15 @@
+\problemname{Sum of Powers}
+
+Write a program that, given $k$ and a sequence $x = (x_1, x_2, \dots, x_n)$ of length $n$,
+finds the sum of a series of the form
+\[k^{x_1}+k^{x_2}+\cdots+k^{x_n} = \sum_{i=1}^n k^{x_i}\]
+
+For example, if $k = 2$, $n=3$, and $x = (3, 4, 7)$, then the sum would be $2^3 + 2^4 + 2^7 = 152$.
+
+\section*{Input}
+The first line contains an integer $k$, where $-100 \leq k \leq 100$.
+The second line contains $n$, the length of the sequence $x$, where $1 \leq n \leq 100$.
+Then $n$ lines follow, the $i$-th of which contains one integer, $x_i$, where $0 \leq x_i \leq 2\,000$.
+
+\section*{Output}
+Output consists of one line with one integer, the sum of the series.

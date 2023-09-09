@@ -1,0 +1,43 @@
+\problemname{Hail, Caesar!}
+\illustration{0.35}{cipher}{Photo from \href{https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/CipherDisk2000.jpg/1920px-CipherDisk2000.jpg}{wikimedia.org}}
+
+Those pesky Romans are about to attack your village.
+Luckily your spies have managed to intercept letters from their general
+and you hope that one of them contains information about the timing of the attack.
+There is only one problem; they are encrypted!
+
+The Romans use an encryption system which is based on shifting the letters of the alphabet.
+For example, the word \texttt{ATTACK} becomes \texttt{CVVCEM} when the letters are shifted by $2$, such as \texttt{A -> C, T -> V, K -> M}.
+In order to decrypt those messages, you just have to find out by how many letters you must shift each character.
+
+As you look at the encrypted messages, you notice a pattern.
+The first line is always the same length.
+``Hmm, could this be a greeting of some sorts?'', you ask yourself.
+
+\texttt{Kdlo/\#Fdhvdu\$}
+
+Using an \href{https://en.wikipedia.org/wiki/ASCII#Printable_characters}{ASCII table} and a pen and paper,
+you try different shifts until you finally crack it.
+The first line says:
+
+\texttt{Hail, Caesar!}
+
+This is brilliant!
+Now you can figure out which shift was used just by looking at the first character!
+
+Since you have a large number of messages to decrypt,
+each of which may have been encrypted with a different shift,
+you decide to write a program to do so.
+But hurry, the fate of your village may depend on your programming skills.
+
+\section*{Input}
+Input consists of exactly four lines, representing the encrypted message.
+It is guaranteed that each character in the input, except for the newline characters,
+belongs to the set of printable characters in the ASCII table,
+in other words, characters numbered from $32$ to $126$, inclusive.
+Each line contains at most $50$ printable characters.
+
+\section*{Output}
+Output the decrypted message.
+It is guaranteed that each character in the output also belongs to the set of printable characters in the ASCII table.
+Take care to wrap numbers around should they be shifted outside of this range.

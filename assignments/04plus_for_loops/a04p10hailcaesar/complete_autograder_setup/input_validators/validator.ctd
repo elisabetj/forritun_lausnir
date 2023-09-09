@@ -1,0 +1,5 @@
+REGEX("[ -~]{13}") NEWLINE
+REGEX("[ -~]{1,50}") NEWLINE
+REGEX("[ -~]{1,50}") NEWLINE
+REGEX("[ -~]{1,50}") NEWLINE
+EOF

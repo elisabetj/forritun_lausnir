@@ -1,0 +1,52 @@
+\problemname{Sine Wave}
+
+Let us attempt to draw a sine wave using whitespace and the \texttt{X} character.
+Sine waves are usually drawn horizontally,
+but standard program output is ordered from top to bottom.
+We will therefore draw our wave vertically.
+
+Our program shall accept two arguments:
+\begin{itemize}
+    \item $N$, which controls how many waves should be drawn
+    \item $L$, which controls how many lines are used to print the waves
+\end{itemize}
+
+Most programming languages have a built in function to compute the sine of a value.
+For example, Python has a built in \texttt{math.sin} function that we could leverage.
+Alas, the sine function takes radians, distance travelled along the perimeter of a unit circle, as input.
+How will we figure out the value to input for each line?
+
+A circle is $2 \pi$ radians.
+Since we wish to draw $N$ waves, the total distance in radians is given by $2 \pi N$.
+Therefore, the distance travelled from one line to the next will be $\frac{2 \pi N}{L}$.
+We can then see that for the $i$th line, where $0 \leq i < L$, the distance travelled in radians up to that line is
+$r_i = i \cdot \frac{2 \pi N}{L}$.
+
+We are not done yet, as $\sin(x)$ will return a real number between $-1.0$ and $1.0$, inclusive.
+We cannot print a negative number of \texttt{X}s,
+and to make sure the wave is clearly visible,
+we still need an appropriate number of \texttt{X}s.
+Let us use $40$ for the full width, or peak-to-peak amplitude, of the waves.
+In other words, an amplitude of $20$, also called semi-amplitude.
+Then we need to linearly transform the return value of the sine function to a real number between $0$ and $40$,
+and round that number to figure out how many \texttt{X} characters to print.
+See the table below for examples.
+
+\begin{tabular}{|l|l|}
+\hline
+Sine value         & Number of \texttt{X} characters to print \\ \hline
+$-1.0$	           & $0$ \\ \hline
+$0.0$	           & $20$ \\ \hline
+$1.0$	           & $40$ \\ \hline
+$0.8414709848078$  & $37$ \\ \hline
+\end{tabular}
+
+\section*{Input}
+Input consists of two lines.
+The first line contains the integer $N$, the number of waves to draw, where $1 \leq N \leq 10$.
+The second line contains the integer $L$, the number of lines used to draw the waves, where $1 \leq L \leq 1\,000$.
+
+\section*{Output}
+Draw the sine wave as described above.
+Exactly one newline character (\texttt{\textbackslash{}n}) should immediately follow the last \texttt{X} on each line.
+If your program outputs additional whitespace, it will be considered incorrect.

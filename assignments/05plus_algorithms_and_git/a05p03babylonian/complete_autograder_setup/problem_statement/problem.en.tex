@@ -1,0 +1,31 @@
+\problemname{Babylonian Square Root Algorithm}
+This exercise is based on chapter $3.5$ in the textbook.
+
+Let us implement the Babylonian square root algorithm.
+Here is a pseudocode description of the algorithm:
+    \begin{itemize}
+        \item Let $n$ be the number for which to find the square root.
+        \item Let $g$ be the initial guess.
+        \item Let $t$ be the tolerance.
+        \item Let $g^\prime$ be our previous guess, initialized to $0$.
+        \item While the absolute difference between $g$ and $g^\prime$ is greater than $t$:
+            \begin{itemize}
+                \item $g^\prime = g$.
+                \item $g =\frac{\frac{n}{g} + g}{2}$, the average of $\frac{n}{g}$ and $g$.
+            \end{itemize}
+    \end{itemize}
+
+\section*{Input}
+Input consists of three lines and they are as follows:
+
+    \begin{itemize}
+        \item $n$ - an integer for which to find the square root, where $1 \leq n \leq 100\,000$.
+        \item $g$ - an integer representing from where to start the search for the actual square root, where $1 \leq g \leq 100\,000$.
+        \item $t$ - a floating point number, indicating the minimum change between iterations until the algorithm stops, where $0.1 \leq t \leq 0.000\,01$. The number is given with at most $5$ digits after the decimal point.
+    \end{itemize}
+
+\section*{Output}
+Output consists of two lines.
+The first line contains the square root of $n$,
+and the second line contains the number of repetitions until the tolerance was reached.
+The output of the square root should have an absolute or relative error of at most $10^{-4}$.

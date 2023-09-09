@@ -1,0 +1,61 @@
+Author: Eiríkur Fannar Torfason
+
+Title: Hail, Caesar!
+
+Those pesky Romans are about to attack your village.
+Luckily your spies have managed to intercept letters from their general
+and you hope that one of them contains information about the timing of the attack.
+There's only one problem; they are encrypted!
+
+The Romans use an encryption system which is based on shifting the letters of the alphabet.
+For example, the word ATTACK becomes CVVCEM when the letters are shifted by 2 (A -> C, T -> V, K -> M).
+In order to decrypt those message, you just have to find out by how many letters you must shift each character.
+
+As you look at the encrypted messages, you notice a pattern.
+The first line is always the same length.
+Hmm, could this be a greeting of some sorts, you ask yourself.
+
+Kdlo/#Fdhvdu$
+
+Using an [ASCII table](https://en.wikipedia.org/wiki/ASCII#Printable_characters) and pen and paper,
+you try different shifts until you finally crack it.
+The first line says:
+
+Hail, Caesar!
+
+This is brilliant!
+Now you can figure out which shift was used just by looking at the first character!
+
+Since you have a large number of messages to decrypt,
+each of which may have been encrypted with a different shift,
+you decide to write a program to do so.
+But hurry, the fate of your village may depend on your programming skills.
+
+Input and Output
+
+Every message is exactly 4 lines. Given the following input:
+
+Jckn."Ecguct#
+Dg"tgcf{"hqt"cvvcem
+Fqp)v"ngv"vjg"gpgo{"ugg"{qw
+Ocmg"uwtg"Dtwvwu"uvc{u"swkgv
+
+the program should print out the decrypted message, which in this case is:
+
+Hail, Caesar!
+Be ready for attack
+Don't let the enemy see you
+Make sure Brutus stays quiet
+
+Hints
+
+Python has two built-in methods,
+[ord()](https://docs.python.org/3/library/functions.html#ord)
+and [chr()](https://docs.python.org/3/library/functions.html#chr),
+which convert letters to numbers and vice versa.
+
+All encrypted strings and all decrypted strings should consist of letters belonging the set of "printable characters" in the ASCII table,
+i.e. characters numbered from 32 to 126 inclusive.
+Take care to wrap numbers around should they be shifted outside of this range.
+
+Python strings are iterable.
