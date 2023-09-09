@@ -1,0 +1,23 @@
+\problemname{Computer, compute!}
+
+You likely know the \href{https://en.wikipedia.org/wiki/Euclidean_distance}{Euclidean distance}
+formula -- the formula to find the distance $d$ between two points, $(x_1, y_1)$ and $(x_2, y_2)$, 
+in a plane.
+
+The formula is $d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$
+
+You will take the two integer coordinates as input and compute the distance between them.
+
+Hint: You can use the \texttt{sqrt} function in the \texttt{math} module.
+
+\section*{Input}
+Input consists of four lines.
+The first line consists of one integer $x_1$, the $x$-coordinate of the first point.
+The second line consists of one integer $y_1$, the $y$-coordinate of the first point.
+The third line consists of one integer $x_2$, the $x$-coordinate of the second point.
+The fourth line consists of one integer $y_2$, the $y$-coordinate of the second point.
+It is guaranteed that $-10\,000 \leq x_1, y_1, x_2, y_2 \leq 10\,000$.
+
+\section*{Output}
+Output one line with one floating point number $d$, the Euclidean distance between the two points.
+The output number should have an absolute or relative error of at most $10^{-9}$.

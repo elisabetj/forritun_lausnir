@@ -1,0 +1,6 @@
+name: Computer, compute!
+author: Pétur Ólafur Aðalgeirsson
+source: T-111-Programming
+rights_owner: Háskólinn í Reykjavík
+license: cc by-sa
+validator_flags: float_tolerance 1e-9

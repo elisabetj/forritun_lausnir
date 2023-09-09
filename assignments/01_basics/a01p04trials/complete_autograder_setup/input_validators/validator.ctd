@@ -1,0 +1,6 @@
+INT(1, 100, a) NEWLINE
+INT(1, 100, b) NEWLINE
+INT(1, 100, c) NEWLINE
+SET(s = (a+b+c)/2.0)
+ASSERT(s * (s-a) * (s-b) * (s-c) >= 0)
+EOF
