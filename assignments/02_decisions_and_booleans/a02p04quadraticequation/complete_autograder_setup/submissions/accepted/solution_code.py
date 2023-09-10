@@ -1,8 +1,8 @@
-val_a_int = int(input())
-val_b_int = int(input())
-val_c_int = int(input())
+a = int(input())
+b = int(input())
+c = int(input())
 
-d = (val_b_int * val_b_int) - (4 * val_a_int * val_c_int)
+d = (b * b) - (4 * a * c)
 
 if d > 0:
     print(2)
