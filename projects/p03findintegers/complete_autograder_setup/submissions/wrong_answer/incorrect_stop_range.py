@@ -7,8 +7,8 @@ required_number_of_divisors = int(input())
 # but we're only supposed to check candidates strictly less than stop_range.
 for candidate in range(10, stop_range + 1):
     first_digit = candidate // 10
-    last_digit = candidate % 10
-    digit_sum_squared = (first_digit + last_digit) ** 2
+    second_digit = candidate % 10
+    digit_sum_squared = (first_digit + second_digit) ** 2
     if candidate == digit_sum_squared:
         print(candidate)
 
