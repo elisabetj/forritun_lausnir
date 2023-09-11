@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+USE_SCORING=0
+. ../../../testdata_tools/gen.sh
+
+use_solution solution_code.py
+
+compile random_generator.py
+compile fixed_stop.py
+
+sample 01
+sample 02
+sample 03
+sample 04
+sample 05
+
+tc empty-output random_generator 80 80 11 11
+echo "This testcase ensures the program has an empty output in some cases.\nStop range is maximal here and no number in the range has the given divisor count." > secret/001-empty-output.desc
+echo "For which inputs should the output be empty for both parts? There are many such cases." > secret/001-empty-output.hint
+
+tc boundary random_generator 81 81 11 11
+echo "If a submission fails this testcase then the issue is probably an off by one error on stop_range." > secret/002-boundary.desc
+echo "Be careful with ranges, the second paramter is exclusive!" > secret/002-boundary.hint
+
+tc almost-empty random_generator 82 82 11 11
+echo "If a submission fails this testcase then the program is suddenly outputting more for the second part when only 81 should be output." > secret/003-almost-empty.desc
+echo "For which inputs is the output for the first part non-empty, but empty for the second part?" > secret/003-almost-empty.hint
+
+for i in {01..12}; do
+tc fixed-$i random_generator 100 100 "$i" "$i"
+done;
+echo "If a submission fails this testcase, a likely reason is that it does not start the second loop at 1 or the inner divisor loop is incorrect." > secret/004-fixed-01.desc
+echo "Which number has only one positive divisor? Note that not all constraints are shared between the two parts of the task." > secret/004-fixed-01.hint
+echo "If a submission fails this testcase, a likely reason is the inner divisor loop is incorrect." > secret/005-fixed-02.desc
+echo "Which numbers have only two positive divisors?" > secret/005-fixed-02.hint
+echo "If a submission fails this testcase, a likely reason is an off by one error in the outer loop of the second part." > secret/009-fixed-06.desc
+echo "Be careful with ranges, the second parameter is exclusive!" > secret/000-fixed-06.hint
+
+for i in {01..10}; do
+tc random-$i random_generator 20 100 1 12
+done;

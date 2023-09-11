@@ -1,0 +1,4 @@
+INT(20, 100, s) NEWLINE
+INT(1, 12, n) NEWLINE
+
+EOF
