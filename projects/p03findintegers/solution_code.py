@@ -21,5 +21,6 @@ for candidate in range(1, stop_range):
     for potential_divisor in range(1, candidate + 1):
         if candidate % potential_divisor == 0:
             number_of_divisors += 1  # Actual divisor encountered. Raise the count.
+
     if number_of_divisors == required_number_of_divisors:
         print(candidate)
