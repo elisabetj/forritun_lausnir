@@ -1,0 +1,40 @@
+\problemname{Prices}
+
+\noindent
+Skrifið forrit sem les inn runu af vöruverðum þangað til gildið $0$ er slegið inn.
+Að lokum skrifar forritið út:
+\begin{itemize} 
+    \item Töluna $m$, fjölda vöruverða, sem slegin voru inn. Talan $0$ sem endar rununa er ekki talin með.
+    \item Töluna $t$, heildarverð varanna.
+    \item Töluna $l$, lægsta verðið, en þó eingöngu ef verð fyrir a.m.k. eina vöru var slegið inn.
+\end{itemize}
+
+Athugið: Munið að gefa breytunum ykkar lýsandi nöfn.
+Stærðfræðilegu táknin sem eru notuð hér eru ekki tillögur að breytuheitum, heldur eru bara notuð til skýringa.
+
+\section*{Inntak}
+Inntakið samanstendur af $n$ línum, með $n \ge 1$. \\
+Sérhver lína $i$, með $1 \le i \le n$, innheldur eina rauntölu $p_i$. \\
+Síðasta talan er $p_n = 0$, en $p_i > 0$ fyrir öll $i < n$. \\
+Óhætt er að gera ráð fyrir að $1 \le n \le 20$,
+einnig að $0 \le p_i \le 1\,000$ fyrir öll $i$,
+og ennfremur að sérhver rauntala $p_i$ í inntakinu sé gefin með í mesta lagi einum aukastaf.
+
+Athugið: Forritið ykkar á ekki að skoða sérstaklega hvort þessi inntaksskilyrði standist, né hafna öðru inntaki.
+Þetta er bara ykkur til upplýsinga, um það inntak sem er prófað í prófunartilvikunum.
+Þið þurfið sem sagt ekki að búast við inntaki utan þessara takmarkana.
+
+\section*{Úttak}
+Úttakið samanstendur af í mesta lagi þremur línum á eftirfarandi sniði: \\ \\
+\noindent
+Number of items: <$m$> \\
+\noindent
+Total price: <$t$> \\
+\noindent
+Lowest price: <$l$> \\ \\
+\noindent
+Þriðja línan er eingöngu prentuð út ef a.m.k. eitt vöruverð var slegið inn. \\
+\noindent
+Gildið $t$ á að vera námundað með einum aukstaf með því að nota innbyggða \texttt{round()} fallið. \\
+\noindent
+Gildið $l$ skal prenta út með eins mörgum aukastöfum og þarf.

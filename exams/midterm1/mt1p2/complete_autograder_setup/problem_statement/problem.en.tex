@@ -1,0 +1,28 @@
+\problemname{Series}
+
+\noindent
+A geometric series is a sum of terms where the ratio of every two consecutive terms is the same.
+The following is an example of such a series with $n=4$ terms and the ratio $r=\frac{1}{2}$:
+
+\[
+\frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16}
+\]
+
+\noindent
+Write a program which uses a \textbf{for-loop} to compute the example series, given the length $n$ as input. \\
+\noindent
+
+Note: Remember to use descriptive names for your variables.
+The mathematical symbols used here are not suggestions for variable names.
+
+\section*{Input}
+The input consists of one line with one integer $n$, where $0 \leq n \leq 10$.
+
+Note: Your program is not supposed to validate this input, or refuse other input.
+This is just for your information about the input in the test cases.
+You do not need to expect input that does not meet these restrictions.
+
+\section*{Output}
+The output consists of $n$ lines, where the $i^{th}$ line shows the cumulative sum,
+$\frac{1}{2} + \frac{1}{4} + \dots + \frac{1}{2^i}$, at each step $i$ in the iteration, with $1 \leq i \leq n$.
+The $n^{th}$ line thus contains the sum of all the $n$ terms.

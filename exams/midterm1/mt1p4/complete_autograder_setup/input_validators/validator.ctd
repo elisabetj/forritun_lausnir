@@ -1,0 +1,4 @@
+INT(0, 100, c) NEWLINE
+INT(c, 100, a) NEWLINE
+
+EOF

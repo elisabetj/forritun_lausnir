@@ -1,0 +1,40 @@
+\problemname{Prices}
+
+\noindent
+Write a program which reads in a sequence of prices of goods until the value $0$ is entered.
+At the end, the program prints:
+\begin{itemize} 
+    \item The number $m$ of prices entered, not including the $0$ that ends the sequence.
+    \item The total price $t$ of the goods.
+    \item The lowest price $l$, but only if at least one price was input.
+\end{itemize}
+
+Note: Remember to use descriptive names for your variables.
+The mathematical symbols used here are not suggestions for variable names, but just used for clarity.
+
+\section*{Input}
+The input consists of $n$ lines, with $n \ge 1$. \\
+Each line $i$, for $1 \le i \le n$, contains one real number $p_i$. \\
+The last one will be $p_n = 0$, but $p_i > 0$ for all $i < n$. \\
+It is safe to assume that $1 \le n \le 20$,
+and that $0 \le p_i \le 1\,000$ for all $i$,
+and also that each number $p_i$ in the input is given with at most one digit after the decimal point.
+
+Note: Your program is not supposed to validate this input, or refuse other input.
+This is just for your information about the input in the test cases.
+You do not need to expect input that does not meet these restrictions.
+
+\section*{Output}
+The output consists of maximum three lines formatted as follows: \\ \\
+\noindent
+Number of items: <$m$> \\
+\noindent
+Total price: <$t$> \\
+\noindent
+Lowest price: <$l$> \\ \\
+\noindent
+The third line is only printed if at least one price was input. \\
+\noindent
+The value $t$ should be rounded to one digit after the decimal point by using the built-in \texttt{round()} function. \\
+\noindent
+The value $l$ should be printed with the same precision as entered by the user.

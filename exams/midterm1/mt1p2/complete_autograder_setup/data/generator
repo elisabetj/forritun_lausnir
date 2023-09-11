@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+USE_SCORING=0
+. ../../../../testdata_tools/gen.sh
+
+use_solution solution_code.py
+
+compile fixed_generator.py
+
+sample 01
+sample 02
+sample 03
+sample 04
+
+for i in {1,3,4,6,7,8,9}; do
+tc fixed-$i fixed_generator "$i"
+done;
