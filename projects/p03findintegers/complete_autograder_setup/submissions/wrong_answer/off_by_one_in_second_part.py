@@ -10,8 +10,10 @@ for candidate in range(10, stop_range):
     if candidate == digit_sum_squared:
         print(candidate)
 
-# Here we're forgetting the (positive) single digit numbers.
-for candidate in range(10, stop_range):
+# Here we skip the last candidate that we're supposed to check.
+# Note that range gives a half-open interval,
+# it includes the left end but excludes the right end.
+for candidate in range(1, stop_range - 1):
     number_of_divisors = 0
     for potential_divisor in range(1, candidate + 1):
         if candidate % potential_divisor == 0:
