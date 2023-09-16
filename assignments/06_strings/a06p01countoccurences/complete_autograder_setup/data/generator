@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+USE_SCORING=0
+. ../../../../testdata_tools/gen.sh
+
+use_solution solution_code.py
+
+compile random_generator.py
+compile missile.py
+
+sample 01
+sample 02
+
+cat missile.txt > secret/001-missile.hint
+tc missile missile
+
+for i in {01..03}; do
+tc repeat-$i random_generator 1000000 1000000 repeat
+HINTFILE="secret/00$(($i+1))-repeat-$i.hint"
+echo "A Time Limit Exceeded verdict here means your program is doing more work than necessary and does not finish within the time limit." > "$HINTFILE"
+echo "Try to avoid nested loops, you only need one for loop for this task." >> "$HINTFILE"
+echo "Be careful of slicing within a loop too, the [:] operator on strings, as it will copy the string and create a new one, which is implemented behind the scenes with a loop." >> "$HINTFILE"
+echo "Generally, we are not testing for efficiency at this level, but we want to make you aware of its importance for the distant future." >> "$HINTFILE"
+echo "If you have trouble getting past this test case, please reach out to an instructor for assistance." >> "$HINTFILE"
+done;
+for i in {01..45}; do
+tc nomatch-$i random_generator 1 1000 nomatch
+done;
+for i in {01..45}; do
+tc match-$i random_generator 1 1000 match
+done;
+for i in {46..50}; do
+tc nomatch-$i random_generator 1001 1000000 nomatch
+done;
+for i in {46..50}; do
+tc match-$i random_generator 1001 1000000 match
+done;

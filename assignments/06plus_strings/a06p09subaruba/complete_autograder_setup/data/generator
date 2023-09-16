@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+USE_SCORING=0
+. ../../../../testdata_tools/gen.sh
+
+use_solution arnar_100.py
+
+compile random_generator.py
+
+sample 1
+sample 2
+
+tc GA-encrypt-01 random_generator D 1
+tc GA-encrypt-02 random_generator D 10
+tc GA-encrypt-03 random_generator D 100
+tc GA-encrypt-04 random_generator D 100
+
+tc GA-encrypt-large-01 random_generator D 1000
+tc GA-encrypt-large-02 random_generator D 10000
+tc GA-encrypt-large-03 random_generator D 100000
+tc GA-encrypt-large-04 random_generator D 199997 # 3 characters are fixed, A/D and 2 newlines
+
+tc GC-decrypt-small-01 random_generator A 1
+tc GC-decrypt-small-02 random_generator A 10
+tc GC-decrypt-small-03 random_generator A 100
+tc GC-decrypt-small-04 random_generator A 100
+
+tc GD-decrypt-large-01 random_generator A 1000
+tc GD-decrypt-large-02 random_generator A 10000
+tc GD-decrypt-large-03 random_generator A 100000
+tc GD-decrypt-large-04 random_generator A 199997

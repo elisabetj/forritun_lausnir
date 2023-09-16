@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+USE_SCORING=0
+. ../../../../testdata_tools/gen.sh
+
+use_solution solution_code.py
+
+compile random_generator.py
+
+sample 01
+sample 02
+sample 03
+sample 04
+sample 05
+sample 06
+sample 07
+sample 08
+sample 09
+
+# r represents the rule type
+COUNTER=1
+for r in {1..9}; do
+    if [ $r -eq 3 ];
+        then continue;
+    fi
+    
+    for i in {01..10}; do
+    HINTFILE="secret/$(printf "%03d" $COUNTER)-rule$r-$i.hint"
+    echo "Look closer at rule $r" > "$HINTFILE"
+    tc rule$r-$i random_generator $r 
+    COUNTER=$((COUNTER+1))
+    done;
+done;

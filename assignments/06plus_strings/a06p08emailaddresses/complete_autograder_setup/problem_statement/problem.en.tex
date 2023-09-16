@@ -1,0 +1,48 @@
+\problemname{Email Addresses}
+
+\illustration{0.4}{mail}{Mail}
+
+You have started your own company and are creating
+a \texttt{Software-as-a-Service} solution for tracking missing socks,
+called \texttt{where-my-sock.is}.
+You are currently in a beta phase.
+People who are interested in using the product
+need to sign up with an email address in order to receive an invite.
+
+You have set up an error monitoring system so that you are notified whenever an error occurs in your software system.
+Recently, you have noticed several errors from the email system that sends out the invites.
+You investigate and discover that a surprisingly large portion of people trying to sign up
+misspell their email address when they fill out the signup form.
+The service you use to send the email messages is very picky about email addresses
+\href{https://en.wikipedia.org/wiki/Email\_address}{conforming to specification}.
+This is a bit of a shame because these users are not made aware of their mistake
+and instead end up refreshing their inboxes, never receiving the invite they crave so much.
+
+You decide to do something about this.\\
+You look at the error logs and compile a list of the $8$ most common mistakes people make.
+They are:
+    \begin{enumerate}
+    \item $@$ symbol is missing.
+    \item There are multiple $@$ symbols.
+    \item There is nothing before the $@$ symbol.
+    \item There is nothing after the $@$ symbol.
+    \item Email address starts with a dot.
+    \item There is a dot just before the $@$ symbol.
+    \item There are consecutive dots.
+    \item The top-level-domain (e.g. \texttt{.com}) is missing.
+    \end{enumerate}
+
+You intend to add a validator to the signup form
+to provide a helpful message to users when they make one of these mistakes,
+but first you create a prototype in your favourite programming language Python.
+
+\section*{Input}
+Input consists of one line that includes the email address that should be checked.
+
+\section*{Output}
+Output consists of an explanation of what is wrong with the email according to the rules above
+or the phrase \texttt{All good.} if nothing is wrong.
+The rules should be validated in the same order as stated above.
+
+\section*{Explanation of samples}
+Sample outputs $1-8$ correspond to the expected output for the most common mistakes $1-8$.

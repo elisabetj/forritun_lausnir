@@ -1,0 +1,2 @@
+REGEX("(([a-z]{1,20}\s)+[a-z]{1,20})?") NEWLINE
+EOF

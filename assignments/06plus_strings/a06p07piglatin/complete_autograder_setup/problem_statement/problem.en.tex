@@ -1,0 +1,34 @@
+\problemname{Pig Latin}
+
+\illustration{0.3}{pigs}{pigs}
+
+You are trying to have a private conversation with your best friend, but your annoying baby brother is eavesdropping.
+To thwart that little brat, you decide to converse in Pig Latin!
+However, your Pig Latin is not very fluid so you need to write a program to help you translate English to Pig Latin.
+
+The rules for translating from English to Pig Latin are as follows:
+\begin{enumerate}
+\item If a word begins with a vowel,
+    append \texttt{yay} to the end of the word.
+\item If a word begins with a consonant,
+    remove all the consonants from the beginning up to the first vowel
+    and append them to the end of the word.
+    Finally, append \texttt{ay} to the end of the word.
+\end{enumerate}
+
+We will consider the following letters to be vowels: \texttt{a, e, i, o, u, y}
+
+For example:
+\begin{itemize}
+    \item dog $\rightarrow$ ogday
+    \item scratch $\rightarrow$ atchscray
+    \item is $\rightarrow$ isyay
+    \item apple $\rightarrow$ appleyay
+\end{itemize}
+
+\section*{Input}
+Input consists of one line with $n$ space separated words, where $0 \leq n \leq 1000$, that should be translated.
+Each word will consist at least $1$ and at most $20$ lowercase English letters and will contain at least one vowel.
+
+\section*{Output}
+Output consists of one line with every word from the input translated to Pig Latin, in the same order they appear in the input and separated by spaces.
