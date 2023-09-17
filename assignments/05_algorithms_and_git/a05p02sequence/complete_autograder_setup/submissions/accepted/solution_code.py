@@ -1,5 +1,5 @@
 n = int(input())
-first, second, third = 0,0,0
+first, second, third = 0, 0, 0
 for i in range(1, n + 1):
     if i == 1:
         current = first = i
