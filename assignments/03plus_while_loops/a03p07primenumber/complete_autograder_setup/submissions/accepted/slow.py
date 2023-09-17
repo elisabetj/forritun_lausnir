@@ -10,6 +10,7 @@ while potential_factor < n:
     if n % potential_factor == 0:
         is_prime = False
         break
+
     potential_factor += 1
 
 if is_prime:
