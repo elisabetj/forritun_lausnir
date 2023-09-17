@@ -1,8 +1,8 @@
-num = int(input())
+number = int(input())
 total = 0
 
-while num != 10:
-    total += num
-    num = int(input())
+while number != 10:
+    total += number
+    number = int(input())
 
 print(total)
