@@ -1,10 +1,10 @@
-max_int = 0
+largest_number_seen_so_far = 0
 
-num_int = int(input())
-while num_int >= 0:
-    if num_int > max_int:
-        max_int = num_int
+number = int(input())
+while number >= 0:
+    if number > largest_number_seen_so_far:
+        largest_number_seen_so_far = number
 
-    num_int = int(input())
+    number = int(input())
 
-print(max_int)
+print(largest_number_seen_so_far)
