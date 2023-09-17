@@ -29,5 +29,7 @@ for line in (line1, line2, line3, line4):
         shifted_code = code - key
         if shifted_code < LOW:
             shifted_code += LENGTH_OF_RANGE
+
         decrypted += chr(shifted_code)
+
     print(decrypted)

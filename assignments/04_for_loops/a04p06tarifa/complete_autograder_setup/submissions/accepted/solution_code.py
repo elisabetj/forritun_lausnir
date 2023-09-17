@@ -1,9 +1,9 @@
 mb_per_month = int(input())
-n = int(input())
+number_of_months = int(input())
 
 mb_allowance = 0
 
-for i in range(n):
+for _ in range(number_of_months):
     mb_allowance += mb_per_month
     usage = int(input())
     mb_allowance -= usage

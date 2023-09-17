@@ -1,10 +1,10 @@
 size = int(input())
 
-for i in range(size):
-    for j in range(size):
-        if j == size - 1: # are we on the right side
+for line in range(size):
+    for column in range(size):
+        if column == size - 1:  # Are we on the right side?
             print("*")
-        elif i == 0 or i == size - 1 or j == 0: # are we on any side
+        elif line == 0 or line == size - 1 or column == 0:  # Are we on any other side?
             print("*", end=" ")
-        else: # then we are not on the edge
+        else:  # Then we are not on the edge.
             print(" ", end=" ")

@@ -32,7 +32,7 @@ for line in (line1, line2, line3, line4):
         # then use the modulus, and finally move the range back into place.
 
         shifted_code = ((shifted_code - LOW) % LENGTH_OF_RANGE) + LOW
-        
+
         # This takes care of values that are below 32,
         # by first moving them down to negative values.
         # And values originally above 126 will now be above 94.
@@ -46,4 +46,5 @@ for line in (line1, line2, line3, line4):
         # Then all that is left is to move the range back up.
 
         decrypted += chr(shifted_code)
+
     print(decrypted)

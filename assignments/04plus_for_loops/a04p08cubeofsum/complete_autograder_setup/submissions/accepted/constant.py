@@ -1,4 +1,5 @@
-M = int(input())
-for n in [0, 1, 512, 4913, 5832, 17576, 19683]:
-    if n <= M:
-        print(n)
+max_number = int(input())
+
+for number in 0, 1, 512, 4913, 5832, 17576, 19683:
+    if number <= max_number:
+        print(number)
