@@ -6,7 +6,7 @@ else:
     is_prime = True
 
 potential_factor = 2
-while potential_factor ** 2 <= n:
+while potential_factor**2 <= n:
     # If we have not found a proper factor
     # by the time we exceed the square root of n,
     # then we're not going to find one,

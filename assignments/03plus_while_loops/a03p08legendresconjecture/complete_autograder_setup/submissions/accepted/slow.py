@@ -1,9 +1,7 @@
 n = int(input())
-print("Primes in the range", n ** 2, "and", (n + 1) ** 2, "are:")
+print("Primes in the range", n**2, "and", (n + 1) ** 2, "are:")
 
-# No need to check n ** 2 and (n+1) ** 2 themselves,
-# since squares will never be primes anyway.
-candidate = n ** 2 + 1
+candidate = n**2 + 1
 while candidate < (n + 1) ** 2:
     if candidate == 1:
         is_prime = False
