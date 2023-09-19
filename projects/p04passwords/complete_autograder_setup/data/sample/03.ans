@@ -1,0 +1,6 @@
+PASSW: Invalid length.
+PASSWORD: Missing lower case letter.
+PASSWORD: Missing numeric letter.
+PASSWORd: Missing numeric letter.
+PaSSWorD23: Valid password of length 10.
+You tried 4 passwords, 1 valid, 3 invalid.

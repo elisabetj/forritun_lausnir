@@ -1,0 +1,5 @@
+123456: Missing lower case letter.
+123456: Missing upper case letter.
+A1bcde: Valid password of length 6.
+sjfd5jfsdlABC9: Valid password of length 14.
+You tried 3 passwords, 2 valid, 1 invalid.

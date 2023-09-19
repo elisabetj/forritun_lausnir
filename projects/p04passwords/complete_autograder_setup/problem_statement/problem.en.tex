@@ -1,0 +1,46 @@
+\problemname{Passwords}
+
+Write a program which allows the user to repeatedly input a password until the input is \texttt{"q"}.
+Each password $p$ should be error-checked according to the following conditions: 
+\begin{enumerate} 
+    \item $6 \le |p| \le 20$, where $|p|$ denotes the length of the password $p$.
+    \item $p$ must contain at least one lowercase letter.
+    \item $p$ must contain at least one uppercase letter.
+    \item $p$ must contain at least one numeric letter.
+\end{enumerate}
+
+Conditions 2--4 should only be checked if the password fulfills condition no. 1. \\
+
+In each iteration, an appropriate error message is printed depending on whether the password is valid or invalid.
+Finally, the count of passwords and how many of them are valid/invalid is printed. \\
+
+Note that the numbers 6 and 20, which stand for the minimum and maximum lengths of a password, as well as the string \texttt{"q"} (denoting quit), should be implemented with \textbf{constants}.
+A constant in a Python program is a variable whose value should not be changed.
+It is a good rule to use capital letters for names of constants and define them at the start of the program.
+
+\section*{Input}
+The input consists of $n$ lines, where $1 \le n \le 50$ and the last line is the string \texttt{"q"}.
+Each line contains a string $s$, where $1 \le |s| \le 30$.
+Each character in the input has an ASCII value between $48$ and $122$, inclusive.
+This includes lowercase letters, uppercase letters, digits and some special symbols.
+
+Note: Your program is not supposed to validate this input, or refuse other input.
+This is just for your information about the input in the test cases. 
+You do not need to expect input that does not meet these restrictions.
+
+\section*{Output}
+For each input line (except \texttt{"q"}), containing a password $p$, at most three lines are printed:
+\begin{itemize}
+    \item If $p$ is valid, the string "\{p\}: Valid password of len \{l\}." is printed and nothing else. 
+    \item If $p$ is of invalid length, the string "\{p\}: Ìnvalid length." is printed and nothing else.
+    \item If $p$ does not contain at least one lower case letter, the string "\{p\}: Missing lower case letter." is printed.
+    \item If $p$ does not contain at least one upper case letter, the string "\{p\}: Missing upper case letter." is printed.
+    \item If $p$ does not contain at least one numeric letter, the string "\{p\}: Missing numeric letter." is printed.
+\end{itemize}
+In the above, \{p\} is a placeholder for password $p$ and \{l\} is a placeholder for the length of $p$.
+In the case that many lines are printed, their ordering should match the one in the list above.
+
+Finally, the following string is printed:
+"You tried \{c\} passwords, \{v\} valid, \{i\} invalid.", where \{c\}, \{v\}, and \{i\} are placeholders for the correct values.  
+
+Note: You MUST use \textbf{f-strings/format strings} for all the output. 

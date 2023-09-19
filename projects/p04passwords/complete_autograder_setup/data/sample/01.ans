@@ -1,0 +1,4 @@
+abcd: Invalid length.
+abcdef: Missing upper case letter.
+abcdef: Missing numeric letter.
+You tried 2 passwords, 0 valid, 2 invalid.

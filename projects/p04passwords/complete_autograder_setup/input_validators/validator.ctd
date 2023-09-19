@@ -1,0 +1,6 @@
+REGEX("[A-Za-z0-9:;<=>\?@\[\]\^_'`\\\\]{1,30}", s) NEWLINE
+WHILE(s != "q")
+REGEX("[A-Za-z0-9:;<=>\?@\[\]\^_'`\\\\]{1,30}", s) NEWLINE
+END
+
+EOF

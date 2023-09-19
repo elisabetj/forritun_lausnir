@@ -1,0 +1,46 @@
+\problemname{Passwords}
+
+Skrifið forrit sem gerir notanda kleift að slá endurtekið inn lykilorð þangað til slegið er inn \texttt{"q"}.
+Sérhvert lykilorð $p$ skal villutékka miðað við eftirfarandi skilyrði: 
+\begin{enumerate} 
+    \item $6 \le |p| \le 20$, þar sem $|p|$ stendur fyrir lengd lykilorðs $p$.
+    \item $p$ þarf að innihalda a.m.k. einn lágstaf.
+    \item $p$ þarf að innihalda a.m.k. einn hástaf.
+    \item $p$ þarf að innihalda a.m.k. einn tölustaf.
+\end{enumerate}
+
+Eingöngu skal athuga skilyrði 2--4 ef lykilorð uppfyllir skilyrði númer 1. \\
+
+Í sérhverri ítrun eru skrifuð í viðeigandi skilaboð eftir því hvort lykilorð er leyfilegt eða óleyfilegt.
+Að lokum er skrifað út fjölda lykilorða og hversu mörg þeirra eru leyfileg/óleyfileg. \\
+
+Athugið að tölurnar 6 og 20, sem tákna lágmarks- og hámarkslengd lykilorðs og einnig strengurinn \texttt{"q"} (sem stendur fyrir ``quit''), eiga að vera útfærð með \textbf{föstum}.
+Fasti í Python forriti er breyta hvers gildi á ekki að breytast.
+Góð regla er að nota hástafi fyrir nöfn á föstum og skilgreina fasta í upphafi forrits.  
+
+\section*{Inntak}
+Inntakið samanstendur af $n$ línum, þar sem $1 \le n \le 50$ og síðasta línan er strengurinn \texttt{"q"}.
+Sérhver lína inniheldur strenginn $s$, þar sem $1 \le |s| \le 30$.
+Sérhver stafur í inntakinu hefur ASCII gildi á milli 48 og 122, að báðum meðtöldum. 
+Þessi stafir eru lágstafir, hástafir, tölustafir og nokkur sérstök tákn.
+
+Athugið: Forritið ykkar á ekki að skoða sérstaklega hvort þessi inntaksskilyrði standist, né hafna öðru inntaki. 
+Þetta er bara ykkur til upplýsinga um það inntak sem er prófað í prófunartilvikunum. 
+Þið þurfið sem sagt ekki að búast við inntaki utan þessara takmarkana.
+
+\section*{Úttak}
+Fyrir sérhverja inntakslínu (nema \texttt{"q"}), sem inniheldur lykilorð $p$, eru í mesta lagi þrjár línur skrifaðar út:
+\begin{itemize}
+    \item Ef $p$ er leyfilegt þá er strengurinn "\{p\}: Valid password of len \{l\}." skrifaður út og ekkert annað. 
+    \item Ef lengdin á $p$ er ekki innan leyfilegra marka þá er strengurinn "\{p\}: Invalid length." skrifaður út og ekkert annað.
+    \item Ef $p$ inniheldur ekki a.m.k. einn lágstaf þá er strengurinn "\{p\}: Missing lower case letter." skrifaður út.
+    \item If $p$ inniheldur ekki a.m.k. einn hástaf þá er strengurinn "\{p\}: Missing upper case letter." skrifaður út.
+    \item If $p$ inniheldur ekki a.m.k. einn tölustaf þá er strengurinn "\{p\}: Missing numeric letter." skrifaður út.
+\end{itemize}
+Hér að ofan er \{p\} staðgengill (e. placeholder) fyrir lykilorðið $p$ og \{l\} staðgengill fyrir lengdina á $p$.
+Ef margar línur eru prentaðar út þá þarf röð þeirra að vera í samræmi við listann hér að ofan.
+
+Að lokum skal skrifa út eftirfarandi streng:
+"You tried \{c\} passwords, \{v\} valid, \{i\} invalid.", þar sem \{c\}, \{v\}, and \{i\} eru staðgenglar fyrir réttu gildin.  
+
+Athugið: Þið VERÐIÐ að nota \textbf{f-strings/format strings} fyrir allt úttak. 
