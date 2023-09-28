@@ -1,0 +1,13 @@
+Title: Is substring
+
+Write a function called is_substring_of that takes in two strings as arguments
+and returns True if the first string is inside the second one.
+
+Hint: There's something in the water.
+
+Example input/output:
+>>> is_substring_of("python", "There's a python in my boot!")
+True
+
+Note: we are testing your code differently this week,
+please only submit your function definitions, without any code outside the functions!

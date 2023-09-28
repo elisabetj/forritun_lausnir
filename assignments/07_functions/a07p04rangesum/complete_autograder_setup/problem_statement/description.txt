@@ -1,0 +1,13 @@
+Title: Range sum
+
+Write the function sum_of_range, which takes in the parameters start, end and step
+and should return the sum of all numbers starting from the start integer,
+ending with the end integer (the end point is included in the sum)
+and taking step size steps each increment.
+
+Example input/output:
+>>> sum_of_range(1, 10, 2)
+25
+
+Note: we are testing your code differently this week,
+please only submit your function definitions, without any code outside the functions!

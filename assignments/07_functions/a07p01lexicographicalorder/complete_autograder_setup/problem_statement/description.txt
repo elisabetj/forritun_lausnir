@@ -1,0 +1,9 @@
+Title: Lexicographical order
+
+Write a function, precedes(one_string, another_string), that receives two strings as parameters.
+The function returns the string that comes first in alphabetical order.
+For example, Hungry comes before Starving alphabetically, because h comes before s.
+The function should ignore case.
+
+Note: we are testing your code differently this week,
+please only submit your function definitions, without any code outside the functions!

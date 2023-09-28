@@ -1,0 +1,36 @@
+\problemname{Decimal to Binary}
+
+Write a Python function, \texttt{decimal\_to\_binary(decimal)},
+that takes as input an integer and returns a string with its binary representation.
+
+How do we get a binary string from an integer?
+The easiest method uses integer division by $2$ on successive quotients and then collects the remainders.
+It is best illustrated by an example. Consider the integer $156$:
+\begin{itemize}
+    \item $156$ divided by $2$ gives the quotient $78$ and remainder $0$.
+    \item $78$ divided by $2$ gives the quotient $39$ and remainder $0$.
+    \item $39$ divided by $2$ gives the quotient $19$ and remainder $1$.
+    \item $19$ divided by $2$ gives the quotient $9$ and remainder $1$.
+    \item $9$ divided by $2$ gives the quotient $4$ and remainder $1$.
+    \item $4$ divided by $2$ gives the quotient $2$ and remainder $0$.
+    \item $2$ divided by $2$ gives the quotient $1$ and remainder $0$.
+    \item $1$ divided by $2$ gives the quotient $0$ and remainder $1$.
+\end{itemize}
+
+Stop when reaching a quotient of $0$.
+The binary equivalent is given by concatenating the remainders, in reverse order,
+so the last remainder is the most significant bit and the first is the least.
+In this example: $10011100$.\\
+You should implement the above algorithm using a loop and string methods.
+
+\textbf{Note that we are testing your code differently in this task,
+please only submit your function definitions, without any code outside the functions!}
+The main python file, which handles input and output, is already provided.
+You can download and place the main file in the same directory as your python file.
+You can then run the main python file we provide to try out the samples.
+
+\section*{Input}
+The input consists of one integer $d$, where $0 \leq d \leq 1\,000\,000$.
+
+\section*{Output}
+The output should consist of one string, the binary representation of $d$.

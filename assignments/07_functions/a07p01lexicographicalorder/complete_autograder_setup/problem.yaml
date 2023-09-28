@@ -1,0 +1,7 @@
+name: Lexicographical Order
+author: Arnar Bjarni Arnarson, Pétur Ólafur Aðalgeirsson, Hannes Kristján Hannesson
+source: T-111-Programming
+rights_owner: Háskólinn í Reykjavík
+license: cc by-sa
+validator_flags: case_sensitive
+languages: python3

@@ -1,0 +1,16 @@
+Title: Extracting a number
+
+Write a function extract_first_number_from_string(string) which takes a string as a parameter.
+The function should extract the first (non-negative) number from the string and return it, or return -1 if no number was found.
+
+Example:
+>>> extract_first_number_from_string("There are 365 or 366 days in the year.")
+365
+
+Note: You can disregard negative numbers entirely,
+they will also not be tested, and only integers will be tested.
+
+Note: The function should just return an integer, not a string.
+
+Note: we are testing your code differently this week,
+please only submit your function definitions, without any code outside the functions!

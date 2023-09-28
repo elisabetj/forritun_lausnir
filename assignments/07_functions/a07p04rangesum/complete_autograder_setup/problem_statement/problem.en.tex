@@ -1,0 +1,34 @@
+\problemname{Range Sum}
+
+Write the function
+\texttt{sum\_of\_range(start, end, step)},
+which takes in three integers as parameters, 
+\texttt{start}, \texttt{end}, and \texttt{step}.
+The function should return the sum of
+all numbers from \texttt{start} to \texttt{end},
+both end points included,
+taking \texttt{step} size steps each increment.
+
+Formally, you should compute the value of 
+\[
+    \sum_{i=0}^{\left \lfloor \frac{b-a}{k} \right \rfloor} a + i \cdot k
+\]
+where $a$ is the value of \texttt{start},
+$b$ is the value of \texttt{end},
+and $k$ is the value of \texttt{step}.
+
+\textbf{Note that we are testing your code differently in this task,
+please only submit your function definitions, without any code outside the functions!}
+The main python file, which handles input and output, is already provided.
+You can download and place the main file in the same directory as your python file.
+You can then run the main python file we provide to try out the samples.
+
+\section*{Input}
+The input to the function will consist of three parameters.\\
+The first parameter will be an integer $a$, the start of the sum, where $1 \leq a \leq 2000$.\\
+The second parameter will be an integer $b$, the end of the sum, where $s \leq b \leq 2000$.\\
+The third parameter will be an integer $k$, size of steps, where $1 \leq k \leq 100$.
+You need not verify this.
+
+\section*{Output}
+The output of the function should be one integer, the sum over the given range.

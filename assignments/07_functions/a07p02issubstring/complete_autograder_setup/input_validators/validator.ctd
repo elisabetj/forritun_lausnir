@@ -1,0 +1,3 @@
+REGEX("[a-zA-Z' ?!]{0,80}") NEWLINE
+REGEX("[a-zA-Z' ?!]{0,80}") NEWLINE
+EOF
