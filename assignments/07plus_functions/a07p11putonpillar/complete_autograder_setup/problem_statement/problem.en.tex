@@ -1,0 +1,44 @@
+\problemname{Put on pillar}
+
+Now implement the function \texttt{put\_on\_pillar(state, disc, pillar)}.
+
+Note: Use the functions \texttt{find\_index\_of\_nth\_occurrence()} and \texttt{insert\_at()} to accomplish this.
+
+\textbf{Note that we are testing your code differently in this task,
+please only submit your function definitions, without any code outside the functions!}
+
+
+\section*{Input}
+
+The function receives three parameters,
+a sequence $s$ representing the state of the game,
+an element $e$, the disc being moved,
+% the disc that should be put on top of the specified pillar
+and an integer $k$, indicating the pillar to put the disc on.
+% which pillar the disc should be placed on,
+
+In the tests, $s$ will be a string with $3 \le |s| < 12$,
+$e$ will be a string of length $|e| = 1$
+and $k$ will be restricted to $1 \le k \le 3$.
+
+It is good if your function also works for other types of sequences and elements,
+or for input outside these specifications,
+but that is not part of the requirements.
+
+In the samples below,
+the first line of the input contains the string $s$
+the second line contains the string $e$
+and the third line contains the pillar number, $k$.
+
+\section*{Output}
+
+The function should return the new state after adding the given disc on top of the specified pillar.
+
+The function should return a sequence $s'$,
+identical to the input sequence $s$
+except with the element $e$ inserted at the top of pillar $k$,
+so $|s'| = |s| + 1$.
+In particular, given a string $s$ as input, $s'$ should also be a string.
+
+In the samples below,
+the first and only line of the output contains the sequence $s'$.

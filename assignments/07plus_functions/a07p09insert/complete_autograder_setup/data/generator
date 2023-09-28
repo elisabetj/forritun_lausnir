@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+USE_SCORING=0
+. ../../../../testdata_tools/gen.sh
+
+use_solution solution_code.py
+
+compile random_generator.py
+
+sample 01
+sample 02
+sample 03
+
+COUNTER=1
+for i in {01..10}; do
+HINTFILE=secret/$(printf "%03d" $COUNTER)-empty-$i.hint
+echo "Try inserting into an empty string." > "$HINTFILE"
+tc empty-$i random_generator 0 0 random
+COUNTER=$(($COUNTER + 1))
+done;
+
+for i in {01..19}; do
+tc first-$i random_generator $i $i first
+done;
+
+for i in {01..19}; do
+tc last-$i random_generator $i $i last
+done;
+
+for i in {01..50}; do
+tc random-$i random_generator 0 19 random
+done;

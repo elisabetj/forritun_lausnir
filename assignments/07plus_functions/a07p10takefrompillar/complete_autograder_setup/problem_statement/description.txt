@@ -1,0 +1,49 @@
+Author: Eiríkur Fannar Torfason
+
+Title: Take from pillar
+
+Part of the usefulness of functions is to hide the messy details of the implementation behind a descriptive function name,
+to make the overall procedure simpler to understand.
+
+Thus, the code to move the smallest disk from the first pillar to the third,
+could now look something like this:
+
+# old_state is "321|||"
+intermediate_state, disc_being_moved = take_from_pillar(state=old_state, pillar=1)
+new_state = put_on_pillar(state=intermediate_state, disc=disc_being_moved, pillar=3)
+# new_state is now "32||1|"
+
+Notice how this gives a more simplified overview
+of the steps required to move a disc from one pillar to another?
+The simpler the overall idea is to understand, the less error prone it becomes,
+i.e. the less likely that we make mistakes when implementing it.
+Now these higher level functions are responsible
+for breaking these broad steps into more detailed substeps.
+
+So, let's write the function take_from_pillar,
+that knows about the context of this problem, and encapsulates the action of removing a disc from a given pillar,
+using the functions find_index_of_nth_occurrence() and remove_at() that we have already defined.
+
+It takes two arguments:
+
+    state
+    pillar
+
+and returns a compound value consisting of two parts:
+
+    new_state
+    removed_disc
+
+Examples of use:
+
+>>> updated_state, disc = take_from_pillar("32||1|", 1)
+>>> print(updated_state)
+3||1|
+>>> print(disc)
+2
+
+>>> updated_state, disc = take_from_pillar("|43|521|", 2)
+>>> print(updated_state)
+|4|521|
+>>> print(disc)
+3

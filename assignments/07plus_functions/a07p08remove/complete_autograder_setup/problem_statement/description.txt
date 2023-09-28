@@ -1,0 +1,27 @@
+Author: Eiríkur Fannar Torfason
+
+Title: Remove
+
+In order to move a disc, we need to remove it from one location and insert it at another.
+For example, imagine that all the discs are on the first pillar and we want to move the smallest disc to the third pillar.
+That means that we would like to change our state representation from "321|||" to "32||1|" by moving the "1" within the string.
+The code to achieve that could look something like this:
+
+# state is "321|||"
+where_to_remove = find_index_of_nth_occurrence(sequence=state, element_to_find="|", occurrence=1) - 1
+state, disc_to_move = remove_at(sequence=state, index_to_remove=where_to_remove)
+where_to_insert = find_index_of_nth_occurrence(sequence=state, element_to_find="|", occurrence=3)
+state = insert_at(sequence=state, index=where_to_insert, element=disc_to_move)
+# state is now "32||1|"
+
+In this exercise, you will implement the 'remove_at' function.
+It is a bit special in that it returns two values;
+the updated sequence (string) and the element (character) that was removed.
+
+In [12]: updated_sequence, removed_element = remove_at(sequence="321|||", index_to_remove=2)
+
+In [13]: print(updated_sequence)
+32|||
+
+In [14]: print(removed_element)
+1

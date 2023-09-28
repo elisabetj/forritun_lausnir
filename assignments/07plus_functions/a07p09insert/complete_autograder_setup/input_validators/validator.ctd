@@ -1,0 +1,4 @@
+REGEX("[^\n]{0,19}", s) NEWLINE
+INT(0, STRLEN(s)) NEWLINE
+REGEX("[^\n]") NEWLINE
+EOF

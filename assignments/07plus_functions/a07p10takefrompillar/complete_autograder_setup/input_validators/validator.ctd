@@ -1,0 +1,3 @@
+REGEX("([1-9|]){4,12}") NEWLINE
+INT(1, 3) NEWLINE
+EOF

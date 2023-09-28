@@ -1,0 +1,18 @@
+Author: Eiríkur Fannar Torfason
+
+Title: Insert
+
+Now implement the insert_at function.
+It takes three arguments:
+
+    sequence
+    index
+    element
+
+Examples of use:
+
+In [18]: insert_at("32|||", 4, "1")
+Out[18]: '32||1|'
+
+In [19]: insert_at("3||1|", 2, "2")
+Out[19]: '3|2|1|'

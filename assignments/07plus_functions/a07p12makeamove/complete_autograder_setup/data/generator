@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+    USE_SCORING=0
+    . ../../../../testdata_tools/gen.sh
+
+    use_solution solution_code.py
+
+    compile random_generator.py
+
+    sample 01
+    sample 02
+    sample 03
+
+
+for fp in {01..03}; do
+for tp in {01..03}; do
+for i in {01..10}; do
+if [ $fp == $tp ]; then
+    continue
+elif [ $fp == 01 ] && [ $tp == 03 ] &&  [ $i == 03 ]; then
+    continue
+elif [ $fp == 01 ] && [ $tp == 02 ] &&  [ $i == 06 ]; then
+    continue
+elif [ $fp == 01 ] && [ $tp == 02 ] &&  [ $i == 01 ]; then
+    continue
+elif [ $fp == 01  ] && [ $tp == 02 ] && [ $i == 10 ]; then
+    continue
+else
+    tc random-$fp-$tp-$i random_generator $fp $tp
+fi;
+done;
+done;
+done;
+
+tc same-01-01 random_generator 1 1
+tc same-02-02 random_generator 2 2
+tc same-03-03 random_generator 3 3

@@ -1,0 +1,41 @@
+\problemname{Make a move}
+
+Now we can implement the function \texttt{move\_one(from, to, state)},
+that moves a single disc from one pillar to another,
+using the functions that we have already created.
+
+\textbf{Note that we are testing your code differently in this task,
+please only submit your function definitions, without any code outside the functions!}
+
+\section*{Input}
+The function recieves three parameters,
+an integer $f$, the pillar we are moving from,
+an integer $t$, the pillar we are moving to,
+and a sequence $s$ representing the state of the game.
+
+In the tests, $f$ will be restricted to $1 \le f \le 3$,
+$t$ will be restricted to $1 \le t \le 3$,
+and $s$ will be a string with $4 \le |s| < 12$.
+
+It is good if your function also works for other types of sequences and elements,
+or for input outside these specifications,
+but that is not part of the requirements.
+
+In the samples below,
+the first line of the input contains the integer $f$,
+the second line of the input contains the integer $t$,
+and the third line contains the string $s$.
+
+\section*{Output}
+
+The function should return a sequence $s'$,
+identical to the input sequence $s$
+except with the top element of pillar $f$ 
+moved to the top of pillar $t$.
+In particular, given a string $s$ as input, $s'$ should also be a string.
+
+Thus, the function should return the new state of the game
+after having made one move.
+
+In the samples below,
+the first and only line of the output contains the sequence $s'$.

@@ -1,0 +1,74 @@
+\problemname{Take from pillar}
+
+Part of the usefulness of functions is to hide the messy details of the implementation behind a descriptive function name,
+to make the overall procedure simpler to understand.
+
+Therefore the code to move the smallest disk from the first pillar to the third
+could now look something like this:
+
+We start with \texttt{old\_state = 321|||}
+\begin{verbatim}
+intermediate_state, disc_being_moved = take_from_pillar(
+    state=old_state,
+    pillar=1
+)
+new_state = put_on_pillar(
+    state=intermediate_state,
+    disc=disc_being_moved,
+    pillar=3
+)
+\end{verbatim}
+Our \texttt{new\_state} is now \texttt{32||1|}\\
+
+Notice how this gives a more simplified overview
+of the steps required to move a disc from one pillar to another?
+The simpler the overall idea is to understand 
+the less likely that we make mistakes when implementing it.
+Now these higher level functions are responsible
+for breaking these big complicated steps into smaller more detailed substeps.
+
+Now, write the function \texttt{take\_from\_pillar},
+that knows about the context of this problem,
+and encapsulates the action of removing a disc from a given pillar,
+using the functions \texttt{find\_index\_of\_nth\_occurrence()}
+and \texttt{remove\_at()} that we have already defined.
+
+\textbf{Note that we are testing your code differently in this task,
+please only submit your function definitions, without any code outside the functions!}
+You can make your own main file to test your code,
+but you should not include that in your submission.
+
+\section*{Input}
+
+The function receives two parameters,
+a sequence $s$, which represents the state of the game,
+and an integer $k$, indicating which pillar we are taking from.
+
+In the tests, $s$ will be a string with $4 \le |s| \le 12$,
+and $k$ will be restricted to $1 \le k \le 3$.
+
+It is good if your function also works for other types of sequences and elements,
+or for input outside these specifications,
+but that is not part of the requirements.
+
+In the samples below,
+the first line of the input contains the string $s$
+and the second line contains the pillar number, $k$.
+
+\section*{Output}
+
+The function should return a pair $(s', e)$ of two values.
+The first value $s'$ should be a sequence
+describing the new state of the game,
+identical to the sequence $s$, except with one element removed,
+so $|s'| = |s| - 1$.
+The second value $e$ should be an element from the sequence $s$,
+representing the disc that was removed,
+which should be the disk that was at the top of pillar $k$.
+
+In particular, given a string $s$ as input, $s'$ should also be a string,
+and $e$ should be a string of length $|e| = 1$, containing a character from $s$.
+
+In the samples below,
+the first and only line of the output contains the pair $(s', e)$,
+the new state of the game and the disc that was removed.

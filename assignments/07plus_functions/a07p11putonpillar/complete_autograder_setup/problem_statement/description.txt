@@ -1,0 +1,24 @@
+Author: Eiríkur Fannar Torfason
+
+Title: Put on pillar
+
+Now implement the put_on_pillar function.
+It takes three arguments:
+
+    state
+    disc
+    pillar
+
+and returns the new state
+after adding the given disc on top of the specified pillar,
+using the functions find_index_of_nth_occurrence() and insert_at().
+
+Examples of use:
+
+>>> new_state = put_on_pillar("3||1|", "2", 2)
+>>> print(new_state)
+3|2|1|
+
+>>> new_state = put_on_pillar("|4|521|", "3", 1)
+>>> print(new_state)
+3|4|521|

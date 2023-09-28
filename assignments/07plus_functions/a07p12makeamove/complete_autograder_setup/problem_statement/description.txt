@@ -1,0 +1,24 @@
+Author: Eiríkur Fannar Torfason
+
+Title: Make a move
+
+Now we can create a function that makes a single move,
+using the functions that we have already created.
+This function takes three arguments:
+
+    from_pillar (integer, 1 to 3)
+    to_pillar (integer, 1 to 3)
+    state (string representation of the current state, e.g. "3|21||")
+
+It then returns the state after the move has been made.
+
+Examples of use:
+
+In [24]: move_one(1, 3, "321|||")
+Out[24]: '32||1|'
+
+In [25]: move_one(1, 2, "32||1|")
+Out[25]: '3|2|1|'
+
+In [26]: move_one(3, 2, "3|2|1|")
+Out[26]: '3|21||'

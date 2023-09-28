@@ -1,0 +1,43 @@
+\problemname{Insert}
+
+Now write the function
+\texttt{insert\_at(sequence, index, element)}
+mentioned previously.
+
+\textbf{Note that we are testing your code differently in this task,
+please only submit your function definitions, without any code outside the functions!}
+A skeleton of a main python file, which handles input and output, is provided,
+but by now you should have a good idea of how to set up a main file to test running your code.
+
+\section*{Input}
+The function receives three parameters,
+a sequence $s$, an integer $i$ and an element $e$.
+In the tests, $s$ will be a string with $0 \le |s| \le 19$,
+$e$ will be a character, that is, a string of length $|e| = 1$,
+and $i$ will be restricted to $0 \le i \le |s|$.
+
+It is good if your function also works for other types of sequences and elements,
+or for input outside these specifications,
+but that is not part of the requirements.
+
+In the samples below,
+the first line of the input contains the string $s$,
+the second line contains the index $i$
+and the third line contains the character $e$.
+
+\section*{Output}
+
+The function should return a sequence $s'$,
+identical to the input sequence $s$
+except with the element $e$ inserted at index $i$,
+and the elements behind that index shifted to the right,
+so $|s'| = |s| + 1$.
+In particular, given a string $s$ as input, $s'$ should also be a string.
+
+Note that $i$ can be equal to $|s|$,
+which means $e$ should be appended to the right end of $s$.
+In fact, $i$ will end up being an index pointing to a position in $s'$,
+the position where $e$ should be after insertion.
+
+In the samples below,
+the first and only line of the output contains the sequence $s'$.

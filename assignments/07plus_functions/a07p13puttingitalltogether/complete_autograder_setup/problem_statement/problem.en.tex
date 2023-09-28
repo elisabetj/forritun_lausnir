@@ -1,0 +1,108 @@
+\problemname{Putting it all together}
+
+Alright, now for the hard part; solving the actual puzzle.
+To do that, we are going to create one last function named \texttt{move\_many}.
+The function recieves four parameters, how many discs there are,
+from what pillar we are moving from, to which pillar we are moving to, and a game state.
+The function then returns the updated state as it is after having moved all the discs,
+as well as printing the game state after every move.
+
+Despite its name, the function can only move one disc at a time.
+Moreover, it should print out the state after each move it makes.
+To achieve this, we are going to use a trick called recursion.
+What that means is that this function is going to call itself!
+It is a bit like that Inception movie.
+
+\section*{Recursion}
+
+The general solution method is as follows.
+When asked to move $m$ discs from pillar $x$ to pillar $y$, what we do is
+\begin{itemize}
+    \item Let $z$ be the number of the remaining pillar
+    \item Call \texttt{move\_many} recursively to move $m - 1$ discs from $x$ to $z$
+    \item Move the $m$-th disc from $x$ to $y$
+    \item Call \texttt{move\_many} recursively to move $m - 1$ discs from $z$ to $y$
+\end{itemize}
+
+We have to be careful not to recurse too far.
+When $n$ equals $0$, then that is our terminating case and our function just returns the state unchanged.
+
+Getting an intuition for why this solution method actually works is not trivial.
+As is often the case, WikiPedia has a pretty good
+\href{https://en.wikipedia.org/wiki/Tower\_of\_Hanoi#Recursive\_solution}{explanation}.
+
+Our program, when successfully implemented, will be able to solve the Tower of Hanoi puzzle for up to $9$ discs.
+It prompts the user for the number of discs
+and then shows the state after every move that is made until all the discs are on the right-most pillar.
+
+\textbf{Note that we are testing your code differently in this task,
+please only submit your function definitions, without any code outside the functions!}
+The main python file, which handles input and output, is provided again this time,
+and includes code corresponding to the input as described below,
+as well as a bit of code you can use for the default configuration of the puzzle,
+where you only need to supply the number of disks.
+The latter is also given in the starter code,
+nested inside an if statement that ensures it is not run when importing functions from your file,
+so you can also try out your code without the main file if you prefer.
+
+\section*{Input}
+
+This time, we need to distinguish between the input to the test case
+and the input to the function,
+because although the function will be called
+with the input from the test case as arguments,
+it will also be called by itself with other arguments.
+
+The function recieves four parameters.
+an integer $m$, how many discs to move between two pillars,
+an integer $f$, the pillar we are moving from,
+an integer $t$, the pillar we are moving to,
+and a sequence $s$ representing the state of the game.
+
+In the test cases, the input to the main program
+(see the samples below),
+consists of four lines:
+The first line contains an integer $n$,
+the total number of disks there are in the puzzle.
+The second line contains an integer $k_b$,
+the pillar where the stack of disks begins.
+The third line contains an integer $k_e$,
+the pillar where the stack of disks should end up.
+And the fourth line contains a string $s_0$
+representing the initial state of the game.
+
+In the tests, $n$ will be restricted to $1 \le n \le 9$,
+$k_b$ will be restricted to $1 \le k_b \le 3$,
+$k_e$ will be restricted to $1 \le k_e \le 3$
+with $k_e \ne k_b$,
+and $s_0$ will be a string with $4 \le |s_0| \le 12$.
+
+The function will then be called with the arguments
+$m=n$, $f=k_b$, $t=k_e$ and $s=s_0$,
+but as mentioned, during its execution,
+it will call itself with other values for the parameters
+$m$, $f$, $t$ and $s$.
+
+It is good if your function also works for other types of sequences and elements,
+or for input outside these specifications,
+but that is not part of the requirements.
+
+\section*{Output}
+
+Note, this time,
+in addition to returning a sequence $s'$,
+the updated game state after moving $m$ discs
+from pillar $f$ to pillar $t$,
+the function should also print
+the updated game state after each move
+directly to the output.
+
+As the function repeatedly calls itself,
+this will result in a sequence of lines in the output,
+one for each move.
+The total number of moves required to solve the puzzle is $2^n-1$.
+(Can you see why?)
+
+So the output should consist of $2^n-1$ lines,
+where the $i$-th line includes the game state after the $i$-th move,
+ending once the puzzle is fully solved.
