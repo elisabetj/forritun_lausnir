@@ -1,0 +1,231 @@
+\problemname{Git and Pair programming}
+
+In this assignment, you work in groups of $2$-$3$ students each and apply
+\href{https://en.wikipedia.org/wiki/Pair_programming}{pair programing}.
+Moreover, you need to use \emph{git} during the development of your solution.
+
+We introduced git, and presented you with step-by-step instructions, in Assignment 5.
+As a refresher we will present them here below again, updated to reflect today's work, and a little bit improved.
+But first, here is a quick overview of what to do to start off this assignment.
+
+What to do:
+\begin{enumerate}
+    \item
+    One of you should create a private GitHub repository called ``\texttt{TileTraveller}''.
+    Make sure the repo is private.
+
+    \item
+    On GitHub in the TileTraveller repo,
+    go to Settings $\rightarrow$ Collaborators
+    and add the other students as collaborators.
+    This is done because the other students need to be able to clone the repo and push changes to it.
+
+    \item Everybody on the team can now clone the repo to their computer with:
+    \begin{itemize}
+        \item \texttt{git clone remote-repository-URL}
+    \end{itemize}
+
+    \item
+    You will take turns writing the code,
+    so work should be done on one person's computer first, let us refer to it as computer1.
+    The other team members should take a supporting role,
+    actively aiding the programmer by offering helpful suggestions, and pointing out errors as they arise.
+    As the wikipedia article states:
+    \begin{quote}
+        \emph{
+            Pair programming is a [\dots] technique
+            in which two programmers work together at one workstation.
+            One, the \emph{driver}, writes code
+            while the other, the \emph{observer} or \emph{navigator},
+            reviews each line of code as it is typed in.
+            The two programmers switch roles frequently.
+            While reviewing, the observer also considers the ``strategic'' direction of the work,
+            coming up with ideas for improvements and likely future problems to address.
+            This is intended to free the driver
+            to focus all of their attention on the ``tactical'' aspects of completing the current task,
+            using the observer as a safety net and guide.
+        }
+    \end{quote}
+
+    \item
+    The team should now design an algorithm as a description for solving the game.
+    Your algorithm should be detailed enough
+    such that the original problem is divided into subproblems
+    that are easier to solve (divide-and-conquer).
+    Put your algorithm description at the top of the program file, your .py file, as a comment.
+
+    Use \texttt{git add} and \texttt{git commit} to commit your changes locally.
+
+    \item
+    Now push your changes to the GitHub repo,
+    and the next person pulls them, \texttt{git pull}, to their computer (computer2), switching roles.
+    Then start implementing your algorithm on computer2.
+
+    Start by implementing a skeleton of your program, i.e. the main program that mainly calls functions,
+    but the functions are currently just stubs that do not have any functionality yet.
+    Define these functions so they can be called, but do not write any code in them yet.
+    You can just type \texttt{pass} or \texttt{return} to satisfy the syntax for your editor,
+    or better yet, write a \texttt{"""docstring"""} describing what the function is supposed to do.
+    Make sure that your program runs, but it does not really do anything at this point.
+    Commit and push the changes.
+
+    \item Switch roles again, now working on computer1 or computer3.
+    Use \texttt{git pull} to get the latest changes.\\
+    Implement one of the functions.
+    Make sure that the program runs after the implementation.
+    Commit and push changes.
+
+    \item Go back to step $7$ until all functionality has been implemented.
+    Finally, put the path to your GitHub repo as a comment in your program file.
+
+    \item Thoroughly test your program in VSCode.
+    When you are convinced that it works as intended, submit your solution on Gradescope.
+
+\end{enumerate}
+
+\pagebreak
+\section*{Further explanation}
+
+Now, for more detailed instructions, if needed:
+One of you should create a private repository on Github.
+Follow the instructions that appear on Github.
+\begin{enumerate}
+    \item Pick a name for the repo, in this case ``\texttt{TileTraveller}''.
+
+    \item Make the repo private.
+
+    \item Check the box for making a \texttt{README} file.
+
+    \item
+    Check the box for making a \texttt{.gitignore} file.
+    Select the python template,
+    you can type ``\emph{py}'' in the search field.
+
+    \item
+    You do not really need to protect this homework with a license,
+    so skip that for now.
+
+    \item Click ``Create repository''.
+\end{enumerate}
+Once you have created the repo, go to Settings $\rightarrow$ Collaborators and add the other students as collaborators.\\
+This is done because the other students need to be able to clone the repo and push changes to it.
+They will get an email with an invitation.
+Accept the invitation.\\
+
+All team members should clone the repo to their local machines:
+\begin{enumerate}
+    \item
+    In the repo home page, you should see a green button near the top, labelled ``Code''. 
+
+    \item
+    Click it, and copy the url, https, not ssh.
+
+    \item
+    Open a terminal, you can open it inside VSCode if you prefer.
+    For Windows, we recommend git bash, but any terminal should do.
+
+    \item
+    Navigate using \texttt{cd} to a folder where you want to store the repo on your computer.
+
+    If you are having trouble accessing the correct drive,
+    you can also open the folder in the GUI,
+    right click, and click open ``Git Bash Here'' or ``Open with Code'' or similar.
+
+    \item
+    Then ``\texttt{git clone url-to-repository}''.
+\end{enumerate}
+
+If/When you are prompted to log in, you can use a Personal Access Token (PKA) as the password.
+You probably already set this up in Assignment 5, but if not, you can generate a new PKA:
+\begin{enumerate}
+    \item Go to GitHub.
+
+    \item Click on your profile image in the top-right corner and click settings.
+
+    \item
+    Under ``Developer Settings'', bottom left,
+    click ``Personal access tokens''.
+
+    \item
+    Create a new token.
+    Make sure to check the checkbox for ``repo'',
+    which will also check all the subselections.
+
+    \item Set the expiry date after the course is done, $90$ days is enough.
+
+    \item
+    Give it a description,
+    so you will know why you created this token
+    when you take a look at your tokens at a later time,
+    to help you judge whether you need to revoke them.
+    This can be something like ``For my laptop during Programming class 2023'' for example.
+
+    \item Scroll all the way down, and click ``Generate token''.
+
+    \item
+    Store the generated token somewhere safe.
+    If you lose this token you can never reclaim it,
+    although if you do, you can revoke it and generate a new one.
+
+    \item Use this token as your password
+    when cloning, pulling and pushing commits to the GitHub repo from your local machine.
+\end{enumerate}
+
+\textbf{If this does not work, make sure you have the latest version of git installed and try again.}
+
+\texttt{cd} into the folder git creates for you.
+Open this folder in VSCode.
+
+\begin{enumerate}
+    \item
+    Now, one of you should write the text of your algorithm in a file called \texttt{tile\_traveller.py}, 
+    as a comment at the top of the file.
+
+    \item
+    Inspect the result of ``\texttt{git status}''.
+
+    \item
+    Use ``\texttt{git add tile\_traveller.py}''
+    to move changes to the staging area.
+    You can hit Tab for autocompletion.
+
+    \item
+    You can also use ``\texttt{git add .}'', notice the dot,
+    to stage all changes to any files in the folder.
+
+    \item
+    Commit your changes with ``\texttt{git commit -m "Describe the algorithm"}''.
+
+    \item
+    You can see a log of all your commits with git log. Hit ``\texttt{q}'' to escape the log interface.
+
+    \item
+    You can use ``\texttt{git log --oneline}'' to make the history more compact.
+
+    \item
+    Push your changes to the Github repo with ``\texttt{git push}''.
+    Inspect your commits on Github.
+
+    \item
+    Have the next person pull the changes from Github with ``\texttt{git pull}''.
+
+    \item
+    Then start implementing your algorithm,
+    refer to the instructions above on how to apply pair programming.
+
+    \item
+    During your implementation, make sure you do ``\texttt{git status}'', ``\texttt{git add}'',
+    and ``\texttt{git commit}'' regularly,
+    ``\texttt{git log}'' is useful too.
+
+    \item
+    Take care to write good commit messages, in English,
+    that describe what the change involves.
+
+    \item
+    Use imperative mood in commit messages. 
+    For example, ``Fix bug'', and not ``Fixed bug'' or ``Fixes bug''.
+
+    \item
+    Also inspect your commits on Github, and get familiar with the UI.
+\end{enumerate}
