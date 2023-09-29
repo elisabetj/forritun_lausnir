@@ -4,14 +4,27 @@ from pathlib import Path
 
 
 def main():
-    move_one = get_function("move_one")
-
+    # Arrange.
+    function_name = "move_one"
+    move_one = get_function(function_name)
+    expected_return_type = str
     from_pillar = int(input())
     to_pillar = int(input())
     state = input()
-    return_val = move_one(from_pillar, to_pillar, state)
-    assert isinstance(return_val, str)
-    print(return_val)
+
+    # Act.
+    actual = move_one(from_pillar, to_pillar, state)
+    actual_return_type = type(actual)
+
+    # Assert.
+    print(actual)
+    message = f"\n\nInput to function '{function_name}':"
+    message += f"\n from_pillar ({type(from_pillar)}): {from_pillar}"
+    message += f"\n to_pillar ({type(to_pillar)}): {to_pillar}"
+    message += f"\n state ({type(state)}): {state}"
+    message += f"\nExpected type of output: {expected_return_type}"
+    message += f"\nActual type of output: {actual_return_type}"
+    assert isinstance(actual, expected_return_type), message
 
 
 def get_function(name):

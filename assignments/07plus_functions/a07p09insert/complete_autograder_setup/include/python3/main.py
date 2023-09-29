@@ -4,14 +4,27 @@ from pathlib import Path
 
 
 def main():
-    insert_at = get_function("insert_at")
-
+    # Arrange.
+    function_name = "insert_at"
+    insert_at = get_function(function_name)
+    expected_return_type = str
     sequence = input()
     index = int(input())
     element = input()
-    return_val = insert_at(sequence, index, element)
-    assert isinstance(return_val, str)
-    print(return_val)
+
+    # Act.
+    actual = insert_at(sequence, index, element)
+    actual_return_type = type(actual)
+
+    # Assert.
+    print(actual)
+    message = f"\n\nInput to function '{function_name}':"
+    message += f"\n sequence ({type(sequence)}): {sequence}"
+    message += f"\n index ({type(index)}): {index}"
+    message += f"\n element ({type(element)}): {element}"
+    message += f"\nExpected type of output: {expected_return_type}"
+    message += f"\nActual type of output: {actual_return_type}"
+    assert isinstance(actual, expected_return_type), message
 
 
 def get_function(name):

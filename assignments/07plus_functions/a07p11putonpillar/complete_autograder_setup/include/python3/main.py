@@ -4,14 +4,27 @@ from pathlib import Path
 
 
 def main():
-    put_on_pillar = get_function("put_on_pillar")
-
+    # Arrange.
+    function_name = "put_on_pillar"
+    put_on_pillar = get_function(function_name)
+    expected_return_type = str
     state = input()
     disc = input()
     pillar = int(input())
-    return_val = put_on_pillar(state, disc, pillar)
-    assert isinstance(return_val, str)
-    print(return_val)
+
+    # Act.
+    actual = put_on_pillar(state, disc, pillar)
+    actual_return_type = type(actual)
+
+    # Assert.
+    print(actual)
+    message = f"\n\nInput to function '{function_name}':"
+    message += f"\n state ({type(state)}): {state}"
+    message += f"\n disc ({type(disc)}): {disc}"
+    message += f"\n pillar ({type(pillar)}): {pillar}"
+    message += f"\nExpected type of output: {expected_return_type}"
+    message += f"\nActual type of output: {actual_return_type}"
+    assert isinstance(actual, expected_return_type), message
 
 
 def get_function(name):

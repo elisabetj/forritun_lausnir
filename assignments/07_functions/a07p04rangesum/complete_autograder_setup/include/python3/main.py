@@ -1,27 +1,37 @@
+from os import getcwd
 from importlib import import_module
 from pathlib import Path
 
 
 def main():
+    # Arrange.
     function_name = "sum_of_range"
     sum_of_range = get_function(function_name)
-
+    expected_return_type = int
     start = int(input())
     end = int(input())
     step = int(input())
-    return_val = sum_of_range(start, end, step)
-    print(return_val)
 
-    expected_type = int
-    actual_type = type(return_val)
-    message = f"[Function {function_name} returned type {actual_type}, but expected type {expected_type}.]"
-    assert isinstance(return_val, expected_type), message
+    # Act.
+    actual = sum_of_range(start, end, step)
+    actual_return_type = type(actual)
+
+    # Assert.
+    print(actual)
+    message = f"\n\nInput to function '{function_name}':"
+    message += f"\n start ({type(start)}): {start}"
+    message += f"\n end ({type(end)}): {end}"
+    message += f"\n step ({type(step)}): {step}"
+    message += f"\nExpected type of output: {expected_return_type}"
+    message += f"\nActual type of output: {actual_return_type}"
+    assert isinstance(actual, expected_return_type), message
 
 
 def get_function(name):
     for module in load_modules():
         if hasattr(module, name):
             return getattr(module, name)
+
     raise NameError(f"Name '{name}' is not defined.")
 
 
@@ -31,6 +41,7 @@ def load_modules():
     for submission_file in this_file.parent.iterdir():
         if submission_file == this_file:
             continue
+
         if submission_file.suffix == ".py":
             modules.append(import_module(submission_file.stem))
 
