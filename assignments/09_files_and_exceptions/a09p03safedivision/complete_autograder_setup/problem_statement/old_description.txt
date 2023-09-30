@@ -1,0 +1,22 @@
+Title: Safe division
+
+Write a program that prompts for two numbers.
+Then call a function divide_safe(num1_str, num2_str),
+which returns the result of dividing the first number by the second number.
+If the given strings do not represent numbers or the second number is 0, the function returns None.
+Use try-except and catch two types of exceptions: ValueError and ZeroDivisionError.
+The main program prints the result rounded to 5 decimal digits if no error occurred, else prints None.
+
+Input/Output example:
+
+    Input first number: 2.3
+    Input second number: 6.5
+    0.35385
+
+    Input first number: 3.x
+    Input second number: 4
+    None
+
+    Input first number: 4.5
+    Input second number: 0
+    None

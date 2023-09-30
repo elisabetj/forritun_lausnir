@@ -1,0 +1,20 @@
+Title: Validate name and age
+
+Write a program that includes two functions, get_name() and get_age().
+
+The get_name() function should prompt the user: "What's your name? "
+If the user enters an empty string or there is a number in the string,
+the function should print:
+    Please enter a valid name.
+It should keep asking until the user supplies a valid name, and return the given name.
+
+The get_age() function should prompt the user: "How old are you? ".
+If the user inputs a string, the function should print:
+    Please enter an integer​.
+If the user inputs a number not in the range 0-125 (inclusive) the function should print:
+    You seriously expect me to believe you are {age} years old?
+It should keep asking until the user supplies a valid age, and return the given age.
+
+The program should call both these functions and print out:
+    Nice to meet you {name}. Congratulations on your {age} years.
+where {name} is the value returned from get_name() and {age} is the value returned from get_age().

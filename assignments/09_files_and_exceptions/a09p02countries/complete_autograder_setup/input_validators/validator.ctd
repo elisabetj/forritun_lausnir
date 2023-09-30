@@ -1,0 +1,2 @@
+REGEX("[a-zA-Z0-9]{1,50}") NEWLINE
+EOF

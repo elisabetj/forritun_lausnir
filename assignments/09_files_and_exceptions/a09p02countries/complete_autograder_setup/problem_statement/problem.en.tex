@@ -1,0 +1,45 @@
+\problemname{Countries}
+
+Write a program that reads from a file, in this case named \texttt{"countries.txt"}.
+An example of such a file is provided alongside the starter code.
+It is guaranteed that the file will exist and is accessible by the name \texttt{"countries.txt"}.
+
+The program should find all countries listed in the file that end with a given suffix.
+Note that the comparison should be case sensitive.
+
+\section*{Submission instructions}
+
+\textbf{Note that we are \emph{NOT} testing any function specifically,
+so your solution must handle the input and output itself!}
+
+It is a good idea for you to break the program down into bite-sized parts
+and implement each part as a function,
+because it makes it easier to develop and understand the program,
+but Gradescope will not test the structure of your code,
+only what outputs it produces given certain inputs.
+
+\section*{Input}
+The input consists of one line containing a string $s$
+representing the suffix to search for,
+e.g. \texttt{"land"}.
+
+FYI: In the test cases,
+$s$ will consist of $1$ to $50$ symbols.
+Each symbol in $s$ will be a digit or letter in the English alphabet.
+You do not need to validate the input, or refuse other input,
+this is just to inform you that you do not need to worry about other kinds of input.
+
+\section*{Output}
+
+% TODO: Consider changing the output format to the following:
+% The first line of the output should contain the integer $N$,
+% the number of countries with the given suffix.
+% Then $N$ lines should follow, each one containing the name of a country ending in the given suffix.
+% You should output the names in the same order they appear in the file.
+
+Let $N$ be the number of countries with the given suffix.
+Then the output should consist of $N+1$ lines.
+The first $N$ lines should each one contain the name of a country ending in the given suffix.
+You should output the names in the same order as they appear in the file.
+Finally, the last line should contain the string\\
+\texttt{\{N\} countries with suffix \{s\} in total}.

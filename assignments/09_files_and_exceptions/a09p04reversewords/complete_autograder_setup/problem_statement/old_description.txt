@@ -1,0 +1,11 @@
+Title: Reverse words
+
+Write a program that takes a filename as input. The program should open that file and print every single word in that file backwards.
+If the input file looks like this:
+    Dear diary, today I made a friend​.
+The output should look like this: 
+    raeD ,yraid yadot I edam a .dneirf​
+
+Note: Do not change the original file and do not write a new file with the words reversed, simply print the reversed words.
+
+Note: For each line in the file, you should print one line to the output.

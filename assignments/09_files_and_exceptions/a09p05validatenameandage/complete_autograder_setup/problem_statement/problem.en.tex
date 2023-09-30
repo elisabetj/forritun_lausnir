@@ -1,0 +1,37 @@
+\problemname{Validate name and age}
+
+Write a program that includes two functions, \texttt{get\_name()} and \texttt{get\_age()}.
+
+The \texttt{get\_name()} function should prompt the user: "What's your name? " If the user enters a string that does not consist of only alphabetical characters and spaces, and additionally has at least one alphabetical character, the function should print:
+\begin{quote}
+    Please enter a valid name.
+\end{quote}
+It should keep asking until the user supplies a valid name, and return the given name.
+
+The \texttt{get\_age()} function should prompt the user: "How old are you? ". If the user inputs a string, the function should print:
+\begin{quote}
+    Please enter an integer.
+\end{quote}
+If the user inputs a number that is strictly less than $0$ or strictly greater than $125$, then the function should print:
+\begin{quote}
+    You seriously expect me to believe you are \{age\} years old?
+\end{quote}
+It should keep asking until the user supplies a valid age, and return the given age.
+
+The program should call both these functions and print out:
+\begin{quote}
+    Nice to meet you \{name\}. Congratulations on your \{age\} years.
+\end{quote}
+where \{name\} is the value returned from \texttt{get\_name()} and \{age\} is the value returned from \texttt{get\_age()}.
+
+\section*{Input}
+Input consists of user interactions providing the name and age as prompted by the program over multiple lines.
+The input consists of at most $5000$ symbols total and each one has an ASCII value in the range $32$ to $126$.
+
+\section*{Output}
+Output consists of:
+\begin{enumerate}
+    \item Possible prompts asking for valid input based on the criteria mentioned.
+    \item A final statement greeting the user using the provided name and age.\\
+    This can be on one line as above or two lines as in the samples, it does not matter.
+\end{enumerate}

@@ -1,0 +1,2 @@
+REGEX("\w{1,30}\.txt") NEWLINE
+EOF

@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+USE_SCORING=0
+. ../../../../testdata_tools/gen.sh
+
+use_solution solution_code.py
+
+compile random_generator.py
+
+sample 01
+sample 02
+sample 03
+
+tc using-file random_generator "axyz"
+echo "Make sure to read from the file 'countries.txt'" > secret/001-using-file.hint
+
+tc edge-02 random_generator "a"
+tc edge-03 random_generator "stan"
+tc edge-04 random_generator "co"
+tc edge-05 random_generator "esia"
+tc edge-06 random_generator "rica"
+# sample 02 is: tc edge-07 random_generator "ia"
+tc edge-08 random_generator "ina"
+tc edge-09 random_generator "ea"
+tc edge-10 random_generator "bia"
+tc edge-11 random_generator "n"
+tc edge-12 random_generator "gua"
+tc edge-13 random_generator "cipe"
+tc edge-14 random_generator "mani"
+tc edge-15 random_generator "uania"
+tc edge-16 random_generator "rino"
+tc edge-17 random_generator "dan"
+tc edge-18 random_generator "ame"
+tc edge-19 random_generator "sia"
+tc edge-20 random_generator "ega"
+tc edge-21 random_generator "lia"
+tc edge-22 random_generator "isia"
+tc edge-23 random_generator "inia"
+tc edge-24 random_generator "e"
+tc edge-25 random_generator "way"
+tc edge-26 random_generator "oland"
+tc edge-27 random_generator "ania"
+
+for i in {01..05}; do
+tc random-$i random_generator "string" 1
+done;
+
+for i in {06..10}; do
+tc random-$i random_generator "string" 2
+done;
+
+for i in {11..20}; do
+tc random-$i random_generator "string" 3
+done;
+
+for i in {21..30}; do
+tc random-$i random_generator "string" 4
+done;
+
+for i in {31..50}; do
+tc random-$i random_generator "integer" 0 100000
+done;

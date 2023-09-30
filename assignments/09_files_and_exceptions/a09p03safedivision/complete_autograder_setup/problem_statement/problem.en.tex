@@ -1,0 +1,26 @@
+\problemname{Safe division}
+
+Write a program that prompts for two floating point numbers.
+Then call a function named \texttt{divide\_safe(num1\_str, num2\_str)},
+which returns the result of dividing the first number by the second number.
+If the given strings do not represent floating point numbers
+or the second number is 0, the function returns \texttt{None}.
+Use \texttt{try-except} and catch two types of exceptions:
+\texttt{ValueError} and \texttt{ZeroDivisionError}.
+
+The main program prints the result rounded to 5 decimal digits if no error occurred, else prints \texttt{None}.
+
+\section*{Input}
+The input consists of:
+\begin{enumerate}
+    \item A string $s_1$ representing the first number.
+    \item A string $s_2$ representing the second number.
+\end{enumerate}
+Note that the strings may contain symbols which are not digits.
+Each line will contain at most $30$ symbols.
+
+\section*{Output}
+The output consists of:
+\begin{enumerate}
+    \item The result of the division rounded to 5 decimal digits or \texttt{None} in case of an error.
+\end{enumerate}

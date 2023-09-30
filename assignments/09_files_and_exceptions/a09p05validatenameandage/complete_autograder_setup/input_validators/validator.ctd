@@ -1,0 +1,4 @@
+WHILE(!ISEOF)
+    REGEX("[^\n]*") NEWLINE
+END
+EOF

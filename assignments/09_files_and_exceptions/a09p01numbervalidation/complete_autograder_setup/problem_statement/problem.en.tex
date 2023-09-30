@@ -1,0 +1,59 @@
+\problemname{Number Validator}
+
+Write a function named \texttt{is\_float(string\_to\_test)}
+that takes one argument that is a string.
+It returns \texttt{True} if the string \texttt{string\_to\_test} represents a floating point value
+and returns \texttt{False} otherwise.
+
+You are required to use \texttt{try}-\texttt{except}.
+The basic concept is to \emph{try} to convert \texttt{string\_to\_test} to a float
+and if it succeeds, return \texttt{True},
+but if it fails (that is, an exception is raised), return \texttt{False}.
+Note that \texttt{float()} raises a \texttt{ValueError} exception.
+
+You should probably not need to implement any helper functions for this task,
+but if you wish, you are welcome to do so,
+although then you are probably overcomplicating things,
+as there is not much code required to solve this.
+
+\section*{Submission instructions}
+
+\textbf{Note that we are testing this function specifically, so your solution must define it.
+Please only submit your function definition(s), without any code outside the function(s)!}
+
+No code is necessary other than your function definition(s),
+but your solution can contain other code if you can't be bothered to remove it,
+as long as it is restricted to
+\texttt{if \_\_name\_\_ == "\_\_main\_\_":}
+so it will not run when Gradescope is importing your function.
+The main python file, which handles input and output, is already included on Gradescope.
+
+A similar, simpler, main file is provided on Canvas for your convenience, along with the starter code.
+You can download and place that main file in the same directory as your python file,
+and supply the name of your python file for importing the function \texttt{is\_float} in the main file.
+You can then run the main python file we provide to try out the samples.
+See also the given starter code for an alternative setup.
+
+\section*{Input}
+
+Your function should accept one parameter,
+called \texttt{string\_to\_test},
+expected to be of type \texttt{str}.
+In this description, we will refer to the input string as $s$, for short.
+Gradescope will handle reading the input for you.
+The input will consist of a single line containing a string,
+and that will be passed as an argument to your function.
+
+For your information, in the test cases,
+the input string $s$ will have at most $20$ symbols,
+consisting of English letters, digits, spaces, and various symbols.
+To be specific, each symbol has an ASCII value between $32$ and $126$, inclusive.
+You do not need to validate the input, or refuse other input,
+this is just to inform you that you do not need to worry about other kinds of input.
+
+\section*{Output}
+
+Your function should return a boolean value,
+indicating if the string $s$ can be interpreted as a \texttt{float} or not.
+Gradescope will handle printing the output for you.
+The output should consist of one line with either a \texttt{True} or \texttt{False}.

@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+USE_SCORING=0
+. ../../../../testdata_tools/gen.sh
+
+use_solution solution_code.py
+
+compile random_generator.py
+
+sample 01
+sample 02
+sample 03
+sample 04
+sample 05
+sample 06
+
+tc edge-01 random_generator "NaN"
+tc edge-02 random_generator "infinity"
+tc edge-03 random_generator "dot"
+tc edge-04 random_generator "multiple_dots"
+
+for i in {01..40}; do
+tc random-$i random_generator "float" 0.001 999.99 2
+done;
+
+for i in {41..50}; do
+tc random-$i random_generator "string" 4
+done;
+
+for i in {51..60}; do
+tc random-$i random_generator "sci_notation"
+done;
+
+for i in {61..70}; do
+tc random-$i random_generator "leading_zero" -10000 10000 1
+done;
+
+for i in {71..80}; do
+tc random-$i random_generator "leading_zero" -10000 10000 0
+done;
+
+for i in {81..90}; do
+tc random-$i random_generator "string-integer" 5
+done;
+
+for i in {91..100}; do
+tc random-$i random_generator "string-float"
+done;
+
+for i in {101..110}; do
+tc random-$i random_generator "no_leading_decimal_zero_int" -10000 10000
+done;
+
+for i in {111..120}; do
+tc random-$i random_generator "float_underscore" -10000 10000 6
+done;
