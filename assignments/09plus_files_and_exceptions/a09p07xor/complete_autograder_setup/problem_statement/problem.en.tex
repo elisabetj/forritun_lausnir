@@ -1,0 +1,34 @@
+\problemname{XOR}
+
+Write a program that:
+\begin{enumerate}
+    \item Prompts the user for a file name.
+    \item Opens the file in binary mode, using the \texttt{"rb"} mode of the \texttt{open} function.
+    \begin{itemize}
+        \item If the file does not exist, then the program should print \texttt{"No file named \{file name\} could be found"}.
+    \end{itemize}
+    \item Calculates an XOR checksum by performing byte-wise XOR operations for every byte in the file.
+    \item Prints out \texttt{"The checksum is <checksum>"} where \texttt{<checksum>} is a single byte in hexadecimal format (e.g. \texttt{xB2}).
+\end{enumerate}
+
+\textbf{Example:} 
+Let's assume that the file \texttt{a.bin} contains three bytes:
+\begin{itemize}
+    \item \texttt{0x01}, \texttt{0x02} and \texttt{0x01}.
+\end{itemize}
+Then the XOR checksum is:
+\begin{itemize}
+    \item \texttt{0x01 \textasciicircum{} 0x02 \textasciicircum{} 0x01 = 0x02}.
+\end{itemize}
+
+\section*{Input}
+Input consists of:
+\begin{enumerate}
+    \item A filename containing the binary file to be processed.
+\end{enumerate}
+
+\section*{Output}
+Output consists of:
+\begin{enumerate}
+    \item The XOR checksum of the binary file, presented as a single byte in hexadecimal format.
+\end{enumerate}

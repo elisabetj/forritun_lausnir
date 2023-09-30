@@ -1,0 +1,4 @@
+WHILE(!ISEOF)
+    REGEX("\w+\.txt") NEWLINE
+END
+EOF

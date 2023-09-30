@@ -1,0 +1,4 @@
+WHILE(!ISEOF)
+    REGEX(".*") NEWLINE
+END
+EOF

@@ -1,0 +1,42 @@
+\problemname{Join two files}
+
+Write a program that reads two text files and prints out their lines interleaved. The two files don't necessarily have to have the same number of lines.
+
+Assuming that we have two files with the following contents:
+
+\texttt{A.TXT}
+\begin{verbatim}
+    Line 1
+    Line 2
+    Line 3
+    Line 4
+\end{verbatim}
+
+\texttt{B.TXT}
+\begin{verbatim}
+    alpha
+    beta
+\end{verbatim}
+
+\textbf{Note:} The program should print out the lines from the two files interleaved as shown below:
+
+\begin{verbatim}
+    Line 1
+    alpha
+    Line 2
+    beta
+    Line 3
+    Line 4
+\end{verbatim}
+
+\section*{Input}
+Input consists of:
+\begin{enumerate}
+    \item Two filenames containing the text to be interleaved.
+\end{enumerate}
+
+\section*{Output}
+Output consists of:
+\begin{enumerate}
+    \item The interleaved content of the two files, where each line from the first file is followed by a line from the second file (if available).
+\end{enumerate}

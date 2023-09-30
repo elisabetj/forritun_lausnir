@@ -1,0 +1,16 @@
+Author: Eiríkur Fannar Torfason
+
+Title: XOR
+
+Write a program that:
+1. Prompts the user for a file name.
+2. Opens the file in binary mode, using the "rb" mode of the open function.
+    - If the file does not exist, then the program should print "No file named {file name} could be found".
+3. Calculates an XOR checksum by performing byte-wise XOR operations for every byte in the file.
+4. Prints out "The checksum is <checksum>" where checksum is a single byte in hexadecimal format (e.g. xB2)
+
+Example:
+Let's assume that the file a.bin contains three bytes:
+- 0x01, 0x02 and 0x01.
+Then the XOR checksum is
+- 0x01 ^ 0x02 ^ 0x01 = 0x02.
