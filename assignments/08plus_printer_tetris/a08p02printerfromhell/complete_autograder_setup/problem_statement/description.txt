@@ -1,0 +1,53 @@
+Author: Eiríkur Fannar Torfason
+
+Title: Printer from Hell
+
+[https://s3.amazonaws.com/mimirplatform.production/files/eef721cd-bedf-41dd-9886-fa07d181301d/baseball-2617310_640.jpg]
+
+One day, your printer loses the plot and starts printing text from the bottom left corner and upwards, rather than from the top left corner and to the right.
+Yet the characters are correctly oriented. When you attempt to print out:
+
+Hey printer,
+what's wrong
+with you?
+
+it comes out as:
+
+,g
+rn
+eo
+tr?
+nwu
+i o
+rsy
+p'
+ th
+yat
+ehi
+Hww
+
+This puts you in a bit of a pickle. You have a small programming assignment that you need to hand in.
+The professor is old and eccentric and insists that his students print out their solutions.
+You need to find a way to correct for your printer's dementia.
+You realize that if you "rotate" your text 90 degrees clockwise before printing it, then it prints out correctly.
+
+Write a function that takes a string as input and returns another string in which the words read downwards, starting from the right-most line.
+Examples of use from IPython:
+
+In [2]: original_text = """123
+   ...: 456
+   ...: 789"""
+
+In [3]: print(rotate_text_clockwise(original_text))
+741
+852
+963
+
+In [4]: original_text = """ABC
+   ...: DE
+   ...: F"""
+
+In [5]: print(rotate_text_clockwise(original_text))
+FDA
+ EB
+  C

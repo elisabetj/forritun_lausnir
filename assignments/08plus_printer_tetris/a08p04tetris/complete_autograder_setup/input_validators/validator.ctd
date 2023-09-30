@@ -1,0 +1,5 @@
+REGEX("[lrtq]{1}",s) NEWLINE
+WHILE(s != "q") 
+    REGEX("[lrtq]{1}",s) NEWLINE
+END
+EOF

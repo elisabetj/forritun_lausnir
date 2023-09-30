@@ -1,0 +1,33 @@
+\problemname{Tetris!}
+
+\illustration{0.4}{tetris}{Tetris}
+
+You make a rather profound realization whilst taking a shower.
+Using your two functions, \texttt{rotate\_text\_clockwise()} and \texttt{change\_indentation()}, 
+you should be able to make a crude ASCII-art version of Tetris!
+
+Well, at least you could ``draw'' one block, move it left or right and rotate it.
+You rush back to your desk to hack together a prototype.
+
+You decide to start by ``drawing'' one piece using Xs like so:
+\begin{verbatim}
+X
+XXX
+\end{verbatim}
+
+You then add a loop that repeatedly asks the user what to do. The options are:\\
+\texttt{(r)ight, (l)eft, (t)urn, (q)uit}\\
+and the user only has to type in the first letter of the available commands, followed by pressing Enter.
+
+You then implement these actions using the functions that you have already built.
+And you're done! Now you can sit back and quietly reflect on this moment of synergy, as you test your delightful little prototype.
+
+\section*{Input}
+The input starts with one line containing a string comprised of one character ``\texttt{r}'', ``\texttt{l}'', ``\texttt{t}'' or ``\texttt{q}''.
+This input repeats until the input is ``\texttt{q}'' at which point the program exits.
+
+\section*{Output}
+First the program should print out the current state of the tetris piece.
+Then the program should prompt the user ``\texttt{(r)ight, (l)eft, (t)urn, (q)uit: }'', without quotations.
+This repeats until the user inputs ``q''.
+

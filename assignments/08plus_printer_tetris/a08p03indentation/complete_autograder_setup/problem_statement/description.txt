@@ -1,0 +1,53 @@
+Author: Eiríkur Fannar Torfason
+
+Title: Indentation
+
+Having printed out your code, you realize that the indentation is all wrong. You need to fix this.
+
+Write a function named change_indentation() that takes two arguments:
+
+- text: a string, possibly containing several lines
+- spaces: an integer, the number of spaces to add (if positive) or remove (if negative)
+
+The function should change the indentation for every line in the supplied string.
+Moreover, it should be smart enough so that it:
+
+1. never removes more from the front of a line than is possible without clipping the text
+2. never adds more indentation than is possible while ensuring that no line exceeds 80 characters.
+
+In cases where the function needs to adjust the number of spaces to add/remove to satisfy the aforementioned constraints,
+it should add/remove the same number of spaces for every line.
+
+Following is an excerpt from an IPython session in which this function is used.
+Notice how it doesn't clip the text when asked to remove spaces that are not there
+and how it only adds 2 spaces when asked to add 100 spaces to honor the 80 character limit.
+
+In [5]: text = """x = 1
+   ...: my_function(x)"""
+
+In [6]: print(change_indentation(text, 4))
+    x = 1
+    my_function(x)
+
+In [7]: print(change_indentation(text, 8))
+        x = 1
+        my_function(x)
+
+In [8]: print(change_indentation(text, -2))
+x = 1
+my_function(x)
+
+In [9]: text = "#\n" + "#" * 78
+
+In [10]: print(change_indentation(text, 100))
+  #
+  ##############################################################################
+
+In [11]: text = """    hello
+    ...:     reykjavik
+    ...:     university"""
+
+In [12]: print(change_indentation(text, -2))
+  hello
+  reykjavik
+  university

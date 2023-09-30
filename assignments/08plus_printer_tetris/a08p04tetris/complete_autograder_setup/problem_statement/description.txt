@@ -1,0 +1,52 @@
+Author: Eiríkur Fannar Torfason
+
+Title: Tetris!
+
+[https://s3.amazonaws.com/mimirplatform.production/files/07bd5ab6-38e9-4cf0-9ee8-209bccc07809/tetris-2973518_640.jpg]
+
+You make a rather profound realization whilst taking a shower.
+Using your two functions, rotate_text_clockwise() and change_indentation(), you should be able to make a crude ASCII-art version of Tetris!
+Well, at least you could "draw" one block, move it left or right and rotate it.
+You rush back to your desk to hack together a prototype.
+
+You decide to start by "drawing" one piece using X's like so:
+
+X
+XXX
+
+You then add a loop that repeatedly asks the user what to do. The options are:
+(r)ight, (l)eft, (t)urn, (q)uit
+and the user only has to type in the first letter of the available commands, followed by pressing Enter.
+
+You then implement these actions leveraging the functions that you have already built.
+And you're done! You sit back and quietly reflect on this moment of synergy, as you test your delightful little prototype.
+
+X
+XXX
+(r)ight, (l)eft, (t)urn, (q)uit: r
+ X
+ XXX
+(r)ight, (l)eft, (t)urn, (q)uit: r
+  X
+  XXX
+(r)ight, (l)eft, (t)urn, (q)uit: t
+  XX
+  X
+  X
+(r)ight, (l)eft, (t)urn, (q)uit: t
+  XXX
+    X
+(r)ight, (l)eft, (t)urn, (q)uit: t
+   X
+   X
+  XX
+(r)ight, (l)eft, (t)urn, (q)uit: t
+  X  
+  XXX
+(r)ight, (l)eft, (t)urn, (q)uit: l
+ X  
+ XXX
+(r)ight, (l)eft, (t)urn, (q)uit: l
+X  
+XXX
+(r)ight, (l)eft, (t)urn, (q)uit: q

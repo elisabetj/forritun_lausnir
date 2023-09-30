@@ -1,0 +1,7 @@
+name: Indentation
+author: Arnar Páll Jóhannsson, Eiríkur Fannar Torfason
+source: T-111-Programming
+rights_owner: Háskólinn í Reykjavík
+license: cc by-sa
+languages: python3
+validator_flags: space_change_sensitive

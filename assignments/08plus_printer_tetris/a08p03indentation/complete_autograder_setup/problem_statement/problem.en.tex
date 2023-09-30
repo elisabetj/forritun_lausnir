@@ -1,0 +1,35 @@
+\problemname{Indentation}
+
+Having printed out your code, you realize that the indentation is all wrong. You need to fix this.
+
+Write a function named \texttt{change\_indentation(text, spaces)} that takes two arguments:
+\begin{itemize}
+    \item \texttt{text}: a string, contains zero or more lines.
+    \item \texttt{spaces}: an integer, the number of spaces to add, if positive, or remove, if negative.
+\end{itemize}
+
+The function should change the indentation for every line in the supplied string.
+Following these rules it should:
+\begin{enumerate}
+    \item Never remove more from the front of a line than is possible without clipping the text.
+    \item Never add more indentation than is possible while ensuring that no line exceeds 70 characters.
+\end{enumerate}
+
+In cases where the function needs to adjust the number of spaces
+to add/remove to satisfy the given constraints,
+it should add/remove the same number of spaces for every line.
+
+\textbf{Note : please only submit your function definitions, without any code outside the functions!}
+
+
+\section*{Input}
+Input consists of one integer $s$, the number of spaces to indent by, where $-100 \leq s \leq 100$,
+and $n$ lines, the strings that should be indented, where $0 \leq n \leq 70$.
+Each string will have at most $70$ symbols.
+It is guaranteed that the string will only be composed of letters from the English alphabet, spaces, and the following special characters: \texttt{, ' ? ! ( ) =}.
+Furthermore, no line will contain trailing spaces.
+
+\section*{Output}
+Output consists of $n$ lines, the input strings indented by $s$ spaces.
+Your output must be exactly correct, including the correct number and placement of spaces and newlines.
+In particular, in each line, there should be no trailing spaces.
