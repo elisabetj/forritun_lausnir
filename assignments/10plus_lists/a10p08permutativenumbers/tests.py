@@ -26,7 +26,7 @@ import unittest
 from solution_code import is_permutative
 
 
-class CodingRoomsUnitTests(unittest.TestCase):
+class PermutationsUnitTests(unittest.TestCase):
     def setUp(self):
         pass
 
