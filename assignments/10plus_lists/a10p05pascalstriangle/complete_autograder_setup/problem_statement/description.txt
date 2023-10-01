@@ -1,0 +1,33 @@
+Author: Eiríkur Fannar Torfason
+
+Title: Pascal's triangle
+
+Write a Python program that asks for the height of a
+[Pascal's triangle](https://en.wikipedia.org/wiki/Pascal's_triangle),
+then generates the triangle and prints it out.
+
+A Pascal triangle of height 6 looks like this:
+                1
+             1     1
+           1    2    1
+         1   3     3   1
+       1   4    6    4   1
+     1   5   10   10   5   1
+
+Pascal’s triangle rules:
+1. To generate the triangle, you start from the first row, which is always 1, and the second row which is always 1 1.
+2. After the first two rows, each row at level h is generated from the values at row h-1.
+Note that the leftmost number and the rightmost number in any row are always 1. Note that, in row h, there are h numbers.
+
+The main program is given, but you need to implement the function make_new_row().
+
+For example, the following is the output of a call to make_new_row():
+    >>> make_new_row([1,1])
+    [1, 2, 1]
+
+Example input output from the program:
+    Height of Pascal's triangle (n>=1): 4
+    [1]
+    [1, 1]
+    [1, 2, 1]
+    [1, 3, 3, 1]

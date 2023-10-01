@@ -1,0 +1,39 @@
+\problemname{Pascal's triangle}
+
+Write a Python program that asks for the height of a
+\href{https://en.wikipedia.org/wiki/Pascal's\_triangle}{Pascal's triangle}
+then generates the triangle and prints it out.
+
+A Pascal triangle of height $6$ looks like this:
+\begin{verbatim}
+                1
+             1     1
+           1    2    1
+         1   3     3   1
+       1   4    6    4   1
+     1   5   10   10   5   1
+\end{verbatim}
+Rules to generate Pascal's triangle:
+\begin{enumerate}
+    \item The first row is always $1$, and the second row is always $1$ $1$.
+    \item After the first two rows, each row at level $h$ is generated from the values at row $h-1$.
+\end{enumerate}
+The leftmost number and the rightmost number in any row are always $1$.
+Note that, in row $h$, there are $h$ numbers.
+
+The main program is given, but you need to implement the function \texttt{make\_new\_row(row)}.
+It should take one list as an argument, one row of Pascal's triangle,
+and return a list, the next row in Pascal's triangle.
+
+For example the expected output of a call to \texttt{make\_new\_row()}
+with \texttt{[1, 1]} as the parameter,
+is \texttt{[1, 2, 1]}.
+
+\section*{Input}
+
+The input consists of one line containing one integer $h$, the height of the triangle, where $0 \leq h \leq 100$.
+
+\section*{Output}
+
+The output consists of $h$ lines, where the $i$th line contains the $i$th level of Pascal's Triangle.
+Each level should be output in Python list notation.

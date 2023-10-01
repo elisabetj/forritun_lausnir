@@ -1,0 +1,47 @@
+\problemname{Permutative Numbers}
+
+Let us say two numbers are permutations of each other
+if it is possible to rearrange the digits of one to get the other.
+
+Furthermore, let $n$ be a number, and let $d$ be the number of digits in $n$.
+Let us say that $n$ is \emph{permutative} if all of its first $d$ multiples are permutations of $n$.
+
+For example, let $n = 1035$.
+Then we have $d = 4$, and the first $4$ multiples of $n$ are:
+\begin{align*}
+	1 \cdot 1035 = 1035 \\
+	2 \cdot 1035 = 2070 \\
+	3 \cdot 1035 = 3105 \\
+	4 \cdot 1035 = 4140
+\end{align*}
+Even though one of those, $3 \cdot 1035 = 3105$, is a permutation of $1035$,
+the number $1035$ is not permutative, since not all of the four multiples are permutations of $1035$.
+
+On the other hand, let $n = 142857$.
+It has $d = 6$ digits, and its first $6$ multiples are
+\begin{align*}
+	1 \cdot 142857 = 142857 \\
+	2 \cdot 142857 = 285714 \\
+	3 \cdot 142857 = 428571 \\
+	4 \cdot 142857 = 571428 \\
+	5 \cdot 142857 = 714285 \\
+	6 \cdot 142857 = 857142
+\end{align*}
+All of these numbers are permutations of $142857$, hence $142857$ is permutative.
+
+Write a program that, given an integer $s$, prints all permutative numbers from 10 up to $s$ inclusive.
+
+The program should be split into functions,
+with a function called \texttt{is\_permutative(n)},
+which takes a parameter $n$
+and returns \texttt{True} or \texttt{False} based on whether $n$ is permutative.
+
+Hint: You can convert an integer to a string to get a string of digits,
+and then the length of the string is the number of digits in the integer.
+
+\section*{Input}
+Input consists of one line, containing the integer $s$, where $10 \leq s \leq 10^6$.
+
+\section*{Output}
+Output consists of $l$ lines, where $l$ is the number of permutative numbers from $10$ to $s$.
+The $i$-th line of the output should contain the $i$-th permutative number.

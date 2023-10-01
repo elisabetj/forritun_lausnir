@@ -1,0 +1,56 @@
+\problemname{Ages}
+
+Write a program that:
+\begin{enumerate}
+    \item Allows the user to input the names and ages of several persons.
+    \item Determines who the oldest and youngest persons are.
+    \item Shows the median and average ages, rounded to the $2$nd decimal.
+    \begin{itemize}
+        \item
+        If there's an even number of people,
+        then the median is the average of the two central values in a sorted list.
+    \end{itemize}
+\end{enumerate}
+
+The program should be robust enough to handle invalid input
+when the user fails to type an integer when one is expected.
+
+\section*{Input}
+First, the program should prompt the user for an integer $n$, the number of people.\\
+If an integer is not input the program should output the following:
+
+\texttt{\{$n$\} is not an integer. Please try again.}\\
+until the user inputs an integer.
+
+The following then repeats $n$ times, for each $i$ satisfying $1 \le i \le n$:
+\begin{itemize}
+    \item The program prompts the user for the name $N_i$ of person $p_i$.
+
+    \item
+    The program prompts the user for the age $H_i$ of person $p_i$, where $1 \leq H_i \leq 100$.\\
+    If an integer is not input the program should output the following:
+
+    \texttt{\{$H_i$\} is not an integer. Please try again.}\\
+    and prompt the user again.
+\end{itemize}
+
+\section*{Output}
+After any error messages have been displayed as a response to erroneous input,
+the output should conclude with the following four lines:
+\begin{itemize}
+    \item
+    \texttt{The oldest person is \{$N_o$\} who is \{$H_o$\} years old}\\
+    where $N_o$ and $H_o$ are the name and age of the oldest person.
+
+    \item
+    \texttt{The youngest person is \{$N_y$\} who is \{$H_y$\} years old}\\
+    where $N_y$ and $H_y$ are the name and age of the youngest person.
+
+    \item
+    \texttt{The median age is \{$\mu_{1/2}$\}}\\
+    where $\mu_{1/2}$ is the median age, and should be rounded to the 2nd decimal.
+
+    \item
+    \texttt{The average age is \{$\mu$\}}\\
+    where $\mu$ is the average age, and should be rounded to the 2nd decimal.
+\end{itemize}

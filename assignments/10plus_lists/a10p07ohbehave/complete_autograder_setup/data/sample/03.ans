@@ -1,0 +1,24 @@
+You are on the left side.
+w g c ~ 
+What would you like to take over the river? (w/g/c/n):
+You are on the right side.
+w c ~ g
+What would you like to take over the river? (w/g/c/n):
+You are on the left side.
+w c ~ g
+What would you like to take over the river? (w/g/c/n):
+You are on the right side.
+c ~ g w
+What would you like to take over the river? (w/g/c/n):
+You are on the left side.
+c g ~ w
+What would you like to take over the river? (w/g/c/n):
+You are on the right side.
+g ~ w c
+What would you like to take over the river? (w/g/c/n):
+You are on the left side.
+g ~ w c
+What would you like to take over the river? (w/g/c/n):
+You are on the right side.
+ ~ w c g
+You solved the puzzle!

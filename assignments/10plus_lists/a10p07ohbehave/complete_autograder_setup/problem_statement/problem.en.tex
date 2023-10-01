@@ -1,0 +1,70 @@
+\problemname{Oh, behave!}
+
+The wolf, goat and cabbage problem is a puzzle about getting some uncooperative livestock across a river, alive and whole.
+It dates back to at least the 9th century, and has entered the folklore of several cultures.
+
+In Icelandic, it is best known as formulated in the following time-honored rhyme:\\
+\begin{center}
+    \emph{Hvernig flutt var yfir á,}\\
+    \emph{úlfur, lamb og heypokinn?}\\
+    \emph{Ekkert granda öðru má,}\\
+    \emph{eitt og mann tók báturinn.}\\
+\end{center}
+
+In English, it is stated as follows:\\
+   \emph{There is a man by a river, he has a boat and a wolf, a goat and a bag of cabbage}.\\
+   \emph{He wants to move all his belongings over the river but can only take one thing at a time.}\\
+   \emph{When left unsupervised, the goat will eat the cabbage and the wolf will eat the goat.}\\
+
+Write a program that allows the user to solve the puzzle.\\
+The program should display the board initially like this:
+
+\texttt{You are on the left side}
+
+\texttt{w g c $\sim$}\\
+where $\sim$ represents the river.
+
+The user can choose to cross the river with one of the following options:
+\begin{itemize}
+    \item w (wolf), g (goat), c (cabbage), n (nothing)
+\end{itemize}
+When the user decides to move something over the river,
+the program needs to check whether the choice is valid,
+and let the user try again if invalid.
+If the choice is valid, the program should determine if the puzzle continues.
+The puzzle stops if the goat eats the cabbage or if the wolf eats the goat,
+and then the program displays the message:
+
+\texttt{The \{consumer\} ate the \{consumed\}.}\\
+If the user manages to move all the items over the river,
+the program should display the message:
+
+\texttt{You solved the puzzle!}
+
+
+\section*{Input}
+The input begins with one prompt which asks the user
+which entity they would like to take to the other side of the river with them:
+
+\texttt{What would you like to take over the river? (w/g/c/n): }\\
+This prompt repeats until either something or someone gets consumed or the puzzle is solved.
+If at any point the user makes an invalid choice, the program should output:
+
+\texttt{Not a valid choice!}\\
+and then prompt the user for their input again.
+
+\section*{Output}
+The output should consist of two lines initially and for each valid user input.\\
+The first must contain either the string
+
+\texttt{You are on the left side.}\\
+or
+
+\texttt{You are on the right side.}\\
+depending on which side the user is on.
+
+The second line must contain one string displaying the current state of the puzzle,
+where each entity is seperated by a space.
+
+
+

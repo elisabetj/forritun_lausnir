@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+USE_SCORING=0
+. ../../../../testdata_tools/gen.sh
+
+use_solution solution_code.py
+
+compile random_generator.py
+
+sample 01
+sample 02
+sample 03
+
+for i in {02..06}; do
+    if [[ $i != 05  ]]; then
+        tc random-$i random_generator 1 $i
+    fi
+done;
+

@@ -1,0 +1,33 @@
+Title: Permutative numbers
+
+Let us say two numbers are permutations of each other
+if it is possible to rearrange the digits of one to get the other,
+as in the previous question.
+
+Now, let us furthermore call a number n "permutative"
+if all its first d multiples are permutations of n,
+where d is the number of digits of n.
+Example:
+1035 has 4 digits, and its first 4 multiples are:
+    1 * 1035 = 1035
+    2 * 1035 = 2070
+    3 * 1035 = 3105
+    4 * 1035 = 4140
+Even though one of those, 3 * 1035 = 3105, is a permutation of 1035,
+the number 1035 is not permutative, since not all of the four multiples are permutations of 1035.
+
+On the other hand, 142857 has 6 digits, and its first 6 multiples are:
+    1 * 142857 = 142857
+    2 * 142857 = 285714
+    3 * 142857 = 428571
+    4 * 142857 = 571428
+    5 * 142857 = 714285
+    6 * 142857 = 857142
+All of these are permutations of 142857, so 142857 is permutative.
+
+Write a program that prints all permutative numbers from 10 up to a number input by the user.
+
+The program should be split into functions,
+with a function called is_permutative(n), which returns True or False based on whether n is permutative.
+
+Hint: You can convert an integer to a string to get a string of digits, and then the length of the string is the number of digits in the integer.
