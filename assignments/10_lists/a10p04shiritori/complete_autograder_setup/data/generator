@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+USE_SCORING=0
+. ../../../../testdata_tools/gen.sh
+
+use_solution solution_code.py
+
+compile random_generator.py
+
+sample 01
+sample 02
+sample 03
+
+# short, no eror
+for i in {01..10}; do
+tc random-$i random_generator 3 10 0.0
+done;
+
+# medium, low error
+for i in {11..20}; do
+tc random-$i random_generator 20 100 0.10
+done;
+
+# long, medium error
+for i in {21..30}; do
+tc random-$i random_generator 100 1000 0.20
+done;
+
+# long, high error
+for i in {31..40}; do
+tc random-$i random_generator 100 1000 0.50
+done;
+
+# long, very high error
+for i in {41..50}; do
+tc random-$i random_generator 100 1000 0.75
+done;
+

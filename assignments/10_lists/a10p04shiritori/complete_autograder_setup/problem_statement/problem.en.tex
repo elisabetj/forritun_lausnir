@@ -1,0 +1,48 @@
+\problemname{Shiritori}
+
+% TODO: Get Unicode letters to render.
+% Perhaps try to get the following to work:
+% \usepackage[T1]{fontenc}
+% \usepackage[utf8]{inputenc}
+
+Shiritori
+% (しりとり)
+is a word game
+in which the players are required to say a word
+which begins with the final letter of the previous word.
+``Shiritori'' literally means ``taking the end''.
+
+For this problem, we will play a slightly different version of Shiritori.
+Keep a list $l_1$ of valid words and another list $l_0$ of invalid words.
+Whenever the user inputs a word
+that does not begin with the final letter of the last valid word,
+we will add it to $l_0$ and ask for another word.
+If the word does begin with the final letter of the last valid word,
+or if it is the first word,
+we will add it to $l_1$.
+The game ends when the user enters \texttt{x}.
+The program should convert all input into lowercase,
+so the comparison should be case-insensitive.
+
+After the game ends,
+the program should print out $l_1$ and $l_0$.
+Note that the first word will never be \texttt{x}
+
+\section*{Input}
+
+The input consists of at least two lines, each line containing one word.
+
+A word is a defined as series of english letters,
+each word is composed of $1$ to $100$ letters.
+
+\section*{Output}
+
+The output consists of two lines.
+
+The first line contains all of the words in $l_1$, seperated by a space.
+It $l_1$ is empty, print an empty line.
+
+The second line contains the all of the words in $l_0$, seperated by a space.
+If $l_0$ is empty, print an empty line.
+
+All output should be lowercase.

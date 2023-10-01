@@ -1,0 +1,35 @@
+\problemname{Barcelona}
+\illustration{0.3}{baggage_claim}{Image from \href{https://www.flickr.com/photos/sandiegointernationalairport/4860291021/}{flickr.com}}
+
+Arnar, Benni and Unnar were at the airport in Barcelona on their way to a competitive programming training camp.
+When the plane had landed they exited and went to the baggage claim.
+When they arrived there was no baggage on the conveyor belts.
+After a few minutes the baggage started trickling in.
+When Benni noticed this he loudly proclaimed
+``My bag's first! No, it's second first! No...\ it's fourth first. No wait...''
+
+Given a list of bags and a number denoting Benni's bag,
+can you help Benni find how first his bag is?
+
+\section*{Input}
+First there is a line with two integers $n$ and $k$,
+the number of bags and Benni's bag.
+It will always hold that $1 \leq n \leq 10^5$ and $-10^9 \leq k \leq 10^9$.
+Next there is a line with $n$ integers separated by spaces, $a_1, a_2, \dotsc, a_n$.
+For each $1 \leq i \leq n$ it holds that $-10^9 \leq a_i \leq 10^9$.
+No two bags are given by the same number and Benni's bag always appears in the list.
+
+\section*{Output}
+Print a single line.
+If Benni's bag is first print \texttt{fyrst},
+if it's the second print \texttt{naestfyrst}.
+Otherwise print a single number denoting how first it is
+followed by the word \texttt{fyrst} after the number.
+
+\section*{Scoring}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Group & Points & Constraints \\ \hline
+1     & 10  & $1 \leq n \leq 100$ \\ \hline
+2     & 90  & No further constraints \\ \hline
+\end{tabular}

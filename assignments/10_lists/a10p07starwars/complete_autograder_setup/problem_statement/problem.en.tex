@@ -1,0 +1,23 @@
+\problemname{Star Wars röðun}
+\illustration{0.3}{dvds}{Image from \href{https://www.flickr.com/photos/cjsorg/3211961956}{cjsort}}
+As many know, the Star Wars movies are numbered rather oddly. The films are numbered as follows in publishing order:
+Episode 4, Episode 5, Episode 6, Episode 1, Episode 2, Episode 3, Episode 7, Episode 8, Episode 9.\\\\
+We define \textit{starwars-order}, as an operation on a list of numbers, such that if the list is ordered, the first third moves to the center,
+the center third moves to the front and the last third stays put. \\\\
+The problem is as follows, given a list of numbers, give their starwars-order.\\ For example for the Star wars movies, the starwars-order of
+$1, 2, 3, 4, 5, 6, 7, 8, 9$ would be $4, 5, 6, 1, 2, 3, 7, 8, 9$.\\\\
+
+\section*{Input}
+The first line contains a single integer $n$, the number of numbers where $n$ is a multiple of $3$.
+The second line contains $n$ different integers separated by spaces, where each value $x$ satisfies $1 \leq x \leq 10^9$.
+
+\section*{Output}
+The starwars-order of the values in the input, given on a single line, separated by spaces.
+
+\section*{Scoring}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Group & Points & Constraints \\ \hline
+1     & 20     & $n = 9$ \\ \hline
+2     & 80     & $3 \leq n \leq 3*10^5$ \\ \hline
+\end{tabular}

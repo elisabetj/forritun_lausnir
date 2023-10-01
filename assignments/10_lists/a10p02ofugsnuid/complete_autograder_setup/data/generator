@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+. ../../../../testdata_tools/gen.sh
+
+use_solution ohg.cpp
+
+compile random_generator.py # Arguments: n k method seed
+
+samplegroup
+sample 01
+sample 02
+
+group GA-small 25
+tc GA-small32-01 random_generator 1 1
+tc GA-small32-02 random_generator 1 1
+tc GA-small32-03 random_generator 1 1
+tc GA-small32-04 random_generator 1 1
+tc GA-small32-05 random_generator 1 1
+tc GA-small32-06 random_generator 1 1
+tc GA-small32-07 random_generator 1 1
+
+group GB-medium 25
+include_group GA-small
+tc 01
+tc 02
+tc GB-medium-01 random_generator 1 5
+tc GB-medium-02 random_generator 1 5 
+tc GB-medium-03 random_generator 1 5
+tc GB-medium-04 random_generator 5 5 
+
+group GC-big 25
+include_group GB-medium
+tc GC-big-01 random_generator 1 1000
+tc GC-big-02 random_generator 1 1000
+tc GC-big-03 random_generator 1 1000
+tc GC-big-04 random_generator 1 1000
+tc GC-big-05 random_generator 1 1000
+tc GC-big-06 random_generator 1000 1000
+tc GC-big-07 random_generator 1000 1000
+
+group GD-extrabig 25
+include_group GC-big
+tc GD-extrabig-01 random_generator 1 200000
+tc GD-extrabig-02 random_generator 1 200000
+tc GD-extrabig-03 random_generator 1 200000
+tc GD-extrabig-04 random_generator 1 200000
+tc GD-extrabig-05 random_generator 200000 200000
+tc GD-extrabig-06 random_generator 200000 200000
+tc GD-extrabig-07 random_generator 200000 200000

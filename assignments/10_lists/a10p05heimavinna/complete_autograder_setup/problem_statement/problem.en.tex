@@ -1,0 +1,34 @@
+\problemname{Heimavinna}
+\illustration{0.3}{books}{Image from \href{https://www.flickr.com/photos/breatheindigital/4692258762/}{flickr.com}}
+
+\noindent
+Hneitir is a college student, meaning he has to do homework in various courses.
+Hneitir is not lazy, but he dislikes doing homework, especially when it comes to chemistry.
+Tomorrow he will be dragged to the board, being made to solve the assigned problems.
+The problem is that he does not know what problems to solve on the board
+since his chemistry teacher, Ormhildur, sometimes skips some problems to hurry things along.
+Even worse is that Hneitir has been procrastinating solving the problems
+and thus there are a lot of problems he has to solve for tomorrow.
+How many problems does he have to solve?
+
+\section*{Input}
+The input consists of a single line specifying the problems Hneitir has to solve.
+Hneitir always has to solve at least one problem.
+The problems are numbered from $1$ up to $1\,000$
+and are given in increasing order, separated by semicolons (\texttt{;}).
+If Hneitir should solve two or more consecutive problems in a row
+it is denoted by \texttt{-}.
+An example of a possible input is \texttt{1-3;5;7;10-13}
+which would mean Hneitir has to solve problem 1,2,3,5,7,10,11,12,13.
+
+\section*{Output}
+Print a single line with a single integer $n$, the number of problems Hneitir has to solve.
+
+\section*{Scoring}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Group & Points & Constraints \\ \hline
+1     & 25  & The problems are all in one interval, e.g. \texttt{3-10} \\ \hline
+2     & 25  & No two problems are consecutive, e.g. \texttt{1;3;5;8;13} \\ \hline
+3     & 50  & No further constraints \\ \hline
+\end{tabular}

@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+. ../../../../testdata_tools/gen.sh
+
+use_solution hannes.py
+
+compile random_generator.py # Arguments: minN maxN
+
+samplegroup
+#sample sampleinputname
+sample 01
+sample 02
+sample 03
+
+# group groupname score
+group GA 20
+tc 01
+# tc testcasename random_generator arg1, arg2, ...
+tc GA-tiny-01 random_generator 9 9
+tc GA-tiny-02 random_generator 9 9
+tc GA-tiny-03 random_generator 9 9
+
+group GB 80
+include_group GA
+tc 02
+tc 03
+tc GB-big-01 random_generator 3 299997 
+tc GB-big-02 random_generator 3 299997 
+tc GB-big-03 random_generator 3 299997 
+tc GB-big-04 random_generator 3 299997 
+tc GB-big-05 random_generator 3 299997 
+tc GB-big-06 random_generator 3 299997 
+tc GB-big-07 random_generator 3 299997 
+tc GB-big-08 random_generator 3 299997 
+tc GB-big-09 random_generator 3 299997 
+tc GB-big-10 random_generator 3 299997 
+tc GB-big-11 random_generator 3 299997 
+tc GB-big-12 random_generator 3 299997 
+tc GB-big-13 random_generator 3 299997 
+tc GB-big-14 random_generator 3 299997 
+tc GB-big-15 random_generator 300000 300000
+
+# Add more groups and adjust scoring if needed
