@@ -28,12 +28,12 @@ def display_state(left_side: list, right_side: list, on_left_side: bool):
 def everything_is_under_control(
     left_side: list, right_side: list, man_is_on_left_side: bool
 ) -> bool:
-    unsupervised_side = right_side if man_is_on_left_side else left_side
-    if WOLF in unsupervised_side and GOAT in unsupervised_side:
-        return False
-    if GOAT in unsupervised_side and CABBAGE in unsupervised_side:
-        return False
-    return True
+    supervised_side = left_side if man_is_on_left_side else right_side
+    return (
+        GOAT in supervised_side
+        or WOLF in supervised_side
+        and CABBAGE in supervised_side
+    )
 
 
 def all_have_crossed(destination: list) -> bool:
