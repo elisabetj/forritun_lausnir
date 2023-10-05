@@ -1,0 +1,15 @@
+Title: Home addresses
+
+Write a program that continuously asks the user for home addresses, one at a time until the user types in 'q' to stop.
+The program should put the addresses into a list and then process the list into a list of tuples containing the street name and number.
+Display the list and the tuple list.
+
+Note: We will only test addresses that consist of a single word, and an integer, separated by a space.
+
+Example of input/output:
+    Home address: Menntavegur 1 
+    Home address: Dúfnahólar 10 
+    Home address: Bankastræti 5 
+    Home address: q
+    ['Menntavegur 1', 'Dúfnahólar 10', 'Bankastræti 5']
+    [('Menntavegur', '1'), ('Dúfnahólar', '10'), ('Bankastræti', '5')]

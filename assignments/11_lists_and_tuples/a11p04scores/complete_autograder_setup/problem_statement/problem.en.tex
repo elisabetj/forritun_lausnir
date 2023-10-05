@@ -1,0 +1,38 @@
+\problemname{Scores}
+
+Write a Python program that takes a sequence of real numbers,
+removes the three lowest numbers and prints out the sum of the remaining numbers.
+
+An error message should be printed if the number of floats entered is $< 3$, but no other error handling is needed.
+
+Hint: Built-in functions can be of great help!
+On the other hand, you do not need to import anything,
+and should not use any import statement.
+
+\section*{Input}
+The program recieves one line as input,
+a sequence $x = (x_1, x_2, \dots, x_n)$ of $n$ real numbers seperated by spaces.
+
+In the tests, $x$ will be of length $n$, with $1 \le n \le 200$,
+where each $x_i$ will satisfy $0.0 \le x_i \le 100.0$ for $1 \le i \le n$,
+and each number $x_i$ will be given with at most one digit after the decimal point.
+
+In the samples below, the first and only line of the input contains the sequence $x$.
+
+\section*{Output}
+The output should consist of either:
+\begin{itemize}
+    \item
+    The string ``\texttt{At least 3 scores needed!}'',
+    if fewer than three scores were input.
+
+    \item
+    The string ``\texttt{Sum of scores (3 lowest removed): \{$s$\}}''
+    where $s$ is the sum of of all the numbers in the sequence $x$
+    except the lowest three,
+    if three or more scores were input.
+
+    The sum should be rounded to one digit after the decimal point.
+\end{itemize}
+
+

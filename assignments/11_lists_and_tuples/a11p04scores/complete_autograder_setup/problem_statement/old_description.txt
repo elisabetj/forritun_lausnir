@@ -1,0 +1,28 @@
+Title: Scores
+
+Note: This is very similar to the first question from midterm 2 in the autumn semester of 2019.
+Athugið: Þetta er mjög svipað fyrsta verkefninu í hlutaprófi 2 á haustönn 2019.
+
+Write a Python program that reads floats from the user (with space between numbers),
+removes the three lowest numbers and prints out the sum of the remaining numbers.
+An error message should be printed if the number of floats entered is < 3, but no other error handling is needed.
+
+Skrifið Python forrit sem les rauntölur frá notanda (með bili á milli talna),
+fjarlægir þrjár minnstu tölurnar og prentar út summu talnanna sem eftir eru.
+Skrifa skal út villuskilaboð ef fjöldi talna sem sleginn er inn er < 3 en ekki þarf að villutékka inntakið að öðru leyti.
+
+Hint: Built-in functions can be of great help!
+Ábending: Innbyggð föll geta hjálpað!
+
+On the other hand, you are not allowed to use any import statement.
+Þið megið hins vegar ekki nota neina import setningu.
+
+Example input/output - Dæmi um inntak/úttak:
+
+Example 1:
+    Enter scores separated by space: 1.1
+    At least 3 scores needed!
+
+Example 2:
+    Enter scores separated by space: 2.3 4.5 1.1 7.8 3.4 5.6
+    Sum of scores (3 lowest removed): 21.3

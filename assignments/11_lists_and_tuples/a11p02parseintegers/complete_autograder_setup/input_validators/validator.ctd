@@ -1,0 +1,2 @@
+REGEX("[^\n]{0,7000}") NEWLINE
+EOF

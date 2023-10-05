@@ -1,0 +1,28 @@
+\problemname{Home Addresses}
+
+Write a program that continuously asks the user for home addresses, 
+one at a time until the user types in ``\texttt{q}'' to stop.
+The program should put the addresses into a list and then process 
+the list into a list of tuples containing the street name and number.
+Display the list and the tuple list.
+
+\section*{Input}
+First, the program should prompt the user for a home address,
+this prompt then repeats until the user inputs ``\texttt{q}''.
+
+In other words, the program should expect the input to be
+a sequence of $n$ lines containing home addresses,
+followed by a final line containing the single character ``\texttt{q}'',
+making up $n + 1$ lines in total, where $n \ge 0$.
+
+In the tests the addresses will be restricted to a single word 
+and an integer, seperated by a space.
+
+A word is defined as a series of English or Icelandic letters,
+each word is composed of $3$ to $15$ letters,
+and each integer is composed of $1$ to $4$ digits with no leading zeroes.
+
+\section*{Output}
+The output should consist of two lines.
+The first line should contain a list of all addresses input.
+The second line should contain a list of tuples where each address has been split up into a tuple of ``\texttt{(word, integer)}''.

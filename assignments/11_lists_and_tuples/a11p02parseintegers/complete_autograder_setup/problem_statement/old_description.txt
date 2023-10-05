@@ -1,0 +1,20 @@
+Title: Parse integers
+
+Write a function, list_to_int_tuple(), that takes a list as a parameter,
+converts every element in the list to an integer and then returns a tuple consisting of these integer elements.
+
+If the function encounters elements that cannot be converted to integers, it ignores them.
+
+The main program is given - DO NOT change it.
+
+Hint: Use try-except and the int() constructor.
+
+Example1:
+
+    Enter elements of list separated by commas: 1,2,3,4
+    (1, 2, 3, 4)
+
+Example2:
+
+    Enter elements of list separated by commas: 1,2,d,5
+    (1, 2, 5)

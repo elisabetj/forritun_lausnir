@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+USE_SCORING=0
+. ../../../../testdata_tools/gen.sh
+
+use_solution solution_code.py
+
+compile random_generator.py
+
+sample 01
+sample 02
+
+for i in {01..10}; do
+    tc only-numbers-$i random_generator 10 50 numbers
+done;
+
+
+for i in {01..10}; do
+    tc no-numbers-$i random_generator 10 50 letters
+done;
+
+for i in {01..20}; do
+    tc mixed-small-$i random_generator 10 200 mixed
+done;
+
+for i in {01..20}; do
+    tc empty_mixed-small-$i random_generator 10 200 empty_mixed
+done;
+
+for i in {01..40}; do
+    tc mixed-large-$i random_generator 201 999 mixed
+done;
+
+tc edge-01 random_generator 0 0 mixed
+tc edge-02 random_generator 1000 1000 mixed

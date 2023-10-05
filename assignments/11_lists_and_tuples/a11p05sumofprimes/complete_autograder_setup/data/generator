@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+USE_SCORING=0
+. ../../../../testdata_tools/gen.sh
+
+use_solution solution_code.py
+
+compile random_generator.py
+
+sample 01
+sample 02
+sample 03
+
+for i in {01..05}; do
+    tc small-onlyprime-$i random_generator 1 20 1 10000 prime
+done;
+
+for i in {06..10}; do
+    tc small-noprime-$i random_generator 1 20 1 10000 noprime
+done;
+
+for i in {01..40}; do
+    tc large-mixed-$i random_generator 20 100 10000 100000 mixed
+done;

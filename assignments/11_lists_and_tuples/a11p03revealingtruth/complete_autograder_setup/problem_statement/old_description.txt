@@ -1,0 +1,25 @@
+Title: Revealing truth
+
+Write a function, list_to_bool_tuple(),
+that takes a list as a parameter, converts every element in the list to a boolean
+and then returns a tuple consisting of these boolean elements.
+
+Any value can be interpreted as a boolean in Python,
+e.g. the empty string (written as "") would be interpreted as False (e.g. by writing bool("")),
+while any other string would be interpreted as True.
+
+Any integers encountered should be converted to int, before being evaluated to their truth value.
+
+The main program is given - DO NOT change it.
+
+Example1:
+
+    Enter elements of list separated by commas: Hello,20,0, 
+    (True, True, False, False)
+
+Example2:
+
+    Enter elements of list separated by commas: 0,,,
+    (False, False, False, False)
+
+Note: The function list_to_bool_tuple can receive a list, whose elements are either integers or strings (or a mix of both).

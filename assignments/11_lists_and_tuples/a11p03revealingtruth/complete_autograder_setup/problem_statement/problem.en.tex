@@ -1,0 +1,36 @@
+\problemname{Revealing Truth}
+
+Write a function, \texttt{list\_to\_bool\_tuple()},
+that converts every element in a given list to a boolean
+and then returns a tuple consisting of these boolean elements.
+
+Any value can be interpreted as a \texttt{boolean} in Python.\\
+For example, the empty string (written as \texttt{""}) would be interpreted as \texttt{False}
+(for example by writing \texttt{bool("")}),
+while any other string would be interpreted as \texttt{True}.
+
+Any integers encountered should be converted to \texttt{int},
+before being evaluated to their truth value.
+
+\textbf{The main file, which handles input and output, is already provided. -
+Please only submit your function definitions, without any code outside the functions!}
+
+Note: The function \texttt{list\_to\_bool\_tuple} can receive a list,
+whose elements are either integers, strings, or a mix of both.
+
+
+\section*{Input}
+The function recieves one list $l$ as a parameter.\\
+In the tests, $l$ will be a list of length $0 \leq |l| \leq 1\,000$.
+The elements of the list will be strings.
+You may assume all characters in the input are printable ASCII characters.
+
+In the samples below,
+the first and only line of the input contains the elements of the list $l$ seperated by commas.
+The autograder will handle reading the input,
+splitting it on the commas
+and passing the resulting list as an argument to your function.
+
+\section*{Output}
+The function should return one tuple $t$,
+the elements of list $l$ converted to booleans.

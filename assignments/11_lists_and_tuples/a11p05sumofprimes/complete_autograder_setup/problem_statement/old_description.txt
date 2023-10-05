@@ -1,0 +1,14 @@
+Title: Sum of primes
+
+Write a function, prime_sum, that takes a list L of integers as an argument
+and uses LIST COMPREHENSION to return the sum of all prime numbers from the list L.
+
+Hint: In your implementation, you can use some of the list functions discussed on page 349 in the textbook.
+
+You are given the function is_prime(n) to check whether the number n is prime or not (the function returns a boolean).
+
+The main function and two other functions are given - DO NOT change it.
+
+For example:
+    Enter elements of list seperated by commas: 1,2,3,4,5,6,7,8,9,10,11
+    28
