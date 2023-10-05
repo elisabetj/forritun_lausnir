@@ -1,0 +1,49 @@
+Author: Eiríkur Fannar Torfason
+
+Title: Battleship
+
+In this exercise, you will program a computer game:
+[Battleship!](https://en.wikipedia.org/wiki/Battleship_(game))
+For the sake of simplicity, we will limit ourselves to a single-player mode with one board.
+
+At the start of the game, 5 ships are placed on a grid with 10 x 10 tiles.
+The grid's columns are numbered from 1 to 10
+whereas the rows are labelled using the letters A to J (see image below).
+Individual coordinates are referenced by letter and number, e.g. .D9 or J10.
+
+[https://s3.amazonaws.com/mimirplatform.production/files/ecffa1c5-5fff-45d6-8f46-47fa77da5b4d/battleship-grid.PNG]
+
+The ships are placed either horizontally or vertically on the grid.
+
+The program shall start by asking for the location for each of the five ships.
+The carrier is the biggest and occupies 5 tiles.
+Next is the battleship with 4 tiles,
+then the destroyer and submarine, which both require 3 tiles.
+Finally, there's a patrol boat that occupies 2 tiles.
+The following example illustrates how a player would enter the location of the ships as depicted above:
+    Specify the location of each ship in your fleet by providing the top/left coordinate and orientation.
+    Examples: 'A2 vertical' or 'C3 horizontal'
+    Location and orientation of your carrier: I5 horizontal
+    Location and orientation of your battleship: A10 vertical
+    Location and orientation of your destroyer: C7 vertical
+    Location and orientation of your submarine: F3 horizontal
+    Location and orientation of your patrol boat: D3 vertical
+
+The program shall then proceed to ask the user which coordinates to attack.
+If there's no ship at the specified coordinates then the program shall print "Miss".
+
+If there is a ship at the specified coordinates then the program shall either print:
+- "Hit, {ship type}" or
+- "You have sunk my {ship type}"
+
+depending on whether all of the ship's tiles have been attacked.
+
+Example:
+    Where to attack: D3
+    Hit, patrol boat 
+    Where to attack: D4
+    Miss
+    Where to attack: E3
+    You have sunk my patrol boat
+
+When all of the ships have been sunk, then the program prints "The entire fleet has been sunk" and exits.
