@@ -1,0 +1,50 @@
+\problemname{Music}
+
+Write a function, \texttt{state\_music\_opinion(genre, music\_group, vocalist)},
+that prints out certain music preferences, as detailed below.
+
+\textbf{The main file, which handles input and output, is already provided. -
+Please only submit your function definitions, without any code outside the functions!}
+
+
+\section*{Input}
+
+The function should accept three strings,
+$g$, $b$ and $s$, in this order, as parameters,
+but in case some of the arguments are not provided
+the function should also default to the following values
+for those arguments that are not provided:
+``Classic Rock'' for $g$, ``The Beatles'' for $b$, and ``Freddie Mercury'' for $s$.
+
+In the samples below,
+the first and only line of the input contains
+the three strings seperated by a ``\text{,}''.
+The autograder will handle reading the input,
+splitting it on the commas
+and passing the resulting list as an argument to your function.
+In case any of the strings are empty, or contain only whitespace,
+those particular values will not be passed to your function,
+in which case it should resort to the defaults.
+
+Note that the parameters of the function
+will sometimes need to be referred to by name,
+so it is important that you use the following names
+for the parameters in your function definition:
+``\texttt{genre}'' for $g$, ``\texttt{music\_group}'' for $b$,
+and ``\texttt{vocalist}'' for $s$.
+
+In the tests, the strings $g$, $b$ and $s$
+will consist of printable ASCII characters,
+and have length at most $30$ each.
+
+
+\section*{Output}
+
+The function should not return anything (just \texttt{None}),
+but should print out the following three lines:
+
+\begin{itemize}
+    \item ``\text{The best type of music is \{$g$\}.}''
+    \item ``\text{The best music group is \{$b$\}.}''
+    \item ``\text{The best lead vocalist is \{$s$\}.}''
+\end{itemize}

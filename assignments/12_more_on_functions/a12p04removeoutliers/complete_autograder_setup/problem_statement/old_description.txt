@@ -1,0 +1,29 @@
+Title: Remove outliers
+
+Write two functions for removing the minimum number and the maximum number from integer lists:
+- remove_min_and_max(a_list): returns nothing, modifies the list passed as an argument
+- without_outliers(a_list): return a new list, does not modify the list passed as an argument.
+
+With the main function like this:
+
+    a_list = [3, 9, 5, 1, 6, 8]
+    print(f"Before calling remove_min_and_max: {a_list = }")
+    remove_min_and_max(a_list)
+    print(f"After calling remove_min_and_max: {a_list = }")
+
+    b_list = [9, 2, 3, 6, 1, 8, 7]
+    print(f"Before calling without_outliers: {b_list = }")
+    c_list = without_outliers(b_list)
+    print(f"After calling without_outliers: {b_list = }")
+    print(f"After calling without_outliers: {c_list = }")
+
+(If the format strings are messing with you, read this:
+https://docs.python.org/3/whatsnew/3.8.html#f-strings-support-for-self-documenting-expressions-and-debugging)
+
+The program should output:
+
+    Before calling remove_min_and_max: a_list = [3, 9, 5, 1, 6, 8]
+    After calling remove_min_and_max: a_list = [3, 5, 6, 8]
+    Before calling without_outliers: b_list = [9, 2, 3, 6, 1, 8, 7]
+    After calling without_outliers: b_list = [9, 2, 3, 6, 1, 8, 7]
+    After calling without_outliers: c_list = [2, 3, 6, 8, 7]

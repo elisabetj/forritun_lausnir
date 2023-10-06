@@ -1,0 +1,4 @@
+Original list before calling functions: [1, 1, 2, 3, 4, 5]
+Resulting list after extracting evens: [2, 4]
+Original list after extracting evens and before removing odds: [1, 1, 2, 3, 4, 5]
+Original list after removing odds: [2, 4]

@@ -1,0 +1,4 @@
+Original list before calling functions: [9, 2, 3, 6, 1, 8, 7]
+Resulting list after extracting middle: [2, 3, 6, 8, 7]
+Original list after extracting middle and before removing outliers: [9, 2, 3, 6, 1, 8, 7]
+Original list after removing outliers: [2, 3, 6, 8, 7]

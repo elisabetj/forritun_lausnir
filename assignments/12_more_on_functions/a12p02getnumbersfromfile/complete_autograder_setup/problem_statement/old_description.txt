@@ -1,0 +1,20 @@
+Title: Get numbers from file
+
+Write a program that prompts the user for a file,
+repeatedly until the user enters a name of a file that actually exists,
+and then extracts all numbers from the text file.
+The results should be saved in a list and finally printed out in sorted order.
+
+The file format used is:
+
+    There are n numbers in this file.
+    a (written form of a), b (written form of b), ...
+
+Contents of an example file, called number_text.txt:
+
+    There are 5 numbers in this file
+    7 (Seven), 3 (Three), 10 (Ten), 1 (One), 77 (Seventyseven)
+
+Given number_text.txt as input, the program should output:
+
+    [1, 3, 5, 7, 10, 77]

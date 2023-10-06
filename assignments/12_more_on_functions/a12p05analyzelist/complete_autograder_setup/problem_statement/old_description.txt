@@ -1,0 +1,25 @@
+Title: Analyze list
+
+Write a Python program that takes a list L of integers > 0 as input and prints out the following information:
+
+1. The list L.
+2. The sorted version of L.
+3. A sorted list of the composite numbers in L (composite numbers are numbers that are not prime). The resulting list should only include each value once.
+4. Minimum, maximum, and average values in L. The average value should be printed with two decimal places (with trailing zeros if necessary).
+
+You are allowed to use list functions, but you are not allowed to import any module.
+The function is_prime() is given.
+
+You need to print out an error message if the user enters invalid values into the list,
+and ask the user again for input until valid input is given.
+See an example below.
+
+    Enter integers separated with commas: 1,2,b
+    Incorrect input! Please try again.
+    Enter integers separated with commas: 1,2,-3
+    Incorrect input! Please try again.
+    Enter integers separated with commas: 2,5,7,2,8,10,34,23,9,4,5
+    Input list: [2, 5, 7, 2, 8, 10, 34, 23, 9, 4, 5]
+    Sorted list:  [2, 2, 4, 5, 5, 7, 8, 9, 10, 23, 34]
+    Composite list:  [4, 8, 9, 10, 34]
+    Min: 2, Max: 34, Average: 9.91

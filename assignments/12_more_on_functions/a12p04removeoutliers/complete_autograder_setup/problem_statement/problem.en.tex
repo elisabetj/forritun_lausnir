@@ -1,0 +1,81 @@
+\problemname{Remove Outliers}
+
+
+Write two functions for removing the minimum number and the maximum number from integer lists:
+
+\begin{itemize}
+    \item
+    \texttt{without\_outliers(a\_list)}:\\
+    Returns a new list.
+    Does not modify the list passed as an argument.
+    % without the minimum number and the maximum number
+    % from \texttt{a\_list},
+    % without modifying \texttt{a\_list}.
+
+    \item
+    \texttt{remove\_min\_and\_max(a\_list)}:\\
+    Returns nothing,
+    modifies the list passed as an argument.
+    % Removes the minimum number and the maximum number
+    % from \texttt{a\_list},
+    % thus modifying \texttt{a\_list}.
+\end{itemize}
+
+\textbf{The main file, which handles input and output, is already provided. -
+Please only submit your function definitions, without any code outside the functions!}
+
+
+\section*{Input}
+
+Each of the functions should accept one list $l$ as a parameter.
+You may assume the elements of the list $l$ will be integers.
+
+In the samples below, the input consists of one line
+containing a sequence $x = (x_1, \dots, x_n)$ of $n$ numbers
+separated by a space.
+The autograder will handle reading the input,
+splitting it, converting to integers
+and passing the resulting list as an argument to the functions.
+
+In the tests, $x$ will always satisfy $2 \le n \le 1\,000$
+and $0 \le x_i < 10\,000$ for all $i$ with $1 \le i \le n$.
+
+\section*{Output}
+
+The function \texttt{without\_outliers()}
+should return a new list $m$
+containing all the numbers appearing in $l$
+except two, the largest and the smallest,
+in the same order as they appear in $l$,
+and no other numbers.
+After the function is called,
+the original list $l$ should remain unchanged.
+
+The function \texttt{remove\_min\_and\_max()}
+should return nothing (just \texttt{None}),
+but should modify the given list $l$,
+so that after the function is called,
+the list will have changed to a modified list $l'$
+containing all the numbers appearing in $l$
+except two, the largest and the smallest,
+in the same order as they appear in $l$,
+and no other numbers.
+
+In each test case, the autograder will call both of the functions
+with the given list as a parameter, in sequence,
+and will verify the results as well as the effects on the given list,
+and print the following four lines to the output,
+as seen in the samples below:
+\begin{itemize}
+    \item
+    ``\texttt{Original list before calling functions: \{$l$\}}''
+
+    \item
+    ``\texttt{Resulting list after extracting middle: \{$m$\}}''
+
+    \item
+    ``\texttt{Original list after extracting middle and before removing outliers: \{$l$\}}''
+
+    \item
+    ``\texttt{Original list after removing outliers: \{$l'$\}}''
+\end{itemize}

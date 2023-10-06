@@ -1,0 +1,4 @@
+Input list: [4, 7, 2, 9, 11, 13, 22, 5, 33, 7, 13]
+Sorted list: [2, 4, 5, 7, 7, 9, 11, 13, 13, 22, 33]
+Composite list: [4, 9, 22, 33]
+Min: 2, Max: 33, Average: 11.45

@@ -1,0 +1,77 @@
+\problemname{Remove Odds}
+
+
+Write two functions for removing odd numbers from integer lists:
+
+\begin{itemize}
+    \item
+    \texttt{extract\_evens(int\_list)}:\\
+    Returns a new list
+    with only even integers from \texttt{int\_list},
+    without modifying \texttt{int\_list}.
+
+    \item
+    \texttt{remove\_odds(int\_list)}:\\
+    Removes odd integers from \texttt{int\_list},
+    thus modifying \texttt{int\_list}.
+\end{itemize}
+
+Hint: Functions have the ability to modify mutable objects in the calling program.
+Lists are mutable objects.
+
+\textbf{The main file, which handles input and output, is already provided. -
+Please only submit your function definitions, without any code outside the functions!}
+
+
+\section*{Input}
+
+Each of the functions should accept one list $l$ as a parameter.
+You may assume the elements of the list $l$ will be integers.
+
+In the samples below, the input consists of one line
+containing a sequence $x = (x_1, \dots, x_n)$ of $n$ numbers
+separated by a space.
+The autograder will handle reading the input,
+splitting it, converting to integers
+and passing the resulting list as an argument to the functions.
+
+In the tests, $x$ will always satisfy $1 \le n \le 1\,000$
+and $1 \le x_i < 100$ for all $i$ with $1 \le i \le n$.
+
+\section*{Output}
+
+The function \texttt{extract\_evens()}
+should return a new list $e$
+containing all the even numbers appearing in $l$,
+in the same order as they appear in $l$,
+and no other numbers.
+After the function is called,
+the original list $l$ should remain unchanged.
+
+The function \texttt{remove\_odds()}
+should return nothing (just \texttt{None}),
+but should modify the given list $l$,
+so that after the function is called,
+the list will have changed to a modified list $l'$
+containing all the even numbers appearing in $l$,
+in the same order as they appear in $l$,
+and no other numbers.
+
+In each test case, the autograder will call both of the functions
+with the given list as a parameter, in sequence,
+and will verify the results as well as the effects on the given list,
+and print the following four lines to the output,
+as seen in the samples below:
+\begin{itemize}
+    \item
+    ``\texttt{Original list before calling functions: \{$l$\}}''
+
+    \item
+    ``\texttt{Resulting list after extracting evens: \{$e$\}}''
+
+    \item
+    ``\texttt{Original list after extracting evens and before removing odds: \{$l$\}}''
+
+    \item
+    ``\texttt{Original list after removing odds: \{$l'$\}}''
+\end{itemize}

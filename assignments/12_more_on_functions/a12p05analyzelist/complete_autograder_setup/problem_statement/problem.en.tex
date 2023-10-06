@@ -1,0 +1,38 @@
+\problemname{Analyze List}
+
+Write a Python program that given a list $l$ of integers $> 0$ prints out the following information:
+\begin{enumerate}
+    \item The list $l$.
+    \item The sorted version of $l$.
+    \item A sorted list of the composite numbers in $l$ (composite numbers are numbers that are not prime). 
+        The resulting list should only include each value once.
+    \item Minimum, maximum, and average values in $l$. The average value should be formatted to two decimal places.
+\end{enumerate}
+
+The function \texttt{is\_prime()} is given.
+
+You need to print out an error message if the user enters invalid values into the list,
+and ask the user again for input until valid input is given.
+
+\section*{Input}
+The input contains a list $l$.\\
+If the list $l$ contains invalid values then the program should ask for another list until a valid list is given.
+In the tests, $l$ will be a list of length $1 \leq 1\,000$.
+The elements of the list will be integers or letters of the English alphabet.
+
+In the samples below,
+each line of the input contains the elements of a list $l$ seperated by commas,
+with the last line of the input being the valid list.
+
+\section*{Output}
+
+The output should contain atleast $4$ lines.
+First if the user input an invalid list the program should display.\\
+``\texttt{Incorrect input! Please try again.}'' for every invalid input.\\
+The next four lines of the output should contain:
+\begin{enumerate}
+    \item ``\texttt{Input list: \{$l$\}}''.
+    \item ``\texttt{Sorted list: \{$l_{sorted}$\}}'' where $l_{sorted}$ is the list $l$ sorted.
+    \item ``\texttt{Composite list: \{$l_{composite}$\}}'', where $l_{composite}$ is a list of composite numbers in $l$.
+    \item ``\texttt{Min: \{$l_{minimum\_value}$\}, Max: \{$l_{maximum\_value}$\}, Average: \{$l_{average\_value}$\}}''
+\end{enumerate}

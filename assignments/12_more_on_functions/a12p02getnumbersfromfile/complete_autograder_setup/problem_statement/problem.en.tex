@@ -1,0 +1,54 @@
+\problemname{Get Numbers From File}
+
+% \textbf{The main file, which handles input and output, is already provided. -
+% Please only submit your function definitions, without any code outside the functions!}
+
+Write a program that extracts all numbers from a given text file.
+The results should be saved in a list and finally printed out in sorted order.
+
+First, the program should ask the user for a file name,
+repeatedly until the user enters a name of a file that actually exists,
+as evidenced by the fact that it can be opened.
+
+
+\section*{Input}
+
+The input consists of one or more line.
+At least one line will contain the name of a file
+that is accessible to the program.
+
+To be specific, the input will consist of $n$ lines, where $n \ge 1$.
+For each $i$ with $1 \le i \le n$,
+line $i$ will contain a non-empty string, let us call it $s_i$ for future reference.
+At least one string $s_i$ will be the name of a file
+that is accessible to the program.
+
+Note that in the samples below, the content of the files is not shown.
+See the provided text files for more information.
+The input files will consist of $0$ or more lines,
+containing a sequence of words and numbers separated by spaces.
+Each word will be made up of letters from the English alphabet, parentheses and punctuation,
+but there will never be numerical digits mixed into the words.
+Any numbers will always stand on their own,
+separated from the rest of the text by spaces or new line characters.
+
+
+\section*{Output}
+
+The output should consist of $m$ lines, with $m \ge 1$, as described below.
+
+For each $i$ with $1 \le i < m$,
+line $i$ of the output should read:
+\begin{itemize}
+    \item
+    ``\texttt{\{$s_i$\} not found! Please try again.}''
+\end{itemize}
+
+Finally, the last line should contain an ordered list
+of all numbers found in the file $s_m$,
+separated by commas and surrounded by square brackets.
+
+As soon as the program receives a name of a file that it can open,
+it should stop asking for input and process the file.
+Note that this means $m$ could be less than $n$,
+but it should always be the case that $m \le n$.

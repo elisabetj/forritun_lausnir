@@ -1,0 +1,25 @@
+Title: Music
+
+Write a function state_music_opinion that takes 3 parameters
+-- music type, music group, vocalist --
+and prints them all out as shown in the example below.
+In case no input is provided by the caller of the function,
+the function should assume these default values for the parameters:
+"Classic Rock", "The Beatles", "Freddie Mercury".
+
+The main program is given:
+
+    def main():
+        music, group, singer = input("Input music, group, singer: ").split(',')
+        state_music_opinion(music, group, singer)
+        state_music_opinion()
+
+Example input/output:
+
+    Input music, group, singer: Rythm and blues,Greta Van Fleet,Luciano Pavarotti
+    The best type of music is Rythm and blues
+    The best music group is Greta Van Fleet
+    The best lead vocalist is Luciano Pavarotti
+    The best type of music is Classic Rock
+    The best music group is The Beatles
+    The best lead vocalist is Freddie Mercury

@@ -1,0 +1,31 @@
+Title: Remove odds
+
+Write two functions for removing odd numbers from integer lists:
+
+- remove_odds(int_list): Removes odd integers from int_list, thus modifying int_list
+- extract_evens(int_list): Returns a new list with only even integers from int_list, without modifying int_list
+
+Example main program:
+
+    def main():
+        a_list = [1, 1, 2, 3, 4, 5]
+        print(f"a_list initially: {a_list}")
+        remove_odds(a_list)
+        print(f"a_list after removing odds: {a_list}")
+
+        b_list = [1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        print(f"b_list initially: {b_list}")
+        c_list = extract_evens(b_list)
+        print(f"b_list after extracting evens: {b_list}")
+        print(f"c_list after extracting evens: {c_list}")
+
+and corresponding output:
+
+    a_list initially: [1, 1, 2, 3, 4, 5]
+    a_list after removing odds: [2, 4]
+    b_list initially: [1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    b_list after extracting evens: [1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    c_list after extracting evens: [2, 4, 6, 8, 10]
+
+Hint: Functions have the ability to modify mutable objects in the calling program.
+Lists are mutable objects. 

@@ -1,0 +1,4 @@
+Original list before calling functions: [21, 1, 23, 102]
+Resulting list after extracting middle: [21, 23]
+Original list after extracting middle and before removing outliers: [21, 1, 23, 102]
+Original list after removing outliers: [21, 23]
