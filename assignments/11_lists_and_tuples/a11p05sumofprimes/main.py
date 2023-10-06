@@ -1,4 +1,4 @@
-from insert_the_name_of_your_solution_file_here import prime_sum
+from solution_code import prime_sum
 
 
 def main():

@@ -1,4 +1,4 @@
-from insert_the_name_of_your_solution_file_here import list_to_int_tuple
+from solution_code import list_to_int_tuple
 
 
 def main():
