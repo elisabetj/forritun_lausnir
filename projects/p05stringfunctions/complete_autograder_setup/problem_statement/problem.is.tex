@@ -1,0 +1,32 @@
+\problemname{String Functions}
+
+Skrifið forrit sem gerir notanda kleift að slá endutekið inn einn staf, sem táknar eitt af þremur mögulegum föllum til að keyra, og síðan streng sem er notaður sem viðfang í fallakallinu.
+Lykkjan er keyrð þangað til stafurinn \texttt{"q"} er sleginn inn. \\
+
+Föllin þrjú sem notandinn á að geta keyrt eru: 
+\begin{enumerate} 
+    \item Fyrir inntaksstafinn \texttt{"c"}, fallið \texttt{collect\_digits(a\_str)}: Þetta fall tekur streng, \texttt{a\_str}, sem viðfang og skilar streng sem inniheldur tölustafina úr \texttt{a\_str}.
+    \item Fyrir inntaksstafinn \texttt{"i"}, fallið \texttt{inverse\_case(a\_str)}: Þetta fall tekur streng, \texttt{a\_str}, sem viðfang og skilar streng þar sem hástöfum í \texttt{a\_str} er skipt út fyrir lágstafi og öfugt. EKKI er leyfilegt að nota innbyggða fallið \texttt{swapcase} í þessu verkefni.
+    \item Fyrir inntaksstafinn \texttt{"h"}, fallið \texttt{to\_hex(an\_int)}: Þetta fall tekur heiltölu, \texttt{an\_int}, sem viðfang og skilar streng sem er sextándarútgáfan af \texttt{an\_int}. EKKI er leyfilegt að nota innbyggða fallið \texttt{hex} í þessu verkefni.
+\end{enumerate}
+
+Strenginn, sem föllin skila, skal skrifa út.
+
+\noindent
+\textbf{Ábending:} Í námskeiðinu Tölvuhögun hefur verið fjallað um hvernig breyta eigi heiltölu í sextándartölu.
+Einnig er hægt að finna upplýsingar um þá aðferð á netinu. 
+
+\section*{Inntak}
+Forritið skal endurtekið lesa línu, einn staf, sem stendur fyrir fall sem kallað verður á.
+Forritið hættir strax keyrslu ef línan er strengurinn \texttt{"q"}.
+Annars skal forritið lesa aðra línu sem streng og kalla á viðeigandi fall með inntakinu sem viðfang.
+
+Formlega séð samanstendur inntakið af $2n-1$ lines, þar sem $n \ge 1$. 
+Lína nr. $2i-1$, $i \ge 1$, inniheldur einn staf úr menginu \texttt{\{"c", "i", "h", "q"\}}. 
+Ef lína nr. $2i-1$, $i \ge 1$, er ekki stafurinn \texttt{"q"}, þá inniheldur lína nr. $2i$ einn streng. 
+Ef lína nr. $2i-1$, $i \ge 1$, er stafurinn \texttt{"h"}, þá inniheldur lína nr. $2i$ streng $s$, sem samanstendur eingöngu af tölustöfum, þar sem $1 \le |s| \le 5$, annars samanstendur $s$ af runu af bókstöfum og tölustöfum, þar sem $1 \le |s| \le 20$. 
+
+\textbf{Athugið}: Forritið ykkar á ekki að skoða sérstaklega hvort þessi inntaksskilyrði standist, né hafna öðru inntaki.
+
+\section*{Úttak}
+Fyrir sérhvert inntakspar sem er stafur og strengur (nema þegar stafurinn er \texttt{"q"}) er úttakið strengur sem er skilagildið úr fallinu sem kallað var á.

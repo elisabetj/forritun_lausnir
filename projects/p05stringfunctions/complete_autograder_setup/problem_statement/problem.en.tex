@@ -1,0 +1,32 @@
+\problemname{String Functions}
+
+Write a program which allows the user to repeatedly input one character, denoting one of three possible functions to execute, followed by a string which is used as an argument in the function call.
+The loop is run until the character input is \texttt{"q"}. \\
+
+The three possible functions that the user should be able to run are: 
+\begin{enumerate} 
+    \item For input character \texttt{"c"}, the function \texttt{collect\_digits(a\_str)}: This function takes a string, \texttt{a\_str}, as an argument and returns a string which contains the digits from \texttt{a\_str}.
+    \item For input character \texttt{"i"}, the function \texttt{inverse\_case(a\_str)}: This function takes a string, \texttt{a\_str}, as an argument and returns a string in which upper case letters in \texttt{a\_str} are replaced with lower case letters, and vice versa. It is NOT allowed to use the built-in function \texttt{swapcase} for this task.
+    \item For input character \texttt{"h"}, the function \texttt{to\_hex(an\_int)}: This function takes an integer, \texttt{an\_int}, as an argument and returns a string which is the hexadecimal representation of \texttt{an\_int}. It is NOT allowed to use the built-in function \texttt{hex} for this task.
+\end{enumerate}
+
+The resulting string from the function calls should be printed out.
+
+\noindent
+\textbf{Hint:} Converting an integer to hex has been discussed in the course ``Tölvuhögun''.
+Information about the method can also be found on the Internet.
+
+\section*{Input}
+The program should repeatedly read a line, one character, denoting the function to call.
+If the line is the string \texttt{"q"}, the program should quit immediately.
+Otherwise the program should read another line as a string and call the appropriate function on it.
+
+Formally, the input consists of $2n-1$ lines, where $n \ge 1$. 
+Line no. $2i-1$, $i \ge 1$, contains one character from the set \texttt{\{"c", "i", "h", "q"\}}. 
+If line no. $2i-1$, $i \ge 1$, is not the character \texttt{"q"}, then line no. $2i$ contains one string. 
+If line no. $2i-1$, $i \ge 1$, is the character \texttt{"h"}, then line no. $2i$ contains a string $s$, which only contains digits, where $1 \le |s| \le 5$, otherwise $s$ consists of a sequence of alphanumeric letters, where $1 \le |s| \le 20$. 
+
+\textbf{Note}: Your program is not supposed to validate this input, or refuse other input.
+
+\section*{Output}
+For each input pair of a character and a string (except when the character is \texttt{"q"}), the output is a string which is the result of the function that was called.

@@ -1,0 +1,11 @@
+REGEX("[cihq]", c) NEWLINE
+WHILE(c != "q")
+    IF (c == "b")
+        INT(0, 99999) NEWLINE
+    ELSE
+        REGEX("[A-Za-z0-9]{1,20}", s) NEWLINE
+    END
+    REGEX("[cihq]", c) NEWLINE
+END
+
+EOF
