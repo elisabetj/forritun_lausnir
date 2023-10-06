@@ -1,0 +1,63 @@
+\problemname{Sequence Analysis}
+
+Þetta verkefni er æfing í skráarvinnslu, listum og frábrigðum.
+Skrifið forrit sem les runu af rauntölum úr inntaksskrá og skrifar út ýmsar upplýsingar um rununa.
+Dæmigerð runa í skrá (\texttt{data1.txt}) lítur svona út:
+
+\begin{verbatim}
+5
+3
+-2
+7
+-4
+4
+0
+11
+15
+-12
+22
+6
+8
+\end{verbatim}
+
+\noindent
+En runa í skrá (\texttt{data2.txt}) gæti einnig verið svona:
+\begin{verbatim}
+12.4
+11.9
+-3.6
+bla  
+5.7
+-2.6
+7.4
+8.9
+xxx
+4.5
+\end{verbatim}
+
+\noindent
+Eða jafnvel svona (\texttt{data3.txt}):
+\begin{verbatim}
+aa
+\end{verbatim}
+
+
+Takið eftir að skráin \texttt{data2.txt} inniheldur tvær línur sem ætti ekki að taka með í greiningu á rununni, og skráin \texttt{data3.txt} inniheldur engar rauntölur.
+
+\pagebreak
+
+\section*{Inntak}
+Inntakið er nafnið á skránni sem á að greina, t.d. \texttt{data1.txt} eða hvaða annað nafn sem er sem endar á \texttt{.txt}.
+Inntaksskráin sjálf inniheldur $1-20$ línur, þar sem sérhver lína er annað hvort rauntala $f$, þar sem $-20 \le f \le 20$, eða einhver annar strengur sem er ekki leyfileg rauntala.
+
+\section*{Úttak}
+Úttakið er annað hvort ekki neitt, þegar inntaksskráin inniheldur engar rauntölur eða þegar ekki er hægt að opna inntaksskrána, eða samanstendur af eftirfarandi fjórum línum:
+\begin{enumerate}
+    \item Tölum í rununni
+    \item Uppsafnaðri summu talnanna í rununni
+    \item Raðaðri útgáfu (í hækkandi röð) af tölunum í rununni 
+    \item Miðgildi rununnar
+\end{enumerate}
+
+Allar tölur á að námunda með fjórum aukastöfum. 
+

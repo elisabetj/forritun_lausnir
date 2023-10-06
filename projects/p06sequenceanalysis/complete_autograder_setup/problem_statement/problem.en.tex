@@ -1,0 +1,63 @@
+\problemname{Sequence Analysis}
+
+This project is an exercise in using files, lists and exceptions.
+Write a program that reads a floating point number sequence from an input file and outputs various information about the sequence.
+A typical sequence in a file (\texttt{data1.txt}) looks like this:
+
+\begin{verbatim}
+5
+3
+-2
+7
+-4
+4
+0
+11
+15
+-12
+22
+6
+8
+\end{verbatim}
+
+\noindent
+However, a sequence in a file (\texttt{data2.txt}) could also look like this:
+\begin{verbatim}
+12.4
+11.9
+-3.6
+bla  
+5.7
+-2.6
+7.4
+8.9
+xxx
+4.5
+\end{verbatim}
+
+\noindent
+Or even like this (\texttt{data3.txt}):
+\begin{verbatim}
+aa
+\end{verbatim}
+
+
+Note that the file \texttt{data2.txt} contains two lines that should be ignored in the analysis, and that the file \texttt{data3.txt} does not contain any valid numbers.
+
+\pagebreak
+
+\section*{Input}
+The input is a name of a file to be analysed, e.g. \texttt{data1.txt} or any other name ending in \texttt{.txt}.
+The input file contains $1-20$ lines, where each line either contains a valid floating point number $f$, where $-20 \le f \le 20$, or any other string which is not a valid float.
+
+\section*{Output}
+The output is either nothing, in the case were the input data file does not contain any floats or if it cannot be opened, or it consists of the following four lines:
+\begin{enumerate}
+    \item The numbers in the sequence
+    \item The cumulative sum of the numbers in the sequence
+    \item The sorted version (ascending order) of the numbers in the sequence 
+    \item The median of the sequence
+\end{enumerate}
+
+All numbers should be rounded to four digits after the decimal point. 
+
