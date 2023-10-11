@@ -61,7 +61,7 @@ def find_directions(location: Tuple[int]) -> Tuple[str]:
 
 def get_direction(valid_directions: Tuple[str]) -> str:
     print_directions(valid_directions)
-    return input("Direction: ").lower()
+    return input("Direction:\n").lower()
 
 
 def print_directions(available_directions: Tuple[str]) -> None:
