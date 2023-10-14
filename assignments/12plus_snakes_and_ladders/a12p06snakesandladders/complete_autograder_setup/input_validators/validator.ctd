@@ -1,0 +1,8 @@
+INT(1,49,n) NEWLINE
+REP(n)
+    REGEX("[0-9]{1,2}\s[0-9]{1,2}") NEWLINE
+END
+
+REGEX("[a-zA-Z]{1,10}") NEWLINE
+REGEX("[a-zA-Z]{1,10}") NEWLINE
+EOF

@@ -1,0 +1,70 @@
+\problemname{Snakes and Ladders}
+
+\illustration{0.3}{snakes\_and\_ladders}{Snakes and Ladders}
+
+
+Write a python program that plays the legendary board game,
+\href{https://en.wikipedia.org/wiki/Snakes_and_Ladders}{Snakes and Ladders}.
+
+The game is played on a board with exactly $100$ squares, numbered from $1$ to $100$.
+
+The rules of the game are as follows:
+
+\begin{itemize}
+    \item In each turn, a player rolls a die and moves forward by the same number of squares as indicated by the die.
+    
+    \item After having moved, if the player is located at the bottom of a ladder, the player moves up the ladder.
+    If a player is instead located at the head of a snake, the player moves down to the tail of the snake.
+    
+    \item If a player rolls $6$, then that player gets to roll the die again.
+    It doesn't matter if the player just moved up a ladder or down a snake, they are still entitled to another roll.
+    
+    \item The player who is first to reach the last square wins.
+    
+    \item  If a player is close to the last square and overshoots by rolling a number higher than required, 
+    then the player still moves to square $100$ and wins the game.
+\end{itemize}
+
+The starter code includes a \texttt{main()} function and a function 
+named \texttt{roll\_die()} that shall be used to simulate the rolling of a single $6$-sided die.
+
+\section*{Input}
+
+First the program should prompt the user for $n$, the number of snakes and ladders on the board.
+
+The second part of the input contains $n$ lines,
+where each line $i$ contains two integers $s_i$ and $e_i$, separated by a space,
+indicating which squares on the board are connected by snakes or ladders,
+where $s_i$ designates the starting square and $e_i$ the end square of a particular connection.
+
+If $s_i > e_i$ then the pair is considered to be a snake,
+but if $e_i > s_i$ then it will be a ladder.
+
+Lastly the program should prompt the user for two names, $p_1$ and $p_2$,
+the names of Player $1$ and Player $2$.
+The program then proceeds to play the game following the rules indicated above.
+Player $1$ starts the game.
+
+In the tests $n$ will be restricted to $1 \le n \le 49$.
+It is guaranteed that no snake/ladder will overlap one another.
+The names $p_1$ and $p_2$ will be of length $1 \le |p_1|, |p_2| \le 10$.
+
+\section*{Output}
+
+For each turn of the game the program should output the rolls and locations of the players as such:
+\begin{itemize}
+    \item ``\texttt{\{$p$\} rolled \{$r$\} and is now at \{$d$\}}.''
+\end{itemize}
+where $p$ is the name of the given player, $r$ is the number that came up on the die,
+and $d$ is the number of the destination square where the player ended up after moving according to the die.
+Additionally it should display one of these messages when players land on a start of a snake or a ladder:
+\begin{itemize}
+    \item ``\texttt{Darn! A snake brought \{$p$\} down to square \{$d'$\}}.''
+    \item ``\texttt{Splendid! \{$p$\} climbed a ladder up to square \{$d'$\}}.''
+\end{itemize}
+where $d'$ is the square the snake or ladder took the player to.
+When the game is over, the program should output
+\begin{itemize}
+    \item ``\texttt{\{$p$\} won the game}.''
+\end{itemize}
+

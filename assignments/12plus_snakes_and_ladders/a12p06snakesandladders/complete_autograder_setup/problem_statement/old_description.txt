@@ -1,0 +1,71 @@
+Author: Eiríkur Fannar Torfason
+
+Title: Snakes and Ladders
+
+[https://s3.amazonaws.com/mimirplatform.production/files/8b6df9c2-fb51-4615-8cba-e4fb099c56b0/20200929_215242.jpg]
+
+In this exercise you will implement a program that plays the legendary board game,
+[Snakes and Ladders](https://en.wikipedia.org/wiki/Snakes_and_Ladders).
+The starter code below includes the main() function and a function named roll_die() that shall be used to simulate the rolling of a single 6-sided die.
+
+The game is played on a board with exactly 100 squares, numbered from 1 to 100.
+
+The program should start by asking for n, the number of snakes and ladders on the board.
+It then proceeds to ask n questions regarding which squares on the board are connected by those snakes and ladders.
+For each, it expects two integers, separated by a space, denoting from which square to which square the player will travel.
+If the first number is larger than the second one, then it's consider to be a snake, otherwise a ladder.
+
+Here's an example for a board with just one ladder and one snake:
+
+    Number of snakes and ladders: 2
+    Snake/ladder 1 leads from where to where: 2 38
+    Snake/ladder 2 leads from where to where: 16 6
+
+The program then proceeds to ask for the names of the two players, like so:
+
+    Name of player 1: George
+    Name of player 2: Al
+
+The program then proceeds to play the game. Player 1 starts the game. The rules of the game are as follows:
+
+- In each turn, a player rolls a die and moves forward by the same number of squares as indicated by the die.
+- After having moved, if the player is located at the bottom of a ladder, the player moves up the ladder.
+Similarly, if a player is located at the head of a snake, the player moves down to the tail of the snake.
+- If a player rolls 6, then that player gets to roll the die again.
+It doesn't matter if the player just moved up a ladder or down a snake, they are still entitled to another roll.
+- The player who is first to reach the last square wins.
+- If a player is close to the last square and overshoots by rolling a number higher than required, then the player still moves to square 100 and wins the game.
+
+The program prints out the rolls and locations of the players as they take turns.
+It also mentions when players land on a snake or a ladder.
+When the game is over, it declares who the winner is.
+
+The following excerpt shows what the output should look like:
+
+    George rolled 5 and is now at square 5
+    Al rolled 5 and is now at square 5
+    George rolled 6 and is now at square 11
+    George rolled 3 and is now at square 14
+    Splendid! George climbed a ladder up to square 74
+    Al rolled 5 and is now at square 10
+    George rolled 5 and is now at square 79
+    Darn! A bloody snake brought George down to square 68
+    Al rolled 6 and is now at square 16
+    Al rolled 2 and is now at square 18
+    George rolled 3 and is now at square 71
+    Al rolled 4 and is now at square 22
+    George rolled 6 and is now at square 77
+    George rolled 3 and is now at square 80
+    Al rolled 3 and is now at square 25
+    George rolled 4 and is now at square 84
+    Al rolled 6 and is now at square 31
+    Splendid! Al climbed a ladder up to square 88
+    Al rolled 2 and is now at square 90
+    George rolled 6 and is now at square 90
+    George rolled 3 and is now at square 93
+    Darn! A bloody snake brought George down to square 73
+    Al rolled 1 and is now at square 91
+    George rolled 4 and is now at square 77
+    Al rolled 6 and is now at square 97
+    Al rolled 4 and is now at square 100
+    Al won the game
