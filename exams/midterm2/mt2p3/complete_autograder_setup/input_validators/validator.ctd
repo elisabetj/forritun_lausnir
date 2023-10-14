@@ -1,0 +1,5 @@
+REP(12)
+    INT(0, 100, c) NEWLINE
+END
+
+EOF

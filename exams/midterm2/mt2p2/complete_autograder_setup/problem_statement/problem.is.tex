@@ -1,0 +1,49 @@
+\problemname{Tokenization (40\%)}
+
+Skrifið forrit sem biður notandann að slá inn nafn á skrá sem inniheldur runu af orðum í sérhverri línu.
+Forritið tilreiðir textann, þ.e. brýtur runurnar upp í tóka með því að nota hvít bil sem afmarkara (e. delimiter).
+Ef komma, punktur, upphrópunarmerki eða spurningamerki (, . ! ?) kemur fyrir í lok orðs þá eru þessi greinarmerki meðhöndluð sem sérstakir tókar.
+Gera má ráð fyrir að þetta séu einu mögulegu greinarmerkin og ef þau koma fyrir í inntaksskrá þá er það í lok orðs (ekkert hvítt bil er á undan greinarmerki).
+
+\textbf{Ekki} er leyfilegt að nota import setningu í lausninni nema \texttt{import typing}. \\
+
+Fyrsta dæmi um inntaksskrá, \texttt{data1.txt}:
+\begin{verbatim}
+One Two Three
+Four Five Six
+Seven Eight Nine
+\end{verbatim}
+
+Annað dæmi um inntaksskrá, \texttt{data2.txt}:
+\begin{verbatim}
+One Two Three? Four
+Five, Six Seven Eight!
+Nine Ten.
+\end{verbatim}
+
+Þriðja dæmi um inntaksskrá, \texttt{data3.txt}:
+\begin{verbatim}
+This is a text, 
+with some
+punctuation characters! attached 
+to some words. 
+Right?
+\end{verbatim}
+
+
+\section*{Inntak}
+Inntakið er nafn skrár sem á að tilreiða, t.d. \texttt{data1.txt} eða hvaða annað skráarnafn sem er sem endar á \texttt{.txt}.
+Inntaksskrá inniheldur $1$ til $10$ línur, þar sem sérhver lína inniheldur runu af $1$ til $15$ orðum, og lengd sérhvers orðs er $1$ til $10$ stafir.
+Hér er orð skilgreint sem runa af hástöfum og/eða lágstöfum, mögulega með kommu, punkti, upphrópunarmerki eða spurningarmerki í lok orðsins.
+
+Athugið: Forritið ykkar á ekki að skoða sérstaklega hvort þessi inntaksskilyrði standist, né hafna öðru inntaki. 
+Þetta er bara ykkur til upplýsinga um það inntak sem er prófað í prófunartilvikunum. 
+Þið þurfið sem sagt ekki að búast við inntaki utan þessara takmarkana.
+
+\section*{Úttak}
+Ef ekki er hægt að opna inntaksskrána þá er ekkert úttak myndað.
+Annars samanstendur úttakið af eftirfarandi:
+\begin{enumerate}
+    \item Fjöldi orða í sér línu og sérhvert orð úr inntaksskránni í sér línu þar á eftir.
+    \item Fjöldi tóka í sér línu og sérhver tóki úr inntaksskránni í sér línu þar á eftir. 
+\end{enumerate}

@@ -1,0 +1,5 @@
+This is a text, 
+with some
+punctuation characters! attached 
+to some words. 
+Right?

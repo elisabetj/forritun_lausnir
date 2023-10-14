@@ -1,0 +1,24 @@
+\problemname{Missing Integers (30\%)}
+
+Write a program that extracts integers from an input string and finds all the missing integers $i$ in the range $0 \le i < n$, where $n$ is the maximum integer in the input.
+
+You are \textbf{not} allowed to use any import statement in your solution, except \texttt{import typing}.
+
+\section*{Input}
+The input is one line $l$, containing a sequence of at most 10 tokens separated with a white space.  
+Each token $t$ consists of a sequence of alphanumeric characters, where $1 \le |t| \le 2$.
+
+Note: Your program is not supposed to validate this input, or refuse other input.
+This is just for your information about the input in the test cases. 
+You do not need to expect input that does not meet these restrictions.
+
+\section*{Output}
+The output consists of the following three lines:
+\begin{enumerate}
+    \item The list $T$ of tokens from the input string. Each token $t$ in $T$ is a string.
+    \item The list $A$ of integers extracted from $T$,
+    in the order they appear in $T$.
+    \item The list $B$ of missing integers from $A$.
+    For each member $m$ in $B$,  $0 \le m < n$ where $n$ is the maximum integer in $A$.
+    The numbers in $B$ should appear in ascending order.
+\end{enumerate}

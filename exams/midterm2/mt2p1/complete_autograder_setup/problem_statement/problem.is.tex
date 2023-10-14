@@ -1,0 +1,24 @@
+\problemname{Missing Integers (30\%)}
+
+Skrifið forrit sem dregur heiltölur út úr inntaksstreng og finnur allar tölur $i$ sem vantar á bilinu $0 \le i < n$, þar sem $n$ er hæsta heiltalan í inntakinu.
+
+\textbf{Ekki} er leyfilegt að nota import setningu í lausninni nema \texttt{import typing}.
+
+\section*{Inntak}
+Inntakið er ein lína $l$ sem inniheldur runu af mesta lagi 10 tókum\footnote{Tóki er runa af stöfum sem saman mynda eina merkingarfræðilega einingu.}. Eitt hvítt bil er á milli tóka.    
+Sérhver tóki $t$ samanstendur af runu bókstafa og/eða tölustafa, þar sem $1 \le |t| \le 2$.
+
+Athugið: Forritið ykkar á ekki að skoða sérstaklega hvort þessi inntaksskilyrði standist, né hafna öðru inntaki. 
+Þetta er bara ykkur til upplýsinga um það inntak sem er prófað í prófunartilvikunum. 
+Þið þurfið sem sagt ekki að búast við inntaki utan þessara takmarkana.
+
+\section*{Úttak}
+Úttakið samanstendur af þremur línum:
+\begin{enumerate}
+    \item Lista $T$ af tókum úr inntaksstrengnum. Sérhver tóki $t$ í $T$ er strengur.
+    \item Lista $A$ af heiltölum sem dregnar eru út úr $T$,
+    í þeirri röð sem þær koma fyrir í $T$.
+    \item Lista $B$ af heiltölum sem vantar í $A$.
+    Fyrir sérhvert stak $m$ í $B$ gildir að $0 \le m < n$, þar sem $n$ er hæsta talan í $A$.
+    Tölurnar í $B$ eiga að vera í vaxandi röð.
+\end{enumerate}

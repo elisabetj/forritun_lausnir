@@ -1,0 +1,36 @@
+\problemname{Matrices (30\%)}
+
+Fylki er tvívíð gagnaskipan sem samanstendur af röðum og dálkum.
+
+\begin{equation*}
+    A_{i,j} = 
+    \begin{pmatrix}
+    a_{1,1} & a_{1,2} & \cdots & a_{1,j} \\
+    a_{2,1} & a_{2,2} & \cdots & a_{2,j} \\
+    \vdots  & \vdots  & \ddots & \vdots  \\
+    a_{i,1} & a_{i,2} & \cdots & a_{i,j} 
+    \end{pmatrix}
+\end{equation*}
+
+Gerum ráð fyrir tveimur fylkjum $A = [a_{i,j}]$ og $B = [b_{i,j}]$, þar sem $i,j$ stendur fyrir stakið í röð $i$ og dálki $j$.
+Þá er samlagning fylkjanna, $C = A + B$, skilgreind sem $[c_{i,j}] = [a_{i,j} + b_{i,j}]$. \\
+
+Í þessu verkefni eigið þið að útfæra fylki sem lista af listum.
+Skrifið forrit sem les heiltölur inn í tvö fylki, $A$ og $B$, af stærðinni $2 \times 3$ (2 raðir, 3 dálkar) og býr til nýtt fylki $C = A + B$.
+Sjáið til þess að það sé mjög auðvelt að breyta forritinu þannig að það ráði við aðrar stærðir af fylkjum.
+
+\textbf{Ekki} er leyfilegt að nota import setningu í lausninni nema \texttt{import typing}. \\
+
+\section*{Input}
+Inntakið samanstendur af $12$ línum, þar sem sérhver lína inniheldur eina heiltölu $i$, $1 \le i < 100$.
+Fyrstu $2 \times 3 = 6$ línurnar innihalda gögn fyrir fyrsta fylkið $A$ og næstu 6 línur gögn fyrir hitt fylkið $B$.
+Fyrstu 3 línurnar fyrir sitt hvort fylkið innihalda tölur fyrir fyrstu röðina í fylkinu og næstu 3 línur gögn fyrir seinni röðina í fylkinu.
+
+\section*{Output}
+Úttakið samanstendur af eftirfarandi þremur línum:
+\begin{enumerate}
+    \item Lista $A$ sem stendur fyrir fyrsta inntaksfylkið.
+    \item Lista $B$ sem stendur fyrir seinna inntaksfylkið.
+    \item Lista $C$ sem stendur fyrir $A + B$.
+    
+\end{enumerate}

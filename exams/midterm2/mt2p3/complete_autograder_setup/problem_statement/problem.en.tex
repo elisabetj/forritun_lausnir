@@ -1,0 +1,36 @@
+\problemname{Matrices (30\%)}
+
+A matrix is a two-dimensional array, arranged in rows and columns.
+
+\begin{equation*}
+    A_{i,j} = 
+    \begin{pmatrix}
+    a_{1,1} & a_{1,2} & \cdots & a_{1,j} \\
+    a_{2,1} & a_{2,2} & \cdots & a_{2,j} \\
+    \vdots  & \vdots  & \ddots & \vdots  \\
+    a_{i,1} & a_{i,2} & \cdots & a_{i,j} 
+    \end{pmatrix}
+\end{equation*}
+
+Let us suppose two matrices $A = [a_{i,j}]$ and $B = [b_{i,j}]$, where $i,j$ represents the element in row $i$ and column $j$.
+Then, their addition $C = A + B$ is defined as $[c_{i,j}] = [a_{i,j} + b_{i,j}]$. \\
+
+In this project, you should implement a matrix as a list of lists.
+Write a program that reads integers into two matrices, $A$ and $B$, of dimension $2 \times 3$ (2 rows, 3 columns) and creates a new matrix $C = A + B$.
+Make sure that it is very easy to change the program to handle other dimensions.
+
+You are \textbf{not} allowed to use any import statement in your solution, except \texttt{import typing}. \\
+
+\section*{Input}
+The input consists of $12$ lines, where each line contains an integer $i$, $1 \le i < 100$.
+The first $2 \times 3 = 6$ lines contain integers for the first matrix $A$ and the next 6 lines contain integers for the second matrix $B$.
+The first 3 lines for each matrix contains integers for the first row of the matrix, and the next 3 lines contain integers for the second row of the matrix.
+
+\section*{Output}
+The output consists of the following three lines:
+\begin{enumerate}
+    \item The list $A$ representing the first input matrix.
+    \item The list $B$ representing the second input matrix.
+    \item The list $C$ representing $A + B$.
+    
+\end{enumerate}
