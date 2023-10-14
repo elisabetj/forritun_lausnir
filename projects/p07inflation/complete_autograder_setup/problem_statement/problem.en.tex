@@ -1,0 +1,49 @@
+\problemname{Inflation}
+
+This project is an exercise in file processing, lists and tuples.
+Write a program that reads information about consumer price index from an input file and prints out various information about the data.
+The data in the input files are obtained from the website of Statistics Iceland, \url{https://statice.is/}.
+A typical file (\texttt{data9091.txt}), which contains data for the years 1990 and 1991, looks like this:
+
+\begin{verbatim}
+    1990M01	139.3
+    1990M02	141.5
+    1990M03	142.7
+    1990M04	143.1
+    1990M05	144.4
+    1990M06	145.4
+    1990M07	146.4
+    1990M08	146.8
+    1990M09	146.8
+    1990M10	147.2
+    1990M11	148.2
+    1990M12	148.6
+    1991M01	149.5
+    1991M02	150.0
+    1991M03	150.3
+    1991M04	151.0
+    1991M05	152.8
+    1991M06	154.9
+    1991M07	156.0
+    1991M08	157.2
+    1991M09	158.1
+    1991M10	159.3
+    1991M11	160.0
+    1991M12	159.8    
+\end{verbatim}
+The first column contains year/month in ascending order. The second column contains the index for the corresponding year/month.
+The data in an input file SHOULD be read into a list of tuples. 
+
+\section*{Input}
+The input is a name of a file to be analyzed, e.g. \texttt{data9091.txt} or any other file name ending with \texttt{.txt}.
+Each line in an input file contains a string denoting a year/month and a float denoting the index for the corresponding year/month. 
+These two fields are separated by a whitespace.
+
+\section*{Output}
+When the input file cannot be opened, no output is generated.  Otherwise, the output consists of the following information:
+\begin{enumerate}
+    \item One tuple \texttt{(y, i)} in line for each line in the input file, where \texttt{y} is year/month (a string) and \texttt{i} is the corresponding index (a float).
+    \item One tuple \texttt{(y, f, l)} in line for each year in the input file, where \texttt{y} is a year (an int) and \texttt{f} and \texttt{l} are the first and the last indices, respectively (both values are floats), for year \texttt{y}. 
+    \item One tuple \texttt{(y, i)} in line for each year in the input file, where \texttt{y} is a year (an int) and \texttt{i} is the calculated inflation (a float), rounded to two decimal digits, given the first and the last index for year \texttt{y}.  
+\end{enumerate}
+

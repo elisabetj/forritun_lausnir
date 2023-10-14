@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+USE_SCORING=0
+USE_PARALLEL=0
+. ../../../testdata_tools/gen.sh
+
+use_solution solution_code.py
+
+compile filename_generator.py
+
+sample 01
+sample 02
+sample 03
+
+# Generate files with random data
+for i in {01..10}; do
+python3 random_generator.py $i
+done;
+
+# Generate filenames used in test cases; the last one will not be found
+for i in {01..11}; do
+tc random-$i filename_generator $i
+done;
+

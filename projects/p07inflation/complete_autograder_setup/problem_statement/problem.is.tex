@@ -1,0 +1,49 @@
+\problemname{Inflation}
+
+Þetta verkefni er æfing í skráarvinnslu, listum og túplum.
+Skrifið forrit sem les upplýsingar um vísitölu neysluverðs úr inntaksskrá og skrifar út ýmsar upplýsingar um gögnin.
+Gögnin í inntaksskránum eru fengin af vef Hagstofu Íslands, \url{https://www.hagstofa.is/}.
+Dæmigerð skrá (\texttt{data9091.txt}), sem inniheldur gögn fyrir árin 1990 og 1991, lítur svona út:
+
+\begin{verbatim}
+    1990M01	139.3
+    1990M02	141.5
+    1990M03	142.7
+    1990M04	143.1
+    1990M05	144.4
+    1990M06	145.4
+    1990M07	146.4
+    1990M08	146.8
+    1990M09	146.8
+    1990M10	147.2
+    1990M11	148.2
+    1990M12	148.6
+    1991M01	149.5
+    1991M02	150.0
+    1991M03	150.3
+    1991M04	151.0
+    1991M05	152.8
+    1991M06	154.9
+    1991M07	156.0
+    1991M08	157.2
+    1991M09	158.1
+    1991M10	159.3
+    1991M11	160.0
+    1991M12	159.8    
+\end{verbatim}
+Í fyrsta dálkinum er ár/mánuður í hækkandi tímaröð og í seinni dálkinum er vísitala fyrir viðkomandi ár/mánuð.
+Gögn úr inntaksskrá SKAL lesa inn í lista af túplum.
+
+\section*{Inntak}
+Inntakið er nafnið á skránni sem á að greina, t.d. \texttt{data9091.txt} eða hvaða annað nafn sem er sem endar á \texttt{.txt}.
+Sérhver lína í inntaksskránni samanstendur af streng sem stendur fyrir ár/mánuð og rauntölu sem stendur fyrir vísitölu viðkomandi árs/mánaðar. 
+Hvítt bil (e. whitespace) er á milli þessara tveggja sviða.
+
+\section*{Úttak}
+Þegar ekki er hægt að opna inntaksskrána er úttakið ekki neitt en annars samanstendur það af eftirfarandi upplýsingum:
+\begin{enumerate}
+    \item Ein túpla \texttt{(y, i)} í línu fyrir sérhverja línu í inntaksskránni, þar sem \texttt{y} er ár/mánuðir (strengur) og \texttt{i} er vísitala (rauntala).
+    \item Ein túpla \texttt{(y, f, l)} í línu fyrir sérhvert ár í inntaksskránni, þar sem \texttt{y} er ár (heiltala), \texttt{f} er fyrsta vísitölugildi árs \texttt{y} og \texttt{l} er síðasta vísitölugildið (bæði vísitölugildin rauntölur).
+    \item Ein túpla \texttt{(y, i)} í línu fyrir sérhvert ár í inntaksskránni, þar sem \texttt{y} er ár (heiltala) og \texttt{i} er útreiknuð verðbólga (rauntala), námunduð með tveimur aukastöfum, miðað við fyrsta og síðasta vísitölugildi árs \texttt{y}.  
+\end{enumerate}
+
