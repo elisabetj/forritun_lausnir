@@ -1,0 +1,233 @@
+Title: Random
+
+In the final part, you change the game such that the user neither chooses directions nor chooses to pull a lever.
+Instead, the program itself makes these decisions by using random functionality.
+
+Have a look at this [page](https://docs.python.org/3/library/random.html)
+as an introduction to the random module in Python.
+You only need to use random.seed() and random.choice().
+
+When selecting a random choice for pulling a lever, and for choosing a direction, use:
+
+    random.choice([YES, NO])
+
+and
+
+    random.choice([NORTH, EAST, SOUTH, WEST])
+
+At the start of the program, the user is asked to give a seed to initialize the random number generator.
+After that, the program itself plays the game!
+
+In case you're wondering why we need to set random.seed(seed),
+here's a bit of an explanation, which hopefully helps to illuminate the concept:
+
+Randomness in computers is a bit… difficult.
+There are no dice inside the computer,
+everything is represented in binary and determined by algorithms,
+so there isn’t really any true randomness.
+There are ways to try to imitate randomness,
+such as grabbing values from outside sources that appear somewhat random,
+such as checking the value of some clock at the time a random number is asked for.
+But such methods have their limitations, and for example,
+if a lot of random numbers are required in a short interval of time, clock values might be very similar.
+
+So what we do instead is using so-called “pseudo random number generators” (prng).
+They are essentially a sequence of numbers that appear to be very random (though in reality they are anything but).
+The values of the sequence are calculated using techniques from number theory,
+involving large prime numbers, and division with remainders (modulus).
+Each value of the sequence is calculated based on the previous value of the sequence, using some particular formula.
+So, if you know the formula, and you know the initial value of the sequence, you could calculate the rest of the sequence,
+making the sequence entirely predictable, and not at all random.
+
+You can think of the “seed” as the initial value of the sequence.
+The pseudo random number generator of python (random) uses a specific formula,
+so if we also use a specific seed, then that determines the sequence entirely.
+We can supply a specific seed into the prng by calling random.seed() and giving it the seed value as a parameter.
+
+Normally, we don’t want to fix the seed in this way, as it removes the randomness,
+but in case of the automatic tests in Coding Rooms,
+we need to remove the randomness so that we can compare the output to judge if your code is behaving correctly.
+
+The random.seed() method can accept a str as a parameter, as well as int,
+which has a vastly different result, so take care to convert the input to int.
+
+Hint: Take a look at the starter code below.
+
+When victory has been achieved, the program prints out how many moves (sum of valid and invalid moves) were needed to finish the game.
+
+The question "Play again (y/n)" should still be answered by the user, but not randomly.
+
+Example input/output:
+
+    Input seed: 10
+    You can travel: (N)orth.
+    Direction: n
+    Pull a lever (y/n): n
+    You can travel: (N)orth or (E)ast or (S)outh.
+    Direction: w
+    Not a valid direction!
+    You can travel: (N)orth or (E)ast or (S)outh.
+    Direction: n
+    You can travel: (E)ast or (S)outh.
+    Direction: e
+    Pull a lever (y/n): n
+    You can travel: (E)ast or (W)est.
+    Direction: w
+    You can travel: (E)ast or (S)outh.
+    Direction: s
+    Pull a lever (y/n): y
+    You received 1 coin, your total is now 1.
+    You can travel: (N)orth or (E)ast or (S)outh.
+    Direction: n
+    You can travel: (E)ast or (S)outh.
+    Direction: w
+    Not a valid direction!
+    You can travel: (E)ast or (S)outh.
+    Direction: s
+    Pull a lever (y/n): y
+    You received 1 coin, your total is now 2.
+    You can travel: (N)orth or (E)ast or (S)outh.
+    Direction: e
+    Pull a lever (y/n): n
+    You can travel: (S)outh or (W)est.
+    Direction: n
+    Not a valid direction!
+    You can travel: (S)outh or (W)est.
+    Direction: w
+    Pull a lever (y/n): y
+    You received 1 coin, your total is now 3.
+    You can travel: (N)orth or (E)ast or (S)outh.
+    Direction: s
+    You can travel: (N)orth.
+    Direction: w
+    Not a valid direction!
+    You can travel: (N)orth.
+    Direction: w
+    Not a valid direction!
+    You can travel: (N)orth.
+    Direction: s
+    Not a valid direction!
+    You can travel: (N)orth.
+    Direction: s
+    Not a valid direction!
+    You can travel: (N)orth.
+    Direction: w
+    Not a valid direction!
+    You can travel: (N)orth.
+    Direction: e
+    Not a valid direction!
+    You can travel: (N)orth.
+    Direction: s
+    Not a valid direction!
+    You can travel: (N)orth.
+    Direction: s
+    Not a valid direction!
+    You can travel: (N)orth.
+    Direction: e
+    Not a valid direction!
+    You can travel: (N)orth.
+    Direction: w
+    Not a valid direction!
+    You can travel: (N)orth.
+    Direction: e
+    Not a valid direction!
+    You can travel: (N)orth.
+    Direction: w
+    Not a valid direction!
+    You can travel: (N)orth.
+    Direction: w
+    Not a valid direction!
+    You can travel: (N)orth.
+    Direction: n
+    Pull a lever (y/n): y
+    You received 1 coin, your total is now 4.
+    You can travel: (N)orth or (E)ast or (S)outh.
+    Direction: e
+    Pull a lever (y/n): y
+    You received 1 coin, your total is now 5.
+    You can travel: (S)outh or (W)est.
+    Direction: e
+    Not a valid direction!
+    You can travel: (S)outh or (W)est.
+    Direction: s
+    You can travel: (N)orth.
+    Direction: s
+    Not a valid direction!
+    You can travel: (N)orth.
+    Direction: e
+    Not a valid direction!
+    You can travel: (N)orth.
+    Direction: s
+    Not a valid direction!
+    You can travel: (N)orth.
+    Direction: w
+    Not a valid direction!
+    You can travel: (N)orth.
+    Direction: w
+    Not a valid direction!
+    You can travel: (N)orth.
+    Direction: w
+    Not a valid direction!
+    You can travel: (N)orth.
+    Direction: n
+    Pull a lever (y/n): n
+    You can travel: (S)outh or (W)est.
+    Direction: e
+    Not a valid direction!
+    You can travel: (S)outh or (W)est.
+    Direction: e
+    Not a valid direction!
+    You can travel: (S)outh or (W)est.
+    Direction: w
+    Pull a lever (y/n): y
+    You received 1 coin, your total is now 6.
+    You can travel: (N)orth or (E)ast or (S)outh.
+    Direction: n
+    You can travel: (E)ast or (S)outh.
+    Direction: n
+    Not a valid direction!
+    You can travel: (E)ast or (S)outh.
+    Direction: w
+    Not a valid direction!
+    You can travel: (E)ast or (S)outh.
+    Direction: s
+    Pull a lever (y/n): y
+    You received 1 coin, your total is now 7.
+    You can travel: (N)orth or (E)ast or (S)outh.
+    Direction: n
+    You can travel: (E)ast or (S)outh.
+    Direction: e
+    Pull a lever (y/n): n
+    You can travel: (E)ast or (W)est.
+    Direction: s
+    Not a valid direction!
+    You can travel: (E)ast or (W)est.
+    Direction: e
+    You can travel: (S)outh or (W)est.
+    Direction: n
+    Not a valid direction!
+    You can travel: (S)outh or (W)est.
+    Direction: n
+    Not a valid direction!
+    You can travel: (S)outh or (W)est.
+    Direction: w
+    Pull a lever (y/n): y
+    You received 1 coin, your total is now 8.
+    You can travel: (E)ast or (W)est.
+    Direction: e
+    You can travel: (S)outh or (W)est.
+    Direction: s
+    Pull a lever (y/n): n
+    You can travel: (N)orth or (S)outh.
+    Direction: w
+    Not a valid direction!
+    You can travel: (N)orth or (S)outh.
+    Direction: w
+    Not a valid direction!
+    You can travel: (N)orth or (S)outh.
+    Direction: e
+    Not a valid direction!
+    You can travel: (N)orth or (S)outh.
+    Direction: s
+    Victory! Total coins 8. Moves 57.
+    Play again (y/n): n

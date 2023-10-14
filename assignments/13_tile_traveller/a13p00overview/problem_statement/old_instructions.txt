@@ -1,0 +1,14 @@
+In this assignment, you extend the functionality of the TileTraveller program you implemented earlier, in Assignment 8.
+
+We recommend that you start with the solution given on
+[Github](https://github.com/reykjavik-university/2023-3-T-111-PROG/blob/main/assignments/08_tile_traveller/a08p01tiletraveller/solution_code.py)
+(also included in the starter code below, for your convenience)
+and make sure that you study it and understand how it works.
+
+As in the first TileTraveller project, you should work on this in a group of two.
+Apply pair (or tri) programming, one student programs while the other one(s) follows and comments on the code, and then you switch roles (several times).
+You should use git while you work on the project, i.e. apply commands like git add, git commit, git log, git push and git pull.
+
+This is our grid of tiles:
+
+[https://s3.amazonaws.com/mimirplatform.production/files/a7221d82-6371-4508-85f2-01440ddcef3a/grid.jpg]

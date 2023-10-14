@@ -1,0 +1,57 @@
+Title: Play multiple times
+
+In the next version, the program should allow the user to play the game multiple times.
+Once the player obtains a victory, the user is asked if he/she wants to play again.
+As long as the answer is ‘y’ or ‘Y’, the game continues.
+Note that when the game is played again, the coin counter is reset.
+
+In this part, you need to make sure that your main program is short,
+i.e. that it only contains the main loop and a call to a play() function.
+
+Example run:
+
+    You can travel: (N)orth.
+    Direction: n
+    Pull a lever (y/n): y
+    You received 1 coin, your total is now 1.
+    You can travel: (N)orth or (E)ast or (S)outh.
+    Direction: e
+    Pull a lever (y/n): y
+    You received 1 coin, your total is now 2.
+    You can travel: (S)outh or (W)est.
+    Direction: w
+    Pull a lever (y/n): n
+    You can travel: (N)orth or (E)ast or (S)outh.
+    Direction: n
+    You can travel: (E)ast or (S)outh.
+    Direction: e
+    Pull a lever (y/n): y
+    You received 1 coin, your total is now 3.
+    You can travel: (E)ast or (W)est.
+    Direction: e
+    You can travel: (S)outh or (W)est.
+    Direction: s
+    Pull a lever (y/n): n
+    You can travel: (N)orth or (S)outh.
+    Direction: s
+    Victory! Total coins 3.
+    Play again (y/n): y
+    You can travel: (N)orth.
+    Direction: n
+    Pull a lever (y/n): y
+    You received 1 coin, your total is now 1.
+    You can travel: (N)orth or (E)ast or (S)outh.
+    Direction: n
+    You can travel: (E)ast or (S)outh.
+    Direction: e
+    Pull a lever (y/n): y
+    You received 1 coin, your total is now 2.
+    You can travel: (E)ast or (W)est.
+    Direction: e
+    You can travel: (S)outh or (W)est.
+    Direction: s
+    Pull a lever (y/n): n
+    You can travel: (N)orth or (S)outh.
+    Direction: s
+    Victory! Total coins 2.
+    Play again (y/n): n

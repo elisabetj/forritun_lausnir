@@ -1,0 +1,42 @@
+Title: Pulling levers for coins
+
+Add the following functionality to tiles (1,2), (2,2), (2,3) and (3,2):
+
+When the player enters these tiles, offer them the choice to pull a lever.
+If they choose to pull the lever (answering either with ‘y’ or ‘Y’/ ‘N’ or ‘n’), they are to be told that they received one coin.
+
+There is no limit on how often the player can get a coin from each lever.
+But they should only be presented with the option to pull a lever once each time they are in a particular room.
+So if they want to be asked again, they must first go away (to another tile) and come back.
+Picking an invalid direction (walking into a wall) does not count as leaving the room.
+
+In addition, you need to keep track of the number of coins the player has and display that before showing the available actions.
+
+When a victory has been reached, the program also prints out how many coins the player retrieved.
+
+Example run:
+
+    You can travel: (N)orth.
+    Direction: s
+    Not a valid direction!
+    You can travel: (N)orth.
+    Direction: n
+    Pull a lever (y/n): y
+    You received 1 coin, your total is now 1.
+    You can travel: (N)orth or (E)ast or (S)outh.
+    Direction: N
+    You can travel: (E)ast or (S)outh.
+    Direction: w
+    Not a valid direction!
+    You can travel: (E)ast or (S)outh.
+    Direction: E
+    Pull a lever (y/n): n
+    You can travel: (E)ast or (W)est.
+    Direction: e
+    You can travel: (S)outh or (W)est.
+    Direction: s
+    Pull a lever (y/n): y
+    You received 1 coin, your total is now 2.
+    You can travel: (N)orth or (S)outh.
+    Direction: S
+    Victory! Total coins 2.
