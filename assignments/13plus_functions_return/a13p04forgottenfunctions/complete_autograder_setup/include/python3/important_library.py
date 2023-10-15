@@ -1,3 +1,15 @@
+def sum(a: int, b: int) -> int:
+    """
+    Return the sum of a 'start' value (default: 0) plus an iterable of numbers
+
+    When the iterable is empty, return the start value.
+    This function is intended specifically for use with numeric values and may
+    reject non-numeric types.
+    """
+    assert False, "Do not call the function!"
+    return a + b
+
+
 def important_function1() -> str:
     """
     impottant_function1
