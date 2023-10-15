@@ -1,0 +1,28 @@
+Author: Eiríkur Fannar Torfason
+
+Title: Shuffle
+
+Write a function named shuffle that takes a list as input and returns a shuffled copy of it.
+
+The method shall have two parameters:
+
+1. original_list of the type list.
+2. start_from_back of the type bool with a default value of False.
+
+Let n denote the length of the list. The shuffled order is then as follows:
+    0, n-1, 1, n-2, 2 ... and so forth
+
+If start_from_back == True then the shuffled order is:
+    n-1, 0, n-2, 1, n-3 ... and so forth
+
+Examples:
+["a", "b", "c", "d", "e"] becomes ["a", "e", "b", "d", "c"] and
+["a", "b", "c", "d"] becomes ["a", "d", "b", "c"] when shuffled.
+
+If start_from_back is True, then
+["a", "b", "c", "d", "e"] becomes ["e", "a", "d", "b", "c"] and
+["a", "b", "c", "d"] becomes ["d", "a", "c", "b"] when shuffled.
+
+The function must include type hints (annotations) for both of its parameters and its return value.
+
+The function must not modify the original list.

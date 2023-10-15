@@ -1,0 +1,21 @@
+Author: Eiríkur Fannar Torfason
+
+Title: Function info
+
+Write a function named get_function_info that takes another function f as an input and returns a string containing the name of f and its docstring.
+
+Examples of use from an IPython session:
+
+    In [2]: import math
+
+    In [3]: print(get_function_info(math.sqrt))
+    Name: sqrt
+    ----------------------------------------
+    Return the square root of x.
+
+    In [4]: print(get_function_info(math.pow))
+    Name: pow
+    ----------------------------------------
+    Return x**y (x to the power of y).
+
+Hint: see chapter 8.3

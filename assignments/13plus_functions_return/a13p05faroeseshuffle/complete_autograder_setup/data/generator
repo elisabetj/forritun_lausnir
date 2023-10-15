@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+. ../../../../testdata_tools/gen.sh
+
+use_solution solution_code.py
+
+compile random_generator.py
+
+sample 01
+sample 02
+sample 03
+sample 04
+
+group GA-small-top-even 20
+tc 02
+for i in {01..10}; do
+    tc GA-small-top-even-$i random_generator 1 52 top 0
+done;
+
+group GB-small-bottom-even 20
+tc 04
+for i in {01..10}; do
+    tc GB-small-bottom-even-$i random_generator 1 52 bottom 0
+done;
+
+group GC-small-top-odd 20
+tc 01
+for i in {01..10}; do
+    tc GC-small-top-odd-$i random_generator 1 52 top 1
+done;
+
+group GD-small-bottom-odd 20
+tc 03
+for i in {01..10}; do
+    tc GD-small-bottom-odd-$i random_generator 1 52 bottom 1
+done;
+
+group GE-large-top-even 5
+include_group GA-small-top-even
+for i in {01..05}; do
+    tc GE-large-top-even-$i random_generator 299000 300000 top 0
+done;
+
+group GF-large-bottom-even 5
+include_group GB-small-bottom-even
+for i in {01..05}; do
+    tc GF-large-bottom-even-$i random_generator 299000 300000 bottom 0
+done;
+
+group GG-large-top-odd 5
+include_group GC-small-top-odd
+for i in {01..05}; do
+    tc GG-large-top-odd-$i random_generator 299000 300000 top 1
+done;
+
+group GH-large-bottom-odd 5
+include_group GD-small-bottom-odd
+for i in {01..05}; do
+    tc GH-large-bottom-odd-$i random_generator 299000 300000 bottom 1
+done;
+

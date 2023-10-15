@@ -1,0 +1,7 @@
+REGEX("(top|bottom)") NEWLINE
+INT(1, 300000, n) NEWLINE
+REPI(i, n, SPACE)
+    INT(1, n, deck[n])
+END NEWLINE
+ASSERT(UNIQUE(deck))
+EOF

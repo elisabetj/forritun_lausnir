@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+USE_SCORING=0
+. ../../../../testdata_tools/gen.sh
+
+use_solution for_data/main.py cpython3
+
+compile function_selector.py cpython3
+
+sample 01
+
+for i in {01..08}; do
+    tc function-$i function_selector $i
+done;

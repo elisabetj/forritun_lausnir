@@ -1,0 +1,43 @@
+\problemname{Faroese Shuffle}
+
+Torleyg adores magic tricks.
+She hopes to become a great illusionist one day.
+She is currently studying card tricks.
+
+Many of these tricks require shuffling the deck of cards in a particular way to prepare the trick.
+A commonly used one is the Faro shuffle, which splits a sequence into two halves at the middle.
+The two halves are then merged by taking a card from the top of each half, alternating between the two decks each time.
+
+Torleyg wants to make her own shuffle which she will base on the Faro shuffle.
+Instead of taking cards from top of both decks, she will take cards from the top of the top half, but the bottom of the bottom half.
+She also wants to have her method a little more flexible, so sometimes she will start by taking a card from the bottom half, thus changing the result of the shuffle.
+
+She started performing the shuffle by hand on a regular $52$ card deck without much trouble.
+However, on her last birthday her grandma gave her an amazing, but ultimately troublesome gift.
+Torleyg received a deck of $N$ cards where each card was marked with an integer.
+She tried to shuffle this special deck but was unable to do so.
+Can you help Torleyg shuffle her special deck?
+
+\section*{Input}
+Input consists of three lines.
+The first line contains either the string \texttt{"top"} or \texttt{"bottom"}, specifying which half the first card is taken from.
+The second line contains one integer $N$, the number of cards in the deck.
+The third line contains $N$ space separated integers, which represent the labels on the cards.
+Each label will be between $1$ and $N$, inclusive, and will appear exactly once.
+
+\section*{Output}
+Output the labels of the cards, separated by spaces, in the order they end up after the shuffle.
+
+\section*{Scoring}
+\begin{tabular}{|l|l|l|}
+\hline
+Group & Points & Constraints \\ \hline
+1     & 20   & The shuffle starts on the top half, $1 \leq N \leq 52$ and $N$ is even. \\ \hline
+2     & 20   & The shuffle starts on the bottom half, $1 \leq N \leq 52$ and $N$ is even. \\ \hline
+3     & 20   & The shuffle starts on the top half, $1 \leq N \leq 52$ and $N$ is odd. \\ \hline
+4     & 20   & The shuffle starts on the bottom half, $1 \leq N \leq 52$ and $N$ is odd. \\ \hline
+5     & 5   & The shuffle starts on the top half, $1 \leq N \leq 300\,000$ and $N$ is even. \\ \hline
+6     & 5   & The shuffle starts on the bottom half, $1 \leq N \leq 300\,000$ and $N$ is even. \\ \hline
+7     & 5   & The shuffle starts on the top half, $1 \leq N \leq 300\,000$ and $N$ is odd. \\ \hline
+8     & 5   & The shuffle starts on the bottom half, $1 \leq N \leq 300\,000$ and $N$ is odd. \\ \hline
+\end{tabular}
