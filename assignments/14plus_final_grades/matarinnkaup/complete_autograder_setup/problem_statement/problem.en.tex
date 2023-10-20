@@ -1,0 +1,36 @@
+\problemname{Matarinnkaup}
+\illustration{0.3}{salad}{Image from \href{https://commons.wikimedia.org/wiki/File:Chicken_salad_on_striped_tablecloth.jpg}{commons.wikimedia.org}}
+
+A lot of food and drinks were sold at Nauthóll over the last few days. Now it is time
+to take inventory and figure out necessary purchases. This job falls to you.
+Given the recipes used at Nauthóll and all receipts from the past few days, how much was
+used of each ingredient?
+
+\section*{Input}
+The first line of the input contains two integers $1 \leq u, k \leq 10\,000$ where
+$u$ is the number of recipes and $k$ is the number of receipts. Next there will be $u$
+descriptions of recipes. The first line of each description contains a string giving the
+name of the dish. Dish names are unique. The next line contains a single integer $1 \leq h \leq 10\,000$,
+the number of ingredients that the recipe calls for. Finally there are $h$ lines, each containing the
+name of an ingredient and then an integer $1 \leq x \leq 500$. This means there are $x$ instances of
+the ingredient in the dish. Then there will be $k$ descriptions of receipts. Each starts with an integer
+$1 \leq n \leq 10\,000$, the number of dishes on the receipt. Then follow $n$ lines, each of them containing
+the name of a dish and an integer $1 \leq y \leq 500$. This means that $y$ instances of the dish were
+purchased. The names of the dishes will always have appeared in the input above. Each name in the input
+is at most $20$ characters and contains only lower case English letters and underscores. The total number
+of names in the input will be at most $100\,000$.
+
+\section*{Output}
+Print how much is needed of every ingredient, one ingredient per line. On each line the name of the ingredient,
+a space and an integer denoting how much is needed should be printed. The ingredients should be printed in
+alphabetical order. Underscores are considered to go before all the letters in this order.
+If an ingredient isn't needed, it shouldn't be printed.
+
+\section*{Scoring}
+\begin{tabular}{|l|l|l|}
+\hline
+Group & Points & Constraints \\ \hline
+1     & 50   & There are at most $500$ names in the input. \\ \hline
+2     & 50   & No further constraints. \\ \hline
+\end{tabular}
+
