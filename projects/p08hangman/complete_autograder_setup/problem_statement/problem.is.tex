@@ -1,0 +1,53 @@
+\problemname{Hangman}
+
+Skrifið forrit sem gerir notanda kleift að spila leikinn Hangman.
+Notandinn slær inn nafn skráar, sem inniheldur 20 ensk orð, og heiltölu sem er notuð til að velja tilheyrandi orð úr skránni sem leyniorðið.
+Síðan reynir notandinn að finna leyniorðið með því að giska endurtekið upp á einstaka stafi. 
+Forritið biður um stafainntak þangað til búið er að giska á alla stafi leyniorðsins eða að notandinn hefur notað 12 tilraunir.
+
+Dæmigerð inntaksskrá (\texttt{data1.txt}) lítur svona út: 
+
+\begin{verbatim}
+lion
+umbrella
+window
+computer
+glass
+juice
+chair
+desktop
+laptop
+dog
+cat
+lemon
+cabel
+mirror
+hat
+golf
+chess
+car
+conference
+test   
+\end{verbatim}
+
+
+\section*{Inntak}
+Fyrsta lína inntaksins inniheldur nafn skráar sem geymir 20 ensk nafnorð í lágstöfum. 
+Lengd sérhvers orðs er $\le 15$. 
+Önnur lína inntaksins inniheldur heiltölu $i$, $1 \le i \le 20$, sem forritið notar til að velja orð nr. $i$ sem leyniorðið.
+Sérhver lína nr. $n > 2$ inniheldur einn staf sem er ágiskun notandans í ítrun $n-2$.
+
+\section*{Úttak}
+Þegar ekki er hægt að opna inntaksskrána þá skrifar forritið ekkert út.
+Annars, í sérhverri ítrun, er úttakið:
+\begin{itemize}
+    \item \texttt{"Secret word: - - - \ldots"} (eitt bandstrik eða réttur stafur fyrir sérhvern staf í leyniorðinu)
+    \item \texttt{"Guess \{i\}/12"} (þar sem $1 \le i \le 12$)
+    \item \texttt{"Correct letter \{c\}!"} eða \texttt{"Incorrect letter \{c\}!"} (þar sem \texttt{c} táknar stafinn í síðustu ágiskun)
+\end{itemize}
+
+Að lokum er síðasta línan í úttakinu: 
+\begin{itemize}
+    \item \texttt{"You won!"} eða
+    \item \texttt{"You lost! The secret word was - - - \ldots"} (ef notandinn giskar 12 sinnum án þess að finna leyniorðið)
+\end{itemize}

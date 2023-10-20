@@ -1,0 +1,53 @@
+\problemname{Hangman}
+
+Write a program that allows the user to play the game Hangman. 
+The user inputs a file name containing 20 English words and an integer which is used to select the corresponding word from the file as the secret word.
+Thereafter, the user tries to guess the secret word by iteratively suggesting its individual letters. 
+The program accepts letter inputs until all the letters of the secret word have been guessed or the user has guessed 12 times.
+%If the user guesses a letter which has already been guessed before, the total count of guesses is not increased.
+
+A typical input file (\texttt{data1.txt}) looks like this: 
+
+\begin{verbatim}
+lion
+umbrella
+window
+computer
+glass
+juice
+chair
+desktop
+laptop
+dog
+cat
+lemon
+cabel
+mirror
+hat
+golf
+chess
+car
+conference
+test   
+\end{verbatim}
+
+
+\section*{Input}
+The first line of the input contains the name of a file containing 20 English lowercase nouns, each of length $\le 15$. 
+The second line of the input contains an integer $i$, $1 \le i \le 20$, signifying that the program should select word no. $i$ as the secret word.
+Each line no. $n > 2$ contains a single letter, which is the user's guess in iteration $n-2$.
+
+\section*{Output}
+When the input file cannot be opened, no output is generated. 
+Otherwise, in each iteration, the output is:
+\begin{itemize}
+    \item \texttt{"Secret word: - - - \ldots"} (one hyphen or correct letter for each letter in the secret word)
+    \item \texttt{"Guess \{i\}/12"} (where $1 \le i \le 12$)
+    \item \texttt{"Correct letter \{c\}!"} or \texttt{"Incorrect letter \{c\}!"} (where \texttt{c} is the most recently guessed symbol)
+\end{itemize}
+
+Finally, the last line of the output is either:
+\begin{itemize}
+    \item \texttt{"You won!"} or
+    \item \texttt{"You lost! The secret word was - - - \ldots"} (if the user guessed 12 times without guessing the secret word)
+\end{itemize}
