@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+. ../../../../testdata_tools/gen.sh
+
+use_solution solution_code.py
+
+compile random_generator.py
+
+
+sample 01
+sample 02
+sample 03
+sample 04
+
+group GA-sorted-unique 10  # Already in sorted order, so students can pass without sorting.
+# Note that python dictionaries remember insertion order since 3.7,
+# see https://stackoverflow.com/a/39980744
+tc 01  # Two insertions, but already in correct order.
+tc 02  # Only one insertion
+for i in {05..10}; do
+    tc GA-len-1-$i random_generator 1 10 0 0 sorted
+done;
+
+
+group GB-unsorted-unique 25  # No repeat, so students can pass without handling overwrite correctly.
+include_group GA-sorted-unique
+tc 03  # Two inserts, in reverse order, so this tests sorting.
+for i in {11..15}; do
+    tc random-$i random_generator 2 10 0 0 random
+done;
+
+group GC-sorted-with-repeats 30
+include_group GA-sorted-unique
+for i in {16..20}; do
+    tc random-$i random_generator 1 20 1 10 sorted
+done;
+
+group GD-unsorted-with-repeats 35
+include_group GA-sorted-unique
+include_group GB-unsorted-unique
+include_group GC-sorted-with-repeats
+tc 04
+for i in {21..25}; do
+    tc random-$i random_generator 1 20 1 4 random
+done;
+for i in {26..30}; do
+    tc random-$i random_generator 11 20 5 10 random
+done;
+for i in {31..35}; do
+    tc random-$i random_generator 2 10 11 20 random
+done;
+tc edge-1 random_generator 1 1 29 29 sorted

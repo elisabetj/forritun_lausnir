@@ -1,0 +1,30 @@
+Title: Gradebook
+
+Write a program that repeatedly asks for a student email and a grade.
+The email and grade should be stored as a key-value pair in a dictionary.
+The grades should be stored in a list inside the dictionary,
+so if the same email is entered twice, the new grade should be appended to the list.
+
+In the end, the program should display each email entered along with the average grade corresponding to the email,
+the emails should be sorted in alphabetical order.
+The grade should be rounded to 2 decimal places.
+
+Example:
+
+    Enter the student email: JohnD@ru.is
+    Enter the students grade: 3
+    Would you like to add another grade (y/n)?: y
+    Enter the student email: JohnD@ru.is
+    Enter the students grade: 10
+    Would you like to add another grade (y/n)?: y          
+    Enter the student email: JohnD@ru.is
+    Enter the students grade: 7
+    Would you like to add another grade (y/n)?: y
+    Enter the student email: MaryC@ru.is
+    Enter the students grade: 9
+    Would you like to add another grade (y/n)?: y
+    Enter the student email: MaryC@ru.is
+    Enter the students grade: 8
+    Would you like to add another grade (y/n)?: n
+    JohnD@ru.is: 6.67
+    MaryC@ru.is: 8.5

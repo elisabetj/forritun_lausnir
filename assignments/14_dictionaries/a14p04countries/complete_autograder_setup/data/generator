@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+USE_SCORING=0
+. ../../../../testdata_tools/gen.sh
+
+use_solution solution_code.py
+
+compile random_generator.py
+
+sample 01
+sample 02
+sample 03
+
+
+for i in {01..05}; do
+    tc no-wrong-one-query-$i random_generator 0 0 1 1
+done;
+
+for i in {06..10}; do
+    tc no-wrong-few-queries-$i random_generator 0 0 2 20
+done;
+
+for i in {11..15}; do
+    tc one-wrong-$i random_generator 1 1 1 20
+done;
+
+for i in {16..20}; do
+    tc few-wrong-$i random_generator 2 10 1 20
+done;

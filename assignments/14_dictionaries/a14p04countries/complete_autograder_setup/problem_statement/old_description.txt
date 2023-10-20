@@ -1,0 +1,39 @@
+Title: Countries
+
+Write a program that reads in a text file supplied by the user,
+which contains all (or a subset of) the countries in the world.
+The program should repeatedly prompt the user to enter a file name,
+until a valid file name is entered.
+
+The program should create a dictionary where the key is an integer
+representing the length of a country name and the value is a list of country names
+i.e. {16 : ["Marshall Islands", "Papua New Guinea"]}
+The program should then repeatedly prompt the user for an integer,
+and display all countries with that length separated by commas.
+
+Example Input/Output:
+
+    Enter a filename: Atlantis
+    File Atlantis not found!
+    Enter a filename: countries.txt
+    Enter the length you want to search for: 4
+    Chad, Cuba, Fiji, Iran, Iraq, Laos, Mali, Oman, Peru, Togo
+    Would you like to continue (y/n)?: y
+    Enter the length you want to search for: 16
+    Marshall Islands, Papua New Guinea, St Kitts & Nevis
+    Would you like to continue (y/n)?: n
+
+
+countries.txt looks like this:
+
+    Afghanistan
+    Albania
+    Algeria
+    Andorra
+    Angola
+    ...
+    Yemen
+    Zambia
+    Zimbabwe
+
+Note: countries.txt is supplied in the "Template" section.

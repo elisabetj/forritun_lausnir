@@ -1,0 +1,91 @@
+\problemname{The Meaning of Dictionary}
+
+Dr. Siggi is an eccentric professor at a university in Iceland,
+and he fancies himself a bit of a wordsmith.
+Since 1964 he has been maintaining on his old mainframe
+a dictionary that includes some words of his own making,
+in addition to the wide-spread vocabulary.
+However, the unthinkable has happened; his mainframe has stopped working,
+and he is at risk of forgetting the meaning of all his made up words,
+unless his dictionary can be salvaged and preserved for posterity.
+Dr. Siggi has utilized his immense influence within the Icelandic academic sphere
+to assemble the best problem solvers in Icelandic academia, and now, you are here.
+Here are your instructions from Siggi.
+
+Write a program that uses a Python dictionary to implement a dictionary.
+The program repeatedly reads in a pair of inputs containing a word and its meaning,
+and stores the definition of the word into the dictionary as a key-value pair.
+Note: if the word is already in the dictionary, the old value should be overwritten.
+After every word-definition pair, the program recives an input indicating whether there are more pairs forthcoming.
+If the input is not \texttt{n} the process is repeated until it gets the input \texttt{n} after an insertion.
+Finally, the program should display the words in the dictionary in alphabetical order,
+along with the corresponding definitions of each.
+
+
+\section*{Input}
+
+% First, a general description of the input,
+% explaining to students how to interpret
+% what they are seeing in the samples below.
+The lines in the input will come in threes,
+where in each block of three lines,
+the first line will contain a word,
+the second line will contain its meaning,
+and the third indicates whether there is more to come.
+
+% Then a more precise description, leaving nothing to doubt.
+Formally, the input will consist of a sequence $l = (l_1, \dots, l_{3n})$ of $3n$ lines.
+For each $i$ with $1 \le i \le n$,
+line $l_{3i - 2}$ will contain a word $w_i$,
+line $l_{3i - 1}$ will contain its associated definition $d_i$,
+and line $l_{3i}$ will contain a response $r_i$
+indicating whether this is the last block or not.
+So line $l_{3n}$ will consist of the single letter \texttt{n},
+but for any $i < n$, line $l_{3i}$ will contain something different.
+
+% And finally, assurances about what to expect from the test cases.
+% Here we mention what we will restrict the input to in the tests,
+% to clarify that they do not need to worry about input outside those restrictions.
+% This does not mean their solutions should validate the input,
+% or reject input that does not satisfy those restrictions.
+In the tests, $n$ will be restricted to $n \le 30$.
+All lines will contain only letters from the English alphabet,
+as well as punctuation, spaces and possibly some numbers.
+And for all $i \in \{1, \dots, n\}$,
+the response $r_i$ will be either \texttt{y} or \texttt{n}.
+In particular, $r_n$ will be \texttt{n}
+and for all $i < n$, the response $r_i$ will be \texttt{y}.
+
+
+\section*{Output}
+
+% First, a general description of the output,
+% explaining to students how to interpret
+% what they are seeing in the samples below.
+The output should display,
+in alphabetical order,
+the words from the input,
+each followed by the last given definition for that word,
+on a separate line,
+and indented by $4$ spaces.
+There should be a blank line preceding each word,
+to separate the pairs.
+
+% Then a more precise description, leaving nothing to doubt.
+Formally, the output should consist of
+a sequence $\lambda = (\lambda_1, \dots, \lambda_{3m})$ of $3m$ lines,
+where $m$ is the number of \emph{different} words in the input.
+So $1 \le m \le n$.
+
+Let $s = (s_1, \dots, s_m)$ be a sequence of
+the distinct words in the set $\{w_1, \dots, w_n\}$,
+sorted in alphabetical order.
+For each $i$ with $1 \le i \le m$,
+line $\lambda_{3i-2}$ should be blank,
+line $\lambda_{3i-1}$ should contain the word $s_i$,
+and line $\lambda_{3i}$ should start wit $4$ spaces,
+followed by the definition of the word $s_i$
+that was given the last time the word $s_i$ appeared in the input.
+To be precise, let $j = \max\{k\mid w_k = s_i\}$.
+Then line $\lambda_{3i}$ should contain the definition $d_j$,
+preceded by $4$ spaces.

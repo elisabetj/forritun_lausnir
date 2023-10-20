@@ -1,0 +1,92 @@
+\problemname{Gradebook}
+
+Write a program that repeatedly asks for a student email and a grade,
+and when all grades have been entered,
+possibly multiple grades for the same email,
+the program calculates the average grade corresponding to each email.
+
+You should use a dictionary to keep track of the grades corresponding to each email,
+keeping a list of grades as a value for each email that is given,
+so if the same email is entered twice, the new grade should be appended to the list.
+
+
+\section*{Input}
+
+% First, a general description of the input,
+% explaining to students how to interpret
+% what they are seeing in the samples below.
+The input will come in triples,
+where in each triple,
+the first line will be an email address,
+the second line will be a grade
+and the third line will be a response
+indicating whether another email-grade pair will be entered.
+
+\subsection*{Formal input specifications}
+% Then a more precise description, leaving nothing to doubt.
+Formally, the input will consist of $3n$ lines,
+$l_1, \dots, l_{3n}$,
+where $n$ is the number of grades that will be entered, with $1 \le n$.
+For each $i \in \{1, \dots, n\}$,
+line $l_{3i - 2}$ will contain a string containing an email address $e_i$,
+line $l_{3i - 1}$ will contain an integer denoting a grade $g_i$,
+and line $l_{3i}$ will contain a string giving a reply $r_i$
+to the question whether more grades will follow.
+The reply $r_n$ will consist of the string \texttt{n},
+indicating that no more grades are forthcoming.
+All other replies $r_j$ for $j < n$
+will be something other than \texttt{n}.
+
+So line $l_1$ will contain an email $e_1$,
+line $l_2$ a grade $g_1$,
+line $l_3$ a reply $r_1$,
+line $l_4$ an email $e_2$
+and so on,
+until the reply $r_n$ will be \texttt{n}.
+
+\subsection*{Test case restrictions}
+% And finally, assurances about what to expect from the test cases.
+% Here we mention what we will restrict the input to in the tests,
+% to clarify that they do not need to worry about input outside those restrictions.
+% This does not mean their solutions should validate the input,
+% or reject input that does not satisfy those restrictions.
+In the tests, $n$ will be restricted to
+$n \le 1\,000\,000$.
+The length of each email address $e_i$ will be restricted to
+$5 \le |e_i| \le 20$.
+Each grade $q_j$ will be an integer restricted to $0 \le g_i \le 10$,
+and each reply $r_j$ will be either \texttt{y} or \texttt{n},
+with $r_j$ being \texttt{y} for all $j < n$,
+and the last reply $r_n$ being \texttt{n}.
+
+
+\section*{Output}
+
+% First, a general description of the output,
+% explaining to students how to interpret
+% what they are seeing in the samples below.
+The program should display each email that was entered,
+along with the average grade corresponding to the email,
+the emails should be sorted in alphabetical order.
+The grade should be rounded to 2 decimal places.
+
+\subsection*{Formal output specifications}
+% Then a more precise description, leaving nothing to doubt.
+Let $m$ be the number of distinct emails in the list
+$e_1, \dots, e_n$,
+and let $u_1, \dots, u_m$
+be a list of the $m$ unique emails, ordered alphabetically.
+For each $j \in \{1, \dots, m\}$,
+associate a grade $g_i$ with $u_j$ if $e_i = u_j$,
+and let $a_j$ be the average value of the grades associated with $u_j$.
+
+Then the output should consist of $m$ lines,
+$\lambda_1, \dots, \lambda_m$
+and for each $j \in \{1, \dots, m\}$,
+line $\lambda_j$ should contain
+the email $u_j$ and the average grade $a_j$,
+separated by a colon and a space:
+\begin{itemize}
+    \item
+    \texttt{\{$u_j$\}: \{$a_j$\}}
+\end{itemize}

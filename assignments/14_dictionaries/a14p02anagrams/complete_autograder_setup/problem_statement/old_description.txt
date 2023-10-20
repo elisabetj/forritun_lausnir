@@ -1,0 +1,26 @@
+Title: Anagrams
+
+A word is an anagram of another word if the characters in one of the words can be rearranged to form the other word.
+We can extend this definition to sentences if we allow spaces between words, and ignore punctuation.
+
+Write a program that prompts the user to input 2 sentences.
+The program should then convert the input strings into a dictionary,
+where the key is a letter in the sentence, and the value is the count of the character in the sentence.
+Do not add punctuation or spaces into the dictionary (HINT: import string.punctuation).
+
+The program should report whether the two sentences are anagrams of each other.
+
+Example input/output:
+
+    Enter a sentence: A gentleman
+    Enter another sentence: Elegant man
+    A gentleman is an anagram of Elegant man.
+
+Another example:
+
+    Enter a sentence: panama
+    Enter another sentence: pan man
+    panama is not an anagram of pan man.
+
+Note: The sentences should be compared in a case-insensitive manner,
+i.e. do not differentiate between upper case and lower case letters.

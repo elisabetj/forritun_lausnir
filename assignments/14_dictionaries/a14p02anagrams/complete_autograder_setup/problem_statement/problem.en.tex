@@ -1,0 +1,47 @@
+\problemname{Sound of Anagrams}
+
+The underground rap scene at Reykjavik University is brutal, only the best survive.
+However, good music is not enough, you must also have a banger title.
+Nowadays, anagrams are in style,
+so Diddi from the law department wants your help to create a program
+that can determine if two sentences are anagrams.
+
+A word is an anagram of another word
+if the characters in one of the words can be rearranged to form the other word.
+We can extend this definition to sentences
+if we allow spaces between words, and ignore punctuation.
+
+Write a program that accepts as input 2 sentences.
+The program should then convert the input strings into a dictionary,
+where the key is a letter in the sentence,
+and the value is the count of the character in the sentence.
+Do not add punctuation or spaces into the dictionary
+(HINT: \texttt{import string.punctuation}).
+
+The program should report whether the two sentences are anagrams of each other.
+
+Note: The sentences should be compared in a case-insensitive manner,
+so the program should not differentiate between upper case and lower case letters.
+
+
+\section*{Input}
+
+The input will consist of $2$ lines,
+containing one sentence each, $S_1$ and $S_2$.
+In the tests, the length of each $S_i$ will be restricted to $|S_i| \leq 70$.
+
+
+\section*{Output}
+
+The output should consist of one line.
+If $S_1$ is an anagram of $S_2$, the program should print out:
+\begin{itemize}
+    \item
+    \texttt{\{$S_1$\} is an anagram of \{$S_2$\}.}
+\end{itemize}
+Otherwise, the program should print out:
+\begin{itemize}
+    \item
+    \texttt{\{$S_1$\} is not an anagram of \{$S_2$\}.}
+\end{itemize}
+

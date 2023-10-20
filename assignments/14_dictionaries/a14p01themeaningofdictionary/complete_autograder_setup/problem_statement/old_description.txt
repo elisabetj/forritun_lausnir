@@ -1,0 +1,28 @@
+Title: The meaning of dictionary
+
+Write a program that uses a Python dictionary to implement a dictionary in the usual sense (e.g. English dictionary).
+The program should ask the user for a word and then the definition of the word,
+and store these inputs into a dictionary as key-value pairs.
+
+The user should be asked: "Would you like to add another word and definition (y/n)?: "
+and the process repeated until the user declines.
+
+Finally, the program should display the words in the dictionary in alphabetical order,
+along with the corresponding definitions of each.
+
+Note: if the word is already in the dictionary, the old value should be overwritten
+
+Example:
+
+    Enter a word: Hello
+    Enter the definition for Hello: an expression or gesture of greeting — used interjectionally in greeting, in answering the telephone, or to express surprise.
+    Would you like to add another word and definition (y/n)?: y
+    Enter a word: World
+    Enter the definition for World: the earth with its inhabitants and all things upon it.
+    Would you like to add another word and definition (y/n)?: n
+
+    Hello:
+        an expression or gesture of greeting —used interjectionally in greeting, in answering the telephone, or to express surprise
+
+    World:
+        the earth with its inhabitants and all things upon it
