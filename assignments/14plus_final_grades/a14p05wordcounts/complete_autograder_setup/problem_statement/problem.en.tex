@@ -1,0 +1,59 @@
+\problemname{Word counts}
+
+Write a program that reads a text file,
+keeps a count of the individual words in the file using a dictionary
+and then groups the words by how often they appear,
+and prints the words of each count, most frequent first.
+The main program is given in the starter code, do not change it.
+Implement the remaining given functions.
+
+Note that the counts are not case-sensitive, that is, 'Word' is the same as 'word' or 'wORd'.
+
+Also, note that your program should account for if a punctuation, like a comma, appears at the end of a word,
+meaning that words like ``university'' and ``university,'' are the same word.
+
+The input files that are used in the samples,
+are provided for your convenience.
+
+
+\section*{Input}
+
+% First, a general description of the input,
+% explaining to students how to interpret
+% what they are seeing in the samples below.
+A line in the input specifies the name of a file to be processed.
+There might be multiple lines, and some lines may contain invalid file names,
+but at least one of them will be valid.
+
+% \subsection*{Formal input specifications}
+% Then a more precise description, leaving nothing to doubt.
+Formally, the input consists of $n$ lines,
+$l_1, \dots, l_n$, where $1 \le n$,
+and at least one of them will contain the name of a file accessible to the program.
+Let us refer to the first such file as $f$.
+
+The file $f$ will consist of $k$ lines,
+containing a total of $m$ words,
+$w_1, \dots, w_m$,
+where $1 \le k$ and $1 \le m$.
+
+% \subsection*{Test case restrictions}
+% And finally, assurances about what to expect from the test cases.
+% Here we mention what we will restrict the input to in the tests,
+% to clarify that they do not need to worry about input outside those restrictions.
+% This does not mean their solutions should validate the input,
+% or reject input that does not satisfy those restrictions.
+In the tests, $n$, $k$ and $m$ will be restricted to
+$n \le 100$, $k \le 1\,000\,000$ and $m \le 1\,000\,000\,000$.
+
+
+\section*{Output}
+
+% First, a general description of the output,
+% explaining to students how to interpret
+% what they are seeing in the samples below.
+The exact output specification is tedious to communicate,
+but it can be well understood by looking at the samples.
+
+% \subsection*{Formal output specifications}
+% Then a more precise description, leaving nothing to doubt.

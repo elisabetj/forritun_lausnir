@@ -1,0 +1,30 @@
+Title: Word counts
+
+Write a program that reads a text file,
+keeps a count of the individual words in the file using a dictionary
+and then groups the words by how often they appear,
+and prints the words of each count (most frequent first).
+The main program is given, do not change it.
+Implement the remaining given functions.
+
+Note that the counts are not case-sensitive, that is, 'Word' is the same as 'word' or 'wORd'.
+
+Also, note that your program should account for if a punctuation (like a comma) appears at the end of a word,
+meaning that word like 'university' and 'university,' are the same word.
+
+Example input file:
+
+    I do not think there is any thrill that can go through the human heart,
+    like that felt by the inventor as he sees some creation of the brain
+    unfolding to success.
+    Such emotions make a man forget food, sleep, friends, love, everything.
+    Nikola Tesla
+
+Input/output:
+
+Name of file: There's only 1 word that appears 3 times:
+ the
+There's only 1 word that appears 2 times:
+ that
+There are 40 words that appear 1 times:
+ i, do, not, think, there, is, any, thrill, can, go, through, human, heart, like, felt, by, inventor, as, he, sees, some, creation, of, brain, unfolding, to, success, such, emotions, make, a, man, forget, food, sleep, friends, love, everything, nikola, tesla
