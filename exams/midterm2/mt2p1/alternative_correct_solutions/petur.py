@@ -13,15 +13,7 @@ def get_input() -> List[str]:
 
 
 def extract_numbers(input_list: List[str]) -> List[int]:
-    return [int(string) for string in input_list if is_number(string)]
-
-
-def is_number(string: str) -> bool:
-    try:
-        int(string)
-        return True
-    except ValueError:
-        return False
+    return [int(string) for string in input_list if string.isnumeric()]
 
 
 def find_missing(numbers: List[int]) -> List[int]:
