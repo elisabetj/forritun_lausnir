@@ -1,0 +1,85 @@
+\problemname{Document Retrieval}
+
+\paragraph{Warning:}
+This is a challenging project, probably the most difficult project that you have worked on so far in the course. 
+Thus, it is even more important now than before to start working on this project as early as possible.
+
+\paragraph{Background:} 
+Document retrieval is the task of finding documents that meet the search criteria input by a user. 
+The most well-known example is web search, where a user types in a set of keywords and the search engine finds web pages that are relevant to the search query. 
+True document retrieval can be quite difficult, as it needs to take into account many different factors. 
+In this project you will implement a very simple document retrieval engine.
+
+\paragraph{Specification:}
+In this project, document collections are stored in text files. 
+At the end of each article in a collection there is a line that contains only the string \texttt{"<END OF DOCUMENT>"}. 
+Your program prompts the user for the name of a text file containing a document collection, reads in the documents from the file and stores the content as a list of strings, with one (long) string for each document. 
+If the document collection file is not found, the program should quit without any output.
+
+In order to look up search terms, the program needs to keep track of which words appear in each document. 
+You should use a \textbf{dictionary} for this purpose. 
+Each entry in your dictionary should have a lower case word as the \textbf{key} and the \textbf{value} should be the \textbf{set} of document numbers in which this words appears.
+Punctuations at the start and end of a word should be removed. 
+
+The program allows a user to perform three actions:
+\begin{enumerate}
+    \item \textbf{Search}: If this option is selected, the user is prompted for a search string. 
+    The program then prints out the number of the documents (in ascending order) in the collection containing every individual words/terms (case-insensitive) in the search string. 
+    The order of the words in the search string is irrelevant. 
+    If no documents in the collection contain every term in the search string, the program prints the message \texttt{"No match"}.
+    \item \textbf{Print}: If this option is selected, the user is prompted for a number for a document. 
+    The program then prints out the entire content of the given document. 
+    If the document corresponding to the number is not found, the program prints \texttt{"No match"}.
+    \item \textbf{Quit}: If the user inputs an action which is neither 1 nor 2, the program quits.
+\end{enumerate}
+
+Your program should continue to prompt until the user chooses to quit.
+
+\paragraph{Example:}
+An example document collection file (\texttt{example.txt}) looks like this: 
+
+\begin{verbatim}
+This is an example document collection file.
+It contains three documents.
+This is text from the first document.
+<END OF DOCUMENT>
+This is text from the second document. Each document is 
+of variable length.
+<END OF DOCUMENT>
+And now we are in the third document, which is indeed 
+the "largest" one 
+measured in the length of the
+text that appears in the document.
+<END OF DOCUMENT>   
+\end{verbatim}
+
+
+\section*{Input}
+The first line of the input contains the name of a document collection file containing text from one or more documents.
+Thereafter, iteratively, in line $2i$, where $1 \le i \le 5$, the input is one of the following:
+\begin{itemize}
+    \item The string \texttt{"search"}: In this case, line $2i + 1$ contains a sequence of one to three strings (search terms) separated with a white space.
+    \item The string \texttt{"print"}: In this case, line $2i + 1$ contains a single integer denoting the document to be printed.
+    \item The string \texttt{"quit"}: In this case, no more input occurs.
+\end{itemize}    
+
+
+\section*{Output}
+When the document collection file cannot be opened, no output is generated. 
+Otherwise, in each iteration, the output is either:
+\begin{itemize}
+    \item A response to a search query which is either:
+    \begin{itemize}
+        \item The string \texttt{"Documents matching search: "}, followed by a sequence of document numbers (in ascending order) in which the entered search terms were found,
+        \item or the string \texttt{"No match"} if no documents match the search string. 
+    \end{itemize}
+    \item A response to a print action which is either:
+    \begin{itemize}
+        \item The string \texttt{"Document number \{i\}:"}, where $i$ is the number of the document to be printed out, followed by (in the next line) the text of the file number $i$, 
+        \item or the string \texttt{"No match"} if no document in the collection corresponds to the entered number $i$.
+    \end{itemize}
+\end{itemize}
+
+\section*{Scoring}
+Each of the $20$ hidden test cases is also worth $5$ points.
+The test cases are accompanied with hints, which you can see if you get them wrong, describing what is being tested.

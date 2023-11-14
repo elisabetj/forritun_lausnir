@@ -1,0 +1,85 @@
+\problemname{Document Retrieval}
+
+\paragraph{Aðvörun:}
+Þetta er krefjandi verkefni, líklega erfiðasta forritunarverkefnið sem þið hafið unnið að hingað til í námskeiðinu.
+Þess vegna er enn mikilvægara nú en áður að byrja að vinna að verkefninu eins snemma og mögulegt er. 
+
+\paragraph{Bakgrunnur:} 
+Í skjalaheimt (e. document retrieval) eru skjöl fundin sem passa við ákveðin leitarskilyrði sem notandi setur fram. 
+Þekktasta dæmið er vefleit þar sem notandi slær inn leitarstreng (mengi af leitarorðum) og leitarvélin finnur vefsíður sem passa við leitarstrenginn. 
+Raunveruleg skjalaheimt getur verð nokkuð erfið þar sem taka þarf tillit til margra mismundani þátta. 
+Í þessu verkefni munið þið hins vegar útfæra mjög einfalda leitarvél.
+
+\paragraph{Lýsing:}
+Í þessu verkefni eru skjalasöfnin geymd í textaskrám. 
+Í lok hvers skjals í safni er ein lína sem inniheldur aðeins strenginn \texttt{"<END OF DOCUMENT>"}. 
+Notandi forritsins slær inn nafn á textaskrá sem inniheldur skjalasafn, les inn einstök skjöl úr skránni og geymir innihald þeirra sem lista af strengjum -- einn (langan) streng fyrir sérhvert skjal. 
+Ef inntaksskráin finnst ekki þá á forritið að hætta keyrslu án þess að skrifa nokkuð út.
+
+Til að fletta upp leitarorðum þarf forritið að halda utan um hvaða orð koma fyrir í sérhverju skjali..
+Þið eigið að nota \textbf{uppflettitöflu} (e. dictionary) í þeim tilgangi. 
+Sérhver færsla í uppflettitöflunnni skal hafa orð í lágstöfum sem \textbf{lykil} (e. key) og \textbf{gildið} (e. value) á að vera \textbf{mengi} (e. set) af númerum þeirra skjala sem orðið kemur fyrir í. 
+Greinarmerki í uppphafi og enda orðs skal fjarlægja.
+
+Forritið leyfir notanda að framkvæma þrjár aðgerðir:
+\begin{enumerate}
+    \item \textbf{Search}: Ef þessi aðgerð er valin þá er notandinn jafnframt beðinn um að slá inn leitarstreng. 
+    Forritið skal síðan prenta út númer þeirra skjala (í hækkandi röð) í skjalasafninu sem innihalda öll orðin í leitarstrengnum.
+    Ekki er gerður greinarmunur á hástöfum og lágstöfum og röð orðanna í leitarstrengnum skiptir ekki máli. 
+    Ef ekkert skjal í safninu inniheldur öll orðin í leitarstrengnum þá skal forritið skrifa út skilaboðin \texttt{"No match"}.
+    \item \textbf{Print}: Ef þessi aðgerð er valin þá er notandinn jafnframt beðinn um að slá inn númer skjals. 
+    Forritið skal síðan prenta út innihald viðkomandi skjals. 
+    Ef ekkert skjal í safninu passar við númerið sem slegið var inn þá skrifar forritið út skilaboðin \texttt{"No match"}.
+    \item \textbf{Quit}: Ef notandinn velur hvorki aðgerð 1 né 2 þá hættir forritið keyrslu.
+\end{enumerate}
+
+Forritið skal bjóða notandanum endurtekið upp á að framkvæma aðgerðirnar að ofan þangað til að hann velur að hætta.
+
+\paragraph{Dæmi:}
+Dæmi um skjalasafn er skráin \texttt{example.txt}: 
+
+\begin{verbatim}
+This is an example document collection file.
+It contains three documents.
+This is text from the first document.
+<END OF DOCUMENT>
+This is text from the second document. Each document is 
+of variable length.
+<END OF DOCUMENT>
+And now we are in the third document, which is indeed 
+the "largest" one 
+measured in the length of the
+text that appears in the document.
+<END OF DOCUMENT>   
+\end{verbatim}
+
+
+\section*{Inntak}
+Fyrsta línan í inntakinu inniheldur nafn á skrá sem geymir texta úr einu eða fleiri skjölum.
+Síðan endurtekið, í línu $2i$, þar sem $1 \le i \le 5$, er inntakið eitt af eftirtöldu:
+\begin{itemize}
+    \item Strengurinn \texttt{"search"}: Í þessu tilfelli geymir lína $2i + 1$ runu af einum til þremur strengjum (leitarorðum) aðskildum með hvítum bilum.
+    \item Strengurinn \texttt{"print"}: Í þessu tilfelli geymir lína $2i + 1$ eina heiltölu sem stendur fyrir skjalið sem á að prenta út.
+    \item Strengurinn \texttt{"quit"}: Í þessu tilfelli fylgir ekkert meira inntak.
+\end{itemize}    
+
+
+\section*{Úttak}
+Þegar ekki er hægt að opna inntaksskrána þá skrifar forritið ekki neitt út.
+Annars, í sérhverri ítrun, er inntakið: 
+\begin{itemize}
+    \item Svar fyrir leitaraðgerð er annað hvort:
+    \begin{itemize}
+        \item Strengurinn \texttt{"Documents matching search: "} og þar á eftir runa af númerum (í hækkandi röð) þeirra skjala sem innihalda öll orð leitarstrengsins,
+        \item eða strengurinnn \texttt{"No match"} ef ekkert skjal passar við leitarstrenginn.  
+    \end{itemize}
+    \item Svar við útprentunaraðgerð er annað hvort: 
+    \begin{itemize}
+        \item Strengurinn \texttt{"Document number \{i\}:"}, þar sem $i$ er númer þess skjals sem beðið var um að prenta út og þar á eftir (í næstu línu) fylgir texti skjals númer $i$, 
+        \item eða strengurinn \texttt{"No match"} ef ekkert skjal í safninu passar við hið innslegna númer $i$.
+    \end{itemize}
+\end{itemize}
+
+\section*{Stigagjöf}
+Sérhvert falið prufutilvik veitir $5$ stig og eru þau $20$ talsins.
+Ábendingar fylgja prufutilvikunum, sem þú sérð ef þú færð rangt á þeim, og lýsa þær hvað er verið að prófa.

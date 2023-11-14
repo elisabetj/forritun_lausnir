@@ -1,0 +1,109 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+USE_PARALLEL=0
+REQUIRE_SAMPLE_REUSE=0
+. ../../../testdata_tools/gen.sh
+
+use_solution solution_code.py
+
+compile random_generator.py
+compile not_found_generator.py
+
+hint () {
+    local name="$1"
+    local path="$CURGROUP_DIR/$(_base ${cases[$name]})"
+    echo "$2" > "$path.hint"
+}
+
+samplegroup
+sample 01
+hint 01 "This is the first sample"
+sample 02
+hint 02 "This is the second sample"
+
+
+GROUP_SCORE=5
+
+group GB $GROUP_SCORE
+tc not-found not_found_generator
+hint not-found "What happens if the file does not exist?"
+
+group GC $GROUP_SCORE
+tc just-quit random_generator GC 0 0 0 0 any any
+hint just-quit "What if the user does not try to search or print?"
+
+group GD $GROUP_SCORE
+tc just-print-valid random_generator GD 10 20 0 0 any valid
+hint just-print-valid "What if the user only prints?"
+
+group GE $GROUP_SCORE
+tc just-print random_generator GE 20 25 0 0 any any
+hint just-print "What is an edge case for the print option?"
+
+group GF $GROUP_SCORE
+tc search-lower-1 random_generator GF 20 50 1 1 lower_no_punctuation any
+hint search-lower-1 "Searching with one keyword and only lowercase letters in doc"
+
+group GG $GROUP_SCORE
+tc search-lower-2 random_generator GG 20 50 2 2 lower_no_punctuation any
+hint search-lower-2 "Searching with two keywords and only lowercase letters in doc"
+
+group GH $GROUP_SCORE
+tc search-lower-3 random_generator GH 20 50 3 3 lower_no_punctuation any
+hint search-lower-3 "Searching with three keywords and only lowercase letters in doc"
+
+group GI $GROUP_SCORE
+tc lower random_generator GI 40 50 0 3 lower_no_punctuation any
+hint lower "Only lowercase letters in doc"
+
+group GJ $GROUP_SCORE
+tc search-no-punctuation-1 random_generator GJ 20 50 1 1 no_punctuation any
+hint search-no-punctuation-1 "Searching with one keyword and only letters in doc"
+
+group GK $GROUP_SCORE
+tc search-no-punctuation-2 random_generator GK 20 50 2 2 no_punctuation any
+hint search-no-punctuation-2 "Searching with two keywords and only letters in doc"
+
+group GL $GROUP_SCORE
+tc search-no-punctuation-3 random_generator GL 20 50 3 3 no_punctuation any
+hint search-no-punctuation-3 "Searching with three keywords and only letters in doc"
+
+group GM $GROUP_SCORE
+tc no-punctuation random_generator GM 40 50 0 3 no_punctuation any
+hint no-punctuation "Only letters in doc"
+
+group GN $GROUP_SCORE
+tc search-lower-punctuation-1 random_generator GN 20 50 1 1 lower any
+hint search-lower-punctuation-1 "Searching with one keyword and only lowercase letters and punctuation in doc"
+
+group GO $GROUP_SCORE
+tc search-lower-punctuation-2 random_generator GO 20 50 2 2 lower any
+hint search-lower-punctuation-2 "Searching with two keywords and only lowercase letters and punctuation in doc"
+
+group GP $GROUP_SCORE
+tc search-lower-punctuation-3 random_generator GP 20 50 3 3 lower any
+hint search-lower-punctuation-3 "Searching with three keywords and only lowercase letters and punctuation in doc"
+
+group GQ $GROUP_SCORE
+tc lower-punctuation random_generator GQ 40 50 0 3 lower any
+hint lower-punctuation "Only lowercase letters and punctuation in doc"
+
+group GR $GROUP_SCORE
+tc search-any-1 random_generator GR 20 50 1 1 any any
+hint search-any-1 "Searching with one keyword"
+
+group GS $GROUP_SCORE
+tc search-any-2 random_generator GS 20 50 2 2 any any
+hint search-any-2 "Searching with two keywords"
+
+group GT $GROUP_SCORE
+tc search-any-3 random_generator GT 20 50 3 3 any any
+hint search-any-3 "Searching with three keywords"
+
+group GU $GROUP_SCORE
+tc any random_generator GU 40 50 0 3 any any
+hint any "Anything goes!"
+
+for file in *.txt; do
+    cp "$file" "../include/python3/"
+done

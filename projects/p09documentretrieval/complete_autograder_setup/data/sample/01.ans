@@ -1,0 +1,14 @@
+Document #2:
+This is text from the second document. Each document is 
+of variable length.
+Documents matching search: 3 
+Document #3:
+And now we are in the third document, which is indeed 
+the "largest" one 
+measured in the length of the
+text that appears in the document.
+Document #1:
+This is an example document collection file.
+It contains three documents.
+This is text from the first document.
+Documents matching search: 1 2 3 

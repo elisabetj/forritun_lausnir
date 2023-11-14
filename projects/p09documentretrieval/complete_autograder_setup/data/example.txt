@@ -1,0 +1,12 @@
+This is an example document collection file.
+It contains three documents.
+This is text from the first document.
+<END OF DOCUMENT>
+This is text from the second document. Each document is 
+of variable length.
+<END OF DOCUMENT>
+And now we are in the third document, which is indeed 
+the "largest" one 
+measured in the length of the
+text that appears in the document.
+<END OF DOCUMENT>
