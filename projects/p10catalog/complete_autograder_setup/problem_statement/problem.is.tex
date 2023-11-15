@@ -1,0 +1,69 @@
+\problemname{Catalog}
+
+Í þessu verkefni eigið þið að útfæra tvo klasa: 
+\texttt{Item} í skránni \texttt{item.py} og \texttt{Catalog} í skránni \texttt{catalog.py}.  
+\begin{itemize}
+    \item Smiðurinn (e. constructor) í \texttt{Item} tekur inn tvær færibreytur sem báðar eru strengir. Sú fyrri stendur fyrir nafn hlutarins og sú seinni fyrir flokkinn sem hluturinn tilheyrir.
+    \item Smiðurinn í \texttt{Catalog} tekur inn eina færibreytu, streng sem stendur fyrir nafn listans (e. catalog).
+    \item \texttt{Catalog} heldur utan um safn (e. collection) af \texttt{Item}. Safnið sem þið ákveðið að nota verður að viðhalda innsetningarröð (e. insertion order).
+    \item Bæði \texttt{Item} og \texttt{Catalog} innihalda nokkrar tilvikaaðgerðir (e. instance methods). 
+    Einstakar aðgerðir í klösunum \texttt{Catalog} og \texttt{Item} verða prófaðir með einingaprófum (e. unit tests). 
+    Þið eigið að geta fundið út hvaða aðgerðir eru nauðsynlegar með því að skoða eftirfarandi aðalforrit og úttak þess:
+\end{itemize}
+
+\begin{verbatim}
+from item import Item
+from catalog import Catalog
+
+item1 = Item("Green Book", "Biography")
+print(item1)
+
+item2 = Item("The God", "Crime")
+print(item2)
+item2.set_name("The Godfather")
+print(item2)
+
+item3 = Item("Schindler's List", "Biography")
+print(item3)
+item3.set_category("Drama")
+print(item3)
+
+catalog = Catalog("Films")
+catalog.add(item1)
+catalog.add(item2)
+catalog.add(item3)
+print(catalog)
+
+catalog.remove(item2)
+print(catalog)
+
+catalog.set_name("Favorite Movies")
+print(catalog)
+
+catalog.clear()
+print(catalog)
+\end{verbatim}
+
+\section*{Úttak}
+Úttak aðalforritsins er eftirfarandi:
+\begin{verbatim}
+Name: Green Book, Category: Biography
+Name: The God, Category: Crime
+Name: The Godfather, Category: Crime
+Name: Schindler's List, Category: Biography
+Name: Schindler's List, Category: Drama
+Catalog Films:
+        Name: Green Book, Category: Biography
+        Name: The Godfather, Category: Crime
+        Name: Schindler's List, Category: Drama
+Catalog Films:
+        Name: Green Book, Category: Biography
+        Name: Schindler's List, Category: Drama
+Catalog Favorite Movies:
+        Name: Green Book, Category: Biography
+        Name: Schindler's List, Category: Drama
+Catalog Favorite Movies:
+\end{verbatim}
+
+\textbf{Athugið:} Þegar einstök \texttt{Item} tiltekins \texttt{Catalog} eru prentuð út þá er einn tab-stafur í upphafi sérhverrar línu.
+Aðalforritið á \textbf{ekki} að fylgja í skilunum ykkar, aðeins skrárnar \texttt{item.py} og \texttt{catalog.py}.

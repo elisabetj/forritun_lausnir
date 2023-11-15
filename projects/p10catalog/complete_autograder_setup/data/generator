@@ -1,0 +1,89 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+. ../../../testdata_tools/gen.sh
+
+use_solution solution_code/main.py
+
+compile random_generator.py
+
+hint () {
+    local name="$1"
+    local path="$CURGROUP_DIR/$(_base ${cases[$name]})"
+    echo "$2" > "$path.hint"
+}
+
+samplegroup
+# sample 01
+
+GENERALHINT="Note that you must define all the required functions of the class to receive a score, even though you leave them unimplemented.\n"
+GENERALHINT="$GENERALHINT""A convenient way of leaving something unimplemented is using the pass keyword as the only line within the function.\n"
+
+GAHINT="$(printf "Is it possible to construct an object of the type Item?\n$GENERALHINT")"
+group GA-item-init 10
+for i in {01..10}; do
+tc item-init-$i random_generator item "__init__"
+hint item-init-$i "$GAHINT"
+done
+
+GBHINT="$(printf "Is it possible to print an object of the type Item?\n$GENERALHINT")"
+group GB-item-str 10
+for i in {01..10}; do
+tc item-str-$i random_generator item "__str__"
+hint item-str-$i "$GBHINT"
+done
+
+GCHINT="$(printf "Is it possible to change the name of an item?\n$GENERALHINT")"
+group GC-item-name 10
+for i in {01..10}; do
+tc item-name-$i random_generator item "set_name"
+hint item-name-$i "$GCHINT"
+done
+
+GDHINT="$(printf "Is it possible to change the category of an item?\n$GENERALHINT")"
+group GD-item-category 10
+for i in {01..10}; do
+tc item-category-$i random_generator item "set_category"
+hint item-category-$i "$GDHINT"
+done
+
+GEHINT="$(printf "Is it possible to construct an object of the type Catalog?\n$GENERALHINT")"
+group GE-catalog-init 10
+for i in {01..10}; do
+tc catalog-init-$i random_generator catalog "__init__"
+hint catalog-init-$i "$GEHINT"
+done
+
+GFHINT="$(printf "Is it possible to print an object of the type Catalog?\n$GENERALHINT")"
+group GF-catalog-str 10
+for i in {01..10}; do
+tc catalog-str-$i random_generator catalog "__str__"
+hint catalog-str-$i "$GFHINT"
+done
+
+GGHINT="$(printf "Is it possible to change the name of a catalog?\n$GENERALHINT")"
+group GG-catalog-name 10
+for i in {01..10}; do
+tc catalog-name-$i random_generator catalog "set_name"
+hint catalog-name-$i "$GGHINT"
+done
+
+GHHINT="$(printf "Is it possible to add an item to a catalog?\n$GENERALHINT")"
+group GH-catalog-add 10
+for i in {01..10}; do
+tc catalog-add-$i random_generator catalog "add"
+hint catalog-add-$i "$GHHINT"
+done
+
+GIHINT="$(printf "Is it possible to remove an item from a catalog?\n$GENERALHINT")"
+group GI-catalog-remove 10
+for i in {01..10}; do
+tc catalog-remove-$i random_generator catalog "remove"
+hint catalog-remove-$i "$GIHINT"
+done
+
+GJHINT="$(printf "Is it possible to clear all items from a catalog?\n$GENERALHINT")"
+group GJ-catalog-clear 10
+for i in {01..10}; do
+tc catalog-clear-$i random_generator catalog "clear"
+hint catalog-clear-$i "$GJHINT"
+done

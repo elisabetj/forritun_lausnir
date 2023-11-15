@@ -1,0 +1,15 @@
+Actiona
+Adventure
+Biography
+Comedy
+Crime Fiction
+Drama
+Fantasy
+Historical
+Horror
+Mystery
+Romance
+Thriller
+True Crime
+Western
+Wuxia
