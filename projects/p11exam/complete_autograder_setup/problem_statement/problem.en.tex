@@ -1,0 +1,174 @@
+\problemname{Exam}
+
+In this project, you implement a prototype of an exam system. 
+The implementation consists of three classes: \texttt{Question} in the file \texttt{question.py}, \texttt{ChoiceQuestion} in the file \texttt{choice\_question.py}, and \texttt{Exam} in the file \texttt{exam.py}.
+
+\section*{Question}
+The Question class should have two private variables (and no other variables):
+\texttt{\_\_question\_str} and \texttt{\_\_answer\_str}, denoting the question and the answer, respectively.
+You should be able to figure out what methods you need by inspecting the following program, which tests the \texttt{Question} class, and the output examples below:
+
+\begin{verbatim}
+from question import Question
+
+def answer_question(a_question):
+    print(a_question.get_question())
+    response = input()
+    print(a_question.check_answer(response))
+
+# Main
+q = Question("Who is the inventor of Python?", "Guido van Rossum")
+answer_question(q)
+print(q)
+\end{verbatim}
+
+\noindent
+Three output examples for the program above:
+
+\begin{verbatim}
+Who is the inventor of Python?
+Guido van Rossum
+True
+Q: Who is the inventor of Python? A: Guido van Rossum
+
+Who is the inventor of Python?
+guido van rossum
+True
+Q: Who is the inventor of Python? A: Guido van Rossum
+
+Who is the inventor of Python?
+no idea
+False
+Q: Who is the inventor of Python? A: Guido van Rossum
+\end{verbatim}
+
+\noindent
+\textbf{Note:} The result of calling \texttt{str()} is a string that contains both the question and the answer.
+
+\section*{ChoiceQuestion}
+This class extends the functionality of \texttt{Question} by providing a multiple choice question.
+You should be able to figure out what variables and methods you need by inspecting the following program, which tests the \texttt{ChoiceQuestion} class, and the output examples below:
+
+\begin{verbatim}
+from choice_question import ChoiceQuestion
+
+def answer_question(a_question):
+    print(a_question.get_question())
+    response = input()
+    print(a_question.check_answer(response))
+
+# Main
+q = ChoiceQuestion("In what year was the Python language first released?")
+q.add_choice("1991", True)
+q.add_choice("1995", False)
+q.add_choice("1998", False)
+q.add_choice("2000", False)
+
+answer_question(q)
+print(q)
+\end{verbatim}
+
+\noindent
+Two output examples for the program above:
+
+\begin{verbatim}
+In what year was the Python language first released?
+1. 1991
+2. 1995
+3. 1998
+4. 2000
+1
+True
+Q: In what year was the Python language first released? A: 1
+
+In what year was the Python language first released?
+1. 1991
+2. 1995
+3. 1998
+4. 2000
+2
+False
+Q: In what year was the Python language first released? A: 1
+\end{verbatim}
+
+\noindent
+\textbf{Note:} The correct answer to a choice question is a string corresponding to the number of the correct choice.
+The number of choices for each choice questions are 2--4 (but you do not need to validate these counts).
+
+\section*{Exam}
+This class encapsulates an exam consisting of one or more instances of \texttt{Question} and/or one or more instances of \texttt{ChoiceQuestion}.  
+You should be able to figure out what variables and methods you need by inspecting the following program, which tests the \texttt{Exam} class, and the output examples below:
+
+\begin{verbatim}
+from question import Question
+from choice_question import ChoiceQuestion
+from exam import Exam
+
+q1 = Question("Who is the inventor of Python?", "Guido van Rossum")
+
+q2 = ChoiceQuestion("In what year was the Python language first released?")
+q2.add_choice("1991", True)
+q2.add_choice("1995", False)
+q2.add_choice("1998", False)
+q2.add_choice("2000", False)
+
+q3 = Question("What does OOP stand for?", "Object-oriented programming")
+
+q4 = ChoiceQuestion("Which of the following is a built-in type in Pyhon?")
+q4.add_choice("array", False)
+q4.add_choice("record", False)
+q4.add_choice("dict", True)
+
+exam = Exam()
+exam.add_question(q1)
+exam.add_question(q2)
+exam.add_question(q3)
+exam.add_question(q4)
+
+exam.take()
+print(f"Your score is {exam.get_points()} point(s) out of {exam.get_num_questions()}")
+
+print(exam)
+\end{verbatim}
+
+\noindent
+An output example for the program above:
+
+\begin{verbatim}
+Who is the inventor of Python?
+Not sure
+False
+
+In what year was the Python language first released?
+1. 1991
+2. 1995
+3. 1998
+4. 2000
+1
+True
+
+What does OOP stand for?
+object-oriented programming
+True
+
+Which of the following is a built-in type in Pyhon?
+1. array
+2. record
+3. dict
+2
+False
+
+Your score is 2 point(s) out of 4
+Q: Who is the inventor of Python? A: Guido van Rossum
+Q: In what year was the Python language first released? A: 1
+Q: What does OOP stand for? A: Object-oriented programming
+Q: Which of the following is a built-in type in Pyhon? A: 3
+\end{verbatim}
+
+\noindent
+\textbf{Note:} When an exam is presented, questions are presented in the order they are added to the exam.
+There is one empty line after the result (True or False) of each question has been printed out.
+
+\section*{Instructions}
+Make sure that you implement and test your classes (one at a time) in the order given above. 
+You should only submit the files \texttt{question.py}, \texttt{choice\_question.py}, and \texttt{exam.py}.

@@ -1,0 +1,15 @@
+Who is the inventor of Python?|Guido van Rossom
+What is the capital of Iceland?|Reykjavik
+How many continents are there on Earth?|Seven
+In which country is the city Liverpool?|England
+How many cents are in a dollar?|One hundred
+In what US State is the city Nashville?|Tennessee
+What is the smallest planet in our solar system?|Mercury
+Which football club plays its home games at Loftus Road?|Queens Park Rangers
+How many times has England won the men's football World Cup?|Once
+Which Tennis Grand Slam is played on a clay surface?|French Open
+What is the name of the 1976 film about the Watergate scandal, starring Robert Redford and Dustin Hoffman?|All the President's Men
+What element is denoted by the chemical symbol Sn in the periodic table?|Tin
+How many meters are in a mile?|1609344
+Who is the president of USA?|Joe Biden
+What is the name of the currency used in the European Union?|Euro

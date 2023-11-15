@@ -1,0 +1,109 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+. ../../../testdata_tools/gen.sh
+
+use_solution solution_code/main.py
+
+compile random_generator.py
+
+hint () {
+    local name="$1"
+    local path="$CURGROUP_DIR/$(_base ${cases[$name]})"
+    echo "$2" > "$path.hint"
+}
+
+samplegroup
+
+GENERALHINT="Note that you must define all the required functions of the class to receive a score, even though you leave them unimplemented.\n"
+GENERALHINT="$GENERALHINT""A convenient way of leaving something unimplemented is using the pass keyword as the only line within the function.\n"
+
+GAHINT="$(printf "Is it possible to construct an instance of type Question?\n$GENERALHINT")"
+group GA-question-init 10
+for i in {01..10}; do
+tc question-init-$i random_generator question "__init__"
+hint question-init-$i "$GAHINT"
+done
+
+GBHINT="$(printf "Is it possible to print an instance of type Question?\n$GENERALHINT")"
+group GB-question-str 10
+for i in {01..10}; do
+tc question-str-$i random_generator question "__str__"
+hint question-str-$i "$GBHINT"
+done
+
+GCHINT="$(printf "Is it possible to get the question string of an instance of type Question?\n$GENERALHINT")"
+group GC-question-get 10
+for i in {01..10}; do
+tc question-get-$i random_generator question "get_question"
+hint question-get-$i "$GCHINT"
+done
+
+GDHINT="$(printf "Is it possible to check an answer of an instance of type Question?\n$GENERALHINT")"
+group GD-question-check 10
+for i in {01..10}; do
+tc question-check-$i random_generator question "check_answer"
+hint question-check-$i "$GDHINT"
+done
+
+GEHINT="$(printf "Is it possible to construct an instance of type ChoiceQuestion?\n$GENERALHINT")"
+group GE-choicequestion-init 10
+for i in {01..10}; do
+tc choicequestion-init-$i random_generator choicequestion "__init__"
+hint choicequestion-init-$i "$GEHINT"
+done
+
+GFHINT="$(printf "Is it possible to add a choice to an instance of type ChoiceQuestion?\n$GENERALHINT")"
+group GF-choicequestion-add 10
+for i in {01..10}; do
+tc choicequestion-add-$i random_generator choicequestion "add_choice"
+hint choicequestion-add-$i "$GFHINT"
+done
+
+GGHINT="$(printf "Is it possible to get the question string of an instance of type ChoiceQuestion?\n$GENERALHINT")"
+group GG-choicequestion-get 10
+for i in {01..10}; do
+tc choicequestion-get-$i random_generator choicequestion "get_question"
+hint choicequestion-get-$i "$GGHINT"
+done
+
+GHHINT="$(printf "Is it possible to check an answer of an instance of type ChoiceQuestion?\n$GENERALHINT")"
+group GH-choicequestion-check 10
+for i in {01..10}; do
+tc choicequestion-check-$i random_generator choicequestion "check_answer"
+hint choicequestion-check-$i "$GHHINT"
+done
+
+GIHINT="$(printf "Is it possible to construct an instance of type Exam?\n$GENERALHINT")"
+group GI-exam-init 10
+for i in {01..10}; do
+tc exam-init-$i random_generator exam "__init__"
+hint exam-init-$i "$GIHINT"
+done
+
+GJHINT="$(printf "Is it possible to add an instance of Question to an instance of Exam?\n$GENERALHINT")"
+group GJ-exam-add-question 10
+for i in {01..10}; do
+tc exam-add-question-$i random_generator exam "add_question" "text"
+hint exam-add-question-$i "$GJHINT"
+done
+
+GKHINT="$(printf "Is it possible to add an instance of ChoiceQuestion to an instance of Exam?\n$GENERALHINT")"
+group GK-exam-add-choicequestion 10
+for i in {01..10}; do
+tc exam-add-choicequestion-$i random_generator exam "add_question" "choice"
+hint exam-add-choicequestion-$i "$GKHINT"
+done
+
+GLHINT="$(printf "Is it possible to print an instance of type Exam?\n$GENERALHINT")"
+group GL-exam-str 10
+for i in {01..10}; do
+tc exam-str-$i random_generator exam "__str__"
+hint exam-str-$i "$GLHINT"
+done
+
+GMHINT="$(printf "Is it possible to take an Exam?\n$GENERALHINT")"
+group GM-exam-take 10
+for i in {01..10}; do
+tc exam-take-$i random_generator exam "take"
+hint exam-take-$i "$GMHINT"
+done

@@ -1,0 +1,9 @@
+name: Exam
+author: Hrafn Loftsson
+source: T-111-Programming
+rights_owner: Háskólinn í Reykjavík
+license: cc by-sa
+type: scoring
+validator_flags: space_change_sensitive case_sensitive
+grading:
+    show_test_data_groups: true
