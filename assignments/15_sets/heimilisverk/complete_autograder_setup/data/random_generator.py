@@ -8,15 +8,26 @@ import sys
 
 random.seed(int(sys.argv[-1]))
 
+RANDOM = "rand"
+AT_MOST = "atmost"
+EVENLY_DISTRIBUTED = "sqrt"
+
+CLOSE_TO_SQRT = "Sqrt."
+ANYWHERE = "Any."
+
 
 def main():
     method = sys.argv[1]
-    if method == "rand":
-        rand(int(sys.argv[2]), int(sys.argv[3]), float(sys.argv[4]))
-    elif method == "atmost":
-        atmost(int(sys.argv[2]))
-    elif method == "sqrt":
-        srt(int(sys.argv[2]))
+    if method == RANDOM:
+        rand(
+            number_of_entries=int(sys.argv[2]),
+            length=int(sys.argv[3]),
+            probability=float(sys.argv[4]),
+        )
+    elif method == AT_MOST:
+        atmost(max_number_of_symbols=int(sys.argv[2]), strategy=ANYWHERE)
+    elif method == EVENLY_DISTRIBUTED:
+        atmost(max_number_of_symbols=int(sys.argv[2]), strategy=CLOSE_TO_SQRT)
     else:
         assert False, f"Unexpected method {method} requested."
 
@@ -35,20 +46,21 @@ def rand(number_of_entries, length, probability):
         print(task)
 
 
-def atmost(max_number_of_symbols):
-    entry_length = random.randint(1, max_number_of_symbols)
+def atmost(max_number_of_symbols: int, strategy: str) -> None:
+    entry_length = fix_length(max_number_of_symbols, strategy)
     number_of_entries = max_number_of_symbols // entry_length
     print(number_of_entries)
     for _ in range(number_of_entries):
         print(random_entry(entry_length))
 
 
-def srt(max_number_of_symbols):
-    entry_length = int(math.sqrt(max_number_of_symbols)) + random.randint(-10, 10)
-    number_of_entries = max_number_of_symbols // entry_length
-    print(number_of_entries)
-    for _ in range(number_of_entries):
-        print(random_entry(entry_length))
+def fix_length(number_of_symbols: int, strategy: str) -> int:
+    if strategy == CLOSE_TO_SQRT:
+        return int(math.sqrt(number_of_symbols)) + random.randint(-10, 10)
+    elif strategy == ANYWHERE:
+        return random.randint(1, number_of_symbols)
+    else:
+        assert False, f"Unexpected strategy {strategy} encountered."
 
 
 def random_entry(length: int) -> str:
