@@ -1,0 +1,35 @@
+In this Assignment, you're meant to continue developing a program to calculate your final grades from this course,
+thus finishing what we started in Assignment 14+.
+
+The program consumes a .csv file like one that instructors can export from the gradebook on a site like Mímir or Coding Rooms.
+It contains a sequence of lines, each of which consists of comma separated values.
+Each line has the same number of fields, so the contents of the file can be thought of as a table, with columns and rows.
+
+The first line of the file contains headers for each column.
+There we hit our first problem, because the semester is not over yet.
+Therefore, if we export the file now, it does not include columns for any coursework that has not been assigned yet (including the final exam).
+This means that the number of columns changes with time,
+and at this time it is still unknown in which order the remaining coursework will be added to the file,
+or how many there will be of each type when all is said and done.
+So, the program needs to dynamically map out which column is associated with which information.
+
+You solved this first part before (in Assignment 14+:),
+but here, we make a little adjustment to the format of the gradebook,
+so rather than building on your solution from Assignment 14+,
+we recommend you use the starter code provided in the template below.
+Refer to the description of the first part for further information on its functionality.
+
+An explanation of the above mentioned adjustment is in order:
+Last year the arrangement of the quizzes was a little different from this year,
+in that we had two quizzes in each class,
+one that students answered individually,
+and then the same quiz again, but this time the students formed groups and discussed the quiz questions before answering.
+The total grade for the quizzes, for a given student,
+was then split equally between that student's average grade from the individual quizzes,
+and the average grade from the group quizzes.
+This year we decided to do without the group quizzes, to leave more time for students to work on the assignments in class,
+so the quiz grade will just be calculated from the individual quizzes.
+
+Unfortunately, the author of this assignment has not found the time to update the assignment to remove this extra complication
+(with the associated changes of the input files, test cases, model solution, template and instructions),
+so we will stick with the version from last year.

@@ -1,0 +1,105 @@
+Author: Pétur Ólafur Aðalgeirsson
+
+Title: Final grades, part 2/3
+
+Now, the second line of the input file states the maximum points available for each coursework.
+In this second stage of the development, you need to extract these maximum points, for the following:
+
+- All the quizzes that have been held in class so far (both individual quizzes and group quizzes)
+- All the assignments
+- All the extra assignments
+- All the homework projects
+- Any midterms held so far
+- The final exam, if included in the file
+
+These values need to be recorded in an accessible manner.
+You could use a dictionary for this purpose, but we'll leave the design decision to you.
+It is probably a good idea to store them as numbers though, not strings, so they are ready for further processing.
+In this second stage, the program should simply display an overview of this record.
+The presentation should be a list of max points along with the column names, as demonstrated in the following output example.
+The provided template below includes a function that is intended to save you time on configuring the format, so we recommend that you take a look at it.
+This part is really little more than a warm-up for the third part, which is considerably more involved.
+
+The content of a typical input file is rather too vast to fit easily to the page here,
+but in the starter code below you can find a file (example input.csv) containing an example of what the first two lines of the file might look like.
+The corresponding output is:
+
+Enter filename: 
+Individual quizzes:
+  50.0 points possible for Quiz 0 (Individual): Introduction
+  45.0 points possible for Quiz 1 (Individual): Basics
+  50.0 points possible for Quiz 2 (Individual): Decisions and booleans
+  50.0 points possible for Quiz 3 (Individual): While loops
+  50.0 points possible for Quiz 4 (Individual): For loops
+  50.0 points possible for Quiz 5 (Individual): Algorithms and git
+  50.0 points possible for Quiz 6 (Individual): Strings
+  45.0 points possible for Quiz 7 (Individual): Functions
+  50.0 points possible for Quiz 8 (Individual): Functions
+  30.0 points possible for Quiz 9 (Individual): Files and exceptions
+  45.0 points possible for Quiz 10 (Individual): Lists
+  50.0 points possible for Quiz 11 (Individual): Lists and tuples
+  50.0 points possible for Quiz 12 (Individual): More on functions
+  50.0 points possible for Quiz 13 (Individual): Dictionaries
+  50.0 points possible for Quiz 14 (Individual): Sets and scope
+Group quizzes:
+  50.0 points possible for Quiz 0 (Group): Introduction
+  45.0 points possible for Quiz 1 (Group): Basics
+  50.0 points possible for Quiz 2 (Group): Decisions and booleans
+  50.0 points possible for Quiz 3 (Group): While loops
+  50.0 points possible for Quiz 4 (Group): For loops
+  50.0 points possible for Quiz 5 (Group): Algorithms and git
+  50.0 points possible for Quiz 6 (Group): Strings
+  45.0 points possible for Quiz 7 (Group): Functions
+  50.0 points possible for Quiz 8 (Group): Functions
+  30.0 points possible for Quiz 9 (Group): Files and exceptions
+  45.0 points possible for Quiz 10 (Group): Lists
+  50.0 points possible for Quiz 11 (Group): Lists and tuples
+  50.0 points possible for Quiz 12 (Group): More on functions
+  50.0 points possible for Quiz 13 (Group): Dictionaries
+  50.0 points possible for Quiz 14 (Group): Sets and scope
+Assignments:
+  30.0 points possible for Assignment 1: Basics
+  30.0 points possible for Assignment 2: Decisions and Booleans
+  30.0 points possible for Assignment 3: While loops
+  30.0 points possible for Assignment 4: For loops
+  10.0 points possible for Assignment 5: Algorithms and git
+  30.0 points possible for Assignment 6: Strings
+  25.0 points possible for Assignment 7: Functions
+   5.0 points possible for Assignment 8: TileTraveller
+  25.0 points possible for Assignment 9: Files and Exceptions
+  22.0 points possible for Assignment 10: Lists
+  25.0 points possible for Assignment 11: Lists and tuples
+  25.0 points possible for Assignment 12: More on functions
+  17.0 points possible for Assignment 13: TileTraveller2
+  25.0 points possible for Assignment 14: Dictionaries
+  15.0 points possible for Assignment 15: Sets
+Extra assignments:
+  24.0 points possible for Assignment 1+: More basics
+  16.0 points possible for Assignment 2+: Decisions and booleans
+  18.0 points possible for Assignment 3+: While loops
+  15.0 points possible for Assignment 4+: For loops
+  10.0 points possible for Assignment 5+: Algorithms
+  14.0 points possible for Assignment 6+: Strings
+  30.0 points possible for Assignment 7+: Functions
+  15.0 points possible for Assignment 8+: Functions for homework and fun
+  10.0 points possible for Assignment 9+: Files and Exceptions
+  10.0 points possible for Assignment 10+: Lists
+   5.0 points possible for Assignment 11+: Lists and tuples
+   5.0 points possible for Assignment 12+: Snakes and Ladders
+   9.0 points possible for Assignment 13+: Functions return
+   5.0 points possible for Assignment 14+: Dictionaries
+   5.0 points possible for Assignment 15+: Customer Analytics
+Projects:
+  10.0 points possible for Project 1: BMI
+  10.0 points possible for Project 2: Commission
+  20.0 points possible for Project 3: Mult and harmonic
+  20.0 points possible for Project 4: Calculator
+  20.0 points possible for Project 5: Hex and Decimal
+  20.0 points possible for Project 6: Data Processing
+  20.0 points possible for Project 7: Grades
+  20.0 points possible for Project 8: Airline Seating
+  10.0 points possible for Project 9: Word classes
+Midterms:
+  40.0 points possible for Midterm 1
+  80.0 points possible for Midterm 2
+The number of possible points on the final exam is not available yet.

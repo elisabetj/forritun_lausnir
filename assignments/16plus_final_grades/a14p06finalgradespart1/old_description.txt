@@ -1,0 +1,97 @@
+Author: Pétur Ólafur Aðalgeirsson
+
+Title: Final grades, part 1/3
+
+In this assignment, you're meant to begin working on a program to calculate your final grades from this course.
+
+The program should prompt the user for the name of a file to open, and print an appropriate error message if the file is not found, of course.
+
+The program consumes a .csv file like one that instructors can export from the gradebook on a site like Mímir or Coding Rooms.
+It contains a sequence of lines, each of which consists of comma separated values.
+Each line has the same number of fields, so the contents of the file can be thought of as a table, with columns and rows.
+
+The first line of the file contains headers for each column.
+There we hit our first problem, because the semester is not over yet.
+Therefore, if we export the file now, it does not include columns for any coursework that has not been assigned yet.
+This means that the number of columns changes with time, and at this time it is still unknown in which order the remaining coursework will be added to the file, or how many there will be of each type when all is said and done.
+
+In particular, the final exam has not been held yet, so the program must not rely on the presence of the final exam in the file.
+However, we want to take the final exam into account once it has arrived, of course.
+
+The goal of this first part of the development of the program is therefore to map out which column is associated with which information.
+So, the task of your program is to read the file, examine the first line, and find the indices of the columns for all of the following categories of coursework:
+
+- All the quizzes that have been held in class so far
+- All the assignments
+- All the extra assignments
+- All the homework projects
+- Any midterms held so far
+- The final exam, if included in the file
+
+The headers for the quiz columns start with "Quiz", i.e. "Quiz 0: Introduction", "Quiz 1: Basics", etc.
+The headers for the homework projects start with "Project", i.e. "Project 1: Voyager", "Project 2: Car rental" etc.
+The headers for the midterms start with "Midterm", i.e. "Midterm 1", "Midterm 2". The header for the final exam will be "Final exam".
+It is safe to assume that within each category, the columns appear in sequential order,
+i.e. the column for Quiz 4 will not appear to the left of the column for Quiz 3 for example. The same goes for the other categories.
+The categories may, however, appear interleaved, so for example the column for Midterm 1 could appear between the columns for Quiz 5 and Quiz 6.
+
+Note that the assignments and extra assignments are similarly named, so the program needs to be able to distinguish between them.
+The columns for the assignments have names like "Assignment 1: Basics", "Assignment 2: Decisions and booleans" etc.,
+while the extra assignments are called "Assignment 1+: More basics", "Assignment 2+: Decisions and booleans" etc.
+
+In addition, the first few columns contain basic information about the students:
+
+- First name in the first column (column nr. 0)
+- Last name in column nr. 1
+- Email in column nr. 2
+- Column nr. 3 specifies which section the student belongs to (H1, H2, ..., H5, HMV, Akureyri, Austurland)
+
+The indices of all these columns need to be recorded in an accessible manner, organized by category.
+Here, you will use a dictionary for this purpose. In this first stage, the program should simply display an overview of this record.
+The presentation should be a list of indices along with the column names, as demonstrated in the following output example.
+Included below is some starter code that is intended to save you time on configuring the format.
+
+The content of a typical input file is rather too vast to fit easily to the page here,
+but here's an example of what the first line of the file might look like
+(also provided below, in the file "example input.csv").
+
+    "First Name","Last Name","Email","Section","Quiz 0: Introduction","Assignment 1+: More basics","Quiz 1: Basics","Assignment 1: Basics","Quiz 2: Decisions and booleans","Assignment 2: Decisions and booleans","Assignment 2+: Decisions and booleans","Project 1: Voyager","Quiz 3: While loops","Assignment 3: While loops","Assignment 3+: While loops","Project 2: Car rental","Assignment 4: For loops","Assignment 4+: For loops","Assignment 5+: Algorithms","Midterm 1","Assignment 6+: Strings","Æfingapróf: Midterm 2 (2019)","Æfingaverkefni: Stock prices","Final exam"
+
+The corresponding output is:
+
+Enter filename: 
+0: First Name
+1: Last Name
+2: Email
+3: Section
+Quizzes:
+   4: Quiz 0: Introduction
+   6: Quiz 1: Basics
+   8: Quiz 2: Decisions and booleans
+  12: Quiz 3: While loops
+Assignments:
+   7: Assignment 1: Basics
+   9: Assignment 2: Decisions and booleans
+  13: Assignment 3: While loops
+  16: Assignment 4: For loops
+Extra assignments:
+   5: Assignment 1+: More basics
+  10: Assignment 2+: Decisions and booleans
+  14: Assignment 3+: While loops
+  17: Assignment 4+: For loops
+  18: Assignment 5+: Algorithms
+  20: Assignment 6+: Strings
+Projects:
+  11: Project 1: Voyager
+  15: Project 2: Car rental
+Midterms:
+  19: Midterm 1
+23: Final exam
+
+Hints and comments:
+
+- In the built-in open function, 'r'  is the default value of the mode parameter, so it can be omitted.
+- You might however need to specify encoding as 'utf-8', i.e.: open(filename, encoding='utf-8')
+- Do remember to close the file when you're done reading it. It can be convenient to use with open(...) as file_object:.
+- You are allowed (and encouraged) to import csv to read the file.
+- It is good practice to use constants for the dictionary keys.

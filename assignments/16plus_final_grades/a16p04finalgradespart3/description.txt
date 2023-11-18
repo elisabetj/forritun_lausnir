@@ -1,0 +1,105 @@
+Author: Pétur Ólafur Aðalgeirsson
+
+Title: Final grades, part 3/3
+
+This exercise continues where the previous one left off.
+You should build on the code from the last exercise, and develop it further.
+Refer to the descriptions of the earlier parts.
+However, you may want to incorporate some of the starter code provided in the template below, into your code, to save some time.
+
+Now, below the first two lines of the input file is a sequence of lines, one for each student.
+In this third part of the project, you need to collect and organize the information about each student that is contained in the file,
+which is the basic information, along with the points that the given student scored in each coursework:
+
+- All the quizzes that have been held in class so far (individual and group quizzes)
+- All the assignments
+- All the extra assignments
+- All the homework projects
+- Any midterms held so far
+- The final exam, if included in the file
+
+Then the program needs to calculate, for each student, a standardized grade from each coursework (for example, on the scale 0.0 to 1.0),
+so that they can be compared, and averages can be calculated etc.
+(for instance, all assignments are supposed to have equal weight, even though they don't all have the same amount of maximum points available).
+
+Next, the program should calculate the final course grade, according to the assessment as stated on
+[Canvas (Home -> Assessment)](https://reykjavik.instructure.com/courses/6232/pages/assessment?titleize=0),
+except with the above mentioned adjustment for group quizzes.
+Some of these statements are a little vague, so a clarification is in order:
+
+- Each midterm counts 10%, but only for those students for which it compares favourably to the final exam. So, the final exam will count as 40%, 50% or 60% depending on those comparisons.
+- Of the weekly homework projects, the best 7 will count, for each student. Of course, as not all of them have already been assigned, you should let the best 7 count, even if there are currently fewer than 10 projects that have been graded. So, for each student, the program should drop the lowest grades until there are only 7 left (in other words, keep dropping the lowest project grade while there are more than 7 project grades left), before calculating the average project grade. If the program is run when there are fewer than 7 project grades already in the file, then nothing should be dropped.
+- Remember that Quiz 0 should be ignored (as if it had not been held). This goes for both the individual and group quizzes.
+- The grade for the group quizzes should be calculated independently of the individual quizzes. Only the best 75% of the quizzes (rounded down) count toward the final grade, in both cases separately. So, the best 75% of the individual quizzes, and the best 75% of the group quizzes. In both cases, this will be rounded down, so for example if there are 17 quizzes, then the 12 best will count, since 17*0.75 = 12.75
+- The grade from assignments is scaled linearly, so an average grade of 5 (out of 10) means full points, and an average grade of 4 results in a grade of 8 from the assignment part.
+- Extra assignments were provided for students as further practice on more involved problems.
+  In the unlikely case that a student does not get full score for the basic assignments, while doing well on the extra assignments, the extra assignments can give some bonus points.
+  The exact implementation is as follows:
+
+  First, the grade from each extra assignment is compared to the established grade from the basic assignments,
+  and only those where the student scored higher than the basic grade are taken into account.
+  Of those, the average grade is calculated,
+  and then the total grade for this part is calculated as the weighted average of
+  the grade for the basic assignments and the grade for the extra assignments,
+  where the weight for the basic assignments is half the number of basic assignments,
+  and the weight for the extra assignments is the number of extra assignments being taken into account,
+  but of course scaled so that the weights sum up to 1.
+
+  See also
+  https://piazza.com/class/krynmvarb9yef?cid=275_f2
+  for an explicit example as well as the exact formula.
+
+Included in the starter code are skeletons for some functions for calculating these intermediate values.
+You will need to provide the implementation of these functions, as they will be unit tested.
+Finishing these functions will also help you toward the final goal, as you can call these functions in the rest of the program.
+
+This also means that you can score some points on the test cases for these functions alone, even without finishing the rest of the program.
+Note, that the detail regarding the extra assignments is worth only 1 point out of 45,
+so you don't really need to worry about that unless you're really itching for that perfect score.
+
+Note, that exported .csv files from Mímir can contain grades for some courseworks that are not within the expected range of that coursework,
+i.e. a student scores lower than 0 or higher than the maximum points available for that coursework.
+This can happen due to teachers typing in incorrect score modifiers when grading manually,
+or perhaps if we change the weight of test cases after tests are run (which has happened).
+But it should not be possible to score higher than 100% on a coursework (or lower than 0%), so this needs to be accounted for.
+
+Finally, the program should print out the grades of the top 10 students,
+nicely formatted in a table that includes the total grades from each category, as well as the final course grade.
+An example of the output is demonstrated below.
+Hint: You should take a look at the starter code.
+There is a function given for formatting the output, that should save you some time on tedious format configuration.
+
+In the starter code, an example input file is given (Muggle Studies 2021-3 (T-111-MUST) standard grades.csv).
+A typical output should look something like this:
+
+Enter filename: 
+Name                                  Quizzes (10%)     Assignments (10%)     Projects (20%)     Exam grade (60%)   Final grade (100%) 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Morag McDougal                             9.56               10.00                9.67               10.00                9.9
+Jimmy Peakes                               8.67               10.00                9.83                9.33                9.4
+Su Li                                      7.67               10.00                9.17                9.62                9.4
+Kenneth Towler                             7.78               10.00                7.67                8.83                8.6
+Mandy Brocklehurst                         9.78               10.00                9.50                7.54                8.4
+Natalie MacDonald                          8.00               10.00                8.33                7.75                8.1
+Kevin Entwhistle                           9.78               10.00                9.33                6.54                7.8
+Cormac McLaggen                            9.89               10.00                8.67                6.17                7.4
+Adrian Pucey                               6.33               10.00                5.33                7.29                7.1
+Romilda Vane                               2.11                4.15                9.33                7.50                7.0
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+(For better fitting in Coding rooms:)
+Enter filename: 
+Name              Quizzes (10%)   Assignments (10%)   Projects (20%)   Exam grade (60%)   Final grade (100%) 
+-------------------------------------------------------------------------------------------------------------
+Morag McDougal         9.56             10.00              9.67             10.00                9.9
+Jimmy Peakes           8.67             10.00              9.83              9.33                9.4
+Su Li                  7.67             10.00              9.17              9.62                9.4
+Kenneth Towler         7.78             10.00              7.67              8.83                8.6
+Mandy Brocklehurst     9.78             10.00              9.50              7.54                8.4
+Natalie MacDonald      8.00             10.00              8.33              7.75                8.1
+Kevin Entwhistle       9.78             10.00              9.33              6.54                7.8
+Cormac McLaggen        9.89             10.00              8.67              6.17                7.4
+Adrian Pucey           6.33             10.00              5.33              7.29                7.1
+Romilda Vane           2.11              4.15              9.33              7.50                7.0
+-------------------------------------------------------------------------------------------------------------
+Refer to the starting code for exact widths of the columns.
