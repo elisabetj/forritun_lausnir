@@ -1,0 +1,48 @@
+"""
+I/O tests:
+
+Test case 1:
+
+Input:
+
+Output:
+Premium customers
+----------------------------------------
+Alan Mitchell
+Clifton Wheeler
+Conrad Brown
+Eleanor Perkins
+Ken Graves
+Sonya Pierce
+
+New customers
+----------------------------------------
+Desiree Swanson
+Elizabeth Rodriguez
+Gertrude Padilla
+Lillian Marshall
+Louise Burns
+Marilyn Parsons
+Robert Montgomery
+Wendell Lynch
+
+Dormant customers
+----------------------------------------
+Alonzo Sutton
+Arturo Walker
+Barry Joseph
+Cathy Adams
+Claudia Sims
+Karl Gardner
+Kirk Smith
+Leroy Simpson
+Lindsey Terry
+Lonnie Edwards
+Marc Williamson
+Noah Watts
+Pat Henry
+Richard Alexander
+Ronald Thomas
+Sammy Mcdonald
+Winston Bates
+"""

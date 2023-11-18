@@ -1,0 +1,53 @@
+\problemname{Chemical equations}
+
+When balancing a chemical equation, a necessary requirement is that
+all the elements appearing on one side of the equation
+must also appear on the other side of the equation.
+
+Write a program that, given a chemical equation,
+checks if the same elements appear on both sides of the equation.
+
+\textbf{Hint}: You should be able to reuse functions from the previous exercise,
+but here each side of the equation can include more than one formula,
+so you might need to split the equation into individual formulae to use those functions.
+
+
+\section*{Input}
+
+The input consists of one line,
+containing one chemical equation whose sides are separated by ``\texttt{<=>}''.
+
+Each side can contain multiple formulae, separated by a ``\texttt{+}''.
+A formula is defined as a series of chemical components each possibly followed by a number.
+Chemical components always start off with $1$ or $2$ English letters,
+the first being uppercase, and the second being lowercase.
+
+In the tests, each chemical equation, contains $2$ to $100$ formulae
+and each formula $f$ will be restricted to $1 \le |f| \le 10$.
+
+
+\section*{Output}
+
+The output should consist of one or more of the following strings, in this order:
+\begin{itemize}
+    \item
+    ``\texttt{No elements missing from either side of the equation.}''
+
+    if there are no elements missing from either side.
+
+    \item
+    ``\texttt{The following elements appear on the left side but not the right:}''
+
+    followed by all the elments missing from the right side,
+    if there are elements that only appear on the left side.
+
+    \item
+    ``\texttt{The following elements appear on the right side but not the left:}''
+
+    followed by all the elments missing from the left side,
+    if there are elements that only appear on the right side.
+\end{itemize}
+If there are elements missing from either side
+the program should also output the string:
+
+``\texttt{Therefore, balancing this chemical equation is not possible.}''

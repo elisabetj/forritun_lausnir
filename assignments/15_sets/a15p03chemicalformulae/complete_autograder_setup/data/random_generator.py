@@ -24,6 +24,7 @@ def construct_formula(element_amount):
     formula_str = ""
     for _ in range(element_amount):
         formula_str += random_element()
+        # TODO: Add numbers as well.
     return formula_str
 
 

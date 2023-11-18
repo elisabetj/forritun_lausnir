@@ -1,0 +1,52 @@
+\problemname{Customer Analytics}
+
+\illustration{0.3}{money}{money}
+
+Your stupendously awesome internet startup, \emph{where-my-sock.is}, has come out of stealth-mode.
+For the past few months you have actual paying customers!
+You want to hire another software engineer but \sout{your wife} the chairman of the board
+insists that you grow your customer base to $1000$ monthly active users before hiring more people.
+
+You decide to engage with your existing users in an attempt to meet that target. You put together the following plan:
+\begin{enumerate}
+    \item Identify premium customers, the die-hard fans who come back each and every month. 
+        Offer them swag such as \emph{where-my-sock.is} baseball caps, t-shirts, and fridge magnets in exchange for referrals and testimonials.
+    \item Identify new customers who signed up last month. Send them a personalized welcome email to improve odds of retaining them.
+    \item Identify dormant customers who have not used your service for the last 2 months. Send them a nudge email to try to get them back.
+\end{enumerate}
+You generate a \texttt{.csv} file based on customer activity in your system. It looks something like this:
+\begin{verbatim}
+    2020-07,Conrad Brown
+    2020-07,Leroy Simpson
+    2020-07,Eleanor Perkins
+    2020-08,Eleanor Perkins
+    2020-08,Conrad Brown
+    2020-09,Conrad Brown
+    2020-09,Gertrude Padilla
+    2020-09,Eleanor Perkins
+    2020-09,Gertrude Padilla
+\end{verbatim}
+There are two columns in the file, the year and month in which the activity took place and the name of the customer.
+
+In this example, we can see that:
+\begin{itemize}
+    \item Conrad Brown and Eleanor Perkins are premium customers. They have used the product in each and every month.
+    \item Gertrude Padilla is a new customer. She used the product twice last month.
+    \item Leroy Simpson is a dormant customer. He has not used the product in the last two months.
+\end{itemize}
+
+You know that you can leverage your Python chops to read this file and print out the three customer segments.
+One for each category of customer, \texttt{Premium}, \texttt{New} and \texttt{Dormant}.
+
+\section*{Input}
+Input consists of one line.
+The filename of the csv file you should read from containing the customer data.
+
+\section*{Output}
+Output contains of three sections, one for each type of customer.
+Each section starts with the name of the section followed by $40$ dashes \(``-''\),
+and then prints out each customers name who belongs to that category,
+each section then ends with one empty new line.
+Customer names should be in alphabetical order.
+
+

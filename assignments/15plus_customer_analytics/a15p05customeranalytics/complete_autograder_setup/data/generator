@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+USE_SCORING=0
+. ../../../../testdata_tools/gen.sh
+
+use_solution solution_code.py
+
+compile filename_generator.py
+
+sample 01
+
+mkdir -p ../include/python3
+for test_type in {'premium','new','dormant','mixed'}; do
+    for i in {01..05}; do
+        FILENAME="$test_type-$i.csv"
+        python3 input_file_content_generator.py 2020 2023 10 100 $test_type $i > "$FILENAME"
+    done
+done;
+
+for test_type in {'premium','new','dormant','mixed'}; do
+    for i in {01..05}; do
+        tc $test_type-$i filename_generator $i $test_type
+    done;
+done;
+
+for file in *.csv; do
+    cp $file ../include/python3/
+done;

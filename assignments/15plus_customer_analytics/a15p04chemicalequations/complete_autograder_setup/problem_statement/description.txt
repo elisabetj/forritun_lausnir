@@ -1,0 +1,27 @@
+Author: Eiríkur Fannar Torfason
+
+Title: Chemical equations
+
+When balancing a chemical equation, a necessary requirement is that
+all the elements appearing on one side of the equation
+must also appear on the other side of the equation.
+
+Write a program that prompts the user for a chemical equation,
+and checks if the same elements appear on both sides of the equation.
+
+You should be able to reuse some functions from the previous exercise,
+but here, each side of the equation can include more than one formula,
+so you'll probably need to split the equation into individual formulae
+before feeding them to your pre-existing functions.
+
+Example input/output:
+
+    Enter a chemical equation: H20 + Fe <=> FeO3H3 + H2
+    No elements missing from either side of the equation.
+
+Another example:
+
+    Enter a chemical equation: Cl2 + KOH <=> KCl
+    The following elements appear on the left side but not the right:
+     H, O
+    Therefore, balancing this chemical equation is not possible.

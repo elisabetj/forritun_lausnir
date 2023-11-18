@@ -1,0 +1,59 @@
+Author: Eiríkur Fannar Torfason
+
+Title: Customer Analytics
+
+[https://s3.amazonaws.com/mimirplatform.production/files/2de83b0a-f2a9-4d74-8390-fc8ae6ace909/money-2724241_640.jpg]
+
+Your stupendously awesome internet startup, where-my-sock.is, has come out of stealth-mode.
+For the past few months you have actual paying customers!
+You want to hire another software engineer but [your wife](strikethrough) the chairman of the board
+insists that you grow your customer base to 1000 monthly active users before hiring more people.
+
+You decide to engage with your existing users in an attempt to meet that target. You put together the following plan:
+
+1. Identify premium customers, the die-hard fans who come back each and every month. Offer them swag (where-my-sock.is baseball caps, t-shirts, fridge magnets) in exchange for referrals and testimonials.
+2. Identify new customers who signed up last month. Send them a personalized welcome email to improve odds of retaining them.
+3. Identify dormant customers who have not used your service for the last 2 months. Send them a nudge email to try to get them back.
+
+You generate a .csv file based on customer activity in your system. It looks something like this:
+
+    2020-07,Conrad Brown
+    2020-07,Leroy Simpson
+    2020-07,Eleanor Perkins
+    2020-08,Eleanor Perkins
+    2020-08,Conrad Brown
+    2020-09,Conrad Brown
+    2020-09,Gertrude Padilla
+    2020-09,Eleanor Perkins
+    2020-09,Gertrude Padilla
+
+There are two columns in the file, the year and month in which the activity took place and the name of the customer.
+
+In this example, we can see that:
+
+- Conrad Brown and Eleanor Perkins are premium customers. They have used the product in each and every month.
+- Gertrude Padilla is a new customer. She used the product twice last month.
+- Leroy Simpson is a dormant customer. He hasn't used the product in the last two months.
+
+You know that you can leverage your Python chops to read this file and print out the three customer segments.
+You want the program to generate output that looks like this (given the .csv example above).
+
+    Premium customers
+    ----------------------------------------
+    Conrad Brown
+    Eleanor Perkins
+
+    New customers
+    ----------------------------------------
+    Gertrude Padilla
+
+    Dormant customers
+    ----------------------------------------
+    Leroy Simpson
+
+
+Other requirements:
+
+- The program should read data from a file named active_customers_by_month.csv
+- The program should continue to produce correct results, even when fed data covering more months than in the example above.
+- Customer names should be in alphabetical order.
