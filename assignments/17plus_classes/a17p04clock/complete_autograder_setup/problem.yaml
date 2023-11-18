@@ -1,0 +1,9 @@
+name: Clock
+author: Arnar Bjarni Arnarson, Kristján Orri Ragnarsson, Pétur Ólafur Aðalgeirsson, Hannes Kristján Hannesson, Eiríkur Fannar Torfason, Hrafn Loftsson
+source: T-111-Programming
+rights_owner: Háskólinn í Reykjavík
+license: cc by-sa
+type: scoring
+validator_flags: space_change_sensitive case_sensitive
+grading:
+    show_test_data_groups: true

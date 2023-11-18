@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+. ../../../../testdata_tools/gen.sh
+
+use_solution solution_code/main.py
+
+compile random_generator.py
+
+hint () {
+    local name="$1"
+    local path="$CURGROUP_DIR/$(_base ${cases[$name]})"
+    echo "$2" > "$path.hint"
+}
+
+samplegroup
+# sample 01
+
+GENERALHINT="A convenient way of leaving something unimplemented is using the pass keyword as the only line within the function.\n"
+
+GAHINT="$(printf "Is it possible to construct an object of the type Clock?\n$GENERALHINT")"
+group GA-clock-init 25
+for i in {01..25}; do
+tc clock-init-$i random_generator clock "__init__"
+hint clock-init-$i "$GAHINT"
+done
+
+GBHINT="$(printf "Is it possible to print an object of the type Clock?\n$GENERALHINT")"
+group GB-clock-str 25
+for i in {01..25}; do
+tc clock-str-$i random_generator clock "__str__"
+hint clock-str-$i "$GBHINT"
+done
+
+GCHINT="$(printf "Is it possible to update a clock?\n$GENERALHINT")"
+group GC-clock-update 25
+for i in {01..25}; do
+tc clock-update-$i random_generator clock "str_update"
+hint clock-update-$i "$GCHINT"
+done
+
+GDHINT="$(printf "Is it possible to add clocks?\n$GENERALHINT")"
+group GD-clock-add 25
+for i in {01..25}; do
+tc clock-add-$i random_generator clock "add_clocks"
+hint clock-add-$i "$GDHINT"
+done

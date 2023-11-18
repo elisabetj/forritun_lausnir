@@ -1,0 +1,49 @@
+Title: A classifying class
+
+[https://s3.amazonaws.com/mimirplatform.production/files/65a1a106-6292-490e-a7b1-d21973aacda3/dog-316991_640.jpg]
+
+In chapter 10 we learned how to predict whether a cancer cell is benign or malignant based on nine different attributes of the cell.
+The solution used nine classifiers, one for each attribute, and then made its ultimate prediction based on the majority outcome.
+
+In this exercise you'll create a classifier similar to the ones utilized in chapter 10.
+To that end you will have to create two classes:
+
+The first class shall be named Sample.
+It should be possible to initialize it like so:
+
+    Sample(value=3.7, classification="cat")
+
+The second class shall be named ClosestMeanClassifier.
+It should be possible to initialize it by passing a list of Sample objects to its constructor like so:
+
+    sample_list = [Sample(value=3.7, classification="cat"), Sample(value=6.4, classification="dog")]
+    classifier = ClosestMeanClassifier(sample_list)
+
+The classifier, when initialized, should calculate the mean (i.e. average value) for each classification based on the samples it receives.
+It should then be able to predict the classification for arbitrary values by finding the classification with the closest mean.
+
+Let's take a concrete example.
+Imagine that we have a dataset containing the weight of several cats and dogs.
+We would like to leverage that to predict whether a pet is a cat or a dog based solely on its weight.
+Here's an excerpt from an iPython session demonstrating how this can be achieved.
+
+    In [1]: from classifier import Sample, ClosestMeanClassifier
+
+    In [2]: cat_weights = [3.5, 3.2, 5.0]  # mean: 3.9
+
+    In [3]: dog_weights = [6.4, 4.7, 7.2]  # mean: 6.1
+
+    In [4]: cat_samples = [Sample(weight, "cat") for weight in cat_weights]
+
+    In [5]: dog_samples = [Sample(weight, "dog") for weight in dog_weights]
+
+    In [6]: classifier = ClosestMeanClassifier(cat_samples + dog_samples)
+
+    In [7]: classifier.classify(4.7)
+    Out[7]: 'cat'
+
+    In [8]: classifier.classify(5.2)
+    Out[8]: 'dog'
+
+In the example above, we observe that 4.7 is closer to the mean for cats (3.9) so the classifier predicts that the pet is a 'cat'.
+However, 5.2 is closer to the mean for dogs (6.1) so the second prediction is 'dog'.

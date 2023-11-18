@@ -1,0 +1,52 @@
+\problemname{Clock}
+
+The clocks at Reykjavík University heve begun ticking backwards and Ingi from facilities, having heard of your previous tales, comes asking for help fixing the situation.
+
+\textbf{The main file, which handles input and output, is already provided. -
+Please only submit your class definition, without any code outside the class!}
+
+Implement a class called \texttt{Clock} with the following attributes:
+
+\begin{itemize}
+    \item An \texttt{\_\_init\_\_()} method with three parameters: hours, minutes, seconds with default values 0.
+    \item Three instance variables to store the hours, minutes and seconds.
+    \item A method called \texttt{str\_update()}. 
+    It takes as an argument a string of the form hh:mm:ss and updates the three instances variables.
+    \item A \texttt{\_\_str\_\_()} method for responding to the \texttt{print} function. It should write out: \texttt{"\{\} hours, \{\} minutes and \{\} seconds."}
+    \item A method called \texttt{add\_clocks()}.
+    It takes another clock object as a parameter, adds the two clocks and returns a new clock instance.
+    In this method, you need to add the respective values of the two clocks together and remember the resulting hours, minutes and seconds.
+    Remember that the sum of seconds cannot exceed 60, in which case there is a carry over to the minutes values.
+    Same for minutes, it cannot exceed 60 and carries over to hours.
+    For hours, the summed values cannot exceed 24.
+    If hours is exceeded, we ignore it and start from zero.
+    Try to use the \texttt{divmod()} built-in Python function in your implementation.
+\end{itemize}
+
+The file submitted should be named: \texttt{clock.py}
+
+
+\section*{Example}
+Example use of class:
+\begin{verbatim}
+clock1 = Clock()
+clock2 = Clock(8, 30)
+print(clock1)
+print(clock2)
+clock1.str_update("03:21:34")
+clock2.str_update("05:45:52")
+print(clock1)
+print(clock2)
+clock3 = clock1.add_clocks(clock2)
+print(clock3)
+\end{verbatim}
+    
+
+Corresponding output:
+\begin{verbatim}
+0 hours, 0 minutes and 0 seconds.
+8 hours, 30 minutes and 0 seconds.
+3 hours, 21 minutes and 34 seconds.
+5 hours, 45 minutes and 52 seconds.
+9 hours, 7 minutes and 26 seconds.
+\end{verbatim}
