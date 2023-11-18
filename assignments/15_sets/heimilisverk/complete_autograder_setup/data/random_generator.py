@@ -21,35 +21,34 @@ def main():
         assert False, f"Unexpected method {method} requested."
 
 
-def rand(n, l, p):
-    ni = n
-    s = []
-    print(ni)
-    for k in range(ni):
+def rand(number_of_entries, length, probability):
+    entries = []
+    print(number_of_entries)
+    for iteration in range(number_of_entries):
         poll = random.uniform(0, 1)
-        size = random.randint(1, l)
-        if poll <= p or k == 0:
-            cur = "".join(random.choices(string.ascii_lowercase, k=size))
+        size = random.randint(1, length)
+        if poll <= probability or iteration == 0:
+            task = "".join(random.choices(string.ascii_lowercase, k=size))
         else:
-            cur = random.choice(s)
-        s.append(cur)
-        print(cur)
+            task = random.choice(entries)
+        entries.append(task)
+        print(task)
 
 
-def atmost(n):
-    l = random.randint(1, n)
-    cnt = n // l
-    print(cnt)
-    for _ in range(cnt):
-        print("".join(random.choices(string.ascii_lowercase, k=l)))
+def atmost(max_number_of_symbols):
+    entry_length = random.randint(1, max_number_of_symbols)
+    number_of_entries = max_number_of_symbols // entry_length
+    print(number_of_entries)
+    for _ in range(number_of_entries):
+        print("".join(random.choices(string.ascii_lowercase, k=entry_length)))
 
 
-def srt(n):
-    l = int(math.sqrt(n)) + random.randint(-10, 10)
-    cnt = n // l
-    print(cnt)
-    for _ in range(cnt):
-        print("".join(random.choices(string.ascii_lowercase, k=l)))
+def srt(max_number_of_symbols):
+    entry_length = int(math.sqrt(max_number_of_symbols)) + random.randint(-10, 10)
+    number_of_entries = max_number_of_symbols // entry_length
+    print(number_of_entries)
+    for _ in range(number_of_entries):
+        print("".join(random.choices(string.ascii_lowercase, k=entry_length)))
 
 
 if __name__ == "__main__":
