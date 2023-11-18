@@ -1,0 +1,42 @@
+Title: Hangman
+
+Write the class Hangman which represents a word in the game hangman.
+The class should keep track of which letters of the word have been revealed and how many times an incorrect guess has been made,
+and it should have the following methods:
+- __init__(word: str): Initializes the word to be discovered, as well as other attributes as necessary.
+- guess_letter(letter: str) -> bool: Returns whether the guess was correct. If the guess was correct, the letter should now no longer be hidden.
+- __str__() -> str: Shows the word, only displaying the revealed letters, and the number of incorrect guesses. For those that are still hidden, show "_" instead. Letters should be printed in uppercase.
+
+It is a good idea to break the guess_letter() method down by delegating some of the details to helper functions.
+Make sure to have methods call other methods where applicaple, to avoid implementing the same functionality in multiple places.
+
+Example usage:
+
+    hangword = Hangman("Testing")
+    print(hangword)
+    print(hangword.guess_letter("i"))
+    print(hangword.guess_letter("I"))
+    print(hangword.guess_letter("a"))
+    hangword.guess_letter("t")
+    print(hangword)
+    hangword.guess_letter("E")
+    hangword.guess_letter("s")
+    print(hangword)
+    hangword.guess_letter("i")
+    hangword.guess_letter("N")
+    hangword.guess_letter("g")
+    print(hangword)
+
+Expected output:
+
+    _ _ _ _ _ _ _
+    Number of incorrect guesses: 0
+    True
+    True
+    False
+    T _ _ T I _ _
+    Number of incorrect guesses: 1
+    T E S T I _ _
+    Number of incorrect guesses: 1
+    T E S T I N G
+    Number of incorrect guesses: 1

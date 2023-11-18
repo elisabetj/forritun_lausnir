@@ -1,0 +1,65 @@
+\problemname{Music Album}
+
+Write a class called \texttt{MusicAlbum} that has the attributes:
+``\texttt{band}'', ``\texttt{title}'' and ``\texttt{year}''.
+
+The class should have $3$ methods:
+\begin{itemize}
+    \item \texttt{\_\_init\_\_(band, title, year)}: 
+    Should accept $3$ parmeters, a band name, album title, and a year.
+    By default the band name should be ``\texttt{unknown band}'',
+    title by default should be ``\texttt{unknown}''
+    and the year should be ``\texttt{unknown year}'' by default.
+
+    \item \texttt{set\_album(band, title, year)}:
+    Should overwrite attributes in the class.
+    If a field is not supplied in the parameter,
+    the default is the same as in the constructor.
+
+    \item \texttt{\_\_str\_\_()}:
+    Should return a string representation of the album,
+    see output example below.
+\end{itemize}
+
+\textbf{Note:}
+It can happen that you might have to overwrite existing data with a default value,
+when calling \texttt{set\_album}.
+
+\textbf{Note:}
+You should \textbf{not} submit the main program as part of your solution,
+only the file that contains the class \texttt{MusicAlbum}.
+
+The following is an example main program.
+This example is also included in the supplied ``\texttt{main.py}'' file:
+\begin{verbatim}
+album = MusicAlbum()
+print(album)
+
+album.set_album("Talking Heads", "Remain in Light", 1980)
+print(album)
+
+album.set_album("AC/DC", "Back in Black")
+print(album)
+
+album_beatles = MusicAlbum("The Beatles", "Abbey Road")
+album_london_calling = MusicAlbum(title="London Calling", year=1979)
+album_beyonce = MusicAlbum(band="Beyonce", year=2016)
+
+print(album_beatles)
+print(album_london_calling)
+print(album_beyonce)
+\end{verbatim}
+
+
+\section*{Output}
+
+The following is the corresponding output for the sample program given above:
+
+\begin{verbatim}
+Album unknown by unknown band, released in unknown year.
+Album Remain in Light by Talking Heads, released in 1980.
+Album Back in Black by AC/DC, released in unknown year.
+Album Abbey Road by The Beatles, released in unknown year.
+Album London Calling by unknown band, released in 1979.
+Album unknown by Beyonce, released in 2016.
+\end{verbatim}

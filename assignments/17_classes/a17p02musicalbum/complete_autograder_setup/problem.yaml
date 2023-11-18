@@ -1,0 +1,8 @@
+name: Music Album
+author: Arnar Páll Jóhannsson, Pétur Ólafur Aðalgeirsson
+source: T-111-Programming
+rights_owner: Háskólinn í Reykjavík
+license: cc by-sa
+type: scoring
+grading:
+  show_test_data_groups: true

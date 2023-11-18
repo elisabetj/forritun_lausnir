@@ -1,0 +1,6 @@
+REGEX("(__init__|__str__)") NEWLINE
+REGEX("[a-zA-Z]{5,12}") NEWLINE
+REGEX("[a-zA-Z]{5,12}") NEWLINE
+INT(1,10000) NEWLINE
+INT(1,8) NEWLINE
+EOF

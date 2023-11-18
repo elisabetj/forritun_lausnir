@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+. ../../../../testdata_tools/gen.sh
+
+use_solution solution_code/main.py
+
+compile random_generator.py
+
+#sample 01
+
+group GA-waterbottle-init 25
+for i in {01..09}; do
+tc waterbottle-init-$i random_generator "__init__" False
+done;
+tc waterbottle-init-10 random_generator "__init__" True
+
+group GB-waterbottle-str 25
+for i in {01..10}; do
+tc waterbottle-str-$i random_generator "__str__" 
+done;
+
+group GC-waterbottle-fill 25
+for i in {01..10}; do
+tc waterbottle-fill-$i random_generator "fill" 
+done;
+
+group GD-waterbottle-drink 25
+for i in {01..10}; do
+tc waterbottle-drink-$i random_generator "drink"
+done;

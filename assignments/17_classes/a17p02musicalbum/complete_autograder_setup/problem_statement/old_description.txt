@@ -1,0 +1,39 @@
+Title: Music album
+
+Write a class called MusicAlbum that has the attributes: 'band', 'title' and 'year'.
+It has a constructor with 3 parameters.
+By default the band name should be "unknown band", title by default should be "unknown" and the year should be "unknown year" by default.
+
+The class has only 2 methods, in addition to __init__():
+- set_album(band, title, year) : function that overwrites attributes in the class. If a field is not supplied in the parameter, the default is the same as in the constructor.
+- __str__() : function that returns a string representation of the album (see output example below).
+
+Example use case:
+
+    album = MusicAlbum()
+    print(album)
+
+    album.set_album("Talking Heads", "Remain in Light", 1980)
+    print(album)
+
+    album.set_album("AC/DC", "Back in Black")
+    print(album)
+
+    album_beatles = MusicAlbum("The Beatles", "Abbey Road")
+    album_london_calling = MusicAlbum(title="London Calling", year=1979)
+    album_beyonce = MusicAlbum(band="Beyonce", year=2016)
+
+    print(album_beatles)
+    print(album_london_calling)
+    print(album_beyonce)
+
+Expected output:
+
+    Album unknown by unknown band, released in unknown year.
+    Album Remain in Light by Talking Heads, released in 1980.
+    Album Back in Black by AC/DC, released in unknown year.
+    Album Abbey Road by The Beatles, released in unknown year.
+    Album London Calling by unknown band, released in 1979.
+    Album unknown by Beyonce, released in 2016.
+
+Note: It can happen that you might have to overwrite existing data with a default value, when calling set_album.

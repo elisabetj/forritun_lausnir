@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+. ../../../../testdata_tools/gen.sh
+
+use_solution solution_code/main.py
+
+compile random_generator.py
+
+# sample 01
+
+group GA-hangman-init 20
+for i in {01..20}; do
+tc hangman-init-$i random_generator "__init__" $i
+done;
+
+group GB-hangman-str 40
+for i in {01..10}; do
+tc hangman-str-$i random_generator "__str__" $i
+done;
+
+group GC-hangman-guess-letter 40
+for i in {01..10}; do
+tc hangman-guess-letter-$i random_generator "guess_letter" $i
+done;

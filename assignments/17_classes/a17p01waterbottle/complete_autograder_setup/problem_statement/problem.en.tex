@@ -1,0 +1,60 @@
+\problemname{Water Bottle}
+
+Write a class \texttt{WaterBottle} which has a maximum capacity and some contents, given in liters.
+The corresponding attributes should be called \texttt{max\_capacity} and \texttt{current\_contents}.
+
+The class should have $4$ methods:
+\begin{enumerate}
+    \item \texttt{\_\_init\_\_(max\_capacity)}:
+    Should accept a parameter called \texttt{max\_capacity} with a default value of $2$,
+    that specifies the maximum capacity of the waterbottle,
+    and set the corresponding attribute accordingly.
+    It should also initialize the current contents to $0L$.
+
+    \item \texttt{fill()}:
+    Should fill the bottle to its maximum capacity.
+
+    \item \texttt{drink(amount)}:
+    Should reduce the contents of the bottle, and return the extracted amount.
+    \begin{itemize}
+        \item If the amount is less than $0$, nothing changes (you are not supposed to spit into the bottle).
+        \item If the amount is more than the current contents, the bottle is emptied.
+        \item Otherwise the amount is subtracted from the contents.
+    \end{itemize}
+
+    \item \texttt{\_\_str\_\_()}:
+    Should return a string stating how many liters of water are currently in the bottle.
+    Print to $1$ decimal places, e.g. ``$2.3L$''.
+\end{enumerate}
+
+Remember that the \texttt{\_\_str\_\_()} method should never print anything, only \emph{return} a string.
+
+\textbf{Note:} You do \textbf{not} need to submit the main program as part of your solution,
+only the file that contains the class \texttt{WaterBottle}.
+
+The following is an example main program.
+This example is also included in the supplied ``\texttt{main.py}'' file:
+   
+\begin{verbatim}
+bottle = WaterBottle(5)
+print(f"Bottle max capacity: {bottle.max_capacity}L.")
+
+bottle.fill()
+print(f"Currently holding {bottle.current_contents}L of water.")
+
+sip = bottle.drink(3.7)
+print(f"Received {sip} liters.")
+
+print(bottle)
+\end{verbatim}
+
+
+\section*{Output}
+
+The following is the corresponding output for the sample program given above:
+\begin{verbatim}
+Bottle max capacity: 5L.
+Currently holding 5.0L of water.
+Received 3.7 liters.
+The bottle currently holds 1.3L of water.
+\end{verbatim}

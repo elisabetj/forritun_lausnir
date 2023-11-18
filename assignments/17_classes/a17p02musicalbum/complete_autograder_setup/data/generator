@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+. ../../../../testdata_tools/gen.sh
+
+use_solution solution_code/main.py
+
+compile random_generator.py
+
+# sample 01
+
+# Testtypes 1-7
+# 1: band, title, year
+# 2: band
+# 3: title
+# 4: year
+# 5: band, title
+# 6: band, year
+# 7: title, year
+
+group GA-musicalbum-init 50
+for i in {01..08}; do
+tc musicalbum-init-$i random_generator "__init__" $i
+done;
+
+group GB-musicalbum-str 50
+for i in {01..08}; do
+tc musicalbum-str-$i random_generator "__str__" $i
+done;
+

@@ -1,0 +1,46 @@
+Title: Water Bottle
+
+Write a class WaterBottle which has max capacity and current contents (given in liters).
+The corresponding attributes should be called max_capacity and current_contents.
+The __init__() method should accept a parameter called max_capacity, with 2 as the default value,
+and initialize the current contents to 0L.
+The class has 3 methods, in addition to __init__():
+1. fill() : Fills the bottle to max capacity.
+2. drink(amount) : reduces the contents of the bottle, and returns the extracted amount.
+   - If the amount is less than 0, nothing changes (you're not supposed to spit into the bottle).
+   - If the amount is more than the current contents, the bottle is emptied.
+   - Otherwise the amount is subtracted from the contents.
+3. __str__() : Returns a string stating how many liters of water are currently in the bottle (print to 1 decimal places, e.g. "2.3L").
+
+Remember that the __str__() method should never print anything, only return a string.
+
+Example usage:
+
+    bottle = WaterBottle()
+    print(bottle)
+
+    bottle.fill()
+    print(bottle)
+
+    sip = bottle.drink(-0.1)
+    print(f"Received {sip} liters.")
+    print(bottle)
+
+    sip = bottle.drink(0.5)
+    print(f"Received {sip} liters.")
+    print(bottle)
+
+    sip = bottle.drink(10)
+    print(f"Received {sip} liters.")
+    print(bottle)
+
+And corresponding outputs:
+
+    The bottle currently holds 0.0L of water.
+    The bottle currently holds 2.0L of water.
+    Received 0 liters.
+    The bottle currently holds 2.0L of water.
+    Received 0.5 liters.
+    The bottle currently holds 1.5L of water.
+    Received 1.5 liters.
+    The bottle currently holds 0.0L of water.

@@ -1,0 +1,52 @@
+\problemname{Hangman}
+
+Write the class \texttt{Hangman} which represents a word in the game hangman.
+The class should keep track of which letters of the word have been revealed and how many times an incorrect guess has been made,
+and it should have the following methods:
+\begin{itemize}
+    \item \texttt{\_\_init\_\_(word: str)}: Initializes the word to be discovered, as well as other attributes as necessary.
+    \item \texttt{guess\_letter(letter: str) -> bool}: Returns whether the guess was correct.
+        If the guess was correct, the letter should now no longer be hidden.
+    \item \texttt{\_\_str\_\_() -> str}: Shows the word, only displaying the revealed letters, and the number of incorrect guesses. 
+        For those that are still hidden, show ``\_'' instead. Letters should be printed in uppercase.
+\end{itemize}
+
+It is a good idea to break the \texttt{guess\_letter()} method down by delegating some of the details to helper functions.
+Make sure to have methods call other methods where applicaple, to avoid implementing the same functionality in multiple places.
+
+\textbf{Note:} You should \textbf{not} submit the main program as part of your solution, only the file that contains the class \texttt{Hangman}.
+
+The following is an example main program, this example is also included in the supplied ``\texttt{main.py}'' file:
+\begin{verbatim}
+hangword = Hangman("Testing")
+print(hangword)
+print(hangword.guess_letter("i"))
+print(hangword.guess_letter("I"))
+print(hangword.guess_letter("a"))
+hangword.guess_letter("t")
+print(hangword)
+hangword.guess_letter("E")
+hangword.guess_letter("s")
+print(hangword)
+hangword.guess_letter("i")
+hangword.guess_letter("N")
+hangword.guess_letter("g")
+print(hangword)
+\end{verbatim}
+
+\section*{Output}
+the corresponding outputs for the sample program given above:
+
+\begin{verbatim}
+_ _ _ _ _ _ _
+Number of incorrect guesses: 0
+True
+True
+False
+T _ _ T I _ _
+Number of incorrect guesses: 1
+T E S T I _ _
+Number of incorrect guesses: 1
+T E S T I N G
+Number of incorrect guesses: 1
+\end{verbatim}
