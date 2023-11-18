@@ -49,7 +49,7 @@ def srt(n):
     cnt = n // l
     print(cnt)
     for _ in range(cnt):
-        print("".join(random.choice(string.ascii_lowercase) for i in range(l)))
+        print("".join(random.choices(string.ascii_lowercase, k=l)))
 
 
 if __name__ == "__main__":
