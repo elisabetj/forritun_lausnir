@@ -1,0 +1,8 @@
+Title: Part 3
+
+In this last part, you add functionality to the Prey class.
+When the breeding time has occcurred for an instance of Prey,
+it should now try to create two offsprings as opposed to just one.
+
+You should not simply copy code from the Animal class,
+but rather refactor the code such that two offsprings can be easily created in the Prey class.

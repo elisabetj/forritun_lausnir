@@ -1,0 +1,25 @@
+Title: Part 1
+
+Start by running the given solution locally on your computer.
+You will notice a run-time error like the following:
+
+    Enter seed for randomness: 10
+    .  O  O  X  .  .  O  O  .  .  
+    .  .  .  .  .  O  O  X  .  O  
+    .  .  .  O  O  .  O  O  O  O  
+    O  X  O  .  X  O  O  X  X  .  
+    .  .  .  O  .  O  .  O  O  O  
+    .  .  O  O  .  X  O  O  O  .  
+    .  .  O  .  .  .  O  O  .  .  
+    .  O  O  O  O  O  O  O  X  O  
+    X  O  O  O  .  O  .  .  O  O  
+    O  X  O  O  .  .  O  .  O  O
+
+    ...
+    island.py", line 56, in clear_all_moved_flags
+        animal.clear_move()
+    AttributeError: 'int' object has no attribute 'clear_move'
+
+Use the debugger in Visual Studio Code to find the reason for this error,
+i.e. set a break-point in the line number shown above
+and inspect the animal object each time the breakpoint is encountered during the run/debugging of the main program.
