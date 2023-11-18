@@ -28,7 +28,7 @@ def rand(number_of_entries, length, probability):
         poll = random.uniform(0, 1)
         size = random.randint(1, length)
         if poll <= probability or iteration == 0:
-            task = "".join(random.choices(string.ascii_lowercase, k=size))
+            task = random_entry(size)
         else:
             task = random.choice(entries)
         entries.append(task)
@@ -40,7 +40,7 @@ def atmost(max_number_of_symbols):
     number_of_entries = max_number_of_symbols // entry_length
     print(number_of_entries)
     for _ in range(number_of_entries):
-        print("".join(random.choices(string.ascii_lowercase, k=entry_length)))
+        print(random_entry(entry_length))
 
 
 def srt(max_number_of_symbols):
@@ -48,7 +48,11 @@ def srt(max_number_of_symbols):
     number_of_entries = max_number_of_symbols // entry_length
     print(number_of_entries)
     for _ in range(number_of_entries):
-        print("".join(random.choices(string.ascii_lowercase, k=entry_length)))
+        print(random_entry(entry_length))
+
+
+def random_entry(length: int) -> str:
+    return "".join(random.choices(string.ascii_lowercase, k=length))
 
 
 if __name__ == "__main__":
