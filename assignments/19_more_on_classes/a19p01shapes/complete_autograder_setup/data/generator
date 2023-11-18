@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+. ../../../../testdata_tools/gen.sh
+
+use_solution solution_code/main.py
+
+compile random_generator.py
+
+samplegroup
+sample 01
+sample 02
+sample 03
+sample 04
+sample 05
+sample 06
+
+group G1A-rectangle-init 10
+for i in {01..05}; do
+    tc rectangle-init-$i random_generator Rectangle "__init__"
+done;
+
+group G1B-rectangle-str 20
+tc 03
+for i in {01..05}; do
+    tc rectangle-str-$i random_generator Rectangle "__str__"
+done;
+
+group G1C-rectangle-perimeter 10
+tc 02
+for i in {01..05}; do
+    tc rectangle-perimeter-$i random_generator Rectangle "get_perimeter"
+done;
+
+group G1D-rectangle-area 10
+tc 01
+for i in {01..05}; do
+    tc rectangle-area-$i random_generator Rectangle "get_area"
+done;
+
+group G2A-square-init 10
+for i in {01..05}; do
+    tc square-init-$i random_generator Square "__init__"
+done;
+
+group G2B-square-str 20
+tc 06
+for i in {01..05}; do
+    tc square-str-$i random_generator Square "__str__"
+done;
+
+group G2C-square-perimeter 10
+tc 05
+for i in {01..05}; do
+    tc square-perimeter-$i random_generator Square "get_perimeter"
+done;
+
+group G2D-square-area 10
+tc 04
+for i in {01..05}; do
+    tc square-area-$i random_generator Square "get_area"
+done;

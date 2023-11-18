@@ -1,0 +1,6 @@
+Initializing ComplexNumber with 2 specified parts,
+and using default values for the remaining 0 parts.
+ re = 5
+ im = -7
+Complex number created without errors.
+5 - 7i

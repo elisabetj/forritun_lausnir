@@ -1,0 +1,111 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+. ../../../../testdata_tools/gen.sh
+
+use_solution solution_code/main.py
+
+compile random_generator.py
+
+samplegroup
+sample 01
+sample 02
+sample 03
+sample 04
+sample 05
+sample 06
+sample 07
+sample 08
+sample 09
+sample 10
+
+group G1A-init-no-defaults 2
+for i in {01..02}; do
+    tc init-$i random_generator "__init__" 2 2
+done;
+
+group G1B-init-defaults 3
+tc init-default-00-specified random_generator "__init__" 0 0
+for i in {01..02}; do
+    tc init-default-$i-specified random_generator "__init__" 1 1
+done;
+
+group G1C-str 10
+tc 01
+tc 02
+tc 03
+tc 04
+tc 05
+for i in {01..05}; do
+    tc str-$i random_generator "__str__" 1 2
+done;
+
+group G2-repr 5
+tc repr-00 random_generator "__repr__" 0 0
+for i in {01..04}; do
+    tc repr-$i random_generator "__repr__" 1 2
+done;
+
+group G3A-re 5
+tc re-00 random_generator "re" 0 0
+for i in {01..04}; do
+    tc re-$i random_generator "re" 1 2
+done;
+
+group G3B-im 5
+tc im-00 random_generator "im" 0 0
+for i in {01..04}; do
+    tc im-$i random_generator "im" 1 2
+done;
+
+group G4-eq 10
+for i in {01..10}; do
+    tc eq-$i random_generator "__eq__"
+done;
+
+group G5-conjugate 10
+tc conjugate-00 random_generator "conjugate" 0 0
+tc 06
+for i in {01..08}; do
+    tc conjugate-$i random_generator "conjugate" 1 2
+done;
+
+group G6-negate 10
+tc negate-00 random_generator "__neg__" 0 0
+for i in {01..09}; do
+    tc negate-$i random_generator "__neg__" 1 2
+done;
+
+group G7A-add 10
+tc add-0-plus-0 random_generator "__add__" 0 0 0 0
+tc add-0-plus-random random_generator "__add__" 0 0 1 2
+tc add-random-plus-0 random_generator "__add__" 1 2 0 0
+tc 08
+for i in {01..06}; do
+    tc add-$i random_generator "__add__" 1 2 1 2
+done;
+
+group G7B-sub 10
+tc sub-0-0 random_generator "__sub__" 0 0 0 0
+tc sub-0-random random_generator "__sub__" 0 0 1 2
+tc sub-random-0 random_generator "__sub__" 1 2 0 0
+for i in {01..07}; do
+    tc sub-$i random_generator "__sub__" 1 2 1 2
+done;
+
+group G7C-mul 10
+tc 09
+for i in {01..09}; do
+    tc mul-$i random_generator "__mul__"
+done;
+
+group G8A-inverse 5
+tc 07
+for i in {01..04}; do
+    tc inverse-$i random_generator "inverse" 1 2
+done;
+
+group G8B-div 5
+tc 10
+for i in {01..04}; do
+    tc div-$i random_generator "__truediv__" 0 2 1 2
+done;

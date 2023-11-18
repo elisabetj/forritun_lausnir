@@ -1,0 +1,9 @@
+name: Shapes
+author: Dagur Benjamínsson, Pétur Ólafur Aðalgeirsson, Hannes Kristján Hannesson, Hrafn Loftsson
+source: T-111-Programming
+rights_owner: Háskólinn í Reykjavík
+license: cc by-sa
+validator_flags: float_tolerance 1e-9
+type: scoring
+grading:
+  show_test_data_groups: true

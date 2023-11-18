@@ -1,0 +1,190 @@
+\problemname{Shapes}
+
+\textbf{The main file, which handles input and output, is already provided. -
+Please only submit your class definitions, without any code outside the classes!}
+
+Implement three classes,
+\texttt{Shape},
+\texttt{Rectangle} (which inherits from \texttt{Shape}),
+and \texttt{Square} (which inherits from \texttt{Rectangle})
+in their own separate files,
+\texttt{Shape} in \texttt{shape.py},
+\texttt{Rectangle} in \texttt{rectangle.py}
+and \texttt{Square} in \texttt{square.py}.
+
+You should be able to figure out
+which methods you need to implement in these classes
+from the example execution code given below,
+which demonstrates what functionality these classes should offer.
+
+Note:
+\begin{itemize}
+    \item
+    The \texttt{\_\_str\_\_()} method should return the string:
+	\texttt{"\{$C$\} with area of \{$A$\} and perimeter of \{$P$\}."}
+	where $C$ is the name of the class,
+	$A$ is the area of the shape,
+	and $P$ is the perimeter.
+	Both $A$ and $P$ should be limited to $2$ decimal places in this string.
+	It does not matter whether you skip trailing zeros.
+
+	\item
+	To get the name of the class
+	you can use \texttt{type(self).\_\_name\_\_}.
+	You could even hide that detail within yet another helper method.
+\end{itemize}
+
+This is an exercise in reusing methods in subclasses,
+so think about at which level in the hierarchy to implement each method,
+so that it can be used by other classes
+without the need to write the same code in multiple places.
+Also try to make your code extendable.
+For example, imagine we were to add a \texttt{Circle} class as well,
+or a \texttt{Triangle} class.
+What functionality would those have in common with the others?
+
+\section*{Example usage}
+
+The following are examples of a main program.
+These two examples are also included in the supplied \texttt{main.py} file:
+
+\subsection*{Example 1}
+
+\begin{verbatim}
+rect = Rectangle(2, 3)
+print(rect.get_area())
+print(rect.get_perimeter())
+print(rect)
+
+sq = Square(2)
+print(sq.get_area())
+print(sq.get_perimeter())
+print(sq)
+\end{verbatim}
+
+Corresponding output:
+\begin{verbatim}
+6
+10
+Rectangle with area of 6.00 and perimeter of 10.00
+4
+8
+Square with area of 4.00 and perimeter of 8.00
+\end{verbatim}
+
+\subsection*{Example 2}
+
+\begin{verbatim}
+rect = Rectangle(5, 10)
+print(f"Rectangle area: {rect.get_area()}")
+print(f"Rectangle perimeter: {rect.get_perimeter()}")
+print(rect)
+
+square = Square(7)
+print(f"Square area: {square.get_area()}")
+print(f"Square perimeter: {square.get_perimeter()}")
+print(square)
+\end{verbatim}
+
+And the corresponding output:
+\begin{verbatim}
+Rectangle area: 50
+Rectangle perimeter: 30
+Rectangle with area of 50.00 and perimeter of 30.00
+Square area: 49
+Square perimeter: 28
+Square with area of 49.00 and perimeter of 28.00
+\end{verbatim}
+
+\section*{Hints}
+
+\begin{itemize}
+	\item
+	You only have to write the functions
+	\texttt{get\_area()} and \texttt{get\_perimeter()} once
+	such that it works for both \texttt{Rectangle} and \texttt{Square}.
+
+    \item
+    The \texttt{Shape} class should not implement
+	the \texttt{get\_area()} and \texttt{get\_perimeter()} methods,
+	as we have no information on how to calculate the area and perimeter
+	of a general undefined shape.
+
+    \item
+    Only implement the \texttt{\_\_str\_\_()} method
+	in the \texttt{Shape} class.
+	If it calls methods that are only defined in the subclasses,
+	that is fine as long as we never attempt to call
+	the \texttt{\_\_str\_\_()} method directly
+	on an instance of the \texttt{Shape} class,
+	which we will not do.
+
+	This class is not intended to be used directly,
+	only serve as a placeholder for common functionality
+	of its derived classes.
+
+    \item
+    The constructor of \texttt{Shape} can be more or less empty,
+	using the \texttt{pass} statement.
+\end{itemize}
+
+
+\section*{Testing}
+
+Provided is a test file with unit tests that you can and should use
+to test your code locally before submitting your solution.
+It will provide you with quicker feedback than Gradescope does,
+and more detail on what is going wrong, if anything.
+
+These are the old test cases
+from before we moved the assignments to Gradescope.
+The autograder on Gradescope uses different tests
+that are randomly generated and more numerous,
+and does not use exatly the same types of tests
+as the ones you can see in the old unit test file.
+
+Below we include a description of the format
+of the test cases in the autograder,
+how the input and output is structured.
+
+This is just FYI, and mostly serves as a documentation for us, the authors.
+You do not really need to worry about these details,
+because you do not need to write any code for dealing with this input,
+that is something that the autograder handles for you.
+We only include this description to explain what it is you are seeing in the samples,
+because we can not include test cases that are not secret (samples)
+without them appearing in the pdf automatically.
+
+
+\subsection*{Input}
+
+% First, a general description of the input,
+% explaining to students how to interpret
+% what they are seeing in the samples below.
+In the input files for the test cases,
+the first line states the type of test case,
+which class and method the test is aimed at testing.
+
+Then, depending on whether the class being tested is Rectangle or Square,
+the second line will contain one or two sidelengths, separated by a comma.
+
+% \subsection*{Formal input specifications}
+% Then a more precise description, leaving nothing to doubt.
+
+% \subsection*{Test case restrictions}
+% And finally, assurances about what to expect from the test cases.
+% Here we mention what we will restrict the input to in the tests,
+% to clarify that they do not need to worry about input outside those restrictions.
+% This does not mean their solutions should validate the input,
+% or reject input that does not satisfy those restrictions.
+
+
+\subsection*{Output}
+
+% First, a general description of the output,
+% explaining to students how to interpret
+% what they are seeing in the samples below.
+The ouput should be rather self-explanatory.
+
+% \subsection*{Formal output specifications}
+% Then a more precise description, leaving nothing to doubt.

@@ -1,0 +1,12 @@
+Initializing ComplexNumber with 2 specified parts,
+and using default values for the remaining 0 parts.
+ re = 3
+ im = 4
+Complex number created without errors.
+Initializing ComplexNumber with 2 specified parts,
+and using default values for the remaining 0 parts.
+ re = 5
+ im = 7
+Complex number created without errors.
+Result of adding 3 + 4i and 5 + 7i together:
+8 + 11i

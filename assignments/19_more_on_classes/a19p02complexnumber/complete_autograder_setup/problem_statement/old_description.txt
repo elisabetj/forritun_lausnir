@@ -1,0 +1,166 @@
+Author: Pétur Ólafur Aðalgeirsson
+
+Title: Complex Number
+
+In mathematics, a complex number is an element of a number system
+that extends the real numbers with a specific element denoted i,
+called the imaginary unit and satisfying the equation i * i = -1.
+Every complex number can be expressed in the form a + bi,
+where a and b are real numbers.
+For example 5 - 2i (here a = 5 and b = -2).
+For the complex number a + bi,
+a is called the real part
+and b is called the imaginary part.
+
+Write a class called `ComplexNumber`,
+which has two attributes, real part, and imaginary part,
+initialized with parameters which both have a default value of 0.
+We will leave it to you to decide how you want to store these values internally.
+You should only submit the class code.
+
+The class should implement the functionality detailed below.
+We recommend that you implement it in the order listed here,
+running your code against the unit tests after each step
+and making sure to pass the corresponding tests.
+There's some starter code in the template to get you started.
+
+1. Conversion to a string should work as follows:
+
+    >>> z = ComplexNumber(5, 7)
+    >>> print(z)
+    5 + 7i
+    >>> str(z)
+    '5 + 7i'
+    >>> str(ComplexNumber(5, -7))
+    '5 - 7i'
+    >>> str(ComplexNumber(5, 0))
+    '5'
+    >>> str(ComplexNumber(5))
+    '5'
+    >>> str(ComplexNumber(-5))
+    '-5'
+    >>> str(ComplexNumber(0, 7))
+    '7i'
+    >>> str(ComplexNumber(0, -7))
+    '-7i'
+    >>> str(ComplexNumber(0, 0))
+    '0'
+    >>> str(ComplexNumber())
+    '0'
+
+2. The class should implement the `__repr__()` method
+in a similar way as we did with the Vector class in Assignment 18:
+
+    >>> z = ComplexNumber(5, 7)
+    >>> repr(z)
+    'ComplexNumber(5, 7)'
+    >>> w = eval(repr(z))
+    >>> type(w) == ComplexNumber
+    True
+    >>> print(w)
+    5 + 7i
+
+3. The class should implement methods called `re()` and `im()`
+for getting the real part and the imaginary part:
+
+    >>> z = ComplexNumber(3, 4)
+    >>> z.re()
+    3
+    >>> z.im()
+    4
+
+4. Two complex numbers should be considered equal if (and only if)
+their real parts are equal and their imaginary parts are equal
+(here we will not bother with floating point errors like in Assignment 18).
+
+    >>> z = ComplexNumber(3, 4)
+    >>> w = ComplexNumber(5, 4)
+    >>> z == w
+    False
+    >>> z == z
+    True
+    >>> z == ComplexNumber(3, 4)
+    True
+    >>> z == eval(repr(z))
+    True
+
+5. The class should implement a method called `conjugate()`.
+The conjugate of a complex number a + bi is defined as a - bi.
+
+    >>> z = ComplexNumber(3, 4)
+    >>> w = z.conjugate()
+    >>> type(w) == ComplexNumber
+    True
+    >>> print(w)
+    3 - 4i
+    >>> print(w.conjugate())
+    3 + 4i
+    >>> z.conjugate().conjugate() == z
+    True
+
+6. The class should also implement the `__neg__()` method:
+
+    >>> z = ComplexNumber(5, -3)
+    >>> type(-z) == ComplexNumber
+    True
+    >>> print(-z)
+    -5 + 3i
+    >>> print(-(-z))
+    5 - 3i
+    >>> z == -(-z)
+    True
+
+7. Addition, subtraction and multiplication of complex numbers
+can be naturally defined by using the rule
+- i * i = -1
+combined with the associative, commutative and distributive laws:
+- (a + bi) + (c + di) = (a + c) + (b + d)i
+- (a + bi) - (c + di) = (a - c) + (b - d)i
+- (a + bi) * (c + di) = (a*c - b*d) + (a*d + b*c)i
+
+The class should overload the '+', '-' and '*' operators:
+
+    >>> z = ComplexNumber(300, 800)
+    >>> w = ComplexNumber(1, -2)
+    >>> type(z + w) == ComplexNumber
+    True
+    >>> print(z + w)
+    301 + 798i
+    >>> type(z - w) == ComplexNumber
+    True
+    >>> print(z - w)
+    299 + 802i
+    >>> type(z * w) == ComplexNumber
+    True
+    >>> print(z * w)
+    1900 + 200i
+
+8. Every nonzero complex number also has a multiplicative inverse:
+- 1/(a + bi) = a/(a**2 + b**2) - (b/(a**2 + b**2))i
+and thus division of complex numbers can be defined as well:
+- z / w = z * (1/w)
+
+    >>> z = ComplexNumber(4, 3)
+    >>> type(z.inverse()) == ComplexNumber
+    True
+    >>> print(z.inverse())
+    0.16 - 0.12i
+    >>> w = ComplexNumber(1) / z
+    >>> type(w) == ComplexNumber
+    True
+    >>> print(w)
+    0.16 - 0.12i
+    >>> print(z.inverse().inverse())
+    4.0 + 3.0i
+    >>> z == z.inverse().inverse()
+    True
+
+The method for overloading the '/' operator is `__truediv__()` (in python 3).
+
+There's much more that can be done with complex numbers,
+such as mixing them with other numeric types (`int`, `float`, etc.)
+in arithmetic operations,
+calculating their polar coordinates,
+taking powers and roots of complex numbers, etc.
+But we'll leave that as a further exercise
+for those of you who are interested.

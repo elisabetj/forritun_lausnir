@@ -1,0 +1,260 @@
+\problemname{Complex Number}
+
+
+\textbf{The main file, which handles input and output, is already provided. -
+Please only submit your class definition, without any code outside the class!}
+
+In mathematics, a complex number is an element of a number system
+that extends the real numbers with a specific element denoted $i$,
+called the imaginary unit and satisfying the equation $i \cdot i = -1$.
+Every complex number can be expressed in the form $a + bi$,
+where $a$ and $b$ are real numbers.
+Example: $5 - 2i$, with $a = 5$ and $b = -2$.
+For the complex number $a + bi$,
+we say $a$ is the real part
+while $b$ is called the imaginary part.
+
+Write a class called \texttt{ComplexNumber},
+which has two attributes, real part, and imaginary part,
+initialized with parameters which both have a default value of $0$.
+We will leave it to you to decide how you want to store these values internally.
+
+The class should implement the functionality detailed below.
+We recommend that you implement it in the order listed here,
+running your code against the unit tests after each step
+and making sure to pass the corresponding tests.
+There is some starter code in the template to get you started.
+
+1. Conversion to a string should work as follows:
+\begin{verbatim}
+>>> z = ComplexNumber(5, 7)
+>>> print(z)
+5 + 7i
+>>> str(z)
+'5 + 7i'
+>>> str(ComplexNumber(5, -7))
+'5 - 7i'
+>>> str(ComplexNumber(5, 0))
+'5'
+>>> str(ComplexNumber(5))
+'5'
+>>> str(ComplexNumber(-5))
+'-5'
+>>> str(ComplexNumber(0, 7))
+'7i'
+>>> str(ComplexNumber(0, -7))
+'-7i'
+>>> str(ComplexNumber(0, 0))
+'0'
+>>> str(ComplexNumber())
+'0'
+\end{verbatim}
+
+2. The class should implement the \texttt{\_\_repr\_\_()} method
+in a similar way as we did with the Vector class in Assignment 18:
+\begin{verbatim}
+>>> z = ComplexNumber(5, 7)
+>>> repr(z)
+'ComplexNumber(5, 7)'
+>>> w = eval(repr(z))
+>>> type(w) == ComplexNumber
+True
+>>> print(w)
+5 + 7i
+\end{verbatim}
+
+3. The class should implement methods called \texttt{re()} and \texttt{im()}
+for getting the real part and the imaginary part:
+\begin{verbatim}
+>>> z = ComplexNumber(3, 4)
+>>> z.re()
+3
+>>> z.im()
+4
+\end{verbatim}
+
+4. Two complex numbers should be considered equal if, and only if,
+their real parts are equal and their imaginary parts are equal.
+Here we will not bother with floating point errors like in Assignment 18.
+\begin{verbatim}
+>>> z = ComplexNumber(3, 4)
+>>> w = ComplexNumber(5, 4)
+>>> z == w
+False
+>>> z == z
+True
+>>> z == ComplexNumber(3, 4)
+True
+>>> z == eval(repr(z))
+True
+\end{verbatim}
+
+5. The class should implement a method called \texttt{conjugate()}.
+The conjugate of a complex number $a + bi$ is defined as $a - bi$.
+\begin{verbatim}
+>>> z = ComplexNumber(3, 4)
+>>> w = z.conjugate()
+>>> type(w) == ComplexNumber
+True
+>>> print(w)
+3 - 4i
+>>> print(w.conjugate())
+3 + 4i
+>>> z.conjugate().conjugate() == z
+True
+\end{verbatim}
+
+6. The class should also implement the \texttt{\_\_neg\_\_()} method:
+\begin{verbatim}
+>>> z = ComplexNumber(5, -3)
+>>> type(-z) == ComplexNumber
+True
+>>> print(-z)
+-5 + 3i
+>>> print(-(-z))
+5 - 3i
+>>> z == -(-z)
+True
+\end{verbatim}
+
+7. Addition, subtraction and multiplication of complex numbers
+can be naturally defined by using the rule
+$i \cdot i = -1$
+combined with the associative, commutative and distributive laws:
+\begin{align*}
+(a + bi) + (c + di) &= (a + c) + (b + d)i \\
+(a + bi) - (c + di) &= (a - c) + (b - d)i \\
+(a + bi) \cdot (c + di) &= (a \cdot c - b \cdot d) + (a \cdot d + b \cdot c)i
+\end{align*}
+
+The class should overload the \texttt{+}, \texttt{-} and \texttt{*} operators:
+\begin{verbatim}
+>>> z = ComplexNumber(300, 800)
+>>> w = ComplexNumber(1, -2)
+>>> type(z + w) == ComplexNumber
+True
+>>> print(z + w)
+301 + 798i
+>>> type(z - w) == ComplexNumber
+True
+>>> print(z - w)
+299 + 802i
+>>> type(z * w) == ComplexNumber
+True
+>>> print(z * w)
+1900 + 200i
+\end{verbatim}
+
+8. Every nonzero complex number also has a multiplicative inverse:
+\[\frac{1}{a + bi} = \frac{a}{a^2 + b^2} - \frac{b}{a^2 + b^2}i\]
+and thus division of complex numbers can be defined as well:
+\[\frac{z}{w} = z \cdot \frac{1}{w}\]
+\begin{verbatim}
+>>> z = ComplexNumber(4, 3)
+>>> type(z.inverse()) == ComplexNumber
+True
+>>> print(z.inverse())
+0.16 - 0.12i
+>>> w = ComplexNumber(1) / z
+>>> type(w) == ComplexNumber
+True
+>>> print(w)
+0.16 - 0.12i
+>>> print(z.inverse().inverse())
+4.0 + 3.0i
+>>> z == z.inverse().inverse()
+True
+\end{verbatim}
+
+The method for overloading the \texttt{/} operator is \texttt{\_\_truediv\_\_()} (in python 3).
+
+There is much more that can be done with complex numbers,
+such as mixing them with other numeric types in arithmetic operations,
+(\texttt{int}, \texttt{float}, etc.),
+calculating their polar coordinates,
+taking powers and roots of complex numbers, etc.
+But we will leave that as a further exercise
+for those of you who are interested.
+
+
+\section*{Testing}
+
+Provided is a test file with unit tests that you can and should use
+to test your code locally before submitting your solution.
+It will provide you with quicker feedback than Gradescope does,
+and more detail on what is going wrong, if anything.
+
+These are the old test cases
+from before we moved the assignments to Gradescope.
+The autograder on Gradescope uses different tests
+that are randomly generated and more numerous,
+and does not use exatly the same types of tests
+as the ones you can see in the old unit test file.
+
+Below we include a description of the format
+of the test cases in the autograder,
+how the input and output is structured.
+
+This is just FYI, and mostly serves as a documentation for us, the authors.
+You do not really need to worry about these details,
+because you do not need to write any code for dealing with this input,
+that is something that the autograder handles for you.
+We only include this description to explain what it is you are seeing in the samples,
+because we can not include test cases that are not secret (samples)
+without them appearing in the pdf automatically.
+
+\subsection*{Input}
+
+% First, a general description of the input,
+% explaining to students how to interpret
+% what they are seeing in the samples below.
+In the input files for the test cases,
+the first line states the type of test case,
+which method the test is aimed at testing.
+
+Then, depending on whether the method being tested
+deals with one or two complex numbers,
+there follows either one or two block of lines
+specifying sets of parameters for the constructor.
+Each block begins with one line stating how many arguments are specified,
+either zero, one or two.
+Then follow that many lines with values for the specified parameters,
+one value per line, indented a little bit for easier human readability.
+So each block will contain $1$ to $3$ lines.
+
+Those parameters for which no value is given will rely on the defaults.
+
+% \subsection*{Formal input specifications}
+% Then a more precise description, leaving nothing to doubt.
+
+% \subsection*{Test case restrictions}
+% And finally, assurances about what to expect from the test cases.
+% Here we mention what we will restrict the input to in the tests,
+% to clarify that they do not need to worry about input outside those restrictions.
+% This does not mean their solutions should validate the input,
+% or reject input that does not satisfy those restrictions.
+
+
+\subsection*{Output}
+
+% First, a general description of the output,
+% explaining to students how to interpret
+% what they are seeing in the samples below.
+The ouput should be rather self-explanatory.
+
+Note that in test cases dealing with division or inversion,
+the autograder will insert a space in front of the i.
+This is not something that your class needs to do,
+we just do this so that the tokenizer can see the coefficient as a separate token,
+and deal with it as a number rather than just any other string.
+Then the autograder can use floating point tolerance to
+compare the number from your solution
+to the one from our solution.
+
+We only need to do this in the case of inversion and division,
+because all test cases are restricted to integers,
+so the only floating point errors that can come up
+are in cases where division is involved.
+
+% \subsection*{Formal output specifications}
+% Then a more precise description, leaving nothing to doubt.
