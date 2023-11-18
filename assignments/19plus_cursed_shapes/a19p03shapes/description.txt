@@ -1,0 +1,104 @@
+Author: Eiríkur Fannar Torfason
+
+Title: Shapes
+
+[https://s3.amazonaws.com/mimirplatform.production/files/5291a8a0-667b-4f6f-9f5b-e8d188c066e1/action-shot.gif]
+
+Note: This assignment is not related to the "Shapes" problem in Assignment 19 at all.
+
+This exercise isn't terribly original.
+Most introductory texts to object-oriented programming contain examples involving the taxonomy of shapes.
+You know, a square is a rectangle and so on and so forth.
+To make things interesting, we'll actually draw our shapes and move them about using nothing but our terminal!
+Well, and [curses](https://docs.python.org/3/library/curses.html#module-curses).
+
+The starter code below consists of two files; `shapes.py` and `terminal_shapes.py`.
+Your job is to add several classes to `shapes.py`.
+Once you've done so, you'll be able to run `terminal_shapes.py` to see your shapes and move them.
+In fact, you can use `terminal_shapes.py` to test your code and verify that the shapes are drawn correctly.
+
+Drawing a shape using the Canvas
+
+You'll notice that `shapes.py` contains an odd looking class named `Canvas`.
+This is a so-called Abstract Base Class (ABC).
+It defines the interface (i.e. list of methods) that you can use to draw your shapes.
+Every shape will have a draw method that receives a `Canvas` object as an argument.
+If you provide a type hint (annotation) for that argument,
+then VS Code will be able to show you which methods are available and what arguments they take.
+
+[https://s3.amazonaws.com/mimirplatform.production/files/d97d470d-a4aa-49c6-a0df-1ccb0733ca7f/draw-function.gif]
+
+The `terminal_shapes.py` file contains an implementation of the `Canvas` interface for curses.
+
+You should not implement the base `Canvas` class.
+It is supposed to raise a `NotImplementedError` as it is an abstract class,
+not meant to have an implementation of its own.
+Rather, the way to use it is to create a subclass
+(such as the `CursesCanvas` class in `terminal_shapes.py`)
+that inherits from `Canvas`, and provide an implementation of the methods in the subclass.
+
+Classes to Implement
+Shape
+
+Start by creating a class named `Shape`.
+Its `__init__()` method shall receive as arguments: `x`, `y`, `width` and `height`, all of which are integers.
+`width` and `height` should be coerced to be no less than 1.
+
+`x` and `y` denote the coordinates of the shape, more concretely the location of the top-left corner of the shape in a coordinate system that looks like this:
+
+[https://s3.amazonaws.com/mimirplatform.production/files/cdce429f-67c8-4d5e-a681-f3a7c370c250/coordinates.png]
+
+The `Shape` class should expose `x`, `y`, `width` and `height` as attributes.
+
+The `Shape` class must have a function named `move()` that takes two arguments, `delta_x` and `delta_y`.
+Calling the method should change the location of the shape by the specified distances.
+
+VerticalLine
+
+Create a class named `VerticalLine` that inherits from `Shape`. It should be possible to construct it like so:
+
+    VerticalLine(pos_x=31, pos_y=3, length=2)
+
+Implement its `draw(self, canvas: Canvas)` method by calling `canvas.draw_vertical_line()`.
+
+HorizontalLine
+
+This class should be exactly like `VerticalLine`, except that it uses `canvas.draw_horizontal_line()`.
+
+Rectangle
+
+Create a class named `Rectangle` that inherits from `Shape`. It should be possible to construct it like so:
+
+    Rectangle(pos_x=30, pos_y=2, width=3, height=4)
+
+Implementing its `draw()` method requires calling 6 different methods on the `Canvas` object, one for each corner and then the remaining two draw the sides.
+When drawing the sides, make sure not to overlap with the corners.
+
+Square
+
+Create a class named `Square` that inherits from `Rectangle` (not `Shape`!). It should be possible to construct it like so:
+
+    Square(pos_x=2, pos_y=2, size=3)
+
+You won't need to implement a `draw()` method specifically.
+You should get that for free by inheriting from `Rectangle` and being clever about how you call the `__init__()` method of the parent class.
+
+Triangle
+
+Finally, create a class named `Triangle` that inherits from `Shape`. It should be possible to construct it like so:
+
+    Triangle(pos_x=14, pos_y=4, size=4)
+
+When drawing the triangle of size 4, it should look like this:
+
+[https://s3.amazonaws.com/mimirplatform.production/files/bfccfb38-a30c-4a22-914c-57709ec6963b/triangle.png]
+
+(Yes, that's supposed to be a right-angled isosceles triangle.
+The reason why the vertical leg is larger than the horizontal one is that characters in terminals tend to have aspect ratios close to 1:2)
+
+You'll need to call `canvas.draw_backslash` to depict the long side.
+
+Note: Those using Microsoft Windows will have to run
+- `pip install windows-curses`
+
+in order for `terminal_curses.py` to work.
