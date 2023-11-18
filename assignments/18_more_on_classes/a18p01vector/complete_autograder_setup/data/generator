@@ -1,0 +1,97 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+. ../../../../testdata_tools/gen.sh
+
+use_solution solution_code/main.py
+
+compile random_generator.py
+
+group GA1-vector-init-no-defaults 2
+for i in {01..02}; do
+    tc vector-init-$i random_generator "__init__" 3 3
+done;
+
+group GA2-vector-init-defaults 3
+tc vector-init-default-00-specified random_generator "__init__" 0 0
+for i in {01..02}; do
+    tc vector-init-default-$i-specified random_generator "__init__" $i $i
+done;
+
+group GB-vector-str 4
+tc vector-str-00 random_generator "__str__" 0 0
+for i in {01..07}; do
+    tc vector-str-$i random_generator "__str__" 1 3
+done;
+
+group GC-vector-abs 7
+tc vector-abs-00 random_generator "__abs__" 0 0
+for i in {01..07}; do
+    tc vector-abs-$i random_generator "__abs__" 1 3
+done;
+
+group GD-vector-add 7
+tc vector-add-0-plus-0 random_generator "__add__" 0 0 0 0
+tc vector-add-0-plus-random random_generator "__add__" 0 0 1 3
+tc vector-add-random-plus-0 random_generator "__add__" 1 3 0 0
+for i in {01..07}; do
+    tc vector-add-$i random_generator "__add__" 1 3 1 3
+done;
+
+group GE-vector-sub 7
+tc vector-sub-0-0 random_generator "__sub__" 0 0 0 0
+tc vector-sub-0-random random_generator "__sub__" 0 0 1 3
+tc vector-sub-random-0 random_generator "__sub__" 1 3 0 0
+for i in {01..07}; do
+    tc vector-sub-$i random_generator "__sub__" 1 3 1 3
+done;
+
+group GF-vector-eq 7
+for i in {01..07}; do
+    tc vector-eq-$i random_generator "__eq__"
+done;
+
+group GG-vector-mul 7
+for i in {01..07}; do
+    tc vector-mul-$i random_generator "__mul__"
+done;
+
+group GH-vector-rmul 7
+for i in {01..07}; do
+    tc vector-rmul-$i random_generator "__rmul__"
+done;
+
+group GI-vector-repr 7
+tc vector-repr-00 random_generator "__repr__" 0 0
+for i in {01..07}; do
+    tc vector-repr-$i random_generator "__repr__" 1 3
+done;
+
+group GJ-vector-gt 7
+for i in {01..07}; do
+    tc vector-gt-$i random_generator "__gt__"
+done;
+
+group GK-vector-ge 7
+for i in {01..07}; do
+    tc vector-ge-$i random_generator "__ge__"
+done;
+
+group GL-vector-lt 7
+for i in {01..07}; do
+    tc vector-lt-$i random_generator "__lt__"
+done;
+
+group GM-vector-le 7
+for i in {01..07}; do
+    tc vector-le-$i random_generator "__le__"
+done;
+
+group GN-vector-dot 7
+for i in {01..07}; do
+    tc vector-dot-$i random_generator "dot"
+done;
+
+group GO-vector-cross 7
+for i in {01..07}; do
+    tc vector-cross-$i random_generator "cross"
+done;
