@@ -1,0 +1,92 @@
+\problemname{Mastermind}
+
+In this exercise, you'll implement the classic code breaking game;
+\href{https://en.wikipedia.org/wiki/Mastermind_(board_game)}{Mastermind}.
+The computer will play the role of the code maker whereas the user takes on the code breaker role.
+
+The game should:
+\begin{itemize}
+    \item Pick a code at random at the start of a game.
+    \item Grant the user $8$ attempts to guess the code.
+    \item Provide feedback after each guess, on how many elements have:
+    \begin{itemize}
+        \item The correct color and position.
+        \item The correct color but incorrect position.
+    \end{itemize}
+    \item Catch and notify the user when the guess is not valid. Invalid guesses do not count.
+    \item Congratulate the user when they guess correctly.
+    \item Tell the user what the actual code was when they fail to guess it.
+\end{itemize}
+
+The expected behavior of the program is best illustrated with an actual game-playing session as seen in the samples below.
+\begin{verbatim}
+Welcome to Mastermind.
+The codemaker has selected a code.
+The code is a sequence of four colors. It may contain duplicates.
+There are 6 possible colors to choose from:
+- (r)ed
+- (g)reen
+- (b)lue
+- (y)ellow
+- (p)urple
+- (o)range
+It's your job to break the code by making a series of guesses.
+Each guess consists of four letters corresponding to the colors listed above.
+Example: to guess red, green, blue and orange, type rgbo and press Enter.
+
+------------------------    The game starts now    -----------------------------
+You have 8 guesses left: rrgg
+Elements with the correct color and position:                                  1
+Elements with the correct color but incorrect position:                        0
+You have 7 guesses left: rrrr
+Elements with the correct color and position:                                  0
+Elements with the correct color but incorrect position:                        0
+You have 6 guesses left: gbby
+Elements with the correct color and position:                                  1
+Elements with the correct color but incorrect position:                        2
+You have 5 guesses left: ppoo
+Elements with the correct color and position:                                  0
+Elements with the correct color but incorrect position:                        0
+You have 4 guesses left: gyyb
+Elements with the correct color and position:                                  1
+Elements with the correct color but incorrect position:                        3
+You have 3 guesses left: ygby
+Elements with the correct color and position:                                  1
+Elements with the correct color but incorrect position:                        3
+You have 2 guesses left: ybyg
+Congratulations, you have guessed the code!
+Would you like to play again (y/n)? y
+------------------------    The game starts now    -----------------------------
+You have 8 guesses left: rrr
+That's not a valid guess. Please enter four letters from an alphabet of rgbypo
+You have 8 guesses left: r g r g
+That's not a valid guess. Please enter four letters from an alphabet of rgbypo
+You have 8 guesses left: xxxx
+That's not a valid guess. Please enter four letters from an alphabet of rgbypo
+You have 8 guesses left: rrgg
+Elements with the correct color and position:                                  0
+Elements with the correct color but incorrect position:                        1
+You have 7 guesses left: rrrr
+Elements with the correct color and position:                                  1
+Elements with the correct color but incorrect position:                        0
+You have 6 guesses left: rbbb
+Elements with the correct color and position:                                  0
+Elements with the correct color but incorrect position:                        1
+You have 5 guesses left: yryy
+Elements with the correct color and position:                                  1
+Elements with the correct color but incorrect position:                        1
+You have 4 guesses left: opry
+Elements with the correct color and position:                                  1
+Elements with the correct color but incorrect position:                        2
+You have 3 guesses left: ooyr
+Elements with the correct color and position:                                  2
+Elements with the correct color but incorrect position:                        0
+You have 2 guesses left: opyr
+Elements with the correct color and position:                                  3
+Elements with the correct color but incorrect position:                        0
+You have 1 guesses left: poyr
+Elements with the correct color and position:                                  3
+Elements with the correct color but incorrect position:                        0
+You failed to guess ppyr. Game over :(
+Would you like to play again (y/n)? n
+\end{verbatim}

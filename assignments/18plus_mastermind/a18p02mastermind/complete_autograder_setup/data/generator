@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+USE_SCORING=0
+. ../../../../testdata_tools/gen.sh
+
+use_solution solution_code.py
+
+compile random_generator.py
+
+#group GZ-samples 4
+sample 01
+sample 02
+sample 03
+sample 04
+
+# group GA-always-win 30
+for i in {01..30}; do
+    tc random-always-win-$i random_generator "always_win" $i
+done;
+
+# group GB-wrong-inputs 30
+for i in {01..30}; do
+    tc random-wrong-inputs-$i random_generator "wrong_inputs" $i
+done;
+
+# group GC-all-random 36
+for i in {01..36}; do
+    tc random-all_random-$i random_generator "all_random" $i
+done;
