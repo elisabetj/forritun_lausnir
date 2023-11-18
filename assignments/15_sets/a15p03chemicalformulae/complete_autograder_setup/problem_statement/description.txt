@@ -1,0 +1,14 @@
+Title: Chemical formulae
+
+Write a program that prompts the user for two chemical formulae.
+The program should call a function and transform each chemical formula string into a set
+of chemical components. For example CaSO4 -> {Ca, S, O}.
+The program should then display common components in each of the formulae
+
+Example input/output:
+
+    Enter a chemical formula: NaNO3
+    Enter another chemical formula: NaHCO3
+    Na, O
+
+Hint: Chemical components always start off with 1 or 2 letters, the first being uppercase, and the second being lowercase.

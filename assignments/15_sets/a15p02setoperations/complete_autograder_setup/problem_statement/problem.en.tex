@@ -1,0 +1,42 @@
+\problemname{Set Operations}
+
+Write a program that, given two files,
+collects the words from each file removing all punctuations,
+then computes and prints the following metrics using set operations:
+
+\begin{itemize}
+    \item Common words in both files.
+    \item Words that only occur in one file but not both.
+    \item Words that only appear in the first file.
+\end{itemize}
+
+For each of these, you should both print how many words there are, and the words themselves in alphabetical order.
+Note: You should remove any punctuation from the start and end of each word (e.g. ``Transylvania,'' should become ``Transylvania'').
+
+\section*{Input}
+Input consists of two lines.
+Both lines each contain one filename, the files that should be compared.
+
+
+\section*{Output}
+Output consists of three sections.
+Each section starts with a specific string, they are as follows:
+\begin{enumerate}
+    \item First section starts with, ``\texttt{The two files have \{$n_1$\} words in common.}'',\\
+where $n_1$ is the number of words the two files have in common.
+
+    \item Second section starts with, ``\texttt{There are \{$n_2$\} words that are only in either file but not both.}''
+where $n_2$ is the number of words present in one but not both files.
+
+    \item Third section starts with, ``\texttt{There are \{$n_3$\} words that only appear in the first file.}'',
+where $n_3$ is the number of words exclusive to only the first file.
+\end{enumerate}
+
+Each of these strings is then followed by the string ``\texttt{These words are as follows:}'',
+unless the number of words in question is $n_i = 0$,
+in which case no additional informations should be given for that particular section.
+The above line should be followed by an enumeration of the relevant words;
+the words that the two files have in common, that are present in only one file,
+or only present in the first file, depending on the section.
+In the enumeration, each word should be seperated by a comma and a space,
+except the final word, which should be seperated from the previous one with an ``\texttt{ and }''.

@@ -1,0 +1,3 @@
+REGEX("([A-Z][a-z]?[0-9]{0,2}){1,100}") NEWLINE
+REGEX("([A-Z][a-z]?[0-9]{0,2}){1,100}") NEWLINE
+EOF

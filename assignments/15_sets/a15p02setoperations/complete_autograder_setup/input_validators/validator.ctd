@@ -1,0 +1,3 @@
+REGEX("[^\n]{1,40}") NEWLINE
+REGEX("[^\n]{1,40}") NEWLINE
+EOF

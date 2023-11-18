@@ -1,0 +1,37 @@
+\problemname{Heimilisverk}
+
+\illustration{0.35}{list}{Image from \href{https://www.flickr.com/photos/otacke/12221292503/}{Oliver Tacke}}
+
+Ómar is a very responsible boy and has a list of chores he needs to do. The problem
+is that Ómar is very lazy, so the list of unfinished chores has become quite long.
+So long, in fact, that he does not remember what chores he has already put on the
+list and has thus put duplicates into the list every now and then.
+
+Now he finally intends to do some chores from the list, but he doesn't want to
+repeat himself. Can you help him remove duplicate chores from his list? That is
+to say, if it appears more than once, he only wants the first instance of it
+to remain on the list.
+
+\section*{Input}
+The first line of the input contains the positive integer $N$, denoting the number
+of chores on the list. Then there are $N$ lines, each with one chore.
+
+\section*{Output}
+The output should contain the filtered list, with one chore from the list on each line.
+The order matters and should be like in the input.
+
+\section*{Scoring}
+The solution will be tested on input data of varying difficulty and the data is
+divided into groups as shown in the table below. The solution will then be
+scored according to how many groups are solved.
+
+\begin{tabular}{|l|l|l|l|}
+\hline
+Group & Points & Constraints \\ \hline
+1     & 20 & $N \leq 10$, Each line is at most $10$ characters  \\ \hline
+2     & 20 & $N \leq 10^5$, Each line is at most $2$ characters \\ \hline
+3     & 20 & $N \leq 10^5$, Each line is at most $10$ characters  \\ \hline
+4     & 20 & $N \leq 10^3$, Each line is at most $1000$ characters  \\ \hline
+5     & 20 & $N \leq 10^6$, The total number of characters in the input is at most $10^6$ \\ \hline
+\end{tabular}
+
