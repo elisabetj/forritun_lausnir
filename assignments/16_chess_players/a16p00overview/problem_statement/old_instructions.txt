@@ -1,0 +1,25 @@
+In this assignment, which is in two parts,
+you write a program that reads in a list of the top 100 highest rated chess players in the world
+and prints out a different view of the data.
+
+The input file, chess-top-100.csv, (available on github in directory assignments/16 chess players) has the following format:
+- Rank; Name; Country; Rating; Birth year.
+A semicolon is the separator between fields.
+The name of the chess player consists of last name, first name.
+
+For example, the following shows the first 10 lines in the file:
+
+    1; Carlsen, Magnus; NOR; 2839; 1990
+    2; Caruana, Fabiano; USA; 2827; 1992
+    3; Mamedyarov, Shakhriyar; AZE; 2820; 1985
+    4; Ding, Liren; CHN; 2804; 1992
+    5; Aronian, Levon; ARM; 2780; 1982
+    6; Giri, Anish; NED; 2780; 1994
+    7; Vachier-Lagrave, Maxime; FRA; 2780; 1990
+    8; Kramnik, Vladimir; RUS; 2779; 1975
+    9; So, Wesley; USA; 2776; 1993
+    10; Anand, Viswanathan; IND; 2771; 1969
+
+A part of the requirement (even though we will not implement it in this assignment)
+is that your program should later be able to look up a given chess player in an effective manner
+and displays his/her attributes (rank, country, rating, birth year).

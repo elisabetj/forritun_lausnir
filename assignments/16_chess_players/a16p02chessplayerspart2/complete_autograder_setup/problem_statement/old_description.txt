@@ -1,0 +1,51 @@
+Title: Part II
+
+In this second part, you have to do the implementation yourself!
+
+You need to add another view of the data, i.e. grouping by birth year.
+The output should look like the following: (in addition to the previous output):
+
+Players by birth year:
+----------------------
+1968 (1) (2701.0):
+                           Boris Gelfand      2701
+1969 (2) (2740.5):
+                       Viswanathan Anand      2771
+                        Vassily Ivanchuk      2710
+1971 (1) (2712.0):
+                           Michael Adams      2712
+1974 (3) (2670.3):
+                        Matthew D Sadler      2693
+                             Gata Kamsky      2666
+                        Sergei Rublevsky      2652
+1975 (2) (2759.5):
+                        Vladimir Kramnik      2779
+                         Veselin Topalov      2740
+1976 (3) (2708.3):
+                           Peter Svidler      2756
+                           Zoltan Almasi      2702
+                  Liviu-Dieter Nisipeanu      2667
+1977 (2) (2659.5):
+                           Evgeniy Najer      2663
+                    Alexander Morozevich      2656
+1979 (3) (2671.0):
+                              Peter Leko      2690
+                     Rustam Kasimdzhanov      2662
+                       Alexander Motylev      2661
+1980 (1) (2661.0):
+                       Vladimir Malakhov      2661
+1981 (1) (2672.0):
+                      Krishnan Sasikiran      2672
+1982 (3) (2715.3):
+                           Levon Aronian      2780
+                  Francisco Vallejo Pons      2713
+                   Lazaro Bruzon Batista      2653
+1983 (7) (2707.1):
+                      Alexander Grischuk      2769
+                        Dmitry Jakovenko      2752
+                           Pavel Eljanov      2703
+                      Gabriel Sargissian      2691
+                       Ruslan Ponomariov      2681
+                          Etienne Bacrot      2678
+                                  Hua Ni      2676
+…

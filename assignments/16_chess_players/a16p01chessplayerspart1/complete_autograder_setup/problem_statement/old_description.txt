@@ -1,0 +1,47 @@
+Title: Part I
+
+The teacher will implement this part with your help.
+Make sure that you also do the implementation on your own computer.
+
+In this first part, the purpose of the program is to display another view of the data, i.e. by grouping the data by country.
+The output should look like the following:
+
+Players by country:
+-------------------
+ARG (1) (2653.0):
+                           Sandro Mareco      2653
+ARM (3) (2710.3):
+                           Levon Aronian      2780
+                      Gabriel Sargissian      2691
+                         Hrant Melkumyan      2660
+AUT (1) (2690.0):
+                           Markus Ragger      2690
+AZE (6) (2722.3):
+                   Shakhriyar Mamedyarov      2820
+                        Teimour Radjabov      2751
+                       Arkadij Naiditsch      2721
+                            Rauf Mamedov      2699
+                           Eltaj Safarli      2676
+                          Gadir Guseinov      2667
+BLR (1) (2664.0):
+                       Vladislav Kovalev      2664
+CHN (9) (2718.7):
+                              Liren Ding      2804
+                               Yangyi Yu      2765
+                                  Yi Wei      2742
+                                Hao Wang      2722
+                             Xiangzhi Bu      2712
+                               Chao b Li      2708
+                                Yue Wang      2681
+                                  Hua Ni      2676
+                               Yifan Hou      2658
+
+	…
+
+The number in parenthesis are the number of players in each group and the average chess ratings in each group.
+When printing the chess player name and rating, use this format: {:>40}{:>10}
+
+In addition to the above requirement,
+you should make sure that your program can easily look up a given chess player
+and display his/her attributes (rank, country, rating, birth year),
+even though that functionality is not part of the current requirements.

@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+USE_SCORING=0
+USE_PARALLEL=0
+. ../../../../testdata_tools/gen.sh
+
+use_solution solution_code.py
+
+compile filename_generator.py
+
+sample 01
+
+mkdir -p ../include/python3
+for i in {01..20}; do
+    FILENAME="test_file_$i.csv"
+    python3 input_file_content_generator.py $i > "$FILENAME"
+    tc test-$i filename_generator $i
+done;
+
+for file in *.csv; do
+    cp $file ../include/python3/
+done
