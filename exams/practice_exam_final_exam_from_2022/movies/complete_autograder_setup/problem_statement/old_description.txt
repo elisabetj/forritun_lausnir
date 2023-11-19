@@ -1,0 +1,199 @@
+Title: Movies
+(27 stig; 45%)
+
+Skrifið forrit, movies.py, sem les gögn úr skrá sem geymir upplýsingar um X-bestu kvikmyndir miðað við einkunnir sem gefnar hafa verið af áhorfendum og býður notanda upp á að framkvæma ákveðnar aðgerðir sem tengjast gögnunum. Inntaksskrá, fyrir 20-bestu kvikmyndir (movies-top-20.csv), lítur svona út:
+Write a program, movies.py, that extracts data from a file that contains information about X-best movies according to ratings given by the viewers, and allows the user to perform certain operations related to the data. An input file, for the 20-best movies (movies-top-20.csv), looks like this:
+The Shawshank Redemption;9.2;1994
+The Godfather;9.1;1972
+The Godfather: Part II;9.0;1974
+Il buono, il brutto, il cattivo;8.9;1966
+Pulp Fiction;8.9;1994
+Inception;8.9;2010
+Schindler's List;8.9;1993
+12 Angry Men;8.9;1957
+One Flew Over the Cuckoo's Nest;8.8;1975
+The Dark Knight;8.8;2008
+Star Wars: Episode V - The Empire Strikes Back;8.8;1980
+The Lord of the Rings: The Return of the King;8.8;2003
+Shichinin no samurai;8.8;1954
+Star Wars;8.7;1977
+Goodfellas;8.7;1990
+Casablanca;8.7;1942
+Fight Club;8.7;1999
+Cidade de Deus;8.7;2002
+The Lord of the Rings: The Fellowship of the Ring;8.7;2001
+Rear Window;8.7;1954
+
+Semíkomma er notuð á milli dálka í skránni.  Fyrsti dálkurinn geymir titil myndar, annar dálkurinn einkunn og þriðji dálkurinn útgáfuárið.
+A semi-colon is used as as separator between the columns in the file.  The first column contains the movie title, the second column the rating, and the third column the year of the release.
+Forritið sýnir valmynd sem býður notanda upp á að framkvæma eftirtaldar aðgerðir / The program displays a menu, allowing the user to perform the following operations:
+•	Sýna upplýsingar um kvikmyndirnar, í stafrófsröð eftir titli myndar / Display information about the movies, alphabetically ordered by title.
+•	Sýna alla titla kvikmynda sem gefnar voru út á tilteknu ári / Display all movie titles released in a given year.
+•	Breyta einkunn allra kvikmynda um tiltekna tölu (athugið að inntaksskránni er þó ekki breytt) / Change the rating of all the movies by a certain number (note, however, that the input file is not changed).
+Valmyndin lítur svona út / The menu looks like this:
+
+*******************************
+1. Movies in alphabetical order
+2. Titles in given year
+3. Modify all ratings
+*******************************
+Fjöldinn af '*' sem skrifaður er út er 31. Ef einhver annar valmöguleiki en '1', '2', eða '3' er sleginn inn þá hættir forritið keyrslu.
+The number of '*' written out is 31. If any other menu option than '1', '2', or '3' is entered, the program quits running.
+InfoWarningTip
+Athugið að það á að vera auðvelt að skipta um stafi sem standa fyrir valmöguleikan, t.d. að nota 'a', 'b' og 'c' í stað '1', '2' og 3'.
+Note that it should be easy to change the letters that stand for the menu options, e.g. using 'a', 'b', and 'c' instead of '1', '2', and '3'.
+Hér fyrir neðan eru dæmi um inntak/úttak sem eiga að gefa ykkur nægar upplýsingar um virkni og úttak forritsins / Here below are input/output examples which should give you enough information about the functionality and the output of the program:
+
+#File not found
+Enter filename: bla.txt
+File bla.txt not found!
+
+
+
+#Movies in alphabetical order
+Enter filename: movies-top-20.csv
+
+*******************************
+1. Movies in alphabetical order
+2. Titles in given year
+3. Modify all ratings
+*******************************
+
+Enter your selection: 1
+12 Angry Men                                        8.90  1957
+Casablanca                                          8.70  1942
+Cidade de Deus                                      8.70  2002
+Fight Club                                          8.70  1999
+Goodfellas                                          8.70  1990
+Il buono, il brutto, il cattivo                     8.90  1966
+Inception                                           8.90  2010
+One Flew Over the Cuckoo's Nest                     8.80  1975
+Pulp Fiction                                        8.90  1994
+Rear Window                                         8.70  1954
+Schindler's List                                    8.90  1993
+Shichinin no samurai                                8.80  1954
+Star Wars                                           8.70  1977
+Star Wars: Episode V - The Empire Strikes Back      8.80  1980
+The Dark Knight                                     8.80  2008
+The Godfather                                       9.10  1972
+The Godfather: Part II                              9.00  1974
+The Lord of the Rings: The Fellowship of the Ring   8.70  2001
+The Lord of the Rings: The Return of the King       8.80  2003
+The Shawshank Redemption                            9.20  1994
+
+*******************************
+1. Movies in alphabetical order
+2. Titles in given year
+3. Modify all ratings
+*******************************
+
+Enter your selection: 0
+
+Svæðið fyrir titil kvikmyndar er vinstri jafnað með breiddina 50, svæðið fyrir einkunn kvikmyndar er hægri jafnað með breiddina 6 og með 2 aukastafi og svæðið fyrir ártal er hægri jafnað með breiddina 6.
+The field for the movie title is left justified with width 50, the field for the movie rating is right justified with width 6 and 2 digits after the decimal point, and the field for the year is right justified with width 6.
+
+
+#Titles in given year
+
+Enter filename: movies-top-20.csv
+
+*******************************
+1. Movies in alphabetical order
+2. Titles in given year
+3. Modify all ratings
+*******************************
+
+Enter your selection: 2
+Enter year: 1994
+The Shawshank Redemption
+Pulp Fiction
+
+*******************************
+1. Movies in alphabetical order
+2. Titles in given year
+3. Modify all ratings
+*******************************
+
+Enter your selection: q
+
+
+#Modify all ratings
+
+Enter filename: movies-top-20.csv
+
+*******************************
+1. Movies in alphabetical order
+2. Titles in given year
+3. Modify all ratings
+*******************************
+
+Enter your selection: 1
+12 Angry Men                                        8.90  1957
+Casablanca                                          8.70  1942
+Cidade de Deus                                      8.70  2002
+Fight Club                                          8.70  1999
+Goodfellas                                          8.70  1990
+Il buono, il brutto, il cattivo                     8.90  1966
+Inception                                           8.90  2010
+One Flew Over the Cuckoo's Nest                     8.80  1975
+Pulp Fiction                                        8.90  1994
+Rear Window                                         8.70  1954
+Schindler's List                                    8.90  1993
+Shichinin no samurai                                8.80  1954
+Star Wars                                           8.70  1977
+Star Wars: Episode V - The Empire Strikes Back      8.80  1980
+The Dark Knight                                     8.80  2008
+The Godfather                                       9.10  1972
+The Godfather: Part II                              9.00  1974
+The Lord of the Rings: The Fellowship of the Ring   8.70  2001
+The Lord of the Rings: The Return of the King       8.80  2003
+The Shawshank Redemption                            9.20  1994
+
+*******************************
+1. Movies in alphabetical order
+2. Titles in given year
+3. Modify all ratings
+*******************************
+
+Enter your selection: 3
+Enter modifier for ratings: 0.25
+
+*******************************
+1. Movies in alphabetical order
+2. Titles in given year
+3. Modify all ratings
+*******************************
+
+Enter your selection: 1
+12 Angry Men                                        9.15  1957
+Casablanca                                          8.95  1942
+Cidade de Deus                                      8.95  2002
+Fight Club                                          8.95  1999
+Goodfellas                                          8.95  1990
+Il buono, il brutto, il cattivo                     9.15  1966
+Inception                                           9.15  2010
+One Flew Over the Cuckoo's Nest                     9.05  1975
+Pulp Fiction                                        9.15  1994
+Rear Window                                         8.95  1954
+Schindler's List                                    9.15  1993
+Shichinin no samurai                                9.05  1954
+Star Wars                                           8.95  1977
+Star Wars: Episode V - The Empire Strikes Back      9.05  1980
+The Dark Knight                                     9.05  2008
+The Godfather                                       9.35  1972
+The Godfather: Part II                              9.25  1974
+The Lord of the Rings: The Fellowship of the Ring   8.95  2001
+The Lord of the Rings: The Return of the King       9.05  2003
+The Shawshank Redemption                            9.45  1994
+
+*******************************
+1. Movies in alphabetical order
+2. Titles in given year
+3. Modify all ratings
+*******************************
+
+Enter your selection: q
+
+InfoWarningTip
+Eitt fall, open_file() er gefið sem þið VERÐIÐ að nota og megið EKKI breyta.
+One function, open_file() is given which you MUST use, and CANNOT change.

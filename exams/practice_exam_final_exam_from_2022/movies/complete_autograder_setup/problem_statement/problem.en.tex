@@ -1,0 +1,73 @@
+\problemname{Movies}
+
+Write a program, \texttt{movies.py}, that extracts data from a file.
+The file contains information about top $N$ movies according to ratings given by viewers.
+The program should allow the user to perform certain operations related to the data.
+An input file, for the top $20$ movies \texttt{movies-top-20.csv}, looks like this:
+
+\begin{verbatim}
+The Shawshank Redemption;9.2;1994
+The Godfather;9.1;1972
+The Godfather: Part II;9.0;1974
+Il buono, il brutto, il cattivo;8.9;1966
+Pulp Fiction;8.9;1994
+Inception;8.9;2010
+Schindler's List;8.9;1993
+12 Angry Men;8.9;1957
+One Flew Over the Cuckoo's Nest;8.8;1975
+The Dark Knight;8.8;2008
+Star Wars: Episode V - The Empire Strikes Back;8.8;1980
+The Lord of the Rings: The Return of the King;8.8;2003
+Shichinin no samurai;8.8;1954
+Star Wars;8.7;1977
+Goodfellas;8.7;1990
+Casablanca;8.7;1942
+Fight Club;8.7;1999
+Cidade de Deus;8.7;2002
+The Lord of the Rings: The Fellowship of the Ring;8.7;2001
+Rear Window;8.7;1954
+\end{verbatim}
+
+A semicolon is used as as separator between the columns in the file.  The first column contains the movie title, the second column the rating, and the third column the year of the release.
+The program displays a menu, allowing the user to perform the following operations:
+\begin{itemize}
+    \item Display information about the movies, alphabetically ordered by title.
+    \item Display all movie titles released in a given year.
+    \item Change the rating of all the movies by a certain number (note, however, that the input file is not changed).
+\end{itemize}
+
+Note that it should be easy to change the letters that stand for the menu options, e.g. using \texttt{a}, \texttt{b}, and \texttt{c} instead of \texttt{1}, \texttt{2}, and \texttt{3}.
+
+One function, \texttt{open\_file()} is given which you \textbf{must} use, and \textbf{cannot} change.
+
+\section*{Input}
+The first line of input contains the name of the file.
+If the file does not exist, no more input will follow and the program exits immediately.
+
+Then menu item selection followg, which starts with a line containing one of the following options:
+\begin{itemize}
+    \item If option \texttt{1} is selected, then the menu selection will repeat with no input between.
+    \item If option \texttt{2} is selected, then a line will follow containing one integer $y$, where $0 \leq y \leq 3000$, the release year for which movies should be listed.
+    \item If option \texttt{3} is selected, then a line will follow containing one floating point number $x$, where $-10 \leq x \leq 10$, the change in rating to apply to all movies.
+    \item If any other menu option than \texttt{1}, \texttt{2}, or \texttt{3} is entered, no more input will follow and the program quits running.
+\end{itemize}
+
+The menu item selection repeats until the program exits.
+
+\section*{Output}
+The program should prompt 
+The menu appears as follows:
+\begin{verbatim}
+*******************************
+1. Movies in alphabetical order
+2. Titles in given year
+3. Modify all ratings
+*******************************
+\end{verbatim}
+
+See the samples for information on output within each menu item.
+
+The number of \texttt{*} symbols written out in the menu is $31$.
+The field for the movie title is left justified with width $50$.
+The field for the movie rating is right justified with width $6$ and exactly $2$ digits after the decimal point.
+The field for the year is right justified with width $6$.

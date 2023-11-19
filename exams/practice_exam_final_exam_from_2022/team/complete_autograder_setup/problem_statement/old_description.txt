@@ -1,0 +1,103 @@
+Title: Team
+(15 stig; 25%)
+
+Í þessu verkefni eigið þið að útfæra tvo klasa:
+•	Player, í skránni player.py, sem hjúpar (fótbolta)leikmann. Ein af public tilvikabreytum í Player er goals sem geymir fjölda marka sem viðkomandi leikmaður hefur skorað.
+•	Team, í skránni team.py, sem hjúpar (fótbolta)lið.
+Með því að skoða aðalforritið hér fyrir neðan ásamt úttaki þess eigið þið að geta áttað ykkur á því hvaða breytur og aðgerðir klasarnir tveir þurfa að hafa.
+In this project, you need to implement two classes:
+•	Player, in the file player.py, which encapsulates a (soccer) player. One of the public instance variables in Player is goals which stores the number of goals that the player has scored.
+•	Team, in the file team.py, which encapsulates a soccer (team).
+By inspecting the main program below and the corresponding output, you should be able to figure out which variables and methods the two classes need.
+
+Aðalforrit / Main program:
+import random
+from player import Player
+from team import Team
+
+def main():
+    random.seed(10)
+
+    player1 = Player("Mohamed", "Salah")
+    player2 = Player("Roberto", "Firmino")
+    player3 = Player("Luis", "Díaz")
+    player4 = Player("Marcus", "Rashford")
+    player5 = Player("Harry", "Maguire")
+    player6 = Player("Christiano", "Ronaldo")
+
+    players = [player1, player2, player3, player4, player5, player6]
+    for player in players:
+        goals = random.randint(1,5)
+        player.add_goals(goals)
+        print(player)
+
+    team1 = Team("Liverpool")
+    team1.add_player(player1)
+    team1.add_player(player2)
+    team1.add_player(player3)
+    print(team1)
+
+    team2 = Team("Manchester United")
+    team2.add_player(player4)
+    team2.add_player(player5)
+    team2.add_player(player6)
+    print(team2)
+
+    most_goals_player = team1.most_goals_player()
+    print(most_goals_player)
+    most_goals_player = team2.most_goals_player()
+    print(most_goals_player)
+
+    team3 = team1 + team2
+    print(team3)
+    most_goals_player = team3.most_goals_player()
+    print(most_goals_player)
+
+
+if __name__ == "__main__":
+    main()
+
+
+
+Útttak aðalforrits / The output from the main program:
+Mohamed Salah, Goals: 5
+Roberto Firmino, Goals: 1
+Luis Díaz, Goals: 4
+Marcus Rashford, Goals: 4
+Harry Maguire, Goals: 5
+Christiano Ronaldo, Goals: 1
+Liverpool:
+        Mohamed Salah, Goals: 5
+        Luis Díaz, Goals: 4
+        Roberto Firmino, Goals: 1
+Manchester United:
+        Harry Maguire, Goals: 5
+        Marcus Rashford, Goals: 4
+        Christiano Ronaldo, Goals: 1
+Mohamed Salah, Goals: 5
+Harry Maguire, Goals: 5
+Liverpool+Manchester United:
+        Mohamed Salah, Goals: 5
+        Harry Maguire, Goals: 5
+        Luis Díaz, Goals: 4
+        Marcus Rashford, Goals: 4
+        Roberto Firmino, Goals: 1
+        Christiano Ronaldo, Goals: 1
+Mohamed Salah, Goals: 5
+
+
+InfoWarningTip
+Athugið að þegar lið er prentað út þá birtast leikmenn þess í lækkandi röð miðað við fjölda marka sem þeir hafa skorað. Ef tveir eða fleiri leikmenn hafa skorað jafnmörg mörk þá birtist sá fyrstur sem fyrst var bætt við liðið. Einn tab-character kemur í hverri línu á undan upplýsingum um sérhvern leikmann liðsins
+
+Note that when a team is printed out its players are shown in descending order on the number of goals they have scored. If two or more players have scored equal number of goals, the one that was added first to the team is shown first. One tab-character is printed in each line before the information for each player is shown.
+InfoWarningTip
+Gefum okkur að players sé einhvers konar safn af tilvikum af Player klasanum . Til að raða players í lækkandi röð á skoruð mörk, þá getið þið notað:
+
+sorted(players, key=lambda p: p.goals, reverse=True)
+
+Hér er "lambda p: p.goals" nafnlaust fall sem skilar gildinu á goals breytunni í tilvikinu p.
+
+Let us assume that players is some kind of a collection of instances of the Player class. In order to sort players in descending order on goals scored, you can use:
+sorted(players, key=lambda p: p.goals, reverse=True)
+
+Here, "lambda p: p.goals" is an anonymous function which returns the value of the goals variable in the instance p.

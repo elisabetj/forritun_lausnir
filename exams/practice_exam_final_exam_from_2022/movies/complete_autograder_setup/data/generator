@@ -1,0 +1,102 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+USE_PARALLEL=0
+. ../../../../testdata_tools/gen.sh
+
+SMALL="movies-top-20.csv"
+LARGE="movies-top-250.csv"
+TOLERANCE=0.1
+
+use_solution solution_code.py
+
+compile random_generator.py
+
+samplegroup
+output_validator_flags float_absolute_tolerance $TOLERANCE
+sample 01
+sample 02
+sample 03
+sample 04
+
+
+group GA-not-exists 2
+output_validator_flags float_absolute_tolerance $TOLERANCE
+tc 01
+tc GA-01 random_generator "bluh.ext" "show" 0 0
+tc GA-02 random_generator "doesnotexist" "show" 0 0
+tc GA-03 random_generator "idk.idc.csv" "show" 0 0
+tc GA-04 random_generator "csv.txt" "show" 0 0
+
+group GB-exit 2
+output_validator_flags float_absolute_tolerance $TOLERANCE
+tc GB-01 random_generator "$SMALL" "show" 1 1
+tc GB-02 random_generator "$LARGE" "show" 1 1
+
+group GC-show 2
+output_validator_flags float_absolute_tolerance $TOLERANCE
+tc 02
+tc GC-01 random_generator "$SMALL" "show" 2 2
+tc GC-02 random_generator "$LARGE" "show" 2 2
+
+group GD-show-multi 2
+output_validator_flags float_absolute_tolerance $TOLERANCE
+tc GD-01 random_generator "$SMALL" "show" 3 3
+tc GD-02 random_generator "$SMALL" "show" 4 10
+tc GD-03 random_generator "$LARGE" "show" 3 3
+tc GD-04 random_generator "$LARGE" "show" 4 10
+
+group GE-year 2
+output_validator_flags float_absolute_tolerance $TOLERANCE
+for i in {01..05}; do
+tc GE-$i random_generator "$LARGE" "year" 2 2
+done
+
+group GF-year-multi 2
+tc 03
+output_validator_flags float_absolute_tolerance $TOLERANCE
+for i in {01..05}; do
+tc GF-$i random_generator "$LARGE" "year" 3 10
+done
+
+group GG-change 2
+output_validator_flags float_absolute_tolerance $TOLERANCE
+for i in {01..05}; do
+tc GG-$i random_generator "$LARGE" "change" 2 2
+done
+
+group GH-change-multi 2
+tc 04
+output_validator_flags float_absolute_tolerance $TOLERANCE
+for i in {01..05}; do
+tc GH-$i random_generator "$LARGE" "change" 3 10
+done
+
+group GI-show-year 2
+output_validator_flags float_absolute_tolerance $TOLERANCE
+for i in {01..05}; do
+tc GI-$i random_generator "$LARGE" "show_year" 2 10
+done
+
+group GJ-show-change 2
+output_validator_flags float_absolute_tolerance $TOLERANCE
+for i in {01..05}; do
+tc GJ-$i random_generator "$LARGE" "show_change" 2 10
+done
+
+group GK-year-change 2
+output_validator_flags float_absolute_tolerance $TOLERANCE
+for i in {01..05}; do
+tc GK-$i random_generator "$LARGE" "year_change" 2 10
+done
+
+group GL-all 2
+output_validator_flags float_absolute_tolerance $TOLERANCE
+for i in {01..05}; do
+tc GL-$i random_generator "$LARGE" "show_year_change" 2 10
+done
+
+group GM-all-strict 3
+output_validator_flags space_change_sensitive case_sensitive
+for i in {01..05}; do
+tc GM-$i random_generator "$LARGE" "show_year_change" 2 10
+done

@@ -1,0 +1,49 @@
+Title: Darts
+(18 stig; 30%)
+
+Skrifið forrit, darts.py, sem leyfir notanda að skrá skor tveggja keppenda í pílu endurtekið þangað til annar keppendanna hefur unnið leikinn.
+•	Um er að ræða svokallað "301 darts" sem þýðir að báðir keppendur byrja með 301 stig.
+•	Keppendur skiptast síðan á að kasta pílunum á píluspjaldið og í hverri umferð er fjöldi stiga sem pílurnar gefa dreginn frá heildarfjöldanum.
+•	Sá vinnur sem fyrr kemst niður í 0 stig.
+•	Ef keppandi skorar fleiri stig í tiltekinni umferð en sem nemur heildarfjölda stiga sem hann á eftir þá er viðkomandi kast ógilt og heildarfjöldi stiga sem eftir eru breytist þá ekki.
+•	Skorin sem slegin eru inn þarf að villutékka, þ.e. að tryggja að þau séu heiltölur.
+•	Fastar eru gefnir sem þið EIGIÐ að nota.
+Write a program, darts.py, which allows the user to repeatedly input the scores of two players in darts until one of them wins.
+•	The game is the so-called "301 darts", which means that both players start with a score of 301 points.
+•	Each player then takes alternating turns at throwing their darts at the dartboard and the points scored are subtracted from the total.
+•	The first player to reach zero points wins the game.
+•	If a player scores more points in a given round than the total points remaining, then the throw is invalid and the remaining total points are not changed.
+•	The entered scores need to be error checked, i.e. ensuring that they are integers.
+•	Constants are given which you MUST use.
+
+Dæmi um inntak/úttak - Example input/output:
+
+
+Input points for Player 1: 180
+Player 1 remaining points: 121
+Input points for Player 2: 60
+Player 2 remaining points: 241
+Input points for Player 1: 40
+Player 1 remaining points: 81
+Input points for Player 2: x
+Invalid input!
+Input points for Player 2: y
+Invalid input!
+Input points for Player 2: 100
+Player 2 remaining points: 141
+Input points for Player 1: 21
+Player 1 remaining points: 60
+Input points for Player 2: 40
+Player 2 remaining points: 101
+Input points for Player 1: 120
+Player 1 remaining points: 60
+Input points for Player 2: 40
+Player 2 remaining points: 61
+Input points for Player 1:
+Invalid input!
+Input points for Player 1: 60
+Player 1 remaining points: 0
+Player 1 won!
+
+Línur sem byrja á "Input" eru inntak en allar aðrar línur eru úttak.  Hér sést að heildarfjöldi stiga sem leikmaður á eftir eru skrifuð út í hverri umferð. Jafnframt eru skilaboð skrifuð út ef inntak er ógilt. Að lokum eru upplýsingar um sigurvegarann skrifaðar út.
+Lines starting with "Input" are inputs, while all other lines are outputs.  Here it can be seen that the total remaining points for a player are printed out in each round. Moreover, an error message is printed when the input is invalid. Finally, information about the winner is printed.

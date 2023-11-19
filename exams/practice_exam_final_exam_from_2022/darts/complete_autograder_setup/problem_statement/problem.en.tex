@@ -1,0 +1,96 @@
+\problemname{Darts}
+
+
+% \textbf{The main file, which handles input and output, is already provided. -
+% Please only submit your function definitions, without any code outside the functions!}
+
+Write a program, \texttt{darts.py},
+which allows the user to repeatedly input the scores of two players in darts
+until one of them wins.
+\begin{itemize}
+    \item
+    The game is the so-called ``301 darts'',
+    which means that both players start with a score of 301 points.
+
+    \item
+    Each player then takes alternating turns
+    at throwing their darts at the dartboard
+    and the points scored are subtracted from the total.
+
+    \item
+    The first player to reach zero points wins the game.
+
+    \item
+    If a player scores more points in a given round
+    than the total points remaining,
+    then the throw is invalid and the remaining total points are not changed.
+
+    \item
+    The entered scores need to be error checked,
+    ensuring that they are integers.
+
+    \item
+    Constants are given which you MUST use.
+\end{itemize}
+
+Example input/output:
+
+\begin{verbatim}
+Input points for Player 1: 180
+Player 1 remaining points: 121
+Input points for Player 2: 60
+Player 2 remaining points: 241
+Input points for Player 1: 40
+Player 1 remaining points: 81
+Input points for Player 2: x
+Invalid input!
+Input points for Player 2: y
+Invalid input!
+Input points for Player 2: 100
+Player 2 remaining points: 141
+Input points for Player 1: 21
+Player 1 remaining points: 60
+Input points for Player 2: 40
+Player 2 remaining points: 101
+Input points for Player 1: 120
+Player 1 remaining points: 60
+Input points for Player 2: 40
+Player 2 remaining points: 61
+Input points for Player 1:
+Invalid input!
+Input points for Player 1: 60
+Player 1 remaining points: 0
+Player 1 won!
+\end{verbatim}
+
+Lines starting with ``Input'' are inputs, while all other lines are outputs.
+Here it can be seen that the total remaining points for a player
+are printed out in each round.
+Moreover, an error message is printed when the input is invalid.
+Finally, information about the winner is printed.
+
+% \section*{Input}
+
+% % First, a general description of the input,
+% % explaining to students how to interpret
+% % what they are seeing in the samples below.
+
+% % \subsection*{Formal input specifications}
+% % Then a more precise description, leaving nothing to doubt.
+
+% % \subsection*{Test case restrictions}
+% % And finally, assurances about what to expect from the test cases.
+% % Here we mention what we will restrict the input to in the tests,
+% % to clarify that they do not need to worry about input outside those restrictions.
+% % This does not mean their solutions should validate the input,
+% % or reject input that does not satisfy those restrictions.
+
+
+% \section*{Output}
+
+% % First, a general description of the output,
+% % explaining to students how to interpret
+% % what they are seeing in the samples below.
+
+% % \subsection*{Formal output specifications}
+% % Then a more precise description, leaving nothing to doubt.

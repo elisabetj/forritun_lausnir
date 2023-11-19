@@ -1,0 +1,47 @@
+\problemname{Team}
+(15 stig; 25\%)
+
+In this project, you need to implement two classes:
+\begin{itemize}
+    \item \texttt{Player}, in the file \texttt{player.py}, which encapsulates a (soccer) player. 
+    One of the public instance variables in Player is goals which stores the number of goals that the player has scored.
+    \item \texttt{Team}, in the file \texttt{team.py}, which encapsulates a (soccer) team.
+    By inspecting the given main program and the corresponding output, you should be able to figure out which variables and methods the two classes need.
+
+The output from the main program:
+\begin{verbatim}
+Mohamed Salah, Goals: 5
+Roberto Firmino, Goals: 1
+Luis Díaz, Goals: 4
+Marcus Rashford, Goals: 4
+Harry Maguire, Goals: 5
+Christiano Ronaldo, Goals: 1
+Liverpool:
+        Mohamed Salah, Goals: 5
+        Luis Díaz, Goals: 4
+        Roberto Firmino, Goals: 1
+Manchester United:
+        Harry Maguire, Goals: 5
+        Marcus Rashford, Goals: 4
+        Christiano Ronaldo, Goals: 1
+Mohamed Salah, Goals: 5
+Harry Maguire, Goals: 5
+Liverpool+Manchester United:
+        Mohamed Salah, Goals: 5
+        Harry Maguire, Goals: 5
+        Luis Díaz, Goals: 4
+        Marcus Rashford, Goals: 4
+        Roberto Firmino, Goals: 1
+        Christiano Ronaldo, Goals: 1
+Mohamed Salah, Goals: 5
+\end{verbatim}
+
+
+\textbf{Note} that when a team is printed out its players are shown in descending order on the number of goals they have scored.
+If two or more players have scored equal number of goals, the one that was added first to the team is shown first. 
+One tab-character is printed in each line before the information for each player is shown.
+
+Let us assume that players is some kind of a collection of instances of the Player class. In order to sort players in descending order on goals scored, you can use:
+\texttt{sorted(players, key=lambda p: p.goals, reverse=True)}
+
+Here, ``\texttt{lambda p: p.goals}'' is an anonymous function which returns the value of the goals variable in the instance $p$.

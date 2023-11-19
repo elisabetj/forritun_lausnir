@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+. ../../../../testdata_tools/gen.sh
+
+use_solution solution_code/main.py
+
+compile random_generator.py
+
+group GA-player-init 10
+for i in {01..10}; do
+    tc player-init-$i random_generator "Player.__init__"
+done;
+
+group GB-player-str 10
+for i in {01..10}; do
+    tc player-str-$i random_generator "Player.__str__"
+done;
+
+group GC-player-add-goals 10
+for i in {01..10}; do
+    tc player-add-goals-$i random_generator "Player.add_goals"
+done;
+
+group GD-team-init 10
+for i in {01..10}; do
+    tc team-init-$i random_generator "Team.__init__"
+done;
+
+group GE-team-str 10
+for i in {01..10}; do
+    tc team-str-$i random_generator "Team.__str__"
+done;
+
+group GF-team-add-player 10
+for i in {01..10}; do
+    tc team-add-player-$i random_generator "Team.add_player"
+done;
+
+group GG-team-most-goals-player 10
+for i in {01..10}; do
+    tc team-most-goals-player-$i random_generator "Team.most_goals_player"
+done;
+
+group GH-team-add 10
+for i in {01..10}; do
+    tc team-add-$i random_generator "Team.__add__"
+done;
+

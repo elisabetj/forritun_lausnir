@@ -1,0 +1,49 @@
+\problemname{Team}
+(15 stig; 25\%)
+
+Í þessu verkefni eigið þið að útfæra tvo klasa:
+\begin{itemize}
+    \item \texttt{Player}, í skránni \texttt{player.py}, sem hjúpar (fótbolta)leikmann. Ein af public tilvikabreytum í \texttt{Player} er goals sem geymir fjölda marka sem viðkomandi leikmaður hefur skorað.
+    \item \texttt{Team}, í skránni \texttt{team.py}, sem hjúpar (fótbolta)lið.
+\end{itemize}
+Með því að skoða gefna aðalforritið hér fyrir ásamt úttaki þess hér að neðan eigið þið að geta áttað ykkur á því hvaða breytur og aðgerðir klasarnir tveir þurfa að hafa.
+
+
+Úttak aðalforrits:
+\begin{verbatim}
+Mohamed Salah, Goals: 5
+Roberto Firmino, Goals: 1
+Luis Díaz, Goals: 4
+Marcus Rashford, Goals: 4
+Harry Maguire, Goals: 5
+Christiano Ronaldo, Goals: 1
+Liverpool:
+        Mohamed Salah, Goals: 5
+        Luis Díaz, Goals: 4
+        Roberto Firmino, Goals: 1
+Manchester United:
+        Harry Maguire, Goals: 5
+        Marcus Rashford, Goals: 4
+        Christiano Ronaldo, Goals: 1
+Mohamed Salah, Goals: 5
+Harry Maguire, Goals: 5
+Liverpool+Manchester United:
+        Mohamed Salah, Goals: 5
+        Harry Maguire, Goals: 5
+        Luis Díaz, Goals: 4
+        Marcus Rashford, Goals: 4
+        Roberto Firmino, Goals: 1
+        Christiano Ronaldo, Goals: 1
+Mohamed Salah, Goals: 5
+\end{verbatim}
+
+
+\textbf{Athugið} að þegar lið er prentað út þá birtast leikmenn þess í lækkandi röð miðað við fjölda marka sem þeir hafa skorað.
+Ef tveir eða fleiri leikmenn hafa skorað jafnmörg mörk þá birtist sá fyrstur sem fyrst var bætt við liðið. 
+Einn tab-character kemur í hverri línu á undan upplýsingum um sérhvern leikmann liðsins
+
+Gefum okkur að players sé einhvers konar safn af tilvikum af Player klasanum . Til að raða players í lækkandi röð á skoruð mörk, þá getið þið notað:
+
+\texttt{sorted(players, key=lambda p: p.goals, reverse=True)}
+
+Hér er ``\texttt{lambda p: p.goals}'' nafnlaust fall sem skilar gildinu á goals breytunni í tilvikinu p.
