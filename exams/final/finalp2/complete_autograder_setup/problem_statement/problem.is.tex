@@ -1,0 +1,76 @@
+\problemname{Spjótkast (40\%)}
+
+Í þessu verkefni útfærið þið forrit sem les nöfn spjótkastara og lengd kasta þeirra (í metrum) í tiltekinni keppni.
+Þessar upplýsingar eru lesnar úr skrá og prentaðar út á ákveðinn hátt (sjá fyrir neðan).
+
+\noindent
+Þið megið \textbf{ekki} nota neina import setningu í lausninni ykkar fyrir utan \texttt{import typing}. \\
+
+\section*{Inntak}
+Inntakið er ein lína sem inniheldur nafn á inntaksskrá sem endar á \texttt{.txt}.
+Dæmigerð inntaksskrá, \texttt{throws1.txt}, lítur svona út:
+\begin{verbatim}
+Sonia Bisset 68.79
+Lillian Copeland 72.28
+Babe Didrikson 69.34
+Tiina Lillak 65.46
+\end{verbatim}
+
+Annað dæmi um inntaksskrá, \texttt{throws2.txt}, er svona:
+\begin{verbatim}
+Leryn Franco 58.12
+Ruth Fuchs 66.23
+Trine Hattestad 61.35
+Tiina Lillak 69.96
+Kirsten Hellier 59.37
+Haruka Kitaguchi 70.23
+Tiina Lillak 71.69
+Mirela Manjani 58.34
+Kirsten Hellier 66.45
+Tiina Lillak 63.44
+Ruth Fuchs 71.68
+Haruka Kitaguchi 62.27
+\end{verbatim}
+
+Þessar tvær skrár eru gefnar, ykkur til þæginda.
+Þið getið hlaðið þeim niður til að prófa á eigin vél.
+
+Inntaksskráin inniheldur alltaf þrjá dálka: fornafn keppanda, eftirnafn keppanda og lengd kasts viðkomandi keppanda.
+Gera má ráð fyrir eftirfarandi atriðum varðandi inntaksskrána:
+\begin{itemize} 
+\item Hún inniheldur a.m.k. eina línu.
+\item Fyrir sérhvern keppanda er fjöldi lína í mesta lagi fjórir.
+\item Lengd nafns sérhvers keppanda er minni en $20$ stafir.
+\item Kast $t$ er alltaf gild rauntala, þar sem $50 \le t \le 75$, með í mesta lagi tvo aukastafi.
+\item Fjöldi umferða (lína í skránni) eru ekki endilega sá sami fyrir alla keppendur.  
+\end{itemize}
+
+\textbf{Athugið}: Forritið ykkar á ekki að skoða sérstaklega hvort þessi inntaksskilyrði standist, né hafna öðru inntaki. 
+Þetta er bara ykkur til upplýsinga um það inntak sem er prófað í prófunartilvikunum. 
+Þið þurfið sem sagt ekki að búast við inntaki utan þessara takmarkana.
+
+
+\pagebreak
+\section*{Úttak}
+Ef ekki er hægt að opna inntaksskrána þá er úttakið tómt.
+Annars samanstendur úttakið af einni línu fyrir sérhvern keppanda.
+Sérhver lína samanstendur af eftirfarandi (í þessari röð):
+\begin{itemize}
+\item Nafni keppanda, vinstri jafnað í sviði með breiddina $20$.
+\item Strengnum \texttt{"Throws: "}.
+\item Lengdum einstakra kasta viðkomandi keppanda, með einu bili á milli þeirra.
+\end{itemize}
+Upplýsingarnar eru prentaðar út í sömu röð og gögnin koma fyrir í inntaksskránni.
+
+Ef keppandi á sér fleiri en eitt kast, þá bætist ein lína við úttakið:
+Hún inniheldur nafn og meðallengd kasta
+þess keppanda sem á fleiri en eitt kast og á jafnframt hæsta meðaltalið.
+Með öðrum orðum, látum $K$ vera þann keppanda sem á hæsta meðaltalið,
+af öllum þeim keppendum sem eiga fleiri en eitt kast
+(hunsið þá keppendur sem eiga bara eitt kast - eitt happaskot er ekki áreiðanlegur mælikvarði á hæfni þeirra).
+Þá á þessi síðasta lína að innihalda nafn keppandans $K$,
+tvípunkt, eitt bil, og síðan meðalkastlengd keppandans.
+Meðaltalið skal námunda með tveimur aukastöfum.
+Ef tveir eða fleiri keppendur eru jafnir um hæsta meðaltalið
+þá skal birta þann sem kemur fyrst fyrir í inntaksskránni.
+

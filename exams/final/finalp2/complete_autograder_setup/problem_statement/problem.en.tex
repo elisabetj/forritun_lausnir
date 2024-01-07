@@ -1,0 +1,76 @@
+\problemname{Javelin Throws (40\%)}
+
+In this project, you implement a program which reads the names of Javelin competitors and their distances (in meters) thrown in some competition.
+The information is read from a file and printed out in a specific manner (see below).
+
+\noindent
+You are \textbf{not} allowed to use any import statement in your solution, except \texttt{import typing}. \\
+
+\section*{Input}
+The input is one line containing the name of an input file, ending in \texttt{.txt}.
+A typical input file, \texttt{throws1.txt}, looks like this:
+\begin{verbatim}
+Sonia Bisset 68.79
+Lillian Copeland 72.28
+Babe Didrikson 69.34
+Tiina Lillak 65.46
+\end{verbatim}
+
+Another example of an input file, \texttt{throws2.txt}, looks like this:
+\begin{verbatim}
+Leryn Franco 58.12
+Ruth Fuchs 66.23
+Trine Hattestad 61.35
+Tiina Lillak 69.96
+Kirsten Hellier 59.37
+Haruka Kitaguchi 70.23
+Tiina Lillak 71.69
+Mirela Manjani 58.34
+Kirsten Hellier 66.45
+Tiina Lillak 63.44
+Ruth Fuchs 71.68
+Haruka Kitaguchi 62.27
+\end{verbatim}
+
+Those two files are provided for your convenience.
+You can download them for testing locally.
+
+The input file always contains three columns: the first name of a competitor, the last name of the competitor, and the distance thrown by that competitor in a particular round of a competition.  
+The following can be assumed about the input file:
+\begin{itemize} 
+\item It contains at least one line.
+\item The number of lines for any given competitor is four at the maximum.
+\item The length of the name of a competitor is less than $20$ characters.
+\item The throw $t$ is always a valid real number, where $50 \le t \le 75$, with at most two decimal digits after the period.
+\item The number of rounds (lines in the file) are not necessarily the same for all competitors.  
+\end{itemize}
+
+\textbf{Note}: Your program is not supposed to validate this input, or refuse other input.
+This is just for your information about the input in the test cases. 
+You do not need to expect input that does not meet these restrictions.
+
+
+\pagebreak
+\section*{Output}
+If the input file cannot be opened, no output is generated.
+Otherwise, the output consists of one line for each competitor.
+Each line is composed of the following (in this order):
+\begin{itemize}
+\item The name of a competitor, left-justified in a field of width $20$.
+\item The string \texttt{"Throws: "}.
+\item The lengths of the individual throws for the competitor, separated by one space.
+\end{itemize}
+The information is printed in the same order as the data appears in the input file.
+
+If any competitor has more than one throw, the output contains one more line:
+It contains the name and the average throw length
+of the competitor who has more than one throw and the highest average.
+In other words, let $C$ be the competitor who has the highest average,
+out of all those that have more than one throw
+(ignore those that have only one throw - one lucky throw is not a reliable measure of their talent).
+This last line should contain the name of the competitor $C$,
+followed by a colon, one space, and then that competitor's average throw length.
+The average throw should be rounded to two decimal digits.
+If two or more players are tied for the highest average,
+the name that appears first in the input file is displayed.
+
