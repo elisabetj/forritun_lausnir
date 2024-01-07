@@ -1,0 +1,86 @@
+\problemname{Height (20\%)}
+
+In this project, you implement the class \texttt{Height}, in the file \texttt{height.py}, which encapsulates height in feet and inches. 
+By inspecting the main program below and its output, you should be able to figure out which instance variables and which methods are necessary in \texttt{Height}. 
+
+You are \textbf{not} allowed to use any import statement in your solution, except \texttt{import typing}. \\
+
+\noindent
+Info on feet and inches:
+\begin{itemize}
+\item The foot (pl. feet; abbreviation: ft) is a unit of length in the imperial and US customary systems of measurement.
+\item Since the International Yard and Pound Agreement of 1959, one foot is defined as 30.48 centimeters exactly.
+\item In customary and imperial units, the foot comprises 12 inches. 
+\item There are 2.54 centimeters in an inch.
+\end{itemize}
+
+
+\section*{Example main program:}
+
+\begin{verbatim}
+from height import Height
+
+h1 = Height(5, 9)    # 5 feet, 9 inches
+print(h1)
+h2 = Height(5, 11)   # 5 feet, 11 inhces
+print(h2)
+
+c1 = h1.cm()        # converts h1 to centimeters
+print(c1,"cm")
+
+c2 = h2.cm()        # converts h2 to centimeters
+print(c2,"cm")
+
+print(h2 > h1)      
+print(h1 > h2)
+
+h3 = h1 + h2        # adds to heights
+print(h3)
+c3 = h3.cm()
+print(c3,"cm")
+
+h4 = Height(5, 12)
+print(h4)
+c4 = h4.cm()
+print(c4,"cm")
+
+print(h4 > h3)
+\end{verbatim}
+
+This main program is provided for your convenience.
+You can download it and run it against your solution for testing locally.
+
+
+\pagebreak
+\section*{Output}
+\noindent
+Output from the main program above:
+\begin{verbatim}
+5 ft, 9 in
+5 ft, 11 in
+175 cm
+180 cm
+True
+False
+11 ft, 8 in
+356 cm
+6 ft, 0 in
+183 cm
+False
+\end{verbatim}
+\textbf{Note:} The cm() method should return the number of centimeters, rounded to the nearest integer.
+
+\section*{Unit tests}
+Your implemenation of \texttt{Height} will be tested with unit tests.
+When the tests generate an instance of \texttt{Height}, the following values will be used:
+\begin{itemize}
+\item $1 \le feet \le 7$
+\item $1 \le inches \le 36$ 
+\end{itemize}
+
+\textbf{Note}: Your implemenation is not supposed to validate this input, or refuse other input.
+This is just for your information about the input in the test cases. 
+You do not need to expect input that does not meet these restrictions.
+
+\section*{Submission}
+You should only submit the file \texttt{height.py}.
