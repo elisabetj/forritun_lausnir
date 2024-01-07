@@ -1,0 +1,97 @@
+\problemname{Yatzy (40\%)}
+
+In this project, you implement a program for playing a very simple version of the game Yatzy.
+This version of the game has the following functionality:
+\begin{itemize}
+    \item There is only one player.
+    \item There are five dice, each with numbers in the range 1 to 6.
+    \item The rolling of the dice is simulated by entering a line containing five integer values.
+    If an empty line is entered, the program quits running.
+    %\item There is no re-rolling of the dice for a given input.
+    \item The player scores points for certain dice combinations.
+    The points $p$ are calculated as follows:
+    \begin{enumerate}
+        \item \textbf{Yatzy}: All $5$ dice show the same number. Then, $p = 50$.
+        \item \textbf{Three of a kind}: The same result appears on $3$ dice.
+        Let $v$ be the value that appears on three dice. Then, $p = 3 \cdot v$.
+        Note that it is not necessary that the other dice be different from these three,
+        but \textbf{Three of a kind} is however only applicable if the dice do not show Yatzy.
+        \item \textbf{Pair}: The same result appears on $2$ dice.
+        Let $v$ be the highest value that appears on a pair of dice. Then, $p = 2 \cdot v$.
+        In other words, if two pairs occur on the dice, the one with higher points is selected.
+        A pair is only applicable if \textbf{Three of a kind} does not appear on the dice.
+        \textbf{Three of a kind} should always be selected in favour of a \textbf{Pair},
+        even if the latter gives higher points.
+        \item If none of the above applies, that is, if all the dice show different values, then $p=0$.
+    \end{enumerate}
+    \item Each roll of the dice is scored independently, regardless of what combinations have been achieved before (see Sample 2 below).
+\end{itemize}
+
+Do take a look at the provided starter code.
+It includes a given function \texttt{get\_counts()}
+that counts how often each value appears in a given roll of the dice.
+You \textbf{can} use this function if you want.
+
+You are \textbf{not} allowed to use any import statement in your solution, except \texttt{import typing}.
+
+\section*{Input}
+
+% First, a general description of the input,
+% explaining to students how to interpret
+% what they are seeing in the samples below.
+As you can see in the samples below,
+each line in the input contains $5$ space-separated numbers.
+Those represent the results of rolling $5$ dice.
+The input then ends with a single blank line
+indicating the end of input.
+This blank line can not be seen in the sample boxes,
+but it is there nonetheless.
+
+\subsection*{Formal input specifications}
+% Then a more precise description, leaving nothing to doubt.
+
+To be specific, the input consists of $n + 1$ lines.
+The last line is empty, but the first $n$ lines,
+call them $l_1, l_2, \dots, l_n$,
+contain dice results.
+
+That is, for each $j\in \{1, 2, \dots, n\}$,
+the line $l_j$ consists of a sequence $v_j=(v_{j1}, v_{j2}, v_{j3}, v_{j4}, v_{j5})$
+of $5$ integers denoting dice values.
+The values are separated with a single space.
+
+\subsection*{Test case restrictions}
+% And finally, assurances about what to expect from the test cases.
+% Here we mention what we will restrict the input to in the tests,
+% to clarify that they do not need to worry about input outside those restrictions.
+% This does not mean their solutions should validate the input,
+% or reject input that does not satisfy those restrictions.
+
+In the test cases, $n$ will be restricted to $0\le n \le 20$,
+and the dice values will be integers restricted to $1 \le v_{ji} \le 6$
+for each $j\in \{1, \dots, n\}$ and $i\in \{1, \dots, 5\}$.
+
+\textbf{Note}: Your program is not supposed to validate this input, or refuse other input.
+This is just for your information about the input in the test cases. 
+It is good if your program can handle other input as well,
+but you do not need to expect input that does not meet these restrictions.
+
+
+\pagebreak
+\section*{Output}
+
+% First, a general description of the output,
+% explaining to students how to interpret
+% what they are seeing in the samples below.
+For each roll of the $5$ dice,
+the output consists of one line containing the points earned as stated above.
+
+\subsection*{Formal output specifications}
+% Then a more precise description, leaving nothing to doubt.
+To be specific, the output should consist of $n$ lines,
+call them $\lambda_1, \dots, \lambda_n$.
+
+For each $j\in \{1, \dots, n\}$,
+the line $\lambda_j$ should contain one integer $p_j$,
+which should be the number of points the player scored
+for the dice roll in line $l_j$ of the input.

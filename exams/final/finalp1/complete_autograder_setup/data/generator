@@ -1,0 +1,175 @@
+#!/usr/bin/env bash
+PPATH=$(realpath ..)
+. ../../../../testdata_tools/gen.sh
+
+use_solution solution_code.py
+
+compile random_generator.py
+
+hint () {
+    local name="$1"
+    local path="$CURGROUP_DIR/$(_base ${cases[$name]})"
+    echo "$2" > "$path.hint"
+}
+
+
+samplegroup
+sample 01
+sample 02
+
+group GA-given-example 20
+tc 01
+tc 02
+
+G00HINT="$(printf "No dice roll.\nYou seem to be assuming there will always be at least one line with dice results.\n")"
+group G00-no-roll 2
+tc no-roll random_generator 0 00
+hint no-roll "$G00HINT"
+
+G01HINT="$(printf "One dice roll, yatzy.\n")"
+group G01-one-roll-yatzy 5
+for i in {01..05}; do
+    tc one-roll-yatzy-$i random_generator 1 01 1 01 # Exactly one line, exactly one yatzy.
+    hint one-roll-yatzy-$i "$G01HINT"
+done
+
+G02HINT="$(printf "One dice roll, simple 3 of a kind, with different values on the other two dice.\n")"
+group G02-one-roll-3kind 5
+for i in {1..5}; do
+    tc one-roll-3kind-$i random_generator 1 01 0 00 1 01
+    hint one-roll-3kind-$i "$G02HINT"
+done
+
+G03HINT="$(printf "One dice roll, simple pair.\n")"
+group G03-one-roll-pair 5
+for i in {1..5}; do
+    tc one-roll-pair-$i random_generator 1 01 0 00 0 00 1 01
+    hint one-roll-pair-$i "$G03HINT"
+done
+
+G04HINT="$(printf "One dice roll, two pairs.\n")"
+group G04-one-roll-2pairs 5
+for i in {1..5}; do
+    tc one-roll-2pairs-$i random_generator 1 01 0 00 0 00 0 00 1 01
+    hint one-roll-2pairs-$i "$G04HINT"
+done
+
+G05HINT="$(printf "One dice roll, all different.\n")"
+group G05-one-roll-singles 5
+for i in {1..5}; do
+    tc one-roll-singles-$i random_generator 1 01 0 00 0 00 0 00 0 00 1 01
+    hint one-roll-singles-$i "$G05HINT"
+done
+
+G06HINT="$(printf "One dice roll, 4 of a kind.\n")"
+group G06-one-roll-4kind 4
+for i in {1..5}; do
+    tc one-roll-4kind-$i random_generator 1 01 0 00 0 00 0 00 0 00 0 00 1 01
+    hint one-roll-4kind-$i "$G06HINT"
+done
+
+G07HINT="$(printf "One dice roll, 3 of a kind, pair on the side.\n")"
+group G07-one-roll-fullhouse 4
+for i in {1..5}; do
+    tc one-roll-fullhouse-$i random_generator 1 01 0 00 0 00 0 00 0 00 0 00 0 00 1 01
+    hint one-roll-fullhouse-$i "$G07HINT"
+done
+
+G08HINT="$(printf "Multiple dice rolls, yatzy only.\n")"
+group G08-many-rolls-yatzy 4
+for i in {1..4}; do
+    tc many-rolls-yatzy-$i random_generator 2 20 1 20 0 00 0 00 0 00 0 00 0 00 0 00
+    hint many-rolls-yatzy-$i "$G08HINT"
+done
+tc all-rolls-yatzy-5 random_generator 20 20 1 20 0 00 0 00 0 00 0 00 0 00 0 00
+hint all-rolls-yatzy-5 "$G08HINT"
+
+G09HINT="$(printf "Multiple dice rolls, 3 of a kind only.\n")"
+group G09-many-rolls-3kind 4
+for i in {1..4}; do
+    tc many-rolls-3kind-$i random_generator 2 20 0 00 1 20 0 00 0 00 0 00 0 00 0 00
+    hint many-rolls-3kind-$i "$G09HINT"
+done
+tc all-rolls-3kind-5 random_generator 20 20 0 00 1 20 0 00 0 00 0 00 0 00 0 00
+hint all-rolls-3kind-5 "$G09HINT"
+
+G10HINT="$(printf "Multiple dice rolls, single pairs only.\n")"
+group G10-many-rolls-pair 4
+for i in {1..4}; do
+    tc many-rolls-pair-$i random_generator 2 20 0 00 0 00 1 20 0 00 0 00 0 00 0 00
+    hint many-rolls-pair-$i "$G10HINT"
+done
+tc all-rolls-pair-5 random_generator 20 20 0 00 0 00 1 20 0 00 0 00 0 00 0 00
+hint all-rolls-pair-5 "$G10HINT"
+
+G11HINT="$(printf "Multiple dice rolls, singles only.\n")"
+group G11-many-rolls-singles 5
+for i in {1..4}; do
+    tc many-rolls-singles-$i random_generator 2 20 0 00 0 00 0 00 0 00 1 20 0 00 0 00
+    hint many-rolls-singles-$i "$G11HINT"
+done
+tc all-rolls-singles-5 random_generator 20 20 0 00 0 00 0 00 0 00 1 20 0 00 0 00
+hint all-rolls-singles-5 "$G11HINT"
+
+G12HINT="$(printf "Multiple dice rolls, singles, simple pairs, simple 3 of a kind and yatzy.\n")"
+group G12-many-rolls-simplemix 5
+for i in {1..4}; do
+    tc many-rolls-simplemix-$i random_generator 2 20 1 20 1 20 1 20 0 00 1 20 0 00 0 00
+    hint many-rolls-simplemix-$i "$G12HINT"
+done
+tc all-rolls-simplemix-5 random_generator 20 20 1 20 1 20 1 20 0 00 1 20 0 00 0 00
+hint all-rolls-simplemix-5 "$G12HINT"
+
+G13HINT="$(printf "Multiple dice rolls, at least one double pair, no 4 of a kind or full house.\n")"
+group G13-many-rolls-doublepairmix 3
+for i in {1..4}; do
+    tc many-rolls-doublepairmix-$i random_generator 2 20 0 20 0 20 0 20 1 20 0 20 0 00 0 00
+    hint many-rolls-doublepairmix-$i "$G13HINT"
+done
+tc all-rolls-doublepairmix-5 random_generator 20 20 0 20 0 20 0 20 1 20 0 20 0 00 0 00
+hint all-rolls-doublepairmix-5 "$G13HINT"
+
+G14HINT="$(printf "Multiple dice rolls, at least one 4 of a kind, no double pairs or full house.\n")"
+group G14-many-rolls-4kindmix 3
+for i in {1..4}; do
+    tc many-rolls-4kindmix-$i random_generator 2 20 0 20 0 20 0 20 0 00 0 20 1 20 0 00
+    hint many-rolls-4kindmix-$i "$G14HINT"
+done
+tc all-rolls-4kindmix-5 random_generator 20 20 0 20 0 20 0 20 0 00 0 20 1 20 0 00
+hint all-rolls-4kindmix-5 "$G14HINT"
+
+G15HINT="$(printf "Multiple dice rolls, at least one full house, no double pairs or 4 of a kind.\n")"
+group G15-many-rolls-fullhousemix 3
+for i in {1..4}; do
+    tc many-rolls-fullhousemix-$i random_generator 2 20 0 20 0 20 0 20 0 00 0 20 0 00 1 20
+    hint many-rolls-fullhousemix-$i "$G15HINT"
+done
+tc all-rolls-fullhousemix-5 random_generator 20 20 0 20 0 20 0 20 0 00 0 20 0 00 1 20
+hint all-rolls-fullhousemix-5 "$G15HINT"
+
+G16HINT="$(printf "Multiple dice rolls, no yatzy\n")"
+group G16-many-rolls-no-yatzy 4
+for i in {1..4}; do
+    tc many-rolls-no-yatzy-$i random_generator 2 20 0 0
+    hint many-rolls-no-yatzy-$i "$G16HINT"
+done
+tc all-rolls-no-yatzy-5 random_generator 20 20 0 0
+hint all-rolls-no-yatzy-5 "$G16HINT"
+
+G17HINT="$(printf "Multiple dice rolls, at least one of every kind of combination.\n")"
+group G17-many-rolls-fullmix 5
+for i in {1..4}; do
+    tc many-rolls-fullmix-$i random_generator 2 20 2 20 2 20 2 20 1 20 2 20 1 20 1 20
+    hint many-rolls-fullmix-$i "$G17HINT"
+done
+tc all-rolls-fullmix-5 random_generator 20 20 2 20 2 20 2 20 1 20 2 20 1 20 1 20
+hint all-rolls-fullmix-5 "$G17HINT"
+
+G18HINT="$(printf "Multiple dice rolls, anything goes.\n")"
+group G18-many-rolls-any 5
+for i in {1..4}; do
+    tc many-rolls-any-$i random_generator 0 20
+    hint many-rolls-any-$i "$G18HINT"
+done
+tc all-rolls-any-$i random_generator 20 20
+hint all-rolls-any-$i "$G18HINT"

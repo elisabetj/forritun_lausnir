@@ -1,0 +1,95 @@
+\problemname{Yatzy (40\%)}
+
+Í þessu verkefni útfærið þið forrit til að spila mjög einfalda útgáfu af Yatzy.
+Þessi útgáfa inniheldur eftirfarandi virkni:
+\begin{itemize}
+    \item Það er aðeins einn spilari.
+    \item Það eru fimm teningar og sérhver þeirra er með gildi á bilinu 1 til 6.
+    \item Hermt er eftir teningakasti með því að slá inn línu sem inniheldur fimm heiltölur.
+    Forritið hættir keyrslu þegar tóm lína er slegin inn.
+    \item Spilarinn fær punkta fyrir ákveðnar samsetningar á teningunum.
+    Punktarnir $p$ eru reiknaðir á eftirfarandi hátt:
+    \begin{enumerate}
+        \item \textbf{Yatzy}: Allir $5$ teningarnir hafa sama gildið. Þá er $p = 50$.
+        \item \textbf{Þrír eins}: Sama gildið kemur upp á $3$ teningum.
+        Lát $v$ vera gildið sem kemur upp á þremur teningum. Þá er $p = 3 \cdot v$.
+        Athugið að það er ekki nauðsynlegt að hinir tveir teningarnir séu með annað gildi en þessir þrír,
+        en \textbf{Þrír eins} á samt aðeins við þegar ekki er um að ræða Yatzy.
+        \item \textbf{Par}: Sama gildið kemur fyrir á $2$ teningum.
+        Lát $v$ vera hæsta gildið sem kemur fyrir á teningapari. Þá er $p = 2 \cdot v$.
+        M.ö.o., ef tvö pör koma fyrir á teningunum þá skal velja parið sem gefur hærri punkta.
+        Par á aðeins við ef \textbf{Þrír eins} eru ekki til staðar.
+        Ávallt skal velja \textbf{Þrír eins} fram yfir \textbf{Par} þrátt fyrir að það síðarnefnda gefi hærri punkta.
+        \item Ef ekkert af ofangreindu á við, þ.e. ef allir teningarnir hafa mismundandi gildi, þá er $p=0$.
+    \end{enumerate}
+    \item Sérhvert teningakast fær stig óháð því hvaða samsetning hefur komið áður upp (sjá Sample 2 fyrir neðan).
+\end{itemize}
+
+Skoðið hinn gefna \textit{starter code}.
+Hann inniheldur fallið \texttt{get\_counts()}
+sem telur hversu oft sérhvert gildi kemur fyrir í teningakasti.
+Þið \textbf{megið} nota þetta fall ef þið viljið.
+
+\textbf{Ekki} er leyfilegt að nota import í lausninni nema \texttt{import typing}.
+
+
+\section*{Inntak}
+% First, a general description of the input,
+% explaining to students how to interpret
+% what they are seeing in the samples below.
+
+Eins og sjá má af sýnidæmunum hér fyrir neðan,
+þá inniheldur sérhver lína $5$ tölur, aðskildar með bilum.
+Þær tákna útkomur þegar $5$ teningum er kastað.
+Inntakið endar síðan á einni auðri línu
+sem gefur til kynna að inntakið sé búið.
+Sú lína sést ekki í reitunum með sýnidæmunum,
+en hún er samt sem áður til staðar í inntakinu.
+
+\subsection*{Formleg skilgreining á inntakinu}
+% Then a more precise description, leaving nothing to doubt.
+
+Nánar tiltekið samanstendur inntakið af $n + 1$ línum.
+Síðasta línan er auð, en fyrstu $n$ línurnar innihalda niðurstöður úr teningaköstum.
+Köllum þær $l_1, l_2, \dots, l_n$.
+
+Sem sagt, fyrir sérhvert $j\in \{1, 2, \dots, n\}$,
+inniheldur línan $l_j$ runu $v_j=(v_{j1}, v_{j2}, v_{j3}, v_{j4}, v_{j5})$
+af $5$ heiltölum sem standa fyrir gildi teninga.
+Eitt bil er á milli þessara gilda.
+
+\subsection*{Takmarkanir prófunargilda}
+% And finally, assurances about what to expect from the test cases.
+% Here we mention what we will restrict the input to in the tests,
+% to clarify that they do not need to worry about input outside those restrictions.
+% This does not mean their solutions should validate the input,
+% or reject input that does not satisfy those restrictions.
+
+Í prófunartilvikunum verður $n$ takmarkað við $0\le n \le 20$,
+og teningagildin verða heiltölur takmarkaðar við $1 \le v_{ji} \le 6$
+fyrir öll $j\in \{1, \dots, n\}$ og $i\in \{1, \dots, 5\}$.
+
+\textbf{Athugið}: Forritið ykkar á ekki að skoða sérstaklega hvort þessi inntaksskilyrði standist, né hafna öðru inntaki.
+Þetta er bara ykkur til upplýsinga um það inntak sem er prófað í prófunartilvikunum. 
+Það er gott ef forritið ykkar getur ráðið við önnur inntök líka,
+en þið þurfið sem sagt ekki að búast við inntaki utan þessara takmarkana.
+
+
+\pagebreak
+\section*{Úttak}
+% First, a general description of the output,
+% explaining to students how to interpret
+% what they are seeing in the samples below.
+Fyrir sérhvert teningakast af $5$ teningunum er ein lína í úttakinu
+sem inniheldur punktana sem fengust fyrir kastið eins og tilgreindir eru að ofan.
+
+\subsection*{Formleg úttakslýsing}
+% Then a more precise description, leaving nothing to doubt.
+
+Nánar tiltekið á úttakið að samanstanda af $n$ línum,
+köllum þær $\lambda_1, \dots, \lambda_n$.
+
+Fyrir hvert $j\in \{1, \dots, n\}$
+á línan $\lambda_j$ að innihalda eina heiltölu $p_j$,
+sem á að vera fjöldi punkta sem leikmaðurinn fékk
+fyrir teningakastið í línu $l_j$ í inntakinu.
